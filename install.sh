@@ -395,6 +395,79 @@ function network() {
     arch-chroot /mnt systemctl enable NetworkManager.service
 }
 
+function users() {
+    create_user "$USER_NAME" "$USER_PASSWORD"
+
+#    for U in ${ADDITIONAL_USERS[@]}; do
+#        IFS='=' S=(${U})
+#        USER=${S[0]}
+#        PASSWORD=${S[1]}
+#        create_user "${USER}" "${PASSWORD}"
+#    done
+
+	arch-chroot /mnt sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+
+    pacman_install "xdg-user-dirs"
+
+#    if [ "$SYSTEMD_HOMED" == "true" ]; then
+#        cat <<EOT > "/mnt/etc/pam.d/nss-auth"
+##%PAM-1.0
+#
+#auth     sufficient pam_unix.so try_first_pass nullok
+#auth     sufficient pam_systemd_home.so
+#auth     required   pam_deny.so
+#
+#account  sufficient pam_unix.so
+#account  sufficient pam_systemd_home.so
+#account  required   pam_deny.so
+#
+#password sufficient pam_unix.so try_first_pass nullok sha512 shadow
+#password sufficient pam_systemd_home.so
+#password required   pam_deny.so
+#EOT
+#
+#        cat <<EOT > "/mnt/etc/pam.d/system-auth"
+##%PAM-1.0
+#
+#auth      substack   nss-auth
+#auth      optional   pam_permit.so
+#auth      required   pam_env.so
+#
+#account   substack   nss-auth
+#account   optional   pam_permit.so
+#account   required   pam_time.so
+#
+#password  substack   nss-auth
+#password  optional   pam_permit.so
+#
+#session   required  pam_limits.so
+#session   optional  pam_systemd_home.so
+#session   required  pam_unix.so
+#session   optional  pam_permit.so
+#EOT
+#    fi
+}
+
+function create_user() {
+    USER_NAME=$1
+    USER_PASSWORD=$2
+#    if [ "$SYSTEMD_HOMED" == "true" ]; then
+#        arch-chroot /mnt systemctl enable systemd-homed.service
+#        create_user_homectl $USER_NAME $USER_PASSWORD
+##       create_user_useradd $USER_NAME $USER_PASSWORD
+#    else
+#        create_user_useradd $USER_NAME $USER_PASSWORD
+#    fi
+    create_user_useradd $USER_NAME $USER_PASSWORD
+}
+
+function create_user_useradd() {
+    USER_NAME=$1
+    USER_PASSWORD=$2
+    arch-chroot /mnt useradd -m -G wheel,storage,optical -s /bin/bash $USER_NAME
+    printf "$USER_PASSWORD\n$USER_PASSWORD" | arch-chroot /mnt passwd $USER_NAME
+}
+
 # Low-level functions
 function prepare() {
     timedatectl set-ntp true
