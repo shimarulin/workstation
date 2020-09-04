@@ -217,6 +217,29 @@ function partition() {
     PARTUUID_ROOT=$(blkid -s PARTUUID -o value $PARTITION_ROOT)
 }
 
+function install() {
+    if [ -n "$PACMAN_MIRROR" ]; then
+        echo "Server=$PACMAN_MIRROR" > /etc/pacman.d/mirrorlist
+    fi
+#    if [ "$REFLECTOR" == "true" ]; then
+#        COUNTRIES=()
+#        for COUNTRY in "${REFLECTOR_COUNTRIES[@]}"; do
+#            COUNTRIES+=(--country "${COUNTRY}")
+#        done
+#        pacman -Sy --noconfirm reflector
+#        reflector "${COUNTRIES[@]}" --latest 25 --age 24 --protocol https --completion-percent 100 --sort rate --save /etc/pacman.d/mirrorlist
+#    fi
+
+#    sed -i 's/#Color/Color/' /etc/pacman.conf
+#    sed -i 's/#TotalDownload/TotalDownload/' /etc/pacman.conf
+
+#    pacstrap /mnt base base-devel linux
+    pacstrap /mnt base linux linux-firmware
+
+#    sed -i 's/#Color/Color/' /mnt/etc/pacman.conf
+#    sed -i 's/#TotalDownload/TotalDownload/' /mnt/etc/pacman.conf
+}
+
 # Low-level functions
 function prepare() {
     timedatectl set-ntp true
