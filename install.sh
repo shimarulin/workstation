@@ -323,7 +323,69 @@ function configuration() {
     printf "$ROOT_PASSWORD\n$ROOT_PASSWORD" | arch-chroot /mnt passwd
 }
 
+function mkinitcpio_configuration() {
+    print_step "mkinitcpio_configuration()"
 
+    if [ "$KMS" == "true" ]; then
+        MODULES=""
+        case "$DISPLAY_DRIVER" in
+            "intel" )
+                MODULES="i915"
+                ;;
+            "nvidia" | "nvidia-lts"  | "nvidia-dkms" | "nvidia-390xx" | "nvidia-390xx-lts" | "nvidia-390xx-dkms" )
+                MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+                ;;
+            "amdgpu" )
+                MODULES="amdgpu"
+                ;;
+            "ati" )
+                MODULES="radeon"
+                ;;
+            "nouveau" )
+                MODULES="nouveau"
+                ;;
+        esac
+        arch-chroot /mnt sed -i "s/^MODULES=()/MODULES=($MODULES)/" /etc/mkinitcpio.conf
+    fi
+
+#    if [ "$LVM" == "true" ]; then
+#        pacman_install "lvm2"
+#    fi
+    if [ "$FILE_SYSTEM_TYPE" == "btrfs" ]; then
+        pacman_install "btrfs-progs"
+    fi
+    if [ "$FILE_SYSTEM_TYPE" == "f2fs" ]; then
+        pacman_install "f2fs-tools"
+    fi
+
+    if [ "$BOOTLOADER" == "systemd" ]; then
+        HOOKS=$(echo $HOOKS | sed 's/!systemd/systemd/')
+        HOOKS=$(echo $HOOKS | sed 's/!sd-vconsole/sd-vconsole/')
+        if [ "$LVM" == "true" ]; then
+            HOOKS=$(echo $HOOKS | sed 's/!sd-lvm2/sd-lvm2/')
+        fi
+        if [ -n "$LUKS_PASSWORD" ]; then
+            HOOKS=$(echo $HOOKS | sed 's/!sd-encrypt/sd-encrypt/')
+        fi
+    else
+        HOOKS=$(echo $HOOKS | sed 's/!udev/udev/')
+        HOOKS=$(echo $HOOKS | sed 's/!usr/usr/')
+        HOOKS=$(echo $HOOKS | sed 's/!keymap/keymap/')
+        HOOKS=$(echo $HOOKS | sed 's/!consolefont/consolefont/')
+#        if [ "$LVM" == "true" ]; then
+#            HOOKS=$(echo $HOOKS | sed 's/!lvm2/lvm2/')
+#        fi
+#        if [ -n "$LUKS_PASSWORD" ]; then
+#            HOOKS=$(echo $HOOKS | sed 's/!encrypt/encrypt/')
+#        fi
+    fi
+    HOOKS=$(sanitize_variable "$HOOKS")
+    arch-chroot /mnt sed -i "s/^HOOKS=(.*)$/HOOKS=($HOOKS)/" /etc/mkinitcpio.conf
+
+    if [ "$KERNELS_COMPRESSION" != "" ]; then
+        arch-chroot /mnt sed -i 's/^#COMPRESSION="'"$KERNELS_COMPRESSION"'"/COMPRESSION="'"$KERNELS_COMPRESSION"'"/' /etc/mkinitcpio.conf
+    fi
+}
 
 # Low-level functions
 function prepare() {
