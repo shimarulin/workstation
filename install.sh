@@ -385,6 +385,14 @@ function mkinitcpio_configuration() {
     if [ "$KERNELS_COMPRESSION" != "" ]; then
         arch-chroot /mnt sed -i 's/^#COMPRESSION="'"$KERNELS_COMPRESSION"'"/COMPRESSION="'"$KERNELS_COMPRESSION"'"/' /etc/mkinitcpio.conf
     fi
+
+    # mkinitcpio()
+    arch-chroot /mnt mkinitcpio -P
+}
+
+function network() {
+    pacman_install "networkmanager"
+    arch-chroot /mnt systemctl enable NetworkManager.service
 }
 
 # Low-level functions
@@ -403,4 +411,8 @@ function main() {
     # TODO: check_facts
     prepare
     partition
+    install
+    mkinitcpio_configuration
+    network
+    users
 }
