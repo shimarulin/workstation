@@ -796,6 +796,12 @@ EOT
     fi
 }
 
+function end() {
+    umount -R /mnt/boot
+    umount -R /mnt
+    reboot
+}
+
 # Low-level functions
 function prepare() {
     timedatectl set-ntp true
@@ -817,4 +823,5 @@ function main() {
     network
     users
     bootloader
+    end
 }
