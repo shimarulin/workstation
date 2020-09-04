@@ -17,3 +17,15 @@ It used only to install the base system.
 # # Start
 # ./install.sh
 ```
+
+## Config
+
+### Fonts
+
+Monospace fonts
+
+- https://www.levien.com/type/myfonts/inconsolata.html
+- https://github.com/source-foundry/Hack
+- https://github.com/tonsky/FiraCode
+- https://github.com/i-tu/Hasklig
+- https://typeof.net/Iosevka/
