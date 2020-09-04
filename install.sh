@@ -828,3 +828,5 @@ function main() {
     bootloader
     end
 }
+
+main $@
