@@ -54,6 +54,21 @@ function warning() {
     esac
 }
 
+function pacman_install() {
+    set +e
+    IFS=' ' PACKAGES=($1)
+    for VARIABLE in {1..5}
+    do
+        arch-chroot /mnt pacman -Syu --noconfirm --needed ${PACKAGES[@]}
+        if [ $? == 0 ]; then
+            break
+        else
+            sleep 10
+        fi
+    done
+    set -e
+}
+
 function load_facts() {
     if [ -d /sys/firmware/efi ]; then
         BIOS_TYPE="uefi"
@@ -239,6 +254,76 @@ function install() {
 #    sed -i 's/#Color/Color/' /mnt/etc/pacman.conf
 #    sed -i 's/#TotalDownload/TotalDownload/' /mnt/etc/pacman.conf
 }
+
+function configuration() {
+    genfstab -U /mnt >> /mnt/etc/fstab
+
+    if [ -n "$SWAP_SIZE" ]; then
+        echo "# swap" >> /mnt/etc/fstab
+        echo "$SWAPFILE none swap defaults 0 0" >> /mnt/etc/fstab
+        echo "" >> /mnt/etc/fstab
+    fi
+
+    if [ "$DEVICE_TRIM" == "true" ]; then
+        if [ "$FILE_SYSTEM_TYPE" == "f2fs" ]; then
+            sed -i 's/relatime/noatime,nodiscard/' /mnt/etc/fstab
+        else
+            sed -i 's/relatime/noatime/' /mnt/etc/fstab
+        fi
+        arch-chroot /mnt systemctl enable fstrim.timer
+    fi
+
+    arch-chroot /mnt ln -s -f $TIMEZONE /etc/localtime
+    arch-chroot /mnt hwclock --systohc
+
+    pacman_install "terminus-font"
+    for LOCALE in "${LOCALES[@]}"; do
+        sed -i "s/#$LOCALE/$LOCALE/" /etc/locale.gen
+        sed -i "s/#$LOCALE/$LOCALE/" /mnt/etc/locale.gen
+    done
+    locale-gen
+    arch-chroot /mnt locale-gen
+    for VARIABLE in "${LOCALE_CONF[@]}"; do
+        localectl set-locale "$VARIABLE"
+        echo -e "$VARIABLE" >> /mnt/etc/locale.conf
+    done
+    echo -e "$KEYMAP\n$FONT\n$FONT_MAP" > /mnt/etc/vconsole.conf
+    echo $HOSTNAME > /mnt/etc/hostname
+
+    OPTIONS=""
+    if [ -n "$KEYLAYOUT" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbLayout\" \"$KEYLAYOUT\""
+    fi
+    if [ -n "$KEYMODEL" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbModel\" \"$KEYMODEL\""
+    fi
+    if [ -n "$KEYVARIANT" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbVariant\" \"$KEYVARIANT\""
+    fi
+    if [ -n "$KEYOPTIONS" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbOptions\" \"$KEYOPTIONS\""
+    fi
+
+#    arch-chroot /mnt mkdir -p "/etc/X11/xorg.conf.d/"
+#    cat <<EOT > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+## Written by systemd-localed(8), read by systemd-localed and Xorg. It's
+## probably wise not to edit this file manually. Use localectl(1) to
+## instruct systemd-localed to update it.
+#Section "InputClass"
+#    Identifier "system-keyboard"
+#    MatchIsKeyboard "on"
+#    $OPTIONS
+#EndSection
+#EOT
+
+    if [ -n "$SWAP_SIZE" ]; then
+        echo "vm.swappiness=10" > /mnt/etc/sysctl.d/99-sysctl.conf
+    fi
+
+    printf "$ROOT_PASSWORD\n$ROOT_PASSWORD" | arch-chroot /mnt passwd
+}
+
+
 
 # Low-level functions
 function prepare() {
