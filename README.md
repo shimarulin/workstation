@@ -22,6 +22,12 @@ It used only to install the base system.
 
 ### Fonts
 
+Bitmap fonts (tty)
+
+- https://wiki.archlinux.org/index.php/fonts#Bitmap
+- http://terminus-font.sourceforge.net/
+- https://tobiasjung.name/profont/
+
 Monospace fonts
 
 - https://www.levien.com/type/myfonts/inconsolata.html
