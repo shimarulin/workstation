@@ -67,10 +67,10 @@ VIRTUALBOX=""
 CMDLINE_LINUX_ROOT=""
 CMDLINE_LINUX=""
 
-CONF_FILE="alis.conf"
-GLOBALS_FILE="alis-globals.conf"
-LOG_FILE="alis.log"
-ASCIINEMA_FILE="alis.asciinema"
+CONF_FILE="install.conf"
+GLOBALS_FILE="globals.conf"
+LOG_FILE="install.log"
+ASCIINEMA_FILE="install.asciinema"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -78,7 +78,7 @@ LIGHT_BLUE='\033[1;34m'
 NC='\033[0m'
 
 function configuration_install() {
-    source alis.conf
+    source $CONF_FILE
 }
 
 function sanitize_variables() {
@@ -1352,7 +1352,7 @@ function systemd_units() {
 }
 
 function terminate() {
-    cp "$CONF_FILE" "/mnt/etc/$CONF_FILE"
+#    cp "$CONF_FILE" "/mnt/etc/$CONF_FILE"
 
     if [ "$LOG" == "true" ]; then
         mkdir -p /mnt/var/log
