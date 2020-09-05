@@ -1354,6 +1354,19 @@ function systemd_units() {
     done
 }
 
+function git() {
+    print_step "git()"
+
+    cat <<EOT > "/mnt/home/$USER_NAME/.gitconfig"
+[user]
+	name = GIT_USER_NAME
+	email = GIT_USER_EMAIL
+
+[core]
+	autocrlf = input
+EOT
+}
+
 function terminate() {
 #    cp "$CONF_FILE" "/mnt/etc/$CONF_FILE"
 
@@ -1500,7 +1513,7 @@ EOT
 }
 
 function main() {
-    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "check_facts" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "desktop_environment" "packages" "systemd_units" "terminate" "end")
+    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "check_facts" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "desktop_environment" "packages" "systemd_units" "git" "terminate" "end")
     STEP="configuration_install"
 
     if [ -n "$1" ]; then
@@ -1549,6 +1562,7 @@ function main() {
     fi
     execute_step "packages" "${STEPS}"
     execute_step "systemd_units" "${STEPS}"
+    execute_step "git" "${STEPS}"
     execute_step "terminate" "${STEPS}"
     execute_step "end" "${STEPS}"
 }
