@@ -1367,6 +1367,12 @@ function git() {
 EOT
 }
 
+function clone_workstation_config_repo() {
+    print_step "clone_workstation_config_repo()"
+
+    git clone https://github.com/shimarulin/workstation.git /mnt/opt/workstation
+}
+
 function terminate() {
 #    cp "$CONF_FILE" "/mnt/etc/$CONF_FILE"
 
@@ -1513,7 +1519,7 @@ EOT
 }
 
 function main() {
-    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "check_facts" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "desktop_environment" "packages" "systemd_units" "git" "terminate" "end")
+    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "check_facts" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "desktop_environment" "packages" "systemd_units" "git" "clone_workstation_config_repo" "terminate" "end")
     STEP="configuration_install"
 
     if [ -n "$1" ]; then
@@ -1563,6 +1569,7 @@ function main() {
     execute_step "packages" "${STEPS}"
     execute_step "systemd_units" "${STEPS}"
     execute_step "git" "${STEPS}"
+    execute_step "clone_workstation_config_repo" "${STEPS}"
     execute_step "terminate" "${STEPS}"
     execute_step "end" "${STEPS}"
 }
