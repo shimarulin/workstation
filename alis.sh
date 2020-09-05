@@ -606,17 +606,17 @@ function configuration() {
         OPTIONS="$OPTIONS"$'\n'"    Option \"XkbOptions\" \"$KEYOPTIONS\""
     fi
 
-    arch-chroot /mnt mkdir -p "/etc/X11/xorg.conf.d/"
-    cat <<EOT > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
-# Written by systemd-localed(8), read by systemd-localed and Xorg. It's
-# probably wise not to edit this file manually. Use localectl(1) to
-# instruct systemd-localed to update it.
-Section "InputClass"
-    Identifier "system-keyboard"
-    MatchIsKeyboard "on"
-    $OPTIONS
-EndSection
-EOT
+#    arch-chroot /mnt mkdir -p "/etc/X11/xorg.conf.d/"
+#    cat <<EOT > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+## Written by systemd-localed(8), read by systemd-localed and Xorg. It's
+## probably wise not to edit this file manually. Use localectl(1) to
+## instruct systemd-localed to update it.
+#Section "InputClass"
+#    Identifier "system-keyboard"
+#    MatchIsKeyboard "on"
+#    $OPTIONS
+#EndSection
+#EOT
 
     if [ -n "$SWAP_SIZE" ]; then
         echo "vm.swappiness=10" > /mnt/etc/sysctl.d/99-sysctl.conf
