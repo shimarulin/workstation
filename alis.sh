@@ -4,6 +4,9 @@ set -e
 # Arch Linux Install Script (alis) installs unattended, automated
 # and customized Arch Linux system.
 # Copyright (C) 2018 picodotdev
+#
+# https://github.com/picodotdev/alis
+# Modified by Vyacheslav Shimarulin
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -67,10 +70,10 @@ VIRTUALBOX=""
 CMDLINE_LINUX_ROOT=""
 CMDLINE_LINUX=""
 
-CONF_FILE="install.conf"
-GLOBALS_FILE="globals.conf"
-LOG_FILE="install.log"
-ASCIINEMA_FILE="install.asciinema"
+CONF_FILE="alis.conf"
+GLOBALS_FILE="alis-globals.conf"
+LOG_FILE="alis.log"
+ASCIINEMA_FILE="alis.asciinema"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
