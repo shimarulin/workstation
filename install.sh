@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+# conf
+
 CONFIG_FILE="install.conf"
 
 # global variables (no configuration, don't edit)
