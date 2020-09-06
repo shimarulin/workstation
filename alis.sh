@@ -1370,9 +1370,11 @@ EOT
 function clone_workstation_config_repo() {
     print_step "clone_workstation_config_repo()"
 
-    mkdir -p /mnt/opt/
-    git clone https://github.com/shimarulin/workstation.git
-    cp -r ./workstation /mnt/opt/workstation
+    pacman -Sy --noconfirm git
+#    mkdir -p /mnt/opt/
+    git clone https://github.com/shimarulin/workstation.git /mnt/opt/workstation
+#    cp -r ./workstation /mnt/opt/workstation
+    chown -R 1000:1000 /mnt/opt/workstation
     cat <<EOT > "/mnt/usr/local/bin/provisioning"
 #!/usr/bin/env bash
 
