@@ -1354,26 +1354,25 @@ function systemd_units() {
     done
 }
 
-function git() {
-    print_step "git()"
-
-    cat <<EOT > "/mnt/home/$USER_NAME/.gitconfig"
-[user]
-	name = $GIT_USER_NAME
-	email = $GIT_USER_EMAIL
-
-[core]
-	autocrlf = input
-EOT
-}
+#function git() {
+#    print_step "git()"
+#
+#    cat <<EOT > "/mnt/home/$USER_NAME/.gitconfig"
+#[user]
+#	name = $GIT_USER_NAME
+#	email = $GIT_USER_EMAIL
+#
+#[core]
+#	autocrlf = input
+#EOT
+#}
 
 function clone_workstation_config_repo() {
     print_step "clone_workstation_config_repo()"
 
     pacman -Sy --noconfirm git
-    mkdir -p /mnt/opt/
-    git clone https://github.com/shimarulin/workstation.git /mnt/opt/workstation
-#    cp -r ./workstation /mnt/opt/workstation
+    git clone https://github.com/shimarulin/workstation.git
+    cp -r ./workstation /mnt/opt/workstation
     chown -R 1000:1000 /mnt/opt/workstation
     cat <<EOT > "/mnt/usr/local/bin/provisioning"
 #!/usr/bin/env bash
@@ -1529,7 +1528,7 @@ EOT
 }
 
 function main() {
-    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "check_facts" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "desktop_environment" "packages" "systemd_units" "git" "clone_workstation_config_repo" "terminate" "end")
+    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "check_facts" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "desktop_environment" "packages" "systemd_units" "clone_workstation_config_repo" "terminate" "end")
     STEP="configuration_install"
 
     if [ -n "$1" ]; then
@@ -1578,7 +1577,6 @@ function main() {
     fi
     execute_step "packages" "${STEPS}"
     execute_step "systemd_units" "${STEPS}"
-    execute_step "git" "${STEPS}"
     execute_step "clone_workstation_config_repo" "${STEPS}"
     execute_step "terminate" "${STEPS}"
     execute_step "end" "${STEPS}"
