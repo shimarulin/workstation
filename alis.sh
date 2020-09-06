@@ -1371,8 +1371,14 @@ function clone_workstation_config_repo() {
     print_step "clone_workstation_config_repo()"
 
     mkdir -p /mnt/opt/
-    git clone https://github.com/shimarulin/workstation.git /mnt/opt/workstation
-    # cp -r ./workstation /mnt/opt/workstation
+    git clone https://github.com/shimarulin/workstation.git
+    cp -r ./workstation /mnt/opt/workstation
+    cat <<EOT > "/mnt/usr/local/bin/provisioning"
+#!/usr/bin/env bash
+
+ansible-playbook /opt/workstation/playbook.yml
+EOT
+    chmod +x /mnt/usr/local/bin/provisioning
 }
 
 function terminate() {
