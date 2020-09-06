@@ -1359,8 +1359,8 @@ function git() {
 
     cat <<EOT > "/mnt/home/$USER_NAME/.gitconfig"
 [user]
-	name = GIT_USER_NAME
-	email = GIT_USER_EMAIL
+	name = $GIT_USER_NAME
+	email = $GIT_USER_EMAIL
 
 [core]
 	autocrlf = input
