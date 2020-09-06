@@ -1371,7 +1371,7 @@ function clone_workstation_config_repo() {
     print_step "clone_workstation_config_repo()"
 
     pacman -Sy --noconfirm git
-#    mkdir -p /mnt/opt/
+    mkdir -p /mnt/opt/
     git clone https://github.com/shimarulin/workstation.git /mnt/opt/workstation
 #    cp -r ./workstation /mnt/opt/workstation
     chown -R 1000:1000 /mnt/opt/workstation
