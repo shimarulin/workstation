@@ -127,8 +127,8 @@ wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/key
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 ```
 
-And add to end of file `/etc/sudoers` using the command `sudo visudo` these strings to connect to virtual machine via
-ssh without password:
+And add to end of file `/etc/sudoers` using the command `sudo visudo` (use `EDITOR=nvim sudo visudo` for change default
+editor) these strings to connect to virtual machine via ssh without password:
 
 ```
 # Vagrant required
