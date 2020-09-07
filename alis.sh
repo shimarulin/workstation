@@ -1355,19 +1355,6 @@ function systemd_units() {
     done
 }
 
-#function git() {
-#    print_step "git()"
-#
-#    cat <<EOT > "/mnt/home/$USER_NAME/.gitconfig"
-#[user]
-#	name = $GIT_USER_NAME
-#	email = $GIT_USER_EMAIL
-#
-#[core]
-#	autocrlf = input
-#EOT
-#}
-
 function clone_workstation_config_repo() {
     print_step "clone_workstation_config_repo()"
 
