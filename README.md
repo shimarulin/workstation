@@ -115,7 +115,7 @@ need setup to use as Vagrant box.
 Install and enable SSH server:
 
 ```bash
-sudo apt install openssh-server
+sudo pacman -Sy openssh
 systemctl enable sshd.service
 ```
 
