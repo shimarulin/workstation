@@ -1365,6 +1365,7 @@ function clone_workstation_config_repo() {
     cat <<EOT > "/mnt/usr/local/bin/provision"
 #!/usr/bin/env bash
 
+cd /opt/workstation
 ansible-playbook /opt/workstation/playbook.yml
 EOT
     cat <<EOT > "/mnt/usr/local/bin/provision-update"
@@ -1373,7 +1374,16 @@ EOT
 cd /opt/workstation
 git pull
 EOT
+    cat <<EOT > "/mnt/usr/local/bin/provision-setup"
+#!/usr/bin/env bash
+
+cd /opt/workstation
+mkdir -p {group_vars,host_vars}
+./setup --target vars
+EOT
     chmod +x /mnt/usr/local/bin/provision
+    chmod +x /mnt/usr/local/bin/provision-update
+    chmod +x /mnt/usr/local/bin/provision-setup
 }
 
 function terminate() {
