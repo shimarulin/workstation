@@ -1,0 +1,6 @@
+---
+# tasks file for {{ cookiecutter.role_name }}
+- name: install dependencies
+  become: yes
+  pacman:
+    name: "{{ '{{' }} {{ cookiecutter.role_name|replace('-', '_') }}_packages {{ '}}' }}"
