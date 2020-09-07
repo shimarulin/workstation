@@ -1,0 +1,12 @@
+---
+# tasks file for ssh
+- name: install dependencies
+  become: yes
+  pacman:
+    name: "{{ ssh_packages }}"
+
+- name: enable sshd service
+  systemd:
+    name: sshd
+    state: started
+    enabled: yes
