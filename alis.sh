@@ -1362,12 +1362,18 @@ function clone_workstation_config_repo() {
     git clone https://github.com/shimarulin/workstation.git
     cp -r ./workstation /mnt/opt/workstation
     chown -R 1000:1000 /mnt/opt/workstation
-    cat <<EOT > "/mnt/usr/local/bin/provisioning"
+    cat <<EOT > "/mnt/usr/local/bin/provision"
 #!/usr/bin/env bash
 
 ansible-playbook /opt/workstation/playbook.yml
 EOT
-    chmod +x /mnt/usr/local/bin/provisioning
+    cat <<EOT > "/mnt/usr/local/bin/provision-update"
+#!/usr/bin/env bash
+
+cd /opt/workstation
+git pull
+EOT
+    chmod +x /mnt/usr/local/bin/provision
 }
 
 function terminate() {
