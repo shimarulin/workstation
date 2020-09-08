@@ -173,3 +173,10 @@ vagrant destroy
 ```bash
 dconf watch /
 ```
+
+## Related projects
+
+- [Arch Linux Install Script](https://picodotdev.github.io/alis/)
+- [My Arch Setup](https://github.com/raphiz/my-arch-setup)
+- [archfi](https://github.com/MatMoul/archfi)
+- [Spark](https://github.com/pigmonkey/spark)
