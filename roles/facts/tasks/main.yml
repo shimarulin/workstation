@@ -1,0 +1,6 @@
+---
+# tasks file for facts
+- name: get username
+  command: whoami
+  register: username
+  changed_when: False
