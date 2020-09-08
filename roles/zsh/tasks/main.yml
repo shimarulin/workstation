@@ -1,0 +1,23 @@
+---
+# tasks file for zsh
+- name: install dependencies
+  become: yes
+  pacman:
+    name: "{{ zsh_packages }}"
+
+- name: configure ~/.zshenv
+  copy:
+    src: .zshenv
+    dest: ~/.zshenv
+
+- name: configure ~/.zshrc
+  copy:
+    src: .zshrc
+    dest: ~/.zshrc
+
+# "username" variable is defined in "facts" role
+- name: set zsh as default shell
+  user:
+    name: "{{ username.stdout }}"
+    shell: /usr/bin/zsh
+  become: true
