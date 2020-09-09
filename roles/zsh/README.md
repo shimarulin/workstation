@@ -2,6 +2,11 @@
 
 > Install and setup zsh
 
+## Examples
+
+- https://gist.github.com/meskarune/6a647b067de3addd045f11c07aaf1cfc
+-
+
 ## Requirements
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the

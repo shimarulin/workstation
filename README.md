@@ -116,7 +116,7 @@ Install and enable SSH server:
 
 ```bash
 sudo pacman -Sy openssh
-systemctl enable sshd.service
+sudo systemctl enable sshd.service
 ```
 
 Add unsafe public key:
@@ -138,13 +138,13 @@ vagrant ALL=(ALL) NOPASSWD: ALL
 To make you own box you should run command
 
 ```bash
-vagrant package --base ubuntu-19.10-desktop --output ubuntu-19.10-desktop.box
+vagrant package --base Arch --output arch.box
 ```
 
 After this you can add you box:
 
 ```bash
-vagrant box add ./ubuntu-19.10-desktop.box --name username/ubuntu-19.10-desktop
+vagrant box add ./arch.box --name shimarulin/arch
 ```
 
 #### Use Vagrant to play tasks
@@ -180,3 +180,14 @@ dconf watch /
 - [My Arch Setup](https://github.com/raphiz/my-arch-setup)
 - [archfi](https://github.com/MatMoul/archfi)
 - [Spark](https://github.com/pigmonkey/spark)
+- [arch-install](https://github.com/wrzlbrmft/arch-install)
+- [krushn-arch](https://github.com/krushndayshmookh/krushn-arch)
+
+## Docs and articles
+
+- https://wiki.archlinux.org/
+- https://ctlos.github.io/wiki
+- https://pikedom.com/install-ansible-on-arch-linux/
+- https://blackarch.ru/?p=198
+- https://computingforgeeks.com/arch-linux-easy-and-fast-installation-with-archfi-installer/
+- https://disconnected.systems/blog/archlinux-installer/#setting-variables-and-collecting-user-input

@@ -1,3 +1,16 @@
+## TTY terminal
+
+issues:
+
+- 256 colors
+
+### 256 colors
+
+Используйте `fbterm` - https://unix.stackexchange.com/a/111667 . Проблема: не удалось найти `fbterm`. Альтернативы:
+
+- https://github.com/uobikiemukot/yaft
+- https://wiki.archlinux.org/index.php/Uvesafb
+
 ## Fonts
 
 Bitmap fonts (tty)

@@ -47,37 +47,32 @@ compinit
 ########################################################################################################################
 ### Oh-My-Zsh
 ########################################################################################################################
-local _OMZ_SOURCES=(
-  # Libs
-#   lib/compfix.zsh
-  lib/completion.zsh
-  lib/directories.zsh
-#   lib/functions.zsh
-#   lib/git.zsh
-#   lib/grep.zsh
-  lib/history.zsh
-  lib/key-bindings.zsh
-#   lib/misc.zsh
-#   lib/spectrum.zsh
-#   lib/termsupport.zsh
-#   lib/theme-and-appearance.zsh
-#   lib/termsupport.zsh
+# zinit wait lucid for \
+#   OMZ::lib/completion.zsh \
+#   OMZ::lib/directories.zsh \
+#   OMZ::lib/history.zsh \
+#   OMZ::lib/key-bindings.zsh \
+#   OMZ::plugins/command-not-found/command-not-found.plugin.zsh \
 
-  # Plugins
-#   plugins/autojump/autojump.plugin.zsh
-#   plugins/command-not-found/command-not-found.plugin.zsh
-#   plugins/fzf/fzf.plugin.zsh
-#   plugins/git/git.plugin.zsh
-#   plugins/gitfast/gitfast.plugin.zsh
-#   plugins/pip/pip.plugin.zsh
-#   plugins/sudo/sudo.plugin.zsh
-#   plugins/thefuck/thefuck.plugin.zsh
-#   plugins/urltools/urltools.plugin.zsh
-)
+# omz_libraries=(
+#     directories.zsh
+#     key-bindings.zsh
+#     history.zsh
+#     completion.zsh
+# )
+# for library in ${omz_libraries[@]}; do
+#     zinit snippet OMZL::$library
+#     done
 
-zinit ice wait"0" from"gh" pick"/dev/null" nocompletions blockf lucid \
-    multisrc"${_OMZ_SOURCES}" compile"${(j.|.)_OMZ_SOURCES}"
-zinit load robbyrussell/oh-my-zsh
+# omz_plugins=(
+#     command-not-found
+# )
+# for plugin in ${omz_plugins[@]}; do
+#     # zinit snippet OMZ::plugins/$plugin/$plugin.plugin.zsh
+#     zinit snippet OMZP::$plugin
+#     done
+
+# zinit snippet OMZP::command-not-found
 ### End of Oh-My-Zsh chunk
 ########################################################################################################################
 
@@ -103,6 +98,11 @@ zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ ${TERM} == "linux" ]]; then
+  # Load config for Linux virtual terminal
+  [[ ! -f ~/.p10k.tty.zsh ]] || source ~/.p10k.tty.zsh
+else
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
 ### End of powerlevel10k chunk
 ########################################################################################################################
