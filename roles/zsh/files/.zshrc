@@ -26,11 +26,11 @@ zinit light-mode for \
 ########################################################################################################################
 # Lines configured by zsh-newuser-install
 ########################################################################################################################
-HISTFILE=~/.histfile
-HISTSIZE=20480
-SAVEHIST=20480
-setopt autocd extendedglob nomatch notify
-bindkey -e
+# HISTFILE=~/.histfile
+# HISTSIZE=20480
+# SAVEHIST=20480
+# setopt autocd extendedglob nomatch notify
+# bindkey -e
 # End of lines configured by zsh-newuser-install
 ########################################################################################################################
 
@@ -42,6 +42,43 @@ zstyle :compinstall filename '/home/vagrant/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+########################################################################################################################
+
+########################################################################################################################
+### Oh-My-Zsh
+########################################################################################################################
+local _OMZ_SOURCES=(
+  # Libs
+#   lib/compfix.zsh
+  lib/completion.zsh
+  lib/directories.zsh
+#   lib/functions.zsh
+#   lib/git.zsh
+#   lib/grep.zsh
+  lib/history.zsh
+  lib/key-bindings.zsh
+#   lib/misc.zsh
+#   lib/spectrum.zsh
+#   lib/termsupport.zsh
+#   lib/theme-and-appearance.zsh
+#   lib/termsupport.zsh
+
+  # Plugins
+#   plugins/autojump/autojump.plugin.zsh
+#   plugins/command-not-found/command-not-found.plugin.zsh
+#   plugins/fzf/fzf.plugin.zsh
+#   plugins/git/git.plugin.zsh
+#   plugins/gitfast/gitfast.plugin.zsh
+#   plugins/pip/pip.plugin.zsh
+#   plugins/sudo/sudo.plugin.zsh
+#   plugins/thefuck/thefuck.plugin.zsh
+#   plugins/urltools/urltools.plugin.zsh
+)
+
+zinit ice wait"0" from"gh" pick"/dev/null" nocompletions blockf lucid \
+    multisrc"${_OMZ_SOURCES}" compile"${(j.|.)_OMZ_SOURCES}"
+zinit load robbyrussell/oh-my-zsh
+### End of Oh-My-Zsh chunk
 ########################################################################################################################
 
 ########################################################################################################################
@@ -60,10 +97,8 @@ zinit wait lucid for zinit-zsh/zinit-console
 ########################################################################################################################
 
 ########################################################################################################################
-### Load Prompt (Theme)
+### Load Prompt (Powerlevel10k Theme)
 ########################################################################################################################
-
-### powerlevel10k
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
