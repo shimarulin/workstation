@@ -1,7 +1,7 @@
 ---
 # tasks file for git
 - name: install dependencies
-  become: yes
+  become: true
   pacman:
     name: "{{ git_packages }}"
 
