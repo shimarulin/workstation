@@ -1,0 +1,31 @@
+---
+# tasks file for yay
+- name: check that the Yay already installed
+  stat:
+    path: /usr/bin/yay
+  register: yay_stat_result
+
+- name: get source
+  become: yes
+  shell: git clone https://aur.archlinux.org/yay.git
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  when: yay_stat_result.stat.exists == false
+
+- name: recursively change ownership of the source directory
+  become: yes
+  file:
+    path: /tmp/yay
+    state: directory
+    recurse: yes
+    owner: "{{ username.stdout }}"
+    group: "{{ username.stdout }}"
+  when: yay_stat_result.stat.exists == false
+
+- name: make and install
+  shell: makepkg -si --noconfirm
+  args:
+    chdir: /tmp/yay
+    executable: /bin/bash
+  when: yay_stat_result.stat.exists == false

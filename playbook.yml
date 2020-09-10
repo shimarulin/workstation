@@ -9,6 +9,7 @@
     - git
     - ssh
     - zsh
+    - yay
 
     # GUI
     #- vga
@@ -19,3 +20,7 @@
     - lightdm
     # Window manager
     - i3
+    # Panel
+#    - polybar
+# Launcher
+#    - rofi
