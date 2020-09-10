@@ -2,10 +2,48 @@
 
 > Install and setup zsh
 
+## Docs
+
+- https://www.reddit.com/r/zsh/comments/g1nm2x/zdharmazinit/g22egyx/?utm_source=reddit&utm_medium=web2x&context=3
+- https://github.com/unixorn/zsh-quickstart-kit
+- https://unix.stackexchange.com/questions/589183/how-do-you-convert-or-translate-these-zplug-codes-whose-uncommon-option-into-zin
+
+## Articles
+
+- https://www.ataias.com.br/2020/04/10/a-shell-configuration/
+- https://callstack.com/blog/supercharge-your-terminal-with-zsh/
+- https://hund0b1.gitlab.io/2018/08/04/spell-check-and-auto-correction-of-commands-in-zsh.html
+- https://blog.confirm.ch/zsh-tips-auto-completion-correction/
+
+## Themes
+
+- https://denysdovhan.com/spaceship-prompt/
+
 ## Examples
 
+- https://github.com/zdharma/zinit-configs
 - https://gist.github.com/meskarune/6a647b067de3addd045f11c07aaf1cfc
--
+- https://github.com/dgo-/dotfiles/blob/master/zsh/zshrc
+- https://github.com/montaropdf/zsh-config/blob/apollo/zshrc.apollo
+- https://github.com/zdharma/zinit-configs/blob/master/psprint/zshrc.zsh
+- https://github.com/crivotz/dot_files/blob/master/linux/zplugin/zshrc
+- https://github.com/yusabana/dotfiles/blob/master/zshdir/zshrc.zplugin
+
+## Plugins
+
+- https://github.com/ohmyzsh/ohmyzsh
+- https://github.com/mbrubeck/compleat
+
+### Manage plugins
+
+- https://github.com/zdharma/zinit
+
+## Settings
+
+### Autocompletion
+
+- https://docs.haskellstack.org/en/stable/shell_autocompletion/
+- https://github.com/zsh-users/zsh-completions (https://www.archlinux.org/packages/community/any/zsh-completions/)
 
 ## Requirements
 
