@@ -9,3 +9,13 @@
     - git
     - ssh
     - zsh
+
+    # GUI
+    - vga
+    # X11 server
+    # TODO: add standalone compositor for Xorg (https://wiki.archlinux.org/index.php/Picom)
+    - xorg
+    # Display manager
+    - lightdm
+    # Window manager
+    - i3
