@@ -11,7 +11,7 @@
     - zsh
 
     # GUI
-    - vga
+    #- vga
     # X11 server
     # TODO: add standalone compositor for Xorg (https://wiki.archlinux.org/index.php/Picom)
     - xorg
