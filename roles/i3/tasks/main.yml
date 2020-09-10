@@ -1,0 +1,6 @@
+---
+# tasks file for i3
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ i3_packages }}"
