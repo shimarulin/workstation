@@ -1,0 +1,6 @@
+---
+# vars file for lightdm
+lightdm_packages:
+  - lightdm
+  - lightdm-gtk-greeter
+  - light-locker # or i3lock ?
