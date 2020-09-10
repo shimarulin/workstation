@@ -1,0 +1,5 @@
+---
+# vars file for vga
+vga_packages_vesa:
+  - mesa
+  - xf86-video-vesa
