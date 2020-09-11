@@ -4,3 +4,8 @@
   become: true
   pacman:
     name: "{{ i3_packages }}"
+
+- name: copy i3 config
+  copy:
+    src: .config/i3/config
+    dest: ~/.config/i3/config
