@@ -23,5 +23,7 @@
     # Panel
     # yay role required
     - polybar
-# Launcher
-#    - rofi
+    # Launcher
+    - rofi
+    # Terminal emulator
+    - kitty

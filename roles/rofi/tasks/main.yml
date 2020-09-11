@@ -1,0 +1,6 @@
+---
+# tasks file for rofi
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ rofi_packages }}"

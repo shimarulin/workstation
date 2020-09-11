@@ -1,0 +1,4 @@
+---
+# vars file for rofi
+rofi_packages:
+  - rofi
