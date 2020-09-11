@@ -21,6 +21,7 @@
     # Window manager
     - i3
     # Panel
-#    - polybar
+    # yay role required
+    - polybar
 # Launcher
 #    - rofi

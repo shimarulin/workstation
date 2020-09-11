@@ -1,0 +1,4 @@
+---
+# vars file for polybar
+polybar_aur_packages:
+  - polybar
