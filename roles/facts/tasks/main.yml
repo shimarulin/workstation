@@ -14,4 +14,5 @@
   become: true
   pacman:
     update_cache: yes
-#    upgrade: yes
+  #    upgrade: yes
+  changed_when: false
