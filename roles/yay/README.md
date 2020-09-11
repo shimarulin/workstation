@@ -2,6 +2,11 @@
 
 > An AUR Helper
 
+## Docs
+
+- https://github.com/Jguer/yay
+- https://ostechnix.com/yay-found-yet-another-reliable-aur-helper/
+
 ## Requirements
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the
