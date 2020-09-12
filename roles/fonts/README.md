@@ -2,10 +2,6 @@
 
 > Font collection and setting
 
-otf-fantasque-sans-mono opensans
-
-fira
-
 - https://www.ubuntupit.com/15-best-linux-font-tools-and-how-to-install-linux-fonts-on-ubuntu/
 
 extra/noto-fonts 20190926-4 Google Noto TTF fonts extra/noto-fonts-cjk 20190409-2 Google Noto CJK fonts

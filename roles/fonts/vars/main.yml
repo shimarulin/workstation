@@ -14,16 +14,15 @@ fonts_packages:
   - ttf-fira-sans
   - ttf-fira-code
   ## Monospace fonts for programmers
-  ### https://github.com/DeLaGuardo/Inconsolata-LGC
-  ### - ttf-inconsolata
-  ### https://github.com/i-tu/Hasklig
-  - ttf-fantasque-sans-mono
+  #- ttf-inconsolata
+  - ttf-fantasque-sans-mono # https://github.com/belluzj/fantasque-sans
   - ttf-hack
   ## Others
   - cantarell-fonts # [installed]
   - ttf-bitstream-vera
   - ttf-dejavu
   - ttf-liberation
+  - ttf-opensans
   - ttf-roboto
 
   # Tools
@@ -34,5 +33,5 @@ fonts_aur_packages:
   - ttf-iosevka
   - ttf-inconsolata-lgc-git # https://github.com/DeLaGuardo/Inconsolata-LGC
   #- ttf-inconsolata-lgc-for-powerline
-  - otf-hasklig # fork of the Source Code Pro
+  - otf-hasklig # https://github.com/i-tu/Hasklig, fork of the Source Code Pro
   - ttf-meslo-nerd-font-powerlevel10k
