@@ -2,6 +2,13 @@
 
 > Rofi: A window switcher, application launcher and dmenu replacement
 
+## Config examples
+
+- https://github.com/regolith-linux/regolith-rofi-config
+- https://github.com/abdes/arch-i3-polybar-dotfiles-autosetup
+
+## Links
+
 - https://github.com/davatorium/rofi
 - https://github.com/davatorium/rofi-themes
 - https://wiki.archlinux.org/index.php/Rofi_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)

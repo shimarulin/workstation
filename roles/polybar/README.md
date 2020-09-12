@@ -2,6 +2,15 @@
 
 > A fast and easy-to-use status bar
 
+## Docs
+
+- https://wiki.archlinux.org/index.php/Polybar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+- https://github.com/polybar/polybar
+
+## Config examples
+
+- https://github.com/abdes/arch-i3-polybar-dotfiles-autosetup
+
 ## Requirements
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the

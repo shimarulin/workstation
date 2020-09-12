@@ -2,6 +2,20 @@
 
 > i3 window manager
 
+## Config examples
+
+- https://github.com/regolith-linux/regolith-i3-gaps-config
+- https://github.com/abdes/arch-i3-polybar-dotfiles-autosetup
+- https://github.com/levinit/i3wm-config
+
+## Utils
+
+- https://github.com/regolith-linux/i3-snapshot
+
+## Libs
+
+- https://github.com/regolith-linux/grelier
+
 ## Requirements
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the
