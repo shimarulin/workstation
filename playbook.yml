@@ -6,10 +6,11 @@
   roles:
     # Common tasks
     - facts
-    - git
     - ssh
+    - git
+    - yay # git role required
+    - fonts # yay role required
     - zsh
-    - yay
 
     # GUI
     #- vga
@@ -21,8 +22,7 @@
     # Window manager
     - i3
     # Panel
-    # yay role required
-    - polybar
+    - polybar # yay role required
     # Launcher
     - rofi
     # Terminal emulator

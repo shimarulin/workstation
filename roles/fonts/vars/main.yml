@@ -1,0 +1,38 @@
+---
+# vars file for fonts
+fonts_packages:
+  # Fonts
+  ## Adobe Source family
+  - adobe-source-code-pro-fonts # [installed]
+  - adobe-source-sans-pro-fonts
+  - adobe-source-serif-pro-fonts
+  ## Noto
+  - noto-fonts
+  - noto-fonts-emoji
+  - noto-fonts-extra
+  ## Fira
+  - ttf-fira-sans
+  - ttf-fira-code
+  ## Monospace fonts for programmers
+  ### https://github.com/DeLaGuardo/Inconsolata-LGC
+  ### - ttf-inconsolata
+  ### https://github.com/i-tu/Hasklig
+  - ttf-fantasque-sans-mono
+  - ttf-hack
+  ## Others
+  - cantarell-fonts # [installed]
+  - ttf-bitstream-vera
+  - ttf-dejavu
+  - ttf-liberation
+  - ttf-roboto
+
+  # Tools
+  - fontconfig # [installed]
+  ## - fontconfig-docs
+
+fonts_aur_packages:
+  - ttf-iosevka
+  - ttf-inconsolata-lgc-git # https://github.com/DeLaGuardo/Inconsolata-LGC
+  #- ttf-inconsolata-lgc-for-powerline
+  - otf-hasklig # fork of the Source Code Pro
+  - ttf-meslo-nerd-font-powerlevel10k
