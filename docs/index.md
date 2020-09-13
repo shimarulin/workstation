@@ -2,6 +2,12 @@
 
 ## Обзор
 
+Интересные дистрибутивы:
+
+- https://ctlos.github.io/wiki - установка и русификация
+- https://regolith-linux.org/ - i3 и сочетания клавиш
+- https://instantos.io/ - сочетания клавиш, композитный менеджер и эффекты
+
 ### Linux console (core)
 
 - https://github.com/uobikiemukot/yaft

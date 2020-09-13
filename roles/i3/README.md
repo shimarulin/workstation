@@ -2,6 +2,26 @@
 
 > i3 window manager
 
+### Compositing
+
+- https://github.com/fennerm/flashfocus
+- Picom fork with animations https://github.com/jonaburg/picom (see
+  https://www.reddit.com/r/i3wm/comments/gro4nn/is_there_any_way_to_get_animations_like_this_with/)
+
+### Workspace switching
+
+- https://github.com/grenewode/i3switcher
+  (https://www.reddit.com/r/i3wm/comments/7bb0qb/i3switcher_a_slightly_better_workspace_switcher/)
+- https://github.com/SeerUK/i3x3
+- https://github.com/infokiller/i3-workspace-groups
+- https://www.reddit.com/r/i3wm/comments/8at5dv/i_wrote_an_expolike_script_for_i3/
+
+- https://travisf.net/i3-wk-switcher
+- https://github.com/un-def/i3-workspace-switcher
+- https://github.com/tmfink/i3-wk-switch
+- https://unix.stackexchange.com/questions/370622/workspace-sliding-animation-in-i3
+- https://unix.stackexchange.com/questions/452617/i3wm-switching-to-workspaces-and-moving-container-to-same-workspace-map-to-di
+
 ## Config examples
 
 - https://github.com/regolith-linux/regolith-i3-gaps-config

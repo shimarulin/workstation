@@ -188,6 +188,7 @@ dconf watch /
 - https://wiki.archlinux.org/
 - https://ctlos.github.io/wiki
 - https://regolith-linux.org/
+- https://instantos.io/
 - https://pikedom.com/install-ansible-on-arch-linux/
 - https://blackarch.ru/?p=198
 - https://computingforgeeks.com/arch-linux-easy-and-fast-installation-with-archfi-installer/
