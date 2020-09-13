@@ -2,6 +2,10 @@
 
 ## Обзор
 
+### Linux console (core)
+
+- https://github.com/uobikiemukot/yaft
+
 ### Графическое окружение
 
 - Display server (X Window System): _Xorg_

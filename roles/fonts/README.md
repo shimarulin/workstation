@@ -4,6 +4,10 @@
 
 - https://www.ubuntupit.com/15-best-linux-font-tools-and-how-to-install-linux-fonts-on-ubuntu/
 
+## Emoji
+
+- https://github.com/stove-panini/fontconfig-emoji
+
 extra/noto-fonts 20190926-4 Google Noto TTF fonts extra/noto-fonts-cjk 20190409-2 Google Noto CJK fonts
 extra/noto-fonts-emoji 20200720-1 Google Noto emoji fonts extra/noto-fonts-extra 20190926-4 Google Noto TTF fonts -
 additional variants
