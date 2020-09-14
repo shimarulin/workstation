@@ -2,11 +2,27 @@
 
 > i3 window manager
 
+- https://github.com/mboughaba/i3config.vim
+- https://github.com/burik666/yagostatus
+
+### Multi monitor
+
+- https://github.com/chmln/enact
+- https://github.com/lpicanco/i3-autodisplay
+
 ### Compositing
 
 - https://github.com/fennerm/flashfocus
 - Picom fork with animations https://github.com/jonaburg/picom (see
   https://www.reddit.com/r/i3wm/comments/gro4nn/is_there_any_way_to_get_animations_like_this_with/)
+
+### Style
+
+- https://github.com/altdesktop/i3-style
+
+### Window switching
+
+- https://github.com/svenstaro/wmfocus
 
 ### Workspace switching
 
@@ -15,6 +31,9 @@
 - https://github.com/SeerUK/i3x3
 - https://github.com/infokiller/i3-workspace-groups
 - https://www.reddit.com/r/i3wm/comments/8at5dv/i_wrote_an_expolike_script_for_i3/
+- https://github.com/infokiller/i3-workspace-groups
+- https://www.reddit.com/r/i3wm/comments/a6s8kp/do_i3_workspaces_have_to_be_linear/
+- https://github.com/Chimrod/i3_workspaces
 
 - https://travisf.net/i3-wk-switcher
 - https://github.com/un-def/i3-workspace-switcher

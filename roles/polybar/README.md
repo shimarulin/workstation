@@ -11,6 +11,15 @@
 
 - https://github.com/abdes/arch-i3-polybar-dotfiles-autosetup
 
+## Modules
+
+- https://github.com/rosenpin/i3-agenda
+- https://github.com/kantord/i3-gnome-pomodoro
+- https://github.com/haideralipunjabi/polybar-kdeconnect
+- https://github.com/manilarome/rofi-spotlight
+- https://github.com/ClydeDroid/rofi-bluetooth
+- https://github.com/sumnerevans/menu-calc
+
 ## Requirements
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the

@@ -7,6 +7,16 @@
 - https://github.com/regolith-linux/regolith-rofi-config
 - https://github.com/abdes/arch-i3-polybar-dotfiles-autosetup
 
+## Modules
+
+- https://github.com/moustacheful/myrmidon
+- https://github.com/adi1090x/rofi
+- https://github.com/davatorium/rofi-themes
+- https://github.com/svenstaro/rofi-calc
+- https://github.com/fdw/rofimoji
+- https://github.com/carnager/clerk
+- https://github.com/mattydebie/bitwarden-rofi
+
 ## Links
 
 - https://github.com/davatorium/rofi

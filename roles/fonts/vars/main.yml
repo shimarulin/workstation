@@ -1,5 +1,8 @@
 ---
 # vars file for fonts
+# TODO:
+# - http://mplus-fonts.osdn.jp/about-en.html
+# - http://www.latofonts.com/
 fonts_packages:
   # Fonts
   ## Adobe Source family

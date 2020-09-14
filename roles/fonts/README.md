@@ -3,10 +3,24 @@
 > Font collection and setting
 
 - https://www.ubuntupit.com/15-best-linux-font-tools-and-how-to-install-linux-fonts-on-ubuntu/
+- https://linuxhint.com/best_fonts_ubuntu_linux/
+- https://www.webfx.com/blog/web-design/a-web-designers-guide-to-linux-fonts/
 
-## Emoji
+## Setup
+
+### Emoji
 
 - https://github.com/stove-panini/fontconfig-emoji
+
+### Rendering
+
+- https://blog.aktsbot.in/better-font-rendering-linux.html
+
+## Editing
+
+- https://birdfont.org/
+
+---
 
 extra/noto-fonts 20190926-4 Google Noto TTF fonts extra/noto-fonts-cjk 20190409-2 Google Noto CJK fonts
 extra/noto-fonts-emoji 20200720-1 Google Noto emoji fonts extra/noto-fonts-extra 20190926-4 Google Noto TTF fonts -
