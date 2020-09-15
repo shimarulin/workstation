@@ -1,0 +1,11 @@
+---
+# This playbook is sandbox to apply development roles
+
+- name: apply common configuration to all nodes
+  hosts: all
+  roles:
+    # Common tasks
+    - facts
+
+    ## Hotkey daemon
+    - sxhkd

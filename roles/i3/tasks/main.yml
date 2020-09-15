@@ -5,6 +5,12 @@
   pacman:
     name: "{{ i3_packages }}"
 
+- name: create i3 config directory
+  file:
+    path: ~/.config/i3
+    state: directory
+    mode: "755"
+
 - name: copy i3 config
   copy:
     src: .config/i3/config

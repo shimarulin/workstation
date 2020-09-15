@@ -1,162 +1,18 @@
-# Workstation
-
-## Distro
-
-- https://regolith-linux.org/
-- https://instantos.io/
-- https://archcraft-os.github.io/features.html
-- https://ctlos.github.io/
+# Arch Linux Workstation
 
 ## Обзор
 
-Интересные дистрибутивы:
+Основные компоненты системы:
 
-- https://ctlos.github.io/wiki - установка и русификация
-- https://regolith-linux.org/ - i3 и сочетания клавиш
-- https://instantos.io/ - сочетания клавиш, композитный менеджер и эффекты
-
-### Linux console (core)
-
-- https://github.com/uobikiemukot/yaft
-
-### Графическое окружение
-
-- Display server (X Window System): _Xorg_
-- Compositor: Picom (fork of _compton_) - https://github.com/regolith-linux/regolith-compositor-picom-glx
-- Display manager (Экранный менеджер, менеджер входа): _LightDM_
-- Window manager (Оконный менеджер): _i3_ (либо его форк i3-gaps)
-- Screen locker (экран блокировки): _light-locker_
-- Application launcher: rofi
-- Panel: polybar, https://gitlab.com/vala-panel-project/vala-panel, https://github.com/geommer/yabar
-
-Дистрибутивы:
-
-- https://regolith-linux.org/ - позаимствовать некоторые сочетания клавиш и утилиты.
-
-### Графический сервер
-
-Можно выбирать между собственно _Xorg_ и различными реализациями _Wayland_. Последний пока не несет в себе достаточно
-функционала: проприетарный драйвер Nvidia не поддерживается, открытый драйвер сильно проигрывает по производительности.
-В результате на картах Nvidia _Wayland_ будет проигрывать, иногда значительно.
-
-### Блокировка экрана
-
-Для _LightDM_ и _i3_ можно использовать экран блокировки как на стороне менеджера входа
-(_[light-locker](https://github.com/the-cavalry/light-locker)_), так и на стороне оконного менеджера
-(_[i3lock](https://github.com/i3/i3lock)_). Есть еще скрипт https://github.com/meskarune/i3lock-fancy, он размывает фон,
-используя для этого _imagemagick_.
-
-Экран блокировки _light-locker_ выбран из-за своей функциональности и для обеспечения единого вида экранов блокировки и
-входа.
-
-### Фон рабочего стола
-
-Для i3 частое решение - использование браузера изображений [feh](https://feh.finalrewind.org/). Для _feh_ (и _swaybg_)
-также существует GTK+3 фронтенд [Azote](https://github.com/nwg-piotr/azote). _Azote_ также заменяет
-https://github.com/dylanaraps/pywal. [Variety](https://github.com/varietywalls/variety) - еще один фронтенд,
-поддерживающий _feh_. Кроме того, есть [i3-wpd](https://github.com/jomiq/i3-wpd) - простой демон обоев рабочего стола.
-
-Подробнее про _feh_ можно почитать в https://wiki.archlinux.org/index.php/feh а также https://github.com/derf/feh.
-
-Динамическая смена обоев https://github.com/xyproto/wallutils
-
-### Композитинг
-
-Та самая штука, которая обеспечивает прозрачность окон, анимации и пр. Краткая история standalone композиторов в Linux:
-xcompmgr -> xcompmgr-dana -> Compton -> Picom. В один из форков compton-а https://github.com/BlackCapCoder/compton были
-внесены изменения, позволяющие анимировать изменения окон. Так как Picom является форком Compton, эти изменения
-перекочевали, а может быть и были написаны с нуля, в форк (а точнее форк форка) https://github.com/jonaburg/picom.
-Информация взята из обсуждений на реддите
-https://www.reddit.com/r/i3wm/comments/gro4nn/is_there_any_way_to_get_animations_like_this_with/
-
-Настройки для оригинального Picom:
-
-- https://github.com/regolith-linux/regolith-compositor-picom-glx
-
-### Panel:
-
-- https://github.com/geommer/yabar,
-- polybar,
-- https://gitlab.com/vala-panel-project/vala-panel
-
-### Уведомления
-
-[Linux Notification Center](https://github.com/phuhl/linux_notification_center) выглядит достаточно современно. В
-качестве альтернативы можно рассмотреть https://github.com/DaveDavenport/Rofication и https://dunst-project.org/
-
-### Буфер обмена
-
-- В сочетании с rofi - https://github.com/erebe/greenclip, https://github.com/cdown/clipmenu/
-- В сочетании с i3 - https://github.com/mrichar1/clipster
-- https://hluk.github.io/CopyQ/
-
-### Сочетания клавиш
-
-Желательно, чтобы сочетания клавиш не зависели от оконного менеджера.
-
-- https://github.com/baskerville/sxhkd
-- https://www.reddit.com/r/i3wm/comments/is2x7a/use_sxhkd_along_with_i3/
-
-В качестве основы для разработки собственных сочетаний клавиш в первую очередь следует рассмотреть оригинальные
-сочетания i3. Кроме того, сочетания, принятые в https://github.com/regolith-linux. Одним из уникальных приложений для
-это этого дистрибутива является https://github.com/regolith-linux/remontoire, который отображает клавиатурные сочетания
-(Cheat sheet). Еще - https://instantos.io/
-
-Отобразить нажатые клавиши на экране может https://gitlab.com/screenkey/screenkey
-
-[Evdoublebind](https://github.com/exrok/evdoublebind) через evdev предоставляет ключи двойного связывания: ключи,
-которые перегружены функциональностью, действующей как модификатор при удерживании, но другая клавиша при нажатии
-отдельно.
-
-- https://vickychijwani.me/blazing-fast-application-switching-in-linux/
-- https://i64.dev/evdoublebind-introduction/
-- https://help.ubuntu.com/stable/ubuntu-help/shell-notifications.html.en
-
-### Запуск приложений
-
-- https://github.com/davatorium/rofi
-- https://github.com/johanmalm/jgmenu - тут почитать про интеграцию с polybar
-- https://github.com/Tomas-M/xlunch
-- https://github.com/nwg-piotr/sgtk-menu
-
-Некоторые лаунчеры:
-
-- https://github.com/MarkHedleyJones/dmenu-extended
-- https://github.com/buster/rrun
-- https://github.com/emgram769/lighthouse
-- https://github.com/sgtpep/pmenu
-- https://github.com/instantOS/instantMENU
-- https://github.com/PonasKovas/rlaunch
-- https://github.com/kokoko3k/higgins
-- https://github.com/enkore/j4-dmenu-desktop
-
-Дропдаун окно в i3 (quake mode) - https://i64.dev/i3dropdown-animated-drop-down/ (https://gitlab.com/exrok/i3dropdown).
-Для терминала - https://github.com/lbonn/i3-quickterm
-
-### Приложения по умолчению
-
-- https://github.com/chmln/handlr
-
-### Интеграции
-
-### Аудио
-
-Переключение входов и выходов звука - https://github.com/yktoo/indicator-sound-switcher.
-
-### Воспроизведение аудио
-
-- Music Player Daemon (MPD) - широко распространен, активно разрабатывается, легковесный и интегрируется со многими
-  приложениями, имеет различные фронтенды
-- [Ymuse](https://github.com/yktoo/ymuse) - фронтенд к MPD
-- Lollypop - плейер
-- Shortwave - интернет-радио
-
-### Запись и воспроизведение видео
-
-- https://github.com/amikha1lov/RecApp
-
-### Vim
-
-- https://github.com/Badacadabra/Vimpressionist
-- https://github.com/Badacadabra/vim-archery
-- https://github.com/jwilm/i3-vim-focus
+- Display server: _Xorg_ - более надежный и стабильный по сравнению с Wayland-ом;
+- Compositor: _Picom_ - современный
+- Display manager (Экранный менеджер, менеджер входа): _LightDM_ - легковесный и конфигурируемый
+- Window manager (Оконный менеджер): _i3_ (либо его форк i3-gaps) - надежный тайловый менеджер, sway с ним совместим на
+  уровне конфигурации (на случай, если Wayland когда-нибудь будет выбран на замену Xorg)
+- Screen locker (экран блокировки): _light-locker_ - логично его использовать вместе с LightDM.
+- Application launcher's:
+  - _rofi_ - очень гибкий и конфигурируемый. С его помощью можно реализовать запуск программ, переключение окон, кнопки
+    выхода и выключения
+  - _jqmenu_ - классическое меню
+- Panel: _polybar_ - обладает большим количеством модулей и интеграций
+- Keybindings: _sxhkd_ - легковесный, все управление клавиатурными сочетаниями должно быть вынесено сюда

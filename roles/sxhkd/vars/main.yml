@@ -1,0 +1,4 @@
+---
+# vars file for sxhkd
+sxhkd_packages:
+  - sxhkd

@@ -14,16 +14,20 @@
 
     # GUI
     #- vga
-    # X11 server
-    # TODO: add standalone compositor for Xorg (https://wiki.archlinux.org/index.php/Picom)
+    ## X11 server
+    ## TODO: add standalone compositor for Xorg (https://wiki.archlinux.org/index.php/Picom)
     - xorg
-    # Display manager
+    ## Display manager
     - lightdm
-    # Window manager
+    ## Window manager
     - i3
-    # Panel
+    ## Hotkey daemon
+    - sxhkd
+    ## Panel
     - polybar # yay role required
-    # Launcher
+    ## Launcher
     - rofi
-    # Terminal emulator
+
+    # Common applications
+    ## Terminal emulator
     - kitty
