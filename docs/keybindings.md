@@ -8,10 +8,13 @@ Todo:
   - https://github.com/regolith-linux/regolith-i3-gaps-config/blob/master/config
   - https://archcraft-os.github.io/features.html
 - [ ] рассмотреть возможности двойного связывания https://github.com/exrok/evdoublebind
-- [ ] использование https://github.com/baskerville/sxhkd
+- [x] использование https://github.com/baskerville/sxhkd
   - https://medium.com/@jonas.elan/create-key-binding-for-media-control-on-linux-like-spotify-bdd60599145e
   - https://my-take-on.tech/2020/07/03/some-tricks-for-sxhkd-and-bspwm/#closelock-screen
   - https://www.reddit.com/r/bspwm/comments/8431ee/sxhkd_not_using_the_correct_keyboard_layout/
+- [ ] клавиатурные сочетания для работы с выделенным текстом:
+  - поменять символы введенные в другой раскладке
+  - toggle case
 - [x] HotKey Helper - использование https://github.com/regolith-linux/remontoire и интеграция с sxhkd
   > Remontoire просто парсит комментарии. Нет разницы, чьи это будут конфиги. Это дополнительная работа по их внесению и
   > актуализации. Возможно, стоит рассмотреть парсеры, которые будут собирать информацию из файлов конфигурации и
@@ -34,3 +37,4 @@ Todo:
 - https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450
 - http://www.linuxlib.ru/Linux/xkb/index.html
 - http://xgu.ru/wiki/xkb
+- https://subscription.packtpub.com/book/networking_and_servers/9781849519724/1/ch01lvl1sec17/configuring-gui-using-xorg-should-know

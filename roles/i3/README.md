@@ -2,6 +2,26 @@
 
 > i3 window manager
 
+## Notes
+
+`i3-sensible-terminal` - launches $TERMINAL with fallbacks. $TERMINAL (this is a non-standard variable). See
+https://wiki.archlinux.org/index.php/Environment_variables
+
+### Articles
+
+- https://ersi.vivaldi.net/2018/08/19/qtile-versus-i3wm-still-looking-for-the-perfect-desktop/
+- https://samsaffron.com/archive/2019/04/09/my-i3-window-manager-setup
+- https://fedoramagazine.org/getting-started-i3-window-manager/
+- https://fedoramagazine.org/using-i3-with-multiple-monitors/
+- https://opensource.com/article/18/8/i3-tiling-window-manager
+- https://i3wm.org/docs/userguide.html
+- https://dzone.com/articles/archlinux-tutorial-part-3-i3-configuration-and-ope
+- https://unix.stackexchange.com/questions/452617/i3wm-switching-to-workspaces-and-moving-container-to-same-workspace-map-to-di
+- https://www.reddit.com/r/i3wm/comments/ipsgdr/rofi_freezes_i3/
+- https://www.reddit.com/r/i3wm/comments/7bb0qb/i3switcher_a_slightly_better_workspace_switcher/
+- https://www.reddit.com/r/i3wm/comments/8at5dv/i_wrote_an_expolike_script_for_i3/
+- https://www.reddit.com/r/i3wm/comments/9x2l64/display_preview_of_all_workspaces/
+
 - https://github.com/mboughaba/i3config.vim
 - https://github.com/burik666/yagostatus
 
@@ -24,6 +44,10 @@
 
 - https://github.com/svenstaro/wmfocus
 
+### Screenlock
+
+- https://gitlab.com/jD91mZM2/xidlehook - runner
+
 ### Workspace switching
 
 - https://github.com/grenewode/i3switcher
@@ -41,15 +65,27 @@
 - https://unix.stackexchange.com/questions/370622/workspace-sliding-animation-in-i3
 - https://unix.stackexchange.com/questions/452617/i3wm-switching-to-workspaces-and-moving-container-to-same-workspace-map-to-di
 
+#### Dynamic workspaces
+
+- https://github.com/kalbasit/i3-dynamic-workspaces
+- https://github.com/mbaynton/i3-workspace-hinting
+
 ## Config examples
 
 - https://github.com/regolith-linux/regolith-i3-gaps-config
 - https://github.com/abdes/arch-i3-polybar-dotfiles-autosetup
 - https://github.com/levinit/i3wm-config
+- https://github.com/addy-dclxvi/i3-starterpack
+- https://github.com/addy-dclxvi/almighty-dotfiles
+- https://www.deviantart.com/addy-dclxvi/art/Take-Off-708842048
 
 ## Utils
 
 - https://github.com/regolith-linux/i3-snapshot
+- https://github.com/altdesktop/i3ipc-python/blob/master/examples/i3-cycle-focus.py
+- https://github.com/svenstaro/wmfocus
+- https://github.com/cornerman/i3-easyfocus
+- https://github.com/OliverUv/quickswitch-for-i3/
 
 ## Libs
 

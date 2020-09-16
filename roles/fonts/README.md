@@ -5,6 +5,8 @@
 - https://www.ubuntupit.com/15-best-linux-font-tools-and-how-to-install-linux-fonts-on-ubuntu/
 - https://linuxhint.com/best_fonts_ubuntu_linux/
 - https://www.webfx.com/blog/web-design/a-web-designers-guide-to-linux-fonts/
+- https://www.reddit.com/r/linux/comments/6el5da/what_is_your_favorite_ui_font/
+- https://thomasbyttebier.be/blog/the-best-ui-typeface-goes-unnoticed
 
 ## Setup
 

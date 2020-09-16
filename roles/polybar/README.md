@@ -19,6 +19,7 @@
 - https://github.com/manilarome/rofi-spotlight
 - https://github.com/ClydeDroid/rofi-bluetooth
 - https://github.com/sumnerevans/menu-calc
+- https://askubuntu.com/questions/1073059/adding-network-selection-clickable-menu-in-polybar
 
 ## Requirements
 

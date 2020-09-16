@@ -89,6 +89,7 @@ https://www.reddit.com/r/i3wm/comments/gro4nn/is_there_any_way_to_get_animations
 - В сочетании с rofi - https://github.com/erebe/greenclip, https://github.com/cdown/clipmenu/
 - В сочетании с i3 - https://github.com/mrichar1/clipster
 - https://hluk.github.io/CopyQ/
+- https://github.com/pvanek/qlipper/
 
 ### Сочетания клавиш
 
@@ -129,6 +130,8 @@ https://www.reddit.com/r/i3wm/comments/gro4nn/is_there_any_way_to_get_animations
 - https://github.com/PonasKovas/rlaunch
 - https://github.com/kokoko3k/higgins
 - https://github.com/enkore/j4-dmenu-desktop
+- https://github.com/echo-devim/slingswarm
+- https://github.com/wvffle/waffy
 
 Дропдаун окно в i3 (quake mode) - https://i64.dev/i3dropdown-animated-drop-down/ (https://gitlab.com/exrok/i3dropdown).
 Для терминала - https://github.com/lbonn/i3-quickterm
