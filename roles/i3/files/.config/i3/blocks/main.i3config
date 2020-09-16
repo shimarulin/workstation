@@ -1,0 +1,6 @@
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html#configuring for more format details
+
+# Modifier key binding
+# Required for correct i3 start
+set $mod Mod4

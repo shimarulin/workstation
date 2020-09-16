@@ -11,16 +11,42 @@
     executable: /bin/bash
   when: polybar_stat_result.stat.exists == false
 
+- name: check that the polybar config exist
+  stat:
+    path: ~/.config/polybar/config
+  register: polybar_config_stat_result
+
 - name: create polybar config directory
   file:
     path: ~/.config/polybar
     state: directory
     mode: "755"
+  when: polybar_config_stat_result.stat.exists == false
 
-- name: copy polybar config
-  copy:
-    src: .config/polybar/config
-    dest: ~/.config/polybar/config
+- name: create polybar config
+  file:
+    path: ~/.config/polybar/config
+    state: touch
+  when: polybar_config_stat_result.stat.exists == false
+
+- name: insert/update polybar variables
+  blockinfile:
+    path: ~/.config/polybar/config
+    marker: "# {mark} polybar variables"
+    marker_begin: "Begin"
+    marker_end: "End"
+    block: "{{ lookup('file', '.config/polybar/blocks/variables.ini') }}"
+
+#- name: create polybar config directory
+#  file:
+#    path: ~/.config/polybar
+#    state: directory
+#    mode: "755"
+#
+#- name: copy polybar config
+#  copy:
+#    src: .config/polybar/config
+#    dest: ~/.config/polybar/config
 
 - name: copy polybar launcher
   copy:
@@ -31,7 +57,7 @@
 - name: add polybar init
   blockinfile:
     path: ~/.config/i3/config
-    marker: "# {mark} polybar"
+    marker: "# {mark} polybar init"
     marker_begin: "Begin"
     marker_end: "End"
     block: |

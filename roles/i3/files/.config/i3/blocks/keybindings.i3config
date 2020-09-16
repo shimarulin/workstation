@@ -1,0 +1,6 @@
+# i3 key binding
+# Please see https://i3wm.org/docs/refcard.html
+
+# https://i3wm.org/docs/userguide.html#_reloading_restarting_exiting
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+w reload

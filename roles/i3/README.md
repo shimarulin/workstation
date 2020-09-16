@@ -2,6 +2,67 @@
 
 > i3 window manager
 
+## Development
+
+### Config syntax highlighting
+
+- Vim - https://github.com/mboughaba/i3config.vim
+- VSC - https://github.com/dcasella/i3wm-syntax
+- Atom - https://github.com/taylon/language-i3wm
+- Sublime Text - https://github.com/skk/i3wm-sublime
+
+#### JetBrains IDE's custom type
+
+Line comment: `#`
+
+Keywords 1
+
+```
+assign
+bindcode
+bindsym
+client.background
+client.focused
+client.focused
+client.focused_inactive
+client.placeholder
+client.unfocused
+client.urgent
+default_border
+default_floating_border
+default_orientation
+exec
+exec_always
+floating_maximum_size
+floating_minimum_size
+floating_modifier
+focus_follows_mouse
+focus_on_window_activation
+focus_wrapping
+font
+for_window
+force_display_urgency_hint
+force_xinerama
+hide_edge_borders
+ipc-socket
+mode
+mouse_warping
+no_focus
+popup_during_fullscreen
+set
+show_marks
+title_align
+workspace_auto_back_and_forth
+workspace_layout
+```
+
+Keywords 2
+
+```
+$mod
+Shift
+```
+
 ## Notes
 
 `i3-sensible-terminal` - launches $TERMINAL with fallbacks. $TERMINAL (this is a non-standard variable). See
@@ -90,6 +151,13 @@ https://wiki.archlinux.org/index.php/Environment_variables
 ## Libs
 
 - https://github.com/regolith-linux/grelier
+
+## Troubleshooting
+
+### JetBrains IDE's
+
+- https://stackoverflow.com/questions/53957831/intellij-in-blocked-mode-when-window-comes-into-focus
+- https://efod.se/pycharm-idea-i3wm/
 
 ## Requirements
 

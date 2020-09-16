@@ -29,4 +29,12 @@
     marker: "# {mark} main i3 configuration"
     marker_begin: "Begin"
     marker_end: "End"
-    block: "{{ lookup('file', '.config/i3/blocks/main') }}"
+    block: "{{ lookup('file', '.config/i3/blocks/main.i3config') }}"
+
+- name: "insert/update i3 keybindings (TODO: move to `sxhkd`)"
+  blockinfile:
+    path: ~/.config/i3/config
+    marker: "# {mark} i3 keybindings"
+    marker_begin: "Begin"
+    marker_end: "End"
+    block: "{{ lookup('file', '.config/i3/blocks/keybindings.i3config') }}"
