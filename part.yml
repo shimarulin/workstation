@@ -5,13 +5,13 @@
   hosts: all
   roles:
     # Common tasks
-    - facts
-    - git
-    - yay # git role required
+    #    - facts
+    #    - git
+    #    - yay # git role required
 
     ## Window manager
-    - i3
+    #    - i3
     ## Hotkey daemon
-    - sxhkd
+    #    - sxhkd
     ## Panel
     - polybar # {yay,i3} role required

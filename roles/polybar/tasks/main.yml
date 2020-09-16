@@ -32,21 +32,18 @@
 - name: insert/update polybar variables
   blockinfile:
     path: ~/.config/polybar/config
-    marker: "# {mark} polybar variables"
+    marker: "# {mark} variables"
     marker_begin: "Begin"
     marker_end: "End"
     block: "{{ lookup('file', '.config/polybar/blocks/variables.ini') }}"
 
-#- name: create polybar config directory
-#  file:
-#    path: ~/.config/polybar
-#    state: directory
-#    mode: "755"
-#
-#- name: copy polybar config
-#  copy:
-#    src: .config/polybar/config
-#    dest: ~/.config/polybar/config
+- name: insert/update polybar top panel
+  blockinfile:
+    path: ~/.config/polybar/config
+    marker: "# {mark} toolbar panel"
+    marker_begin: "Begin"
+    marker_end: "End"
+    block: "{{ lookup('file', '.config/polybar/blocks/toolbar.ini') }}"
 
 - name: copy polybar launcher
   copy:

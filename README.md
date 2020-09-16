@@ -49,6 +49,10 @@ Documentation:
 - [Argbash documentation](https://argbash.readthedocs.io/en/stable/)
 - [Vagrant Documentation](https://www.vagrantup.com/docs/)
 
+#### Articles
+
+- [Using Ansible templates to maintain partial file blocks](https://garthkerr.com/using-ansible-template-for-partial-file-block/)
+
 #### Getting started
 
 Requirements:
