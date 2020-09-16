@@ -6,6 +6,12 @@
   roles:
     # Common tasks
     - facts
+    - git
+    - yay # git role required
 
+    ## Window manager
+    - i3
     ## Hotkey daemon
     - sxhkd
+    ## Panel
+    - polybar # {yay,i3} role required

@@ -27,3 +27,13 @@
     src: .config/polybar/launch.sh
     dest: ~/.config/polybar/launch.sh
     mode: "755"
+
+- name: add polybar init
+  blockinfile:
+    path: ~/.config/i3/config
+    marker: "# {mark} polybar"
+    marker_begin: "Begin"
+    marker_end: "End"
+    block: |
+      # Start polybar to display a workspace bar
+      exec_always --no-startup-id $HOME/.config/polybar/launch.sh

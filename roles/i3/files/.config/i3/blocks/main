@@ -1,0 +1,3 @@
+# Modifier key binding
+# Required for correct i3 start
+set $mod Mod4

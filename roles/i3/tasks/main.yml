@@ -5,13 +5,28 @@
   pacman:
     name: "{{ i3_packages }}"
 
+- name: check that the i3 config exist
+  stat:
+    path: ~/.config/i3/config
+  register: i3_config_stat_result
+
 - name: create i3 config directory
   file:
     path: ~/.config/i3
     state: directory
     mode: "755"
+  when: i3_config_stat_result.stat.exists == false
 
-- name: copy i3 config
-  copy:
-    src: .config/i3/config
-    dest: ~/.config/i3/config
+- name: create i3 config
+  file:
+    path: ~/.config/i3/config
+    state: touch
+  when: i3_config_stat_result.stat.exists == false
+
+- name: insert/update main i3 configuration
+  blockinfile:
+    path: ~/.config/i3/config
+    marker: "# {mark} main i3 configuration"
+    marker_begin: "Begin"
+    marker_end: "End"
+    block: "{{ lookup('file', '.config/i3/blocks/main') }}"
