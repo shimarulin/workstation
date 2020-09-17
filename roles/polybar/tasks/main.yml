@@ -35,7 +35,7 @@
     marker: "# {mark} variables"
     marker_begin: "Begin"
     marker_end: "End"
-    block: "{{ lookup('file', '.config/polybar/blocks/variables.ini') }}"
+    block: "{{ lookup('template', '.config/polybar/blocks/variables.ini') }}"
 
 - name: insert/update polybar top panel
   blockinfile:
@@ -43,7 +43,7 @@
     marker: "# {mark} toolbar panel"
     marker_begin: "Begin"
     marker_end: "End"
-    block: "{{ lookup('file', '.config/polybar/blocks/toolbar.ini') }}"
+    block: "{{ lookup('template', '.config/polybar/blocks/toolbar.ini') }}"
 
 - name: copy polybar launcher
   copy:

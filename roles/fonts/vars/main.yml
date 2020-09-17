@@ -38,3 +38,4 @@ fonts_aur_packages:
   #- ttf-inconsolata-lgc-for-powerline
   - otf-hasklig # https://github.com/i-tu/Hasklig, fork of the Source Code Pro
   - ttf-meslo-nerd-font-powerlevel10k
+  - montserrat-font-ttf
