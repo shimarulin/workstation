@@ -4,3 +4,7 @@ git_user_name: {{ cookiecutter.git_user_name }}
 git_user_email: {{ cookiecutter.git_user_email }}
 java_provider: {{ cookiecutter.java_provider }}
 virtualbox_provider: {{ cookiecutter.virtualbox_provider }}
+
+# Theme variables
+font_ui: {{ cookiecutter.font_ui }}
+font_terminal: {{ cookiecutter.font_terminal }}
