@@ -38,3 +38,25 @@
     marker_begin: "Begin"
     marker_end: "End"
     block: "{{ lookup('file', '.config/i3/blocks/keybindings.i3config') }}"
+
+# TODO: move to common role
+#- name: create user executable scripts directory
+#  file:
+#    path: ~/.local/bin
+#    state: directory
+#    mode: "755"
+
+- name: copy XDG autostart launcher
+  copy:
+    src: .config/i3/autostart.sh
+    dest: ~/.config/i3/autostart.sh
+    mode: "755"
+
+- name: add XDG autostart init
+  blockinfile:
+    path: ~/.config/i3/config
+    marker: "# {mark} XDG autostart"
+    marker_begin: "Begin"
+    marker_end: "End"
+    block: |
+      exec --no-startup-id $HOME/.config/i3/autostart.sh
