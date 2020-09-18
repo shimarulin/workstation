@@ -10,6 +10,11 @@
 
 ## Setup
 
+### Icon
+
+- https://ionicons.com/
+- https://materialdesignicons.com/
+
 ### Emoji
 
 - https://github.com/stove-panini/fontconfig-emoji
