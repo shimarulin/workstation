@@ -18,6 +18,7 @@
 - THUNAR (XFCE)
 - Nemo (Linux Mint Cinnamon)
 - CAJA (MATE)
+- https://jjacky.com/donnatella/
 
 GUI:
 

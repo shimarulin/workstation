@@ -140,6 +140,10 @@ https://www.reddit.com/r/i3wm/comments/gro4nn/is_there_any_way_to_get_animations
 
 - https://github.com/chmln/handlr
 
+### Проверка обновлений
+
+- https://jjacky.com/kalu/
+
 ### Интеграции
 
 ### Аудио

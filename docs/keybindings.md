@@ -7,6 +7,7 @@ Todo:
   - https://regolith-linux.org/docs/reference/keybindings/
   - https://github.com/regolith-linux/regolith-i3-gaps-config/blob/master/config
   - https://archcraft-os.github.io/features.html
+  - https://material-shell.com/#hotkeys
 - [ ] рассмотреть возможности двойного связывания https://github.com/exrok/evdoublebind
 - [x] использование https://github.com/baskerville/sxhkd
   - https://medium.com/@jonas.elan/create-key-binding-for-media-control-on-linux-like-spotify-bdd60599145e
