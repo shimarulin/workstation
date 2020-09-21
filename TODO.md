@@ -1,4 +1,5 @@
 - [ ] добавить polybar, виджеты даты и раскладки клавиатуры
+- [ ] показать-скрыть тулбар https://github.com/tadly/hideIt.sh
 - [ ] настройка раскладок клавиатуры и управление ими
 - [ ] заполнить `/etc/skel`
 - [ ] настройка клавиатурных сочетаний
@@ -8,6 +9,10 @@
       https://wiki.archlinux.org/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 - [ ] Redshift - управление цветовой температурой экрана
       https://wiki.archlinux.org/index.php/Redshift_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+
+#### Animation
+
+- https://www.reddit.com/r/unixporn/comments/92guq6/i3polybar_animated_polybar_drop_down_menus/
 
 ### File manager
 
@@ -69,3 +74,13 @@ Vim:
 
 - https://github.com/xxxserxxx/gotop
 - https://github.com/phillbush/xprompt
+
+#### Calendar
+
+to conky - https://github.com/rsteube/ansi2conky
+
+- https://lostpackets.de/khal/
+- https://github.com/lfos/calcurse
+- https://github.com/dmedvinsky/gsimplecal
+- https://github.com/ohwgiles/focal
+- https://github.com/vivien/i3blocks-contrib/tree/master/rofi-calendar

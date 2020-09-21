@@ -6,6 +6,7 @@
   roles:
     # Common tasks
     - facts
+    - keyboard
     - ssh
     - git
     - yay # git role required

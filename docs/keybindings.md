@@ -39,3 +39,25 @@ Todo:
 - http://www.linuxlib.ru/Linux/xkb/index.html
 - http://xgu.ru/wiki/xkb
 - https://subscription.packtpub.com/book/networking_and_servers/9781849519724/1/ch01lvl1sec17/configuring-gui-using-xorg-should-know
+
+### Навигация
+
+- [vim like keybindings for i3wm](https://github.com/michaelmrose/vi3)
+- https://vitiral.github.io/linux/2015/10/30/30-i3-vim-mode.html
+- https://medium.com/usevim/hjkl-and-touch-typing-92bfb75e0818
+- http://vimcasts.org/episodes/creating-repeatable-mappings-with-repeat-vim/
+
+### Reference Card
+
+| Key Binding                                    | Action            | Comment                                                    |
+| ---------------------------------------------- | ----------------- | ---------------------------------------------------------- |
+| _Launch Application_                           |                   |                                                            |
+| <kbd>Super</kbd>+<kbd>Enter</kbd>              | run terminal      |                                                            |
+| <kbd>Super</kbd>+<kbd>Space</kbd>              | run app menu      |                                                            |
+| <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>?</kbd> | run hotkey helper |                                                            |
+|                                                |                   |                                                            |
+| _Navigation_                                   |                   |                                                            |
+| <kbd>Super</kbd>+<kbd>h</kbd>                  |                   | Vim like, in i3 (<kbd>Super</kbd>+<kbd>j</kbd>) by default |
+| <kbd>Super</kbd>+<kbd>j</kbd>                  |                   | Vim like, in i3 (<kbd>Super</kbd>+<kbd>k</kbd>) by default |
+| <kbd>Super</kbd>+<kbd>k</kbd>                  |                   | Vim like, in i3 (<kbd>Super</kbd>+<kbd>l</kbd>) by default |
+| <kbd>Super</kbd>+<kbd>l</kbd>                  |                   | Vim like, in i3 (<kbd>Super</kbd>+<kbd>;</kbd>) by default |

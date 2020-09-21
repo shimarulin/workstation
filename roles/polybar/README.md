@@ -10,6 +10,7 @@
 ## Config examples
 
 - https://github.com/abdes/arch-i3-polybar-dotfiles-autosetup
+- https://gitlab.com/dwt1/dotfiles/blob/master/.config/polybar/config
 
 ## Modules
 
