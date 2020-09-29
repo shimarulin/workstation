@@ -10,6 +10,11 @@
 - [ ] Redshift - управление цветовой температурой экрана
       https://wiki.archlinux.org/index.php/Redshift_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 
+### Firefox
+
+- https://github.com/MiguelRAvila/SimplerentFox
+- https://github.com/rajshekhar26/startpage
+
 #### Animation
 
 - https://www.reddit.com/r/unixporn/comments/92guq6/i3polybar_animated_polybar_drop_down_menus/

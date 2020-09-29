@@ -1,0 +1,4 @@
+---
+# vars file for awesome
+awesome_packages:
+  - awesome

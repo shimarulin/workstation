@@ -21,11 +21,12 @@
     ## Display manager
     - lightdm
     ## Window manager
-    - i3
+    #- i3
+    - awesome
     ## Hotkey daemon
-    - sxhkd
+    #- sxhkd
     ## Panel
-    - polybar # {yay,i3} role required
+    #- polybar # {yay,i3} role required
     ## Launcher
     - rofi
 
