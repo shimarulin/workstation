@@ -33,6 +33,10 @@
 
 - https://regolith-linux.org/ - позаимствовать некоторые сочетания клавиш и утилиты.
 
+---
+
+- https://github.com/un-def/i3-workspace-switcher
+
 ### Графический сервер
 
 Можно выбирать между собственно _Xorg_ и различными реализациями _Wayland_. Последний пока не несет в себе достаточно
@@ -155,15 +159,65 @@ https://www.reddit.com/r/i3wm/comments/gro4nn/is_there_any_way_to_get_animations
 - Music Player Daemon (MPD) - широко распространен, активно разрабатывается, легковесный и интегрируется со многими
   приложениями, имеет различные фронтенды
 - [Ymuse](https://github.com/yktoo/ymuse) - фронтенд к MPD
-- Lollypop - плейер
+- [Lollypop](https://gitlab.gnome.org/World/lollypop) - плейер
 - Shortwave - интернет-радио
+- [Cozy](https://github.com/geigi/cozy) - audio books
 
-### Запись и воспроизведение видео
+### Запись аудио
+
+https://wiki.gnome.org/Apps/SoundRecorder
+
+### Запись видео
 
 - https://github.com/amikha1lov/RecApp
+- TODO: more CLI tools
+
+### Воспроизведение видео
+
+- https://mpv.io/ + https://github.com/celluloid-player/celluloid
+
+### Edit Video
+
+- https://gitlab.gnome.org/YaLTeR/video-trimmer
+
+### Screenshot
+
+- https://flameshot.js.org/#/
+- TODO: more CLI tools
+
+### Book and docs reading
+
+- https://johnfactotum.github.io/foliate/
+
+### EMail?
+
+- https://wiki.gnome.org/Apps/Geary (https://gitlab.gnome.org/GNOME/geary)
+
+### RSS
+
+- https://gitlab.gnome.org/World/gfeeds (https://gabmus.gitlab.io/gnome-feeds/)
+- https://gitlab.com/news-flash/news_flash_gtk
+
+### Tasks
+
+- https://github.com/getting-things-gnome/gtg/ (https://wiki.gnome.org/Apps/GTG)
+- https://gitlab.com/jmiskinis/gnome-shell-extension-task-widget/
+- https://github.com/johannesjo/super-productivity
 
 ### Vim
 
 - https://github.com/Badacadabra/Vimpressionist
 - https://github.com/Badacadabra/vim-archery
 - https://github.com/jwilm/i3-vim-focus
+
+## Others
+
+- https://github.com/tortious/Master-Scripting-Repo
+
+### Nautilus
+
+- https://www.omgubuntu.co.uk/2020/07/open-folder-in-terminal-ubuntu-plugin
+
+### Terminal
+
+- https://arcolinuxd.com/10-why-are-we-using-urxvt-in-bspwm-instead-of-termite/
