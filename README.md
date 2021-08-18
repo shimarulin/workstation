@@ -1,27 +1,23 @@
-# Workstation
+# Arch workstation config
 
 ## Installation
 
-The installation script inspired by [Arch Linux Install Script](https://picodotdev.github.io/alis/) and
-[archfi](https://github.com/MatMoul/archfi). It used only to install the base system.
-
-```
-# # Start the system with lastest Arch Linux installation media
-# loadkeys [keymap]
-# curl https://raw.githubusercontent.com/shimarulin/workstation/master/get.sh | bash
-# # or with URL shortener:
-# # curl -sL https://git.io/JUGL3 | bash
-# # curl -sL https://bit.ly/2QOooFJ | bash
-# # curl -sL https://rb.gy/jm6qlg | bash
-# # Edit install.conf and change variables values with your preferences
-# vim install.conf
-# # Start
-# ./install.sh
+```shell
+# Upgrade your system
+sudo pacman -Syu
+# Install dependencies
+sudo pacman -S git python python-pip ansible
+sudo pip install cookiecutter
 ```
 
-## Ansible config
+```shell
+# Create config dir
+mkdir ~/.config && cd "$_"
+# Clone configuration
+git clone https://github.com/shimarulin/workstation.git
+```
 
-### Usage
+## Usage
 
 Before run playbook you must setup common variables via `setup` script in this repository root:
 
@@ -36,9 +32,9 @@ Run playbook on localhost
 ansible-playbook playbook.yml
 ```
 
-### Development
+## Development
 
-#### Tools
+### Tools
 
 Documentation:
 
@@ -49,11 +45,11 @@ Documentation:
 - [Argbash documentation](https://argbash.readthedocs.io/en/stable/)
 - [Vagrant Documentation](https://www.vagrantup.com/docs/)
 
-#### Articles
+### Articles
 
 - [Using Ansible templates to maintain partial file blocks](https://garthkerr.com/using-ansible-template-for-partial-file-block/)
 
-#### Getting started
+### Getting started
 
 Requirements:
 
@@ -89,7 +85,7 @@ Yarn:
 yarn
 ```
 
-#### Work with Ansible roles and variables
+### Work with Ansible roles and variables
 
 You can configure your variables with `setup` script:
 
@@ -110,7 +106,7 @@ For create new role from template you can run `setup` with `--target role` or wi
 ./setup
 ```
 
-#### Create Vagrant box for test role from existing virtual machine
+### Create Vagrant box for test role from existing virtual machine
 
 Create new virtual machine and install target distributive. In according to Vagrant conventions, create user `vagrant`
 with password `vagrant`. This password don't need to run playbook and you can choice other if you need. After this it
@@ -151,7 +147,7 @@ After this you can add you box:
 vagrant box add ./arch.box --name shimarulin/arch
 ```
 
-#### Use Vagrant to play tasks
+### Use Vagrant to play tasks
 
 ```bash
 # Start VM
@@ -164,7 +160,7 @@ vagrant halt
 vagrant destroy && vagrant up
 ```
 
-#### Delete default VM and box
+### Delete default VM and box
 
 In project root:
 
@@ -172,7 +168,7 @@ In project root:
 vagrant destroy
 ```
 
-#### Watch DConf changes
+### Watch DConf changes
 
 ```bash
 dconf watch /
