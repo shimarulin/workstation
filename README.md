@@ -80,9 +80,7 @@ Yarn:
 yarn
 ```
 
-### Work with Ansible roles and variables
-
-You can configure your variables:
+### Configure Ansible variables
 
 ```bash
 # Setup Ansible variables
@@ -92,7 +90,7 @@ cookiecutter -f templates/vars
 If you add variables manually, don't forget to change variables template in `templates/vars`. It will used for setup
 variables before run playbook for setup target environment.
 
-For create new role from template you can run `setup` with `--target role` or without args
+### Create Ansible role
 
 ```bash
 # Create Ansible role
