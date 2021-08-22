@@ -6,30 +6,30 @@
   roles:
     # Common tasks
     - facts
-    - keyboard
     - ssh
     - git
-    - yay # git role required
-    - fonts # yay role required
-    - zsh
+#    - keyboard
+#    - yay # git role required
+#    - fonts # yay role required
+#    - zsh
 
-    # GUI
-    #- vga
-    ## X11 server
-    ## TODO: add standalone compositor for Xorg (https://wiki.archlinux.org/index.php/Picom)
-    - xorg
-    ## Display manager
-    - lightdm
-    ## Window manager
-    #- i3
-    - awesome
-    ## Hotkey daemon
-    #- sxhkd
-    ## Panel
-    #- polybar # {yay,i3} role required
-    ## Launcher
-    - rofi
+# GUI
+#- vga
+## X11 server
+## TODO: add standalone compositor for Xorg (https://wiki.archlinux.org/index.php/Picom)
+#    - xorg
+## Display manager
+#    - lightdm
+## Window manager
+#- i3
+#    - awesome
+## Hotkey daemon
+#- sxhkd
+## Panel
+#- polybar # {yay,i3} role required
+## Launcher
+#    - rofi
 
-    # Common applications
-    ## Terminal emulator
-    - kitty
+# Common applications
+## Terminal emulator
+#    - kitty

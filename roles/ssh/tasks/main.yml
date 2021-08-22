@@ -3,11 +3,4 @@
 - name: install dependencies
   become: true
   pacman:
-    name: "{{ ssh_packages }}"
-
-- name: enable sshd service
-  become: true
-  systemd:
-    name: sshd
-    state: started
-    enabled: yes
+    name: '{{ ssh_packages }}'

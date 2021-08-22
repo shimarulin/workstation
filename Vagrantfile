@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "shimarulin/arch"
+  config.vm.box = "vagrant/arch"
   config.vm.box_version = "0"
 
   # Disable automatic box update checking. If you disable this, then

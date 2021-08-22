@@ -7,7 +7,7 @@
 sudo pacman -Syu
 # Install dependencies
 sudo pacman -S git python python-pip ansible
-sudo pip install cookiecutter
+pip install -U cookiecutter
 ```
 
 ```shell
@@ -69,13 +69,8 @@ Also you should install `python-vagrant` and `cookiecutter` packages via pip:
 ```bash
 # Install packages
 pip3 install -U python-vagrant cookiecutter
-```
-
-and configure cookiecutter context with `setup` script in this repository root:
-
-```bash
-# Setup cookiecutter context
-./setup --target cookiecutterrc
+# or
+pip install -U python-vagrant cookiecutter
 ```
 
 For enable Git Hook's to autoformatting files with [Prettier](https://prettier.io/) just install NodeJS packages with
@@ -87,11 +82,11 @@ yarn
 
 ### Work with Ansible roles and variables
 
-You can configure your variables with `setup` script:
+You can configure your variables:
 
 ```bash
 # Setup Ansible variables
-./setup --target vars
+cookiecutter -f templates/vars
 ```
 
 If you add variables manually, don't forget to change variables template in `templates/vars`. It will used for setup
@@ -101,9 +96,7 @@ For create new role from template you can run `setup` with `--target role` or wi
 
 ```bash
 # Create Ansible role
-./setup --target role
-# or
-./setup
+cookiecutter --output-dir roles templates/role
 ```
 
 ### Create Vagrant box for test role from existing virtual machine
@@ -122,12 +115,16 @@ sudo systemctl enable sshd.service
 Add unsafe public key:
 
 ```bash
-mkdir -pm 700 /home/vagrant/.ssh
-wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O /home/vagrant/.ssh/authorized_keys
+mkdir -pm 700 ~/.ssh
+curl -L https://git.io/v47gO -o ~/.ssh/authorized_keys
+# or
+# curl -L https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub -o ~/.ssh/authorized_keys
+# or
+# wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O /home/vagrant/.ssh/authorized_keys
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 ```
 
-And add to end of file `/etc/sudoers` using the command `sudo visudo` (use `EDITOR=nvim sudo visudo` for change default
+And add to end of file `/etc/sudoers` using the command `sudo visudo` (use `sudo EDITOR=nvim visudo` for change default
 editor) these strings to connect to virtual machine via ssh without password:
 
 ```
@@ -138,13 +135,14 @@ vagrant ALL=(ALL) NOPASSWD: ALL
 To make you own box you should run command
 
 ```bash
+# VirtualBox VM name: Arch
 vagrant package --base Arch --output arch.box
 ```
 
 After this you can add you box:
 
 ```bash
-vagrant box add ./arch.box --name shimarulin/arch
+vagrant box add ./arch.box --name vagrant/arch
 ```
 
 ### Use Vagrant to play tasks

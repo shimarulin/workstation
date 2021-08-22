@@ -5,10 +5,10 @@
   register: username
   changed_when: false
 
-- name: get graphic card vendor
-  script: ./utils/gpu-vendor
-  register: vga_vendor
-  changed_when: false
+#- name: get graphic card vendor
+#  script: ./utils/gpu-vendor
+#  register: vga_vendor
+#  changed_when: false
 
 - name: update packages cache
   become: true
