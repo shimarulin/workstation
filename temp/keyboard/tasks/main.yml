@@ -1,0 +1,17 @@
+---
+# tasks file for keyboard
+#- name: install dependencies
+#  become: true
+#  pacman:
+#    name: "{{ keyboard_packages }}"
+
+- name: create xkb config directory
+  file:
+    path: ~/.config/xkb
+    state: directory
+    mode: '755'
+
+- name: copy xkb config
+  copy:
+    src: .config/xkb/config
+    dest: ~/.config/xkb/config

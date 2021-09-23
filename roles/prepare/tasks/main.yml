@@ -1,0 +1,13 @@
+---
+# tasks file for prepare
+- name: get username
+  command: whoami
+  register: username
+  changed_when: false
+
+- name: update packages cache and upgrade system
+  become: true
+  pacman:
+    update_cache: yes
+    upgrade: yes
+  changed_when: false

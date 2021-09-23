@@ -1,6 +1,6 @@
-# ansible-role-zsh
+# ansible-role-prepare
 
-> Install and setup zsh
+> Preparation tasks aаfor roles
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: zsh, x: 42 }
+         - { role: prepare, x: 42 }
 
 ## License
 

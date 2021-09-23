@@ -1,0 +1,4 @@
+---
+# defaults file for polybar
+font_ui: Source Sans Pro # Roboto, Open Sans, Montserrat, Noto Sans, Ubuntu, Exo 2, Inter, Rubik
+color_ui_bg: '#030303'

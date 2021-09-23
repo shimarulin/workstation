@@ -1,0 +1,40 @@
+---
+# tasks file for sxhkd
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ sxhkd_packages }}'
+
+#- name: copy sxhkd service file
+#  become: true
+#  copy:
+#    src: etc/systemd/user/default.target.wants/sxhkd.service
+#    dest: /etc/systemd/user/default.target.wants/sxhkd.service
+
+- name: create sxhkd config directory
+  file:
+    path: ~/.config/sxhkd
+    state: directory
+    mode: '755'
+
+- name: copy sxhkd config
+  copy:
+    src: .config/sxhkd/sxhkdrc
+    dest: ~/.config/sxhkd/sxhkdrc
+
+- name: create systemd sxhkd service directory
+  file:
+    path: ~/.config/systemd/user
+    state: directory
+    mode: '755'
+
+- name: copy systemd sxhkd service file
+  copy:
+    src: .config/systemd/user/sxhkd.service
+    dest: ~/.config/systemd/user/sxhkd.service
+
+- name: enable sxhkd service
+  systemd:
+    name: sxhkd.service
+    scope: user
+    enabled: yes

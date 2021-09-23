@@ -1,6 +1,6 @@
-# ansible-role-zsh
+# ansible-role-paru
 
-> Install and setup zsh
+> Feature packed AUR helper
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: zsh, x: 42 }
+         - { role: paru, x: 42 }
 
 ## License
 

@@ -1,6 +1,6 @@
-# ansible-role-zsh
+# ansible-role-python
 
-> Install and setup zsh
+> Install and setup Python
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: zsh, x: 42 }
+         - { role: python, x: 42 }
 
 ## License
 

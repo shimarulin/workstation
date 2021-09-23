@@ -1,22 +1,31 @@
 ---
 # tasks file for zsh
-# TODO: set zsh as default shell for new users (skeleton)
 - name: install dependencies
   become: true
   pacman:
     name: '{{ zsh_packages }}'
 
-- name: set ~/.zshenv
+- name: configure ~/.zshenv
   copy:
     src: .zshenv
     dest: ~/.zshenv
 
-- name: set ~/.zshrc
+- name: configure ~/.zshrc
   copy:
     src: .zshrc
     dest: ~/.zshrc
 
-# "username" variable is defined in "prepare" role
+- name: copy powerlevel10k config
+  copy:
+    src: .p10k.zsh
+    dest: ~/.p10k.zsh
+
+- name: copy powerlevel10k TTY config
+  copy:
+    src: .p10k.tty.zsh
+    dest: ~/.p10k.tty.zsh
+
+# "username" variable is defined in "facts" role
 - name: set zsh as default shell
   user:
     name: '{{ username.stdout }}'

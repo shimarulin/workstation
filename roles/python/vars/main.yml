@@ -1,0 +1,5 @@
+---
+# vars file for python
+python_packages:
+  - python
+  - python-pip
