@@ -19,8 +19,8 @@
     path: /tmp/yay
     state: directory
     recurse: yes
-    owner: "{{ username.stdout }}"
-    group: "{{ username.stdout }}"
+    owner: '{{ username.stdout }}'
+    group: '{{ username.stdout }}'
   when: yay_stat_result.stat.exists == false
 
 - name: make and install
