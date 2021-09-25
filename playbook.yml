@@ -8,12 +8,18 @@
     - prepare
 
     # Common tasks
-    - python
+    - curl
     - ssh
     - git
-    ## Package management
+
+    # Setup programming languages and build tools
+    - pip
+    - rust
+
+    # Package management
     - paru # git role required
-    ## Shell setup
+
+    # Shell setup
     - zsh
 
     # Graphic subsystem tasks

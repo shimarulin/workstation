@@ -1,6 +1,6 @@
 ---
-# tasks file for python
+# tasks file for curl
 - name: install dependencies
   become: true
   pacman:
-    name: '{{ python_packages }}'
+    name: '{{ curl_packages }}'

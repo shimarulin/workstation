@@ -3,7 +3,7 @@
 - name: install dependencies
   become: true
   pacman:
-    name: "{{ lightdm_packages }}"
+    name: '{{ lightdm_packages }}'
 
 - name: enable LightDM service
   become: true
@@ -15,11 +15,14 @@
   become: true
   lineinfile:
     path: /etc/lightdm/lightdm.conf
-    regexp: "^#greeter-session="
+    regexp: '^#greeter-session='
     line: greeter-session=lightdm-gtk-greeter
 
 # https://wiki.archlinux.org/index.php/Systemd#Change_default_target_to_boot_into
-- name: change default target to boot into graphical.target
+# systemctl set-default graphical.target
+- name: change default target to graphical.target
   become: true
-  shell: systemctl set-default graphical.target
-  changed_when: false
+  file:
+    src: /usr/lib/systemd/system/graphical.target
+    dest: /etc/systemd/system/default.target
+    state: link

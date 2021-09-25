@@ -1,6 +1,6 @@
-# ansible-role-python
+# ansible-role-curl
 
-> Install and setup Python
+> Install Curl
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: python, x: 42 }
+         - { role: curl, x: 42 }
 
 ## License
 

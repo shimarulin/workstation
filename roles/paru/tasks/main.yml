@@ -1,15 +1,17 @@
 ---
 # tasks file for paru
+- name: install build dependencies
+  become: true
+  pacman:
+    name:
+      - base-devel
+      - git
+    extra_args: --needed
+
 - name: check that the Paru already installed
   stat:
     path: /usr/bin/paru
   register: paru_stat_result
-
-- name: install build dependencies
-  become: true
-  pacman:
-    name: base-devel
-    extra_args: --needed
 
 - name: get source
   become: yes

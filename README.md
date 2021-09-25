@@ -2,19 +2,38 @@
 
 ## Installation
 
+### Install dependencies per user (recommended)
+
+```shell
+# Upgrade your system
+sudo pacman -Syu
+# Install dependencies
+sudo pacman -S git python
+python -m ensurepip --upgrade --user
+ln -s pip3 ~/.local/bin/pip
+python -m pip install --user ansible
+pip install --user cookiecutter
+```
+
+### Install dependencies globally
+
 ```shell
 # Upgrade your system
 sudo pacman -Syu
 # Install dependencies
 sudo pacman -S git python python-pip ansible
-pip install -U cookiecutter
+sudo pip install cookiecutter
 ```
+
+### Get configuration
 
 ```shell
 # Create config dir
 mkdir ~/.config && cd "$_"
 # Clone configuration
 git clone https://github.com/shimarulin/workstation.git
+cd workstation
+ansible-galaxy install -r requirements.yml
 ```
 
 ## Usage
