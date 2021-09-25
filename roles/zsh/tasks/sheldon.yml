@@ -1,0 +1,19 @@
+# https://github.com/rossmacarthur/sheldon
+- name: install build dependencies
+  become: true
+  pacman:
+    name:
+      - curl
+      - bash
+    extra_args: --needed
+
+- name: check that the sheldon already local installed
+  stat:
+    path: ~/.local/bin/sheldon
+  register: sheldon_stat_result
+
+- name: install sheldon
+  shell: |
+    set -o pipefail
+    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+  when: sheldon_stat_result.stat.exists == false

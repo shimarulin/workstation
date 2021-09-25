@@ -6,6 +6,8 @@
   pacman:
     name: '{{ zsh_packages }}'
 
+- include_tasks: sheldon.yml
+
 - name: set ~/.zshenv
   copy:
     src: .zshenv
