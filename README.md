@@ -175,6 +175,12 @@ vagrant halt
 vagrant destroy && vagrant up
 ```
 
+Connect to virtual machine by ssh
+
+```shell
+vagrant ssh
+```
+
 ### Delete default VM and box
 
 In project root:

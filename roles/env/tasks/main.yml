@@ -1,0 +1,4 @@
+---
+# tasks file for env
+- include_tasks: etc/profile.yml
+- include_tasks: etc/profile.d.yml

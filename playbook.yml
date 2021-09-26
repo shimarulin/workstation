@@ -8,6 +8,7 @@
     - prepare
 
     # Common tasks
+    - env
     - curl
     - ssh
     - git
