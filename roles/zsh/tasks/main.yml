@@ -10,12 +10,12 @@
 
 - name: set ~/.zshenv
   copy:
-    src: .zshenv
+    src: home/.zshenv
     dest: ~/.zshenv
 
 - name: set ~/.zshrc
   copy:
-    src: .zshrc
+    src: home/.zshrc
     dest: ~/.zshrc
 
 # "username" variable is defined in "prepare" role

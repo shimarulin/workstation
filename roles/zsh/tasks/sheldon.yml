@@ -17,3 +17,13 @@
     set -o pipefail
     curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
   when: sheldon_stat_result.stat.exists == false
+
+- name: copy config file
+  copy:
+    src: home/.config/sheldon/plugins.toml
+    dest: ~/.config/sheldon/plugins.toml
+
+- name: create data directory
+  ansible.builtin.file:
+    path: ~/.local/share/sheldon
+    state: directory
