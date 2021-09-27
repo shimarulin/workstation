@@ -14,14 +14,61 @@ shell = "zsh"
 
 [plugins]
 
+# Completions
+# NOTE: Try:
+# - https://github.com/zdharma/zzcomplete
+# -----------
+
+# https://github.com/zsh-users/zsh-completions
+[plugins.zsh-completions]
+git = 'https://github.com/zsh-users/zsh-completions'
+
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/completion.zsh
+[plugins.completion]
+git = 'https://github.com/ohmyzsh/ohmyzsh'
+dir = "lib"
+
+# History
+# NOTE: Try
+# - https://github.com/zdharma/history-search-multi-word
+# -----------
+
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
+# The history plugin doesn't like being deferred, not sure why.
+[plugins.history]
+git = 'https://github.com/ohmyzsh/ohmyzsh'
+dir = "lib"
+
+# Oh My Zsh
+# -----------
+
 # https://github.com/ohmyzsh/ohmyzsh
 [plugins.ohmyzsh]
 git = 'https://github.com/ohmyzsh/ohmyzsh.git'
-use = ['lib/{completion,history,key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
+use = ['lib/{key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
 
+# Themes
+# -----------
+
+# https://github.com/sindresorhus/pure
+#[plugins.purerc]
+#local = "~/.config/zsh/themes"
+[plugins.pure]
+git = "https://github.com/sindresorhus/pure"
+use = ["{async,pure}.zsh"]
+
+# Highlighting
+# -----------
+
+# https://github.com/zdharma/fast-syntax-highlighting
+# NOTE: Run `fast-theme -l` to list available themes.
 [plugins.fast-syntax-highlighting]
-git = 'https://github.com/zdharma/fast-syntax-highlighting.git'
+git = 'https://github.com/zdharma/fast-syntax-highlighting'
+
+# compinit
+# -----------
 
 # https://github.com/rossmacarthur/sheldon/issues/122#issuecomment-887258527
+# https://github.com/rossmacarthur/dotfiles/blob/trunk/src/zsh/plugins/compinit.plugin.zsh
 [plugins.compinit]
-inline = 'autoload -Uz compinit && compinit'
+local = "~/.config/zsh/plugins"

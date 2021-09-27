@@ -8,15 +8,20 @@
 
 - include_tasks: sheldon.yml
 
-- name: set ~/.zshenv
+- name: copy ~/.zshenv
   copy:
     src: home/.zshenv
     dest: ~/.zshenv
 
-- name: set ~/.zshrc
+- name: copy ~/.zshrc
   copy:
     src: home/.zshrc
     dest: ~/.zshrc
+
+- name: copy ~/.config/zsh
+  copy:
+    src: home/.config/zsh
+    dest: ~/.config
 
 # "username" variable is defined in "prepare" role
 - name: set zsh as default shell
