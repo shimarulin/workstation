@@ -20,10 +20,10 @@
 
 # "username" variable is defined in "prepare" role
 - name: set zsh as default shell
+  become: true
   user:
     name: '{{ username.stdout }}'
     shell: /usr/bin/zsh
-  become: true
 
 - name: synchronize the pkgfile database
   become: true

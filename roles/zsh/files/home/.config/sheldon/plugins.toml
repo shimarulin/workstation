@@ -14,7 +14,14 @@ shell = "zsh"
 
 [plugins]
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+# https://github.com/ohmyzsh/ohmyzsh
+[plugins.ohmyzsh]
+git = 'https://github.com/ohmyzsh/ohmyzsh.git'
+use = ['lib/{completion,history,key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
+
+[plugins.fast-syntax-highlighting]
+git = 'https://github.com/zdharma/fast-syntax-highlighting.git'
+
+# https://github.com/rossmacarthur/sheldon/issues/122#issuecomment-887258527
+[plugins.compinit]
+inline = 'autoload -Uz compinit && compinit'

@@ -2,6 +2,6 @@
 # vars file for zsh
 zsh_packages:
   - zsh
-  - zsh-completions
-  - bash-completion
+  - git
   - pkgfile
+  - sqlite
