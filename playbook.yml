@@ -21,6 +21,7 @@
     - rust
 
     # Package management
+    - appimage
     - paru # git role required
 
     # Shell setup

@@ -1,0 +1,4 @@
+---
+# vars file for appimage
+appimage_packages:
+  - fuse2
