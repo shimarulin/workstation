@@ -9,6 +9,9 @@
 
     # Common tasks
     - env
+    - fonts
+
+    # Common tools
     - curl
     - ssh
     - git

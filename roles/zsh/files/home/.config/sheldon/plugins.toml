@@ -48,9 +48,19 @@ git = 'https://github.com/ohmyzsh/ohmyzsh.git'
 use = ['lib/{key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
 
 # Themes
+# NOTE: Try:
+# - https://github.com/romkatv/powerlevel10k
+# - https://github.com/starship/starship
+# - https://github.com/spaceship-prompt/spaceship-prompt
+#     TOP CON
+#     Really slow when working with kubernetes or big repositories
 # -----------
 
 # https://github.com/sindresorhus/pure
+#     TOP CON
+#     •••
+#     Inflexible
+#     Configuration options are very limited
 #[plugins.purerc]
 #local = "~/.config/zsh/themes"
 [plugins.pure]

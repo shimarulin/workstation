@@ -1,0 +1,18 @@
+---
+# vars file for fonts
+fonts_packages:
+  # Fonts
+  ## Adobe Source family
+  - adobe-source-code-pro-fonts
+
+  # Tools
+  - fontconfig
+  - fontconfig-docs
+
+fonts_remotes:
+  - name: MesloLGS NF
+    urls:
+      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
