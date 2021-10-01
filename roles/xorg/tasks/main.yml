@@ -3,4 +3,4 @@
 - name: install dependencies
   become: true
   pacman:
-    name: "{{ xorg_packages }}"
+    name: '{{ xorg_packages }}'

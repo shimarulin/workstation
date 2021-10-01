@@ -1,0 +1,5 @@
+---
+# defaults file for localization
+
+localization_user_language_name: 'ru_RU'
+localization_system_language_name: 'en_US'
