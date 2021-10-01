@@ -1,0 +1,33 @@
+---
+# Setup locale
+
+- name: Ensure localisation files for '{{ localization_system_language }}' are available
+  become: true
+  locale_gen:
+    name: '{{ localization_system_language }}'
+    state: present
+
+- name: Ensure localisation files for '{{ localization_user_language }}' are available
+  become: true
+  locale_gen:
+    name: '{{ localization_user_language }}'
+    state: present
+
+- name: Get current locale and language configuration
+  command: localectl status
+  register: locale_status
+  changed_when: false
+
+- name: Parse 'LANG' from current locale and language configuration
+  set_fact:
+    locale_lang: "{{ locale_status.stdout | regex_search('LANG=([^\n]+)', '\\1') | first }}"
+
+- name: Parse 'LANGUAGE' from current locale and language configuration
+  set_fact:
+    locale_language:
+      "{{ locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([locale_lang], true) | first }}"
+
+- name: Configure system locale to '{{ localization_lang }}' and language to '{{ localization_language }}'
+  become: true
+  command: localectl set-locale LANG={{ localization_lang }} LANGUAGE={{ localization_language }}
+  changed_when: locale_lang != localization_lang or locale_language != localization_language

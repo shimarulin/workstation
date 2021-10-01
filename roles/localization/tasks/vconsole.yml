@@ -1,0 +1,12 @@
+---
+# Setup vconsole
+- name: install dependencies
+  become: true
+  pacman:
+    name: terminus-font
+
+- name: Create /etc/vconsole.conf
+  become: true
+  template:
+    src: etc/vconsole.conf.j2
+    dest: /etc/vconsole.conf
