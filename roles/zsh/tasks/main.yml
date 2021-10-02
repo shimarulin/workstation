@@ -13,11 +13,6 @@
     src: home/.zshenv
     dest: ~/.zshenv
 
-- name: copy ~/.zshrc
-  copy:
-    src: home/.zshrc
-    dest: ~/.zshrc
-
 - name: copy ~/.config/zsh
   copy:
     src: home/.config/zsh

@@ -14,6 +14,19 @@ shell = "zsh"
 
 [plugins]
 
+# Instant Prompt
+# -----------
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+[plugins.powerlevel10k_instant_promptrc]
+local = "~/.config/zsh/themes"
+
+# OMZ config
+# -----------
+
+[plugins.omzrc]
+local = "~/.config/zsh/env"
+
 # Completions
 # NOTE: Try:
 # - https://github.com/zdharma/zzcomplete
@@ -47,26 +60,6 @@ dir = "lib"
 git = 'https://github.com/ohmyzsh/ohmyzsh.git'
 use = ['lib/{key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
 
-# Themes
-# NOTE: Try:
-# - https://github.com/romkatv/powerlevel10k
-# - https://github.com/starship/starship
-# - https://github.com/spaceship-prompt/spaceship-prompt
-#     TOP CON
-#     Really slow when working with kubernetes or big repositories
-# -----------
-
-# https://github.com/sindresorhus/pure
-#     TOP CON
-#     •••
-#     Inflexible
-#     Configuration options are very limited
-#[plugins.purerc]
-#local = "~/.config/zsh/themes"
-[plugins.pure]
-git = "https://github.com/sindresorhus/pure"
-use = ["{async,pure}.zsh"]
-
 # Highlighting
 # -----------
 
@@ -82,3 +75,25 @@ git = 'https://github.com/zdharma/fast-syntax-highlighting'
 # https://github.com/rossmacarthur/dotfiles/blob/trunk/src/zsh/plugins/compinit.plugin.zsh
 [plugins.compinit]
 local = "~/.config/zsh/plugins"
+
+# VTE
+# -----------
+
+[plugins.vte]
+local = "~/.config/zsh/plugins"
+
+# Themes
+# NOTE: Try:
+# - https://github.com/romkatv/powerlevel10k
+# - https://github.com/starship/starship
+# - https://github.com/spaceship-prompt/spaceship-prompt
+#     TOP CON
+#     Really slow when working with kubernetes or big repositories
+# -----------
+
+# https://github.com/romkatv/powerlevel10k
+[plugins.powerlevel10k]
+git = "https://github.com/romkatv/powerlevel10k"
+#
+[plugins.powerlevel10krc]
+local = "~/.config/zsh/themes"
