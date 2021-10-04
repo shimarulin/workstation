@@ -1,5 +1,6 @@
 ---
 # Setup locale
+# https://www.gnu.org/software/gettext/manual/html_node/Locale-Environment-Variables.html
 
 - name: Ensure localisation files for '{{ localization_system_language }}' are available
   become: true

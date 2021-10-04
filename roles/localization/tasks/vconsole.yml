@@ -1,5 +1,8 @@
 ---
 # Setup vconsole
+# https://files.ax86.net/terminus-ttf/README.Terminus.txt
+# See also:
+# - https://github.com/fcambus/spleen
 - name: install dependencies
   become: true
   pacman:
