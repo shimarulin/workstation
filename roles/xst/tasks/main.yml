@@ -1,0 +1,21 @@
+---
+# tasks file for xst
+- name: install build dependencies
+  become: true
+  pacman:
+    name:
+      - bash
+      - base-devel
+      - git
+    extra_args: --needed
+
+- name: check that the xst already installed
+  stat:
+    path: /usr/bin/xst
+  register: xst_stat_result
+
+- name: install xst from AUR
+  shell: paru -S --noconfirm xst-git
+  args:
+    executable: /bin/bash
+  when: xst_stat_result.stat.exists == false

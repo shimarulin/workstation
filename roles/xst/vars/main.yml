@@ -1,0 +1,4 @@
+---
+# vars file for xst
+xst_packages:
+  - xst
