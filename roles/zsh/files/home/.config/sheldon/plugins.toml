@@ -52,6 +52,13 @@ dir = "lib"
 git = 'https://github.com/ohmyzsh/ohmyzsh'
 dir = "lib"
 
+[plugins.histdbrc]
+local = "~/.config/zsh/env"
+
+# https://github.com/larkery/zsh-histdb
+[plugins.zsh-histdb]
+git = 'https://github.com/larkery/zsh-histdb'
+
 # Oh My Zsh
 # -----------
 
