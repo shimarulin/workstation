@@ -129,3 +129,8 @@ git = "https://github.com/romkatv/powerlevel10k"
 #
 [plugins.powerlevel10krc]
 local = "~/.config/zsh/themes"
+
+# Key bindings
+# -----------
+[plugins.key-bindings]
+local = "~/.config/zsh/plugins"
