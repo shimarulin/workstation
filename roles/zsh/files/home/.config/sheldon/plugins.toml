@@ -42,8 +42,6 @@ git = 'https://github.com/ohmyzsh/ohmyzsh'
 dir = "lib"
 
 # History
-# NOTE: Try
-# - https://github.com/zdharma/history-search-multi-word
 # -----------
 
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
@@ -66,6 +64,16 @@ git = 'https://github.com/larkery/zsh-histdb'
 [plugins.ohmyzsh]
 git = 'https://github.com/ohmyzsh/ohmyzsh.git'
 use = ['lib/{key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
+
+# Suggestions
+# -----------
+
+[plugins.autosuggestionsrc]
+local = "~/.config/zsh/env"
+
+# https://github.com/zsh-users/zsh-autosuggestions
+[plugins.zsh-autosuggestions]
+git = 'https://github.com/zsh-users/zsh-autosuggestions'
 
 # Highlighting
 # -----------
