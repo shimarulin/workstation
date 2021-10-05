@@ -72,6 +72,10 @@ git = 'https://github.com/larkery/zsh-histdb'
 git = 'https://github.com/junegunn/fzf'
 use = ['shell/key-bindings.zsh']
 
+# https://github.com/m42e/zsh-histdb-fzf
+[plugins.zsh-histdb-fzf]
+git = 'https://github.com/m42e/zsh-histdb-fzf'
+
 # Suggestions
 # -----------
 
