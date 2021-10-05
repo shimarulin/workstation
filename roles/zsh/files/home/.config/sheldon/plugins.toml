@@ -27,6 +27,14 @@ local = "~/.config/zsh/themes"
 [plugins.omzrc]
 local = "~/.config/zsh/env"
 
+# Oh My Zsh
+# -----------
+
+# https://github.com/ohmyzsh/ohmyzsh
+[plugins.ohmyzsh]
+git = 'https://github.com/ohmyzsh/ohmyzsh.git'
+use = ['lib/{key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
+
 # Completions
 # NOTE: Try:
 # - https://github.com/zdharma/zzcomplete
@@ -57,13 +65,12 @@ local = "~/.config/zsh/env"
 [plugins.zsh-histdb]
 git = 'https://github.com/larkery/zsh-histdb'
 
-# Oh My Zsh
-# -----------
-
-# https://github.com/ohmyzsh/ohmyzsh
-[plugins.ohmyzsh]
-git = 'https://github.com/ohmyzsh/ohmyzsh.git'
-use = ['lib/{key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
+# fzf reverse search
+# should be loaded after ohmyzsh key bindings
+# https://github.com/junegunn/fzf
+[plugins.fzf-key-bindings]
+git = 'https://github.com/junegunn/fzf'
+use = ['shell/key-bindings.zsh']
 
 # Suggestions
 # -----------
@@ -74,6 +81,11 @@ local = "~/.config/zsh/env"
 # https://github.com/zsh-users/zsh-autosuggestions
 [plugins.zsh-autosuggestions]
 git = 'https://github.com/zsh-users/zsh-autosuggestions'
+
+# https://github.com/junegunn/fzf
+[plugins.fzf-completion]
+git = 'https://github.com/junegunn/fzf'
+use = ['shell/completion.zsh']
 
 # Highlighting
 # -----------
