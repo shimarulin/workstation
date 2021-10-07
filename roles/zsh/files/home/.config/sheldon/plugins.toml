@@ -72,11 +72,6 @@ git = 'https://github.com/larkery/zsh-histdb'
 git = 'https://github.com/junegunn/fzf'
 use = ['shell/key-bindings.zsh']
 
-# https://github.com/m42e/zsh-histdb-fzf
-# require core/inetutils
-[plugins.zsh-histdb-fzf]
-git = 'https://github.com/m42e/zsh-histdb-fzf'
-
 # Suggestions
 # -----------
 
@@ -114,13 +109,7 @@ local = "~/.config/zsh/plugins"
 [plugins.vte]
 local = "~/.config/zsh/plugins"
 
-# Themes
-# NOTE: Try:
-# - https://github.com/romkatv/powerlevel10k
-# - https://github.com/starship/starship
-# - https://github.com/spaceship-prompt/spaceship-prompt
-#     TOP CON
-#     Really slow when working with kubernetes or big repositories
+# Theme
 # -----------
 
 # https://github.com/romkatv/powerlevel10k
@@ -129,8 +118,3 @@ git = "https://github.com/romkatv/powerlevel10k"
 #
 [plugins.powerlevel10krc]
 local = "~/.config/zsh/themes"
-
-# Key bindings
-# -----------
-[plugins.key-bindings]
-local = "~/.config/zsh/plugins"

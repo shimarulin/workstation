@@ -4,6 +4,5 @@ zsh_packages:
   - zsh
   - git
   - fzf
-  - inetutils
   - pkgfile
   - sqlite
