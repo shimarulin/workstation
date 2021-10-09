@@ -36,6 +36,9 @@
     ## Window manager
     - awesome
 
+    # Hardware
+    - keyboard
+
     # Applications
     ## Terminal emulator
     - kitty
