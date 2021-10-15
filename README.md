@@ -189,6 +189,13 @@ In project root:
 vagrant destroy
 ```
 
+### Setup VirtualBox Guest Addition
+
+```shell
+pacman -S virtualbox-guest-utils
+sudo systemctl enable vboxservice
+```
+
 ### Watch DConf changes
 
 ```bash
