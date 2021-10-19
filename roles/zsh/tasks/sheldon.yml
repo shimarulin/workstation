@@ -21,9 +21,9 @@
 - name: copy config file
   copy:
     src: home/.config/sheldon/plugins.toml
-    dest: ~/.config/sheldon/plugins.toml
+    dest: ~/.config/sheldon/ # If dest is a non-existent path and if either dest ends with "/" or src is a directory, dest is created.
 
 - name: create data directory
-  ansible.builtin.file:
+  file:
     path: ~/.local/share/sheldon
     state: directory
