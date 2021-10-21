@@ -6,7 +6,7 @@
     name: '{{ pip_packages }}'
 
 # https://pip.pypa.io/en/stable/installation/
-- name: check that the Paru already installed
+- name: check that the pip3 already installed
   stat:
     path: ~/.local/bin/pip3
   register: pip3_stat_result

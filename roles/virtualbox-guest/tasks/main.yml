@@ -1,0 +1,20 @@
+---
+# tasks file for virtualbox-guest
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ virtualbox_guest_packages }}'
+
+- name: enable vboxservice service
+  become: true
+  systemd:
+    name: vboxservice.service
+    state: started
+    enabled: yes
+# virtualbox-guest-utils installs /etc/xdg/autostart/vboxclient.desktop that launches VBoxClient-all on logon
+# TODO: add XDG Autostart with SystemD
+#$ VBoxClient --clipboard
+#$ VBoxClient --draganddrop
+#$ VBoxClient --seamless
+#$ VBoxClient --checkhostversion
+#$ VBoxClient --vmsvga

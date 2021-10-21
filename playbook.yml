@@ -15,7 +15,7 @@
     # Common tools
     - curl
     - ssh
-    - git
+    #    - git
 
     # Setup programming languages and build tools
     - pip
