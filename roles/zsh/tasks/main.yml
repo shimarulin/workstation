@@ -18,6 +18,11 @@
     src: home/.config/zsh
     dest: ~/.config
 
+- name: create histdb data directory
+  file:
+    path: ~/.local/share/histdb
+    state: directory
+
 # "username" variable is defined in "prepare" role
 - name: set zsh as default shell
   become: true
