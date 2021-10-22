@@ -1,0 +1,26 @@
+---
+# tasks file for rust
+# https://www.rust-lang.org/tools/install
+- name: check that the Cargo already local installed
+  stat:
+    path: ~/.cargo/bin
+  register: cargo_stat_result
+
+- name: install Rust
+  shell: |
+    set -o pipefail
+    curl --proto '=https' --tlsv1.2  https://sh.rustup.rs -sSf | sh -s -- -y
+  when: cargo_stat_result.stat.exists == false
+
+- name: add $HOME/.local/bin to $PATH
+  blockinfile:
+    path: ~/.profile
+    block: |
+      # If user ID is greater than or equal to 1000 &
+      # if ~/.cargo/bin exists and is a directory &
+      # if ~/.cargo/bin is not already in your $PATH
+      # then export ~/.cargo/bin to your $PATH.
+      if [[ $UID -ge 1000 && -d $HOME/.cargo/bin && -z $(echo $PATH | grep -o $HOME/.cargo/bin) ]]
+      then
+          export PATH=$HOME/.cargo/bin:${PATH}
+      fi

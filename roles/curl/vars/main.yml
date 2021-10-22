@@ -1,4 +1,0 @@
----
-# vars file for curl
-curl_packages:
-  - curl

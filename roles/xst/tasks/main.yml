@@ -1,14 +1,5 @@
 ---
 # tasks file for xst
-- name: install build dependencies
-  become: true
-  pacman:
-    name:
-      - bash
-      - base-devel
-      - git
-    extra_args: --needed
-
 - name: check that the xst already installed
   stat:
     path: /usr/bin/xst
