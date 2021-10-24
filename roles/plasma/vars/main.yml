@@ -45,4 +45,5 @@ plasma_packages:
   #  - polkit-kde-agent # required by plasma-desktop
   - powerdevil
   #  - systemsettings # required by plasma-desktop
+  - xdg-desktop-portal
   - xdg-desktop-portal-kde

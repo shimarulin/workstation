@@ -4,3 +4,9 @@
   become: true
   pacman:
     name: '{{ plasma_packages }}'
+
+- name: set GTK_USE_PORTAL=1 environment variable
+  become: true
+  copy:
+    src: etc/profile.d/
+    dest: /etc/profile.d/
