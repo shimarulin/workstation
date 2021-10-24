@@ -1,0 +1,12 @@
+---
+# tasks file for sddm
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ sddm_packages }}'
+
+- name: enable SDDM service
+  become: true
+  systemd:
+    name: sddm.service
+    enabled: yes

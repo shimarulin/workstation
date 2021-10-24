@@ -1,0 +1,10 @@
+---
+# vars file for dolphin
+dolphin_packages:
+  - dolphin
+  - dolphin-plugins
+  - ffmpegthumbs
+  - kde-cli-tools
+  - kdegraphics-thumbnailers
+  - konsole
+  - purpose
