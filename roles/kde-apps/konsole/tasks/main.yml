@@ -1,0 +1,16 @@
+---
+# tasks file for konsole
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ konsole_packages }}'
+
+- name: copy user profile
+  copy:
+    src: 'home/.local/share/konsole/Пользовательский профиль.profile'
+    dest: ~/.local/share/konsole/
+
+- name: copy Konsole config profile
+  copy:
+    src: home/.config/konsolerc
+    dest: ~/.config/
