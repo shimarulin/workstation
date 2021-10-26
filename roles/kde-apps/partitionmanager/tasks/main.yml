@@ -1,0 +1,6 @@
+---
+# tasks file for partitionmanager
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ partitionmanager_packages }}'

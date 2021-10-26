@@ -1,0 +1,4 @@
+---
+# vars file for partitionmanager
+partitionmanager_packages:
+  - partitionmanager
