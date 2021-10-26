@@ -10,7 +10,29 @@
     src: 'home/.local/share/konsole/Пользовательский профиль.profile'
     dest: ~/.local/share/konsole/
 
-- name: copy Konsole config profile
-  copy:
-    src: home/.config/konsolerc
-    dest: ~/.config/
+- name: set default profile
+  community.general.ini_file:
+    path: ~/.config/konsolerc
+    no_extra_spaces: true
+    mode: '0600'
+    section: 'Desktop Entry'
+    option: DefaultProfile
+    value: Пользовательский профиль.profile
+
+- name: hide menubar
+  community.general.ini_file:
+    path: ~/.config/konsolerc
+    no_extra_spaces: true
+    mode: '0600'
+    section: 'KonsoleWindow'
+    option: ShowMenuBarByDefault
+    value: 'false'
+
+- name: show tab button on tabbar
+  community.general.ini_file:
+    path: ~/.config/konsolerc
+    no_extra_spaces: true
+    mode: '0600'
+    section: 'TabBar'
+    option: NewTabButton
+    value: 'true'
