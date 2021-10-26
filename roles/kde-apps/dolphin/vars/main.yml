@@ -6,5 +6,6 @@ dolphin_packages:
   - ffmpegthumbs
   - kde-cli-tools
   - kdegraphics-thumbnailers
+  - kompare
   - konsole
   - purpose
