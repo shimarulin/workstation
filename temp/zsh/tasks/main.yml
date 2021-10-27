@@ -1,0 +1,45 @@
+---
+# tasks file for zsh
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ zsh_packages }}'
+
+- name: configure ~/.zshenv
+  copy:
+    src: .zshenv
+    dest: ~/.zshenv
+
+- name: configure ~/.zshrc
+  copy:
+    src: .zshrc
+    dest: ~/.zshrc
+
+- name: copy powerlevel10k config
+  copy:
+    src: .p10k.zsh
+    dest: ~/.p10k.zsh
+
+- name: copy powerlevel10k TTY config
+  copy:
+    src: .p10k.tty.zsh
+    dest: ~/.p10k.tty.zsh
+
+# "username" variable is defined in "facts" role
+- name: set zsh as default shell
+  user:
+    name: '{{ username.stdout }}'
+    shell: /usr/bin/zsh
+  become: true
+
+- name: synchronize the pkgfile database
+  become: true
+  command: 'pkgfile -u'
+  changed_when: false
+
+- name: enable automatically synchronizing the pkgfile database
+  become: true
+  systemd:
+    name: pkgfile-update.timer
+    state: started
+    enabled: yes

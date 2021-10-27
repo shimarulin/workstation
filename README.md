@@ -1,27 +1,42 @@
-# Workstation
+# Arch workstation config
 
 ## Installation
 
-The installation script inspired by [Arch Linux Install Script](https://picodotdev.github.io/alis/) and
-[archfi](https://github.com/MatMoul/archfi). It used only to install the base system.
+### Install dependencies per user (recommended)
 
-```
-# # Start the system with lastest Arch Linux installation media
-# loadkeys [keymap]
-# curl https://raw.githubusercontent.com/shimarulin/workstation/master/get.sh | bash
-# # or with URL shortener:
-# # curl -sL https://git.io/JUGL3 | bash
-# # curl -sL https://bit.ly/2QOooFJ | bash
-# # curl -sL https://rb.gy/jm6qlg | bash
-# # Edit install.conf and change variables values with your preferences
-# vim install.conf
-# # Start
-# ./install.sh
+```shell
+# Upgrade your system
+sudo pacman -Syu
+# Install dependencies
+sudo pacman -S git python
+python -m ensurepip --upgrade --user
+ln -s pip3 ~/.local/bin/pip
+python -m pip install --user ansible
+pip install --user cookiecutter
 ```
 
-## Ansible config
+### Install dependencies globally
 
-### Usage
+```shell
+# Upgrade your system
+sudo pacman -Syu
+# Install dependencies
+sudo pacman -S git python python-pip ansible
+sudo pip install cookiecutter
+```
+
+### Get configuration
+
+```shell
+# Create config dir
+mkdir ~/.config && cd "$_"
+# Clone configuration
+git clone https://github.com/shimarulin/workstation.git
+cd workstation
+ansible-galaxy install -r requirements.yml
+```
+
+## Usage
 
 Before run playbook you must setup common variables via `setup` script in this repository root:
 
@@ -36,9 +51,9 @@ Run playbook on localhost
 ansible-playbook playbook.yml
 ```
 
-### Development
+## Development
 
-#### Tools
+### Tools
 
 Documentation:
 
@@ -49,11 +64,11 @@ Documentation:
 - [Argbash documentation](https://argbash.readthedocs.io/en/stable/)
 - [Vagrant Documentation](https://www.vagrantup.com/docs/)
 
-#### Articles
+### Articles
 
 - [Using Ansible templates to maintain partial file blocks](https://garthkerr.com/using-ansible-template-for-partial-file-block/)
 
-#### Getting started
+### Getting started
 
 Requirements:
 
@@ -73,13 +88,8 @@ Also you should install `python-vagrant` and `cookiecutter` packages via pip:
 ```bash
 # Install packages
 pip3 install -U python-vagrant cookiecutter
-```
-
-and configure cookiecutter context with `setup` script in this repository root:
-
-```bash
-# Setup cookiecutter context
-./setup --target cookiecutterrc
+# or
+pip install -U python-vagrant cookiecutter
 ```
 
 For enable Git Hook's to autoformatting files with [Prettier](https://prettier.io/) just install NodeJS packages with
@@ -89,28 +99,24 @@ Yarn:
 yarn
 ```
 
-#### Work with Ansible roles and variables
-
-You can configure your variables with `setup` script:
+### Configure Ansible variables
 
 ```bash
 # Setup Ansible variables
-./setup --target vars
+cookiecutter -f templates/vars
 ```
 
 If you add variables manually, don't forget to change variables template in `templates/vars`. It will used for setup
 variables before run playbook for setup target environment.
 
-For create new role from template you can run `setup` with `--target role` or without args
+### Create Ansible role
 
 ```bash
 # Create Ansible role
-./setup --target role
-# or
-./setup
+cookiecutter --output-dir roles templates/role
 ```
 
-#### Create Vagrant box for test role from existing virtual machine
+### Create Vagrant box for test role from existing virtual machine
 
 Create new virtual machine and install target distributive. In according to Vagrant conventions, create user `vagrant`
 with password `vagrant`. This password don't need to run playbook and you can choice other if you need. After this it
@@ -126,12 +132,16 @@ sudo systemctl enable sshd.service
 Add unsafe public key:
 
 ```bash
-mkdir -pm 700 /home/vagrant/.ssh
-wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O /home/vagrant/.ssh/authorized_keys
+mkdir -pm 700 ~/.ssh
+curl -L https://git.io/v47gO -o ~/.ssh/authorized_keys
+# or
+# curl -L https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub -o ~/.ssh/authorized_keys
+# or
+# wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O /home/vagrant/.ssh/authorized_keys
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 ```
 
-And add to end of file `/etc/sudoers` using the command `sudo visudo` (use `EDITOR=nvim sudo visudo` for change default
+And add to end of file `/etc/sudoers` using the command `sudo visudo` (use `sudo EDITOR=nvim visudo` for change default
 editor) these strings to connect to virtual machine via ssh without password:
 
 ```
@@ -142,16 +152,17 @@ vagrant ALL=(ALL) NOPASSWD: ALL
 To make you own box you should run command
 
 ```bash
+# VirtualBox VM name: Arch
 vagrant package --base Arch --output arch.box
 ```
 
 After this you can add you box:
 
 ```bash
-vagrant box add ./arch.box --name shimarulin/arch
+vagrant box add ./arch.box --name vagrant/arch
 ```
 
-#### Use Vagrant to play tasks
+### Use Vagrant to play tasks
 
 ```bash
 # Start VM
@@ -164,7 +175,13 @@ vagrant halt
 vagrant destroy && vagrant up
 ```
 
-#### Delete default VM and box
+Connect to virtual machine by ssh
+
+```shell
+vagrant ssh
+```
+
+### Delete default VM and box
 
 In project root:
 
@@ -172,7 +189,14 @@ In project root:
 vagrant destroy
 ```
 
-#### Watch DConf changes
+### Setup VirtualBox Guest Addition
+
+```shell
+pacman -S virtualbox-guest-utils
+sudo systemctl enable vboxservice
+```
+
+### Watch DConf changes
 
 ```bash
 dconf watch /

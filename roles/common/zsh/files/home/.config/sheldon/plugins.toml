@@ -1,0 +1,120 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+# Instant Prompt
+# -----------
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+[plugins.powerlevel10k_instant_promptrc]
+local = "~/.config/zsh/themes"
+
+# OMZ config
+# -----------
+
+[plugins.omzrc]
+local = "~/.config/zsh/env"
+
+# Oh My Zsh
+# -----------
+
+# https://github.com/ohmyzsh/ohmyzsh
+[plugins.ohmyzsh]
+git = 'https://github.com/ohmyzsh/ohmyzsh.git'
+use = ['lib/{key-bindings}.zsh', 'plugins/{command-not-found}/*.plugin.zsh']
+
+# Completions
+# NOTE: Try:
+# - https://github.com/zdharma/zzcomplete
+# -----------
+
+# https://github.com/zsh-users/zsh-completions
+[plugins.zsh-completions]
+git = 'https://github.com/zsh-users/zsh-completions'
+
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/completion.zsh
+[plugins.completion]
+git = 'https://github.com/ohmyzsh/ohmyzsh'
+dir = "lib"
+
+# History
+# -----------
+
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
+# The history plugin doesn't like being deferred, not sure why.
+[plugins.history]
+git = 'https://github.com/ohmyzsh/ohmyzsh'
+dir = "lib"
+
+[plugins.histdbrc]
+local = "~/.config/zsh/env"
+
+# https://github.com/larkery/zsh-histdb
+[plugins.zsh-histdb]
+git = 'https://github.com/larkery/zsh-histdb'
+
+# fzf reverse search
+# should be loaded after ohmyzsh key bindings
+# https://github.com/junegunn/fzf
+[plugins.fzf-key-bindings]
+git = 'https://github.com/junegunn/fzf'
+use = ['shell/key-bindings.zsh']
+
+# Suggestions
+# -----------
+
+[plugins.autosuggestionsrc]
+local = "~/.config/zsh/env"
+
+# https://github.com/zsh-users/zsh-autosuggestions
+[plugins.zsh-autosuggestions]
+git = 'https://github.com/zsh-users/zsh-autosuggestions'
+
+# https://github.com/junegunn/fzf
+[plugins.fzf-completion]
+git = 'https://github.com/junegunn/fzf'
+use = ['shell/completion.zsh']
+
+# Highlighting
+# -----------
+
+# https://github.com/zdharma/fast-syntax-highlighting
+# NOTE: Run `fast-theme -l` to list available themes.
+[plugins.fast-syntax-highlighting]
+git = 'https://github.com/zdharma/fast-syntax-highlighting'
+
+# compinit
+# -----------
+
+# https://github.com/rossmacarthur/sheldon/issues/122#issuecomment-887258527
+# https://github.com/rossmacarthur/dotfiles/blob/trunk/src/zsh/plugins/compinit.plugin.zsh
+[plugins.compinit]
+local = "~/.config/zsh/plugins"
+
+# VTE
+# -----------
+
+[plugins.vte]
+local = "~/.config/zsh/plugins"
+
+# Theme
+# -----------
+
+# https://github.com/romkatv/powerlevel10k
+[plugins.powerlevel10k]
+git = "https://github.com/romkatv/powerlevel10k"
+#
+[plugins.powerlevel10krc]
+local = "~/.config/zsh/themes"

@@ -1,0 +1,7 @@
+---
+# tasks file for dolphin
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ dolphin_packages }}'
+## TODO: add service menu https://develop.kde.org/docs/dolphin/service-menus/

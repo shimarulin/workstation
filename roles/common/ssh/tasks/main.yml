@@ -1,0 +1,11 @@
+---
+# tasks file for ssh
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ ssh_packages }}'
+
+- name: create ssh directory
+  file:
+    path: ~/.ssh
+    state: directory

@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "shimarulin/arch"
+  config.vm.box = "vagrant/arch"
   config.vm.box_version = "0"
 
   # Disable automatic box update checking. If you disable this, then
@@ -59,6 +59,9 @@ Vagrant.configure("2") do |config|
 
     vb.cpus = 2
     vb.customize ["modifyvm", :id, "--vram", "128"]
+    vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+    vb.customize ['modifyvm', :id, '--draganddrop', 'bidirectional']
   end
   #
   # View the documentation for the provider you are using for more
@@ -79,7 +82,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.verbose = "v"
-    ansible.playbook = "playbook.yml"
-#     ansible.playbook = "part.yml"
+    ansible.playbook = "playbook_virtualbox.yml"
   end
 end

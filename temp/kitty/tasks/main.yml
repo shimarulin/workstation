@@ -1,0 +1,11 @@
+---
+# tasks file for kitty
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ kitty_packages }}'
+
+- name: copy ~/.config/kitty
+  copy:
+    src: home/.config/kitty
+    dest: ~/.config

@@ -1,0 +1,18 @@
+---
+# tasks file for facts
+- name: get username
+  command: whoami
+  register: username
+  changed_when: false
+
+#- name: get graphic card vendor
+#  script: ./utils/gpu-vendor
+#  register: vga_vendor
+#  changed_when: false
+
+- name: update packages cache
+  become: true
+  pacman:
+    update_cache: yes
+  #    upgrade: yes
+  changed_when: false

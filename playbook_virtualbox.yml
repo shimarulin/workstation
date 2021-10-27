@@ -1,0 +1,9 @@
+---
+# This playbook deploys the whole application stack to virtual machine.
+
+- import_playbook: playbook.yml
+
+- name: apply VirtualBox Guest additions
+  hosts: all
+  roles:
+    - virtualbox-guest

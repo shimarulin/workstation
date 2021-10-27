@@ -1,0 +1,62 @@
+---
+# tasks file for polybar
+- name: check that the Polybar already installed
+  stat:
+    path: /usr/bin/polybar
+  register: polybar_stat_result
+
+- name: install AUR dependencies
+  shell: yay -S --noconfirm polybar
+  args:
+    executable: /bin/bash
+  when: polybar_stat_result.stat.exists == false
+
+- name: check that the polybar config exist
+  stat:
+    path: ~/.config/polybar/config
+  register: polybar_config_stat_result
+
+- name: create polybar config directory
+  file:
+    path: ~/.config/polybar
+    state: directory
+    mode: '755'
+  when: polybar_config_stat_result.stat.exists == false
+
+- name: create polybar config
+  file:
+    path: ~/.config/polybar/config
+    state: touch
+  when: polybar_config_stat_result.stat.exists == false
+
+- name: insert/update polybar variables
+  blockinfile:
+    path: ~/.config/polybar/config
+    marker: '# {mark} variables'
+    marker_begin: 'Begin'
+    marker_end: 'End'
+    block: "{{ lookup('template', '.config/polybar/blocks/variables.ini') }}"
+
+- name: insert/update polybar top panel
+  blockinfile:
+    path: ~/.config/polybar/config
+    marker: '# {mark} toolbar panel'
+    marker_begin: 'Begin'
+    marker_end: 'End'
+    block: "{{ lookup('template', '.config/polybar/blocks/toolbar.ini') }}"
+
+- name: copy polybar launcher
+  copy:
+    src: .config/polybar/launch.sh
+    dest: ~/.config/polybar/launch.sh
+    mode: '755'
+
+- name: add polybar init
+  blockinfile:
+    path: ~/.config/i3/config
+    marker: '# {mark} polybar init'
+    marker_begin: 'Begin'
+    marker_end: 'End'
+    block: |
+      # Start polybar to display a workspace bar
+      exec_always --no-startup-id $HOME/.config/polybar/launch.sh

@@ -1,0 +1,6 @@
+---
+# tasks file for pulseaudio
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ pulseaudio_packages }}'

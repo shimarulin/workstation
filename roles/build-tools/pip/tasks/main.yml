@@ -1,0 +1,22 @@
+---
+# tasks file for pip
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ pip_packages }}'
+
+# https://pip.pypa.io/en/stable/installation/
+- name: check that the pip3 already installed
+  stat:
+    path: ~/.local/bin/pip3
+  register: pip3_stat_result
+
+- name: install pip with use ensurepip module
+  shell: python -m ensurepip --upgrade --user
+  when: pip3_stat_result.stat.exists == false
+
+- name: Create a symbolic link from pip3 to pip
+  file:
+    src: ~/.local/bin/pip3
+    dest: ~/.local/bin/pip
+    state: link

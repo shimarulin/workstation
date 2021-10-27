@@ -1,0 +1,5 @@
+---
+# vars file for utils
+utils_packages:
+  - curl
+  - bash

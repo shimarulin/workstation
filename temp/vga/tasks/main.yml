@@ -1,0 +1,7 @@
+---
+# tasks file for vga
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ vga_packages_vesa }}'
+  when: vga_vendor.stdout == "vesa"

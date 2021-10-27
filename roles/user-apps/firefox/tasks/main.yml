@@ -1,0 +1,51 @@
+---
+# tasks file for firefox
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ firefox_packages }}'
+
+- name: create firefox global extension directory
+  become: true
+  file:
+    path: /usr/lib/firefox/browser/extensions/
+    state: directory
+
+- name: copy global pref
+  become: true
+  copy:
+    src: usr/lib/firefox/defaults/pref/autoconfig.js
+    dest: /usr/lib/firefox/defaults/pref/
+
+- name: copy global config
+  become: true
+  copy:
+    src: usr/lib/firefox/firefox.cfg
+    dest: /usr/lib/firefox/
+
+# TODO: temporary unavailable
+#- name: install firefox-extension-plasma-integration
+#  shell: paru -S --noconfirm firefox-extension-plasma-integration
+#  args:
+#    executable: /bin/bash
+
+- name: install native connector software for the 'Profile Switcher for Firefox' extension (binary files)
+  shell: paru -S --noconfirm firefox-profile-switcher-connector-bin
+  args:
+    executable: /bin/bash
+
+# https://addons.mozilla.org/en-US/firefox/addon/profile-switcher/
+- name: install 'Profile Switcher for Firefox' extension
+  become: true
+  get_url:
+    url: https://addons.mozilla.org/firefox/downloads/file/3809893/
+    dest: /usr/lib/firefox/browser/extensions/profile-switcher-ff@nd.ax.xpi
+#    validate_certs: no
+
+# https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+- name: install 'uBlock Origin' extension
+  become: true
+  get_url:
+    url: https://addons.mozilla.org/firefox/downloads/file/3853583/ublock_origin-1.38.6-an+fx.xpi
+    dest: /usr/lib/firefox/browser/extensions/uBlock0@raymondhill.net.xpi
+#    validate_certs: no

@@ -1,0 +1,4 @@
+---
+# vars file for virtualbox-guest
+virtualbox_guest_packages:
+  - virtualbox-guest-utils

@@ -4,32 +4,24 @@
 - name: apply common configuration to all nodes
   hosts: all
   roles:
-    # Common tasks
-    - facts
+    # Gathering facts and update system
+    - prepare
+    - build-tools
+    - package-management
+    - common
+
+    # Graphic subsystem
+    - X11
+
+    # Hardware
     - keyboard
-    - ssh
-    - git
-    - yay # git role required
-    - fonts # yay role required
-    - zsh
+    - pulseaudio
 
-    # GUI
-    #- vga
-    ## X11 server
-    ## TODO: add standalone compositor for Xorg (https://wiki.archlinux.org/index.php/Picom)
-    - xorg
-    ## Display manager
-    - lightdm
-    ## Window manager
-    #- i3
-    - awesome
-    ## Hotkey daemon
-    #- sxhkd
-    ## Panel
-    #- polybar # {yay,i3} role required
-    ## Launcher
-    - rofi
+    # Desktop environment
+    - plasma
 
-    # Common applications
-    ## Terminal emulator
-    - kitty
+    ## KDE Apps
+    - kde-apps
+
+    ## Common User Apps
+    - user-apps

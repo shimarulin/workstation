@@ -1,0 +1,5 @@
+---
+# vars file for sddm
+sddm_packages:
+  - sddm
+  - sddm-kcm

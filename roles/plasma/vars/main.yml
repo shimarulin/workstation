@@ -1,0 +1,49 @@
+---
+# vars file for plasma
+plasma_packages:
+  - bluedevil
+  - breeze
+  - breeze-gtk
+  #  - discover # TODO: check functional?
+  - drkonqi
+  # https://archlinux.org/packages/extra/any/ibus-typing-booster/
+  #  - ibus
+  - kaccounts-integration # optional dependency of plasma-desktop
+  #  - kactivitymanagerd # required by plasma-workspace
+  #  - kde-cli-tools # required by plasma-workspace
+  - kde-gtk-config
+  #  - kdecoration # required by kde-gtk-config
+  - kdeplasma-addons
+  - kgamma5
+  - khotkeys
+  - kinfocenter
+  #  - kmenuedit # required by plasma-desktop
+  - kscreen
+  #  - kscreenlocker # required by kwin
+  - ksshaskpass
+  #  - ksystemstats # required by ksysguard, plasma-systemmonitor, plasma-workspace
+  - kwallet-pam
+  #  - kwayland-integration
+  #  - kwayland-server
+  - kwin
+  - kwrited
+  #  - layer-shell-qt # required by kscreenlocker
+  #  - milou # required by plasma-workspace
+  #  - oxygen
+  - plasma-browser-integration
+  - plasma-desktop
+  - plasma-disks
+  - plasma-firewall
+  - plasma-nm
+  - plasma-pa
+  #  - plasma-sdk # TODO: check dependencies
+  - plasma-systemmonitor
+  - plasma-thunderbolt
+  - plasma-vault
+  - plasma-workspace
+  - plasma-workspace-wallpapers
+  #  - polkit-kde-agent # required by plasma-desktop
+  - powerdevil
+  #  - systemsettings # required by plasma-desktop
+  - xdg-desktop-portal
+  - xdg-desktop-portal-kde

@@ -1,17 +1,11 @@
 ---
 # tasks file for keyboard
-#- name: install dependencies
-#  become: true
-#  pacman:
-#    name: "{{ keyboard_packages }}"
+- name: check keyboard config file
+  stat:
+    path: /etc/X11/xorg.conf.d/00-keyboard.conf
+  register: keyboard_stat_result
 
-- name: create xkb config directory
-  file:
-    path: ~/.config/xkb
-    state: directory
-    mode: "755"
-
-- name: copy xkb config
-  copy:
-    src: .config/xkb/config
-    dest: ~/.config/xkb/config
+- name: set default keyboard
+  become: true
+  shell: localectl --no-convert set-x11-keymap us,ru
+  when: keyboard_stat_result.stat.exists == false
