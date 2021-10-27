@@ -20,11 +20,6 @@
     # Desktop environment
     - plasma
 
-    # Applications
-    ## Terminal emulator
-    - kitty
-    - xst
-
     ## KDE Apps
     - kde-apps
 
