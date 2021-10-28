@@ -1,0 +1,14 @@
+---
+# vars file for gwenview
+gwenview_packages:
+  - gwenview
+
+  - kimageformats # support for dds, xcf, exr, psd, and more image formats
+  - karchive # plugin for Krita and OpenRaster images
+  - libavif # AVIF format support
+  - libheif # HEIF format support
+  - openexr # EXR format support
+
+  - kipi-plugins # export to various online services
+
+  - qt5-imageformats # support for tiff, webp, and more image formats

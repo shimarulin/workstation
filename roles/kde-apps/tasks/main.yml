@@ -1,6 +1,0 @@
----
-# tasks file for kde-apps
-#- name: install dependencies
-#  become: true
-#  pacman:
-#    name: "{{ kde_apps_packages }}"

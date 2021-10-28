@@ -1,0 +1,6 @@
+---
+# vars file for okular
+okular_packages:
+  - okular
+  - ebook-tools
+  - kdegraphics-mobipocket

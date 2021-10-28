@@ -1,0 +1,6 @@
+---
+# tasks file for okular
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ okular_packages }}'

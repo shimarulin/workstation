@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Vyacheslav Shimarulin
-  description: Setup for AppImage app
+  description: A fast and easy to use image viewer
   license: MIT
   min_ansible_version: 2.8
 
