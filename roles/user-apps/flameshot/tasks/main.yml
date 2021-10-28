@@ -1,0 +1,8 @@
+---
+# tasks file for flameshot
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ flameshot_packages }}'
+# TODO: KDE integration
+# https://github.com/flameshot-org/flameshot#on-kde-plasma-desktop
