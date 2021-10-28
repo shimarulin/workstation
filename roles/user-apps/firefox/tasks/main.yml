@@ -40,12 +40,17 @@
   get_url:
     url: https://addons.mozilla.org/firefox/downloads/file/3809893/
     dest: /usr/lib/firefox/browser/extensions/profile-switcher-ff@nd.ax.xpi
-#    validate_certs: no
 
 # https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
 - name: install 'uBlock Origin' extension
   become: true
   get_url:
-    url: https://addons.mozilla.org/firefox/downloads/file/3853583/ublock_origin-1.38.6-an+fx.xpi
+    url: https://addons.mozilla.org/firefox/downloads/file/3853583/
     dest: /usr/lib/firefox/browser/extensions/uBlock0@raymondhill.net.xpi
-#    validate_certs: no
+
+# https://addons.mozilla.org/ru/firefox/addon/bitwarden-password-manager/
+- name: install 'Bitwarden password manager' extension
+  become: true
+  get_url:
+    url: https://addons.mozilla.org/firefox/downloads/file/3859577/
+    dest: /usr/lib/firefox/browser/extensions/bitwarden@bitwarden.com.xpi
