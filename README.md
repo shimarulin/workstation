@@ -12,7 +12,7 @@ sudo pacman -S git python
 python -m ensurepip --upgrade --user
 ln -s pip3 ~/.local/bin/pip
 python -m pip install --user ansible
-pip install --user cookiecutter
+python -m pip install --user cookiecutter
 ```
 
 ### Install dependencies globally

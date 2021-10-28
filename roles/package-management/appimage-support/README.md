@@ -1,6 +1,6 @@
-# ansible-role-appimage
+# ansible-role-appimage-support
 
-> Setup for AppImage app
+> AppImage support
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: appimage, x: 42 }
+         - { role: appimage-support, x: 42 }
 
 ## License
 

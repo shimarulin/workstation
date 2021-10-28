@@ -1,0 +1,6 @@
+---
+# tasks file for appimage-support
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ appimage_support_packages }}'
