@@ -205,9 +205,9 @@ dconf watch /
 ## Related projects
 
 - [Arch Linux Install Script](https://picodotdev.github.io/alis/)
-- [My Arch Setup](https://github.com/raphiz/my-arch-setup)
+- [My Arch Setup](https://github.com/raphiz/my-arch-setup) - Ansible based automation scripts for my Arch Linux machines
 - [archfi](https://github.com/MatMoul/archfi)
-- [Spark](https://github.com/pigmonkey/spark)
+- [Spark](https://github.com/pigmonkey/spark) - Arch Linux Provisioning with Ansible
 - [arch-install](https://github.com/wrzlbrmft/arch-install)
 - [krushn-arch](https://github.com/krushndayshmookh/krushn-arch)
 

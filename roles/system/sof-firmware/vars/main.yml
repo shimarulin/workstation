@@ -1,0 +1,4 @@
+---
+# vars file for sof-firmware
+sof_firmware_packages:
+  - sof-firmware

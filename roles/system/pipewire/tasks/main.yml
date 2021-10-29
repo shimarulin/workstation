@@ -1,0 +1,15 @@
+---
+# tasks file for pipewire
+# https://roosnaflak.com/tech-and-research/transitioning-to-pipewire/
+# https://wiki.archlinux.org/title/PipeWire#Audio
+# https://wiki.archlinux.org/title/GStreamer#PipeWire
+# https://wiki.archlinux.org/title/KDE#Phonon
+- name: install PipeWire
+  become: true
+  pacman:
+    name: '{{ pipewire_packages }}'
+
+- name: install GStreamer plugins for KDE Phonon
+  become: true
+  pacman:
+    name: '{{ gst_packages }}'

@@ -14,8 +14,7 @@
     - X11
 
     # Hardware
-    - keyboard
-    - pulseaudio
+    - system
 
     # Desktop environment
     - plasma
