@@ -1,10 +1,5 @@
 ---
 # tasks file for prepare
-- name: get user home dir
-  shell: 'getent passwd "$USER" | cut -d: -f6'
-  register: user_home
-  changed_when: false
-
 - name: update packages cache and upgrade system
   become: true
   pacman:
