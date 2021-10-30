@@ -91,9 +91,15 @@ use = ['shell/completion.zsh']
 # -----------
 
 # https://github.com/zdharma/fast-syntax-highlighting
+#
+# WARN: It looks like Sebastian has deleted the Zdharma repositories :-(
+#       See https://github.com/zdharma-continuum
+#       and https://www.reddit.com/r/zsh/comments/qinb6j/httpsgithubcomzdharma_has_suddenly_disappeared_i/
+#       Also known https://github.com/zdharma-mirror
+#
 # NOTE: Run `fast-theme -l` to list available themes.
 [plugins.fast-syntax-highlighting]
-git = 'https://github.com/zdharma/fast-syntax-highlighting'
+git = 'https://github.com/zdharma-continuum/fast-syntax-highlighting'
 
 # compinit
 # -----------
