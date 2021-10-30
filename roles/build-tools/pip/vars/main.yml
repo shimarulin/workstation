@@ -1,4 +1,0 @@
----
-# vars file for pip
-pip_packages:
-  - python

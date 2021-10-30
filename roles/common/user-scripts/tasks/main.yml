@@ -1,0 +1,8 @@
+---
+# tasks file for user-scripts
+
+- name: copy user scripts
+  copy:
+    src: home/.local/bin/
+    dest: ~/.local/bin/
+    mode: u+rwx,g=,o=

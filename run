@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+# Run playbook
+cd ~/.config/localhost && ansible-playbook playbook.yml

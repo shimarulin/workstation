@@ -16,7 +16,7 @@
 - name: copy ~/.config/zsh
   copy:
     src: home/.config/zsh
-    dest: ~/.config
+    dest: ~/.config/
 
 - name: create histdb data directory
   file:

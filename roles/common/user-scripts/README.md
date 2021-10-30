@@ -1,6 +1,6 @@
-# ansible-role-pip
+# ansible-role-user-scripts
 
-> Instal pip - the package installer for Python
+> User utilites and scripts
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: pip, x: 42 }
+         - { role: user-scripts, x: 42 }
 
 ## License
 

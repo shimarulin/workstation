@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+
+# A script for preparing the system for applying the configuration.
+
+C_DESTINATION=~/.config/localhost
+
+install_dependencies () {
+  # Upgrade your system
+  sudo pacman -Syu
+
+  # Install Python and pip
+  sudo pacman -S git python --needed
+  python -m ensurepip --user
+  python -m pip install --user --upgrade pip
+
+  # Setup environment
+  export PATH=$HOME/.local/binar:${PATH}
+
+  # Install dependencies
+  python -m pip install --user ansible
+  python -m pip install --user cookiecutter
+}
+
+clone_configuration () {
+  mkdir -p ~/.config
+  cd ~/.config || return
+  git clone https://github.com/shimarulin/workstation.git $C_DESTINATION
+}
+
+prepare_configuration () {
+  cd $C_DESTINATION || return
+
+  # Install Ansible Galaxy roles
+  ansible-galaxy install -r requirements.yml
+
+  # Setup Ansible configuration variables
+  python -m cookiecutter -f templates/vars
+}
+
+install_dependencies
+clone_configuration
+prepare_configuration
