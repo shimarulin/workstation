@@ -23,11 +23,10 @@
     path: ~/.local/share/histdb
     state: directory
 
-# "username" variable is defined in "prepare" role
 - name: set zsh as default shell
   become: true
   user:
-    name: '{{ username.stdout }}'
+    name: '{{ ansible_user_id }}'
     shell: /usr/bin/zsh
 
 - name: synchronize the pkgfile database

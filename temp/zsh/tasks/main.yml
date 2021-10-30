@@ -25,10 +25,9 @@
     src: .p10k.tty.zsh
     dest: ~/.p10k.tty.zsh
 
-# "username" variable is defined in "facts" role
 - name: set zsh as default shell
   user:
-    name: '{{ username.stdout }}'
+    name: '{{ ansible_user_id }}'
     shell: /usr/bin/zsh
   become: true
 

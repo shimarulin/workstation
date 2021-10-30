@@ -19,8 +19,8 @@
     path: /tmp/paru
     state: directory
     recurse: yes
-    owner: '{{ username.stdout }}'
-    group: '{{ username.stdout }}'
+    owner: '{{ ansible_user_id }}'
+    group: '{{ ansible_user_id }}'
   when: paru_stat_result.stat.exists == false
 
 - name: make and install
