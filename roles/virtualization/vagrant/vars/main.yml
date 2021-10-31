@@ -1,0 +1,4 @@
+---
+# vars file for vagrant
+vagrant_packages:
+  - vagrant
