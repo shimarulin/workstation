@@ -23,16 +23,18 @@
     src: usr/lib/firefox/firefox.cfg
     dest: /usr/lib/firefox/
 
-# TODO: temporary unavailable
-#- name: install firefox-extension-plasma-integration
-#  shell: paru -S --noconfirm firefox-extension-plasma-integration
-#  args:
-#    executable: /bin/bash
+# https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
+- name: install 'Plasma Integration by KDE' extension
+  become: true
+  get_url:
+    url: https://addons.mozilla.org/firefox/downloads/file/3859385/
+    dest: /usr/lib/firefox/browser/extensions/plasma-browser-integration@kde.org.xpi
 
 - name: install native connector software for the 'Profile Switcher for Firefox' extension (binary files)
   shell: paru -S --noconfirm firefox-profile-switcher-connector-bin
   args:
     executable: /bin/bash
+  changed_when: false
 
 # https://addons.mozilla.org/en-US/firefox/addon/profile-switcher/
 - name: install 'Profile Switcher for Firefox' extension
