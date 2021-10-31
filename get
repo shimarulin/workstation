@@ -9,7 +9,7 @@ install_dependencies () {
   sudo pacman -Syu
 
   # Install Python and pip
-  sudo pacman -S git python --needed
+  sudo pacman -S git python --needed --noconfirm
   python -m ensurepip --user
   python -m pip install --user --upgrade pip
 
