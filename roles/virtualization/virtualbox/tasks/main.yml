@@ -1,0 +1,22 @@
+---
+# tasks file for virtualbox
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ virtualbox_packages }}'
+
+- name: Add the user to vboxusers group
+  become: true
+  user:
+    name: '{{ ansible_user_id }}'
+    groups: vboxusers
+    append: yes
+
+- name: create virtual machines data directory
+  file:
+    path: ~/.local/share/virtualbox/
+    state: directory
+
+- name: set virtual machines data directory
+  shell: vboxmanage setproperty machinefolder ~/.local/share/virtualbox/
+  changed_when: false
