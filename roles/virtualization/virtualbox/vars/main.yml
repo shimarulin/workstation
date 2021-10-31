@@ -1,0 +1,7 @@
+---
+# vars file for virtualbox
+virtualbox_packages:
+  - linux-headers
+  - virtualbox
+  - virtualbox-guest-iso
+  - virtualbox-host-dkms
