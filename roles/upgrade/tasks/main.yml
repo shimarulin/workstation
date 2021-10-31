@@ -1,5 +1,5 @@
 ---
-# tasks file for prepare
+# tasks file for upgrade
 - name: update packages cache and upgrade system
   become: true
   pacman:

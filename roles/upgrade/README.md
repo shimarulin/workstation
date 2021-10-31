@@ -1,6 +1,6 @@
-# ansible-role-prepare
+# ansible-role-upgrade
 
-> Preparation tasks aаfor roles
+> Upgrade system before running tasks
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: prepare, x: 42 }
+         - { role: upgrade, x: 42 }
 
 ## License
 
