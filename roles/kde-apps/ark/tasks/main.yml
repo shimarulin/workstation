@@ -1,0 +1,6 @@
+---
+# tasks file for ark
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ ark_packages }}'

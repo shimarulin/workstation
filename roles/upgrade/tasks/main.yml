@@ -1,0 +1,7 @@
+---
+# tasks file for upgrade
+- name: update packages cache and upgrade system
+  become: true
+  pacman:
+    update_cache: yes
+    upgrade: yes

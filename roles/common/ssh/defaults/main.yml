@@ -1,2 +1,5 @@
 ---
 # defaults file for ssh
+ssh_hosts:
+  - github.com
+  - gitlab.com

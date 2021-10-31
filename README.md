@@ -2,53 +2,34 @@
 
 ## Installation
 
-### Install dependencies per user (recommended)
-
 ```shell
-# Upgrade your system
-sudo pacman -Syu
-# Install dependencies
-sudo pacman -S git python
-python -m ensurepip --upgrade --user
-ln -s pip3 ~/.local/bin/pip
-python -m pip install --user ansible
-pip install --user cookiecutter
+# Download https://raw.githubusercontent.com/shimarulin/workstation/main/get
+# with Curl
+curl -L https://git.io/JPBef --output get
+# or Wget
+wget https://git.io/JPBef -O get
+# Mark the file as executable
+chmod +x get
+# Run
+./get
 ```
 
-### Install dependencies globally
-
-```shell
-# Upgrade your system
-sudo pacman -Syu
-# Install dependencies
-sudo pacman -S git python python-pip ansible
-sudo pip install cookiecutter
-```
-
-### Get configuration
-
-```shell
-# Create config dir
-mkdir ~/.config && cd "$_"
-# Clone configuration
-git clone https://github.com/shimarulin/workstation.git
-cd workstation
-ansible-galaxy install -r requirements.yml
-```
+See https://github.com/shimarulin/workstation/blob/main/get for details.
 
 ## Usage
 
-Before run playbook you must setup common variables via `setup` script in this repository root:
-
-```bash
-# Setup Ansible variables
-./setup --target vars
-```
+> :warning: Before starting the configuration, make sure that the variables in the `group_vars/all` file in the
+> repository root are defined. If not, you can set up it via cookiecutter template:
+>
+> ```bash
+> # Setup Ansible variables
+> cd ~/.config/localhost && python -m cookiecutter -f templates/vars
+> ```
 
 Run playbook on localhost
 
 ```bash
-ansible-playbook playbook.yml
+cd ~/.config/localhost && ansible-playbook playbook.yml
 ```
 
 ## Development
@@ -87,8 +68,6 @@ Also you should install `python-vagrant` and `cookiecutter` packages via pip:
 
 ```bash
 # Install packages
-pip3 install -U python-vagrant cookiecutter
-# or
 pip install -U python-vagrant cookiecutter
 ```
 
@@ -205,9 +184,9 @@ dconf watch /
 ## Related projects
 
 - [Arch Linux Install Script](https://picodotdev.github.io/alis/)
-- [My Arch Setup](https://github.com/raphiz/my-arch-setup)
+- [My Arch Setup](https://github.com/raphiz/my-arch-setup) - Ansible based automation scripts for my Arch Linux machines
 - [archfi](https://github.com/MatMoul/archfi)
-- [Spark](https://github.com/pigmonkey/spark)
+- [Spark](https://github.com/pigmonkey/spark) - Arch Linux Provisioning with Ansible
 - [arch-install](https://github.com/wrzlbrmft/arch-install)
 - [krushn-arch](https://github.com/krushndayshmookh/krushn-arch)
 

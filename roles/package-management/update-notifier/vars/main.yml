@@ -1,0 +1,4 @@
+---
+# vars file for update-notifier
+#update_notifier_packages:
+#  - update-notifier

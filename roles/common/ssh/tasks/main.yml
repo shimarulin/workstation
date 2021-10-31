@@ -9,3 +9,13 @@
   file:
     path: ~/.ssh
     state: directory
+
+- name: create ssh config
+  file:
+    path: ~/.ssh/config
+    state: touch
+    mode: 0600
+
+- name: generate ssh keys
+  include_tasks: generate_key.yml
+  loop: '{{ ssh_hosts }}'

@@ -1,0 +1,4 @@
+---
+# vars file for flameshot
+flameshot_packages:
+  - flameshot

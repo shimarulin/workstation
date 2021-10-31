@@ -1,9 +1,5 @@
 ---
 # tasks file for facts
-- name: get username
-  command: whoami
-  register: username
-  changed_when: false
 
 #- name: get graphic card vendor
 #  script: ./utils/gpu-vendor

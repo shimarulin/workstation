@@ -1,0 +1,6 @@
+---
+# tasks file for gwenview
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ gwenview_packages }}'

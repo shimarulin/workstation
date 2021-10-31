@@ -2,6 +2,11 @@
 
 > your description
 
+## SSH docs
+
+- https://www.ssh.com/academy/ssh/key
+- https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_keypair_module.html
+
 ## Requirements
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the

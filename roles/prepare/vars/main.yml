@@ -1,4 +1,0 @@
----
-# vars file for prepare
-prepare_packages:
-  - prepare
