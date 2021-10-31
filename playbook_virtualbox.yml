@@ -6,4 +6,4 @@
 - name: apply VirtualBox Guest additions
   hosts: all
   roles:
-    - virtualbox-guest
+    - virtualization/virtualbox-guest

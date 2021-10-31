@@ -1,12 +1,6 @@
-# ansible-role-package-management
+# ansible-role-virtualbox
 
-> your description
-
-```shell
-sudo pacman -Syu # synchronize the repository databases and update the system's packages, excluding "local" packages that are not in the configured repositories
-sudo pacman -S <package_name1> <package_name2> # install a single package or list of packages
-sudo pacman -Rs <package_name> # remove a package and its dependencies which are not required by any other installed package
-```
+> VirtualBox
 
 ## Requirements
 
@@ -32,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: package-management, x: 42 }
+         - { role: virtualbox, x: 42 }
 
 ## License
 
