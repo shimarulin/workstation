@@ -5,7 +5,7 @@
   pacman:
     name: '{{ vagrant_packages }}'
 
-- name: install python-vagrant (requireb by ansible provisioner)
+- name: install python-vagrant (required by ansible provisioner)
   pip:
     name: python-vagrant
     executable: ~/.local/bin/pip

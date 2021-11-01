@@ -1,6 +1,7 @@
 ---
 # This playbook deploys the whole application stack to virtual machine.
 
+- import_playbook: playbook_virtualbox_prestart.yml
 - import_playbook: playbook.yml
 
 - name: apply VirtualBox Guest additions

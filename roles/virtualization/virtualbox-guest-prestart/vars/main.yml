@@ -1,0 +1,4 @@
+---
+# vars file for virtualbox-guest-prestart
+virtualbox_guest_prestart_packages:
+  - python
