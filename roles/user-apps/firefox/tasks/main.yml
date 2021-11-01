@@ -5,6 +5,12 @@
   pacman:
     name: '{{ firefox_packages }}'
 
+- name: enable smooth scroll
+  become: true
+  copy:
+    src: etc/profile.d/
+    dest: /etc/profile.d/
+
 - name: create firefox global extension directory
   become: true
   file:
