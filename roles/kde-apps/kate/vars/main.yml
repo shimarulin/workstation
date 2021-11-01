@@ -1,0 +1,4 @@
+---
+# vars file for kate
+kate_packages:
+  - kate
