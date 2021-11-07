@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Joplin
+Comment=Joplin for Desktop
+Exec=${HOME}/.local/opt/Joplin.AppImage
+Icon=joplin
+StartupWMClass=Joplin
+Type=Application
+Categories=Office;
+MimeType=x-scheme-handler/joplin;
+X-AppImage-AppVersion={{ joplin_latest_release.version }}
+X-AppImage-SHA512={{ joplin_latest_release.sha512 }}
+X-AppImage-ReleaseDate={{ joplin_latest_release.releaseDate }}
