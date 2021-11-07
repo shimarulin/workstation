@@ -1,0 +1,12 @@
+---
+# tasks file for dirs
+- name: create extra directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+#    - ~/Проекты/
+#    - ~/Образы дисков/
+    - ~/.local/opt/ # Сторонние приложения
+    - ~/.local/share/applications/ # Ярлыки сторонних приложений
+    - ~/.local/share/icons/hicolor/512x512/apps/ # Иконки сторонних приложений
