@@ -1,0 +1,9 @@
+---
+# tasks file for power-management
+
+# TODO: Increase battery life
+
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ power_management_packages }}"
