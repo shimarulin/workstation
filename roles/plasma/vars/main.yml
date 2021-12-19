@@ -1,7 +1,9 @@
 ---
 # vars file for plasma
 plasma_packages:
+  # Bluetooth manager
   - bluedevil
+
   - breeze
   - breeze-gtk
   #  - discover # TODO: check functional?

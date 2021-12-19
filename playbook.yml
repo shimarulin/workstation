@@ -14,6 +14,7 @@
     - X11
 
     # Hardware
+    - hardware-support
     - system
 
     # Desktop environment
