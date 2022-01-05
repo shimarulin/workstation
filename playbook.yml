@@ -10,20 +10,14 @@
     - package-management
     - common
 
-    # Graphic subsystem
-    - X11
-
     # Hardware
     - hardware-support
-    - system
 
     # Desktop environment
-    - plasma
-
-    ## KDE Apps
-    - kde-apps
+    - gnome
 
     ## Common User Apps
     - user-apps
 
+    ## Virtualization tools
     - virtualization

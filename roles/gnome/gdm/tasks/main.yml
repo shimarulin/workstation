@@ -1,0 +1,12 @@
+---
+# tasks file for gdm
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ gdm_packages }}"
+
+- name: enable GDM service
+  become: true
+  systemd:
+    name: gdm.service
+    enabled: yes

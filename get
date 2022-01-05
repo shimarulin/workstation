@@ -14,7 +14,7 @@ install_dependencies () {
   python -m pip install --user --upgrade pip
 
   # Setup environment
-  export PATH=$HOME/.local/binar:${PATH}
+  export PATH=$HOME/.local/bin:${PATH}
 
   # Install dependencies
   python -m pip install --user ansible

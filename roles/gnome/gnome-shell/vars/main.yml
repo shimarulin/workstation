@@ -1,0 +1,11 @@
+---
+# vars file for gnome-shell
+gnome_shell_packages:
+  - gnome-shell # required by `gdm`
+  - gnome-session # required by `gdm`
+  - gnome-shell-extensions
+  - gnome-keyring
+  - tracker # required by `gtk3`, `gtk4`...
+  - gnome-control-center
+  - gnome-tweaks
+  - dconf-editor

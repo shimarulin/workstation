@@ -1,0 +1,6 @@
+---
+# tasks file for gnome-files
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ gnome_files_packages }}"

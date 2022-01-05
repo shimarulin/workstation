@@ -1,0 +1,8 @@
+---
+# tasks file for tilix
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ tilix_packages }}"
+
+## TODO: https://aur.archlinux.org/packages/gogh-git/

@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Vyacheslav Shimarulin
-  description: System tools for hardware support
+  description: X11 workspace
   license: MIT
   min_ansible_version: 2.8
 
@@ -20,8 +20,8 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - hardware-support/bluetooth
-  - hardware-support/sof-firmware
-  - hardware-support/pipewire
+  - X11/xorg
+  - X11/systemd-graphical-target
+  - X11/xst
 # List your role dependencies here, one per line. Be sure to remove the '[]' above,
 # if you add dependencies to this list.

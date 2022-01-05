@@ -1,0 +1,12 @@
+---
+# vars file for gstreamer
+gstreamer_packages:
+  - gstreamer
+  - gstreamer-vaapi # see https://wiki.archlinux.org/title/GStreamer#Hardware_video_acceleration
+                    # and https://wiki.archlinux.org/title/Hardware_video_acceleration
+  - gst-plugin-pipewire
+  - gst-plugins-bad
+  - gst-plugins-base
+  - gst-plugins-good
+  - gst-plugins-ugly
+  - gst-libav
