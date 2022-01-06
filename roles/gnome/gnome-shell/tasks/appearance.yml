@@ -1,0 +1,32 @@
+- name: install appearance dependencies
+  become: true
+  pacman:
+    name: "{{ gnome_appearance_packages }}"
+
+# TODO: add flatpak support
+#- name: Install the flatpak themes from flathub
+#  become: yes
+#  flatpak:
+#    name: "{{ item }}"
+#    state: present
+#  loop:
+#    - org.gtk.Gtk3theme.Arc
+#    - org.gtk.Gtk3theme.Arc-solid
+#    - org.gtk.Gtk3theme.Arc-Dark
+#    - org.gtk.Gtk3theme.Arc-Dark-solid
+#    - org.gtk.Gtk3theme.Arc-Darker
+#    - org.gtk.Gtk3theme.Arc-Darker-solid
+#  register: flatpak_theme_out
+#  changed_when: flatpak_theme_out.stderr == ''
+
+- name: configure themes
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/user-theme/name"
+      value: "'Arc-Dark'" # Arc-Dark-solid
+    - key: "/org/gnome/desktop/interface/gtk-theme"
+      value: "'Arc-Darker'" # Arc-Darker-solid
+    - key: "/org/gnome/desktop/interface/icon-theme"
+      value: "'Papirus'"

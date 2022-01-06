@@ -4,3 +4,7 @@
   become: true
   pacman:
     name: "{{ gnome_shell_packages }}"
+
+- include_tasks: extensions.yml
+- include_tasks: appearance.yml
+- include_tasks: shortcuts.yml
