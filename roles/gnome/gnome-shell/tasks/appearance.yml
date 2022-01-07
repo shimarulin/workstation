@@ -3,23 +3,7 @@
   pacman:
     name: "{{ gnome_appearance_packages }}"
 
-# TODO: add flatpak support
-#- name: Install the flatpak themes from flathub
-#  become: yes
-#  flatpak:
-#    name: "{{ item }}"
-#    state: present
-#  loop:
-#    - org.gtk.Gtk3theme.Arc
-#    - org.gtk.Gtk3theme.Arc-solid
-#    - org.gtk.Gtk3theme.Arc-Dark
-#    - org.gtk.Gtk3theme.Arc-Dark-solid
-#    - org.gtk.Gtk3theme.Arc-Darker
-#    - org.gtk.Gtk3theme.Arc-Darker-solid
-#  register: flatpak_theme_out
-#  changed_when: flatpak_theme_out.stderr == ''
-
-- name: configure themes
+- name: set GTK and Gnome Shell theme
   community.general.dconf:
     key: "{{ item.key }}"
     value: "{{ item.value }}"
@@ -30,3 +14,19 @@
       value: "'Arc-Darker'" # Arc-Darker-solid
     - key: "/org/gnome/desktop/interface/icon-theme"
       value: "'Papirus'"
+
+- name: copy themes for use by Flatpack applications
+  copy:
+    src: /usr/share/themes/
+    dest: .themes
+    remote_src: yes
+
+- name: set Flatpack filesystem
+  become: true
+  command: 'flatpak override --filesystem={{ ansible_user_dir }}/.themes'
+  changed_when: false
+
+- name: set Flatpack applications GTK theme
+  become: true
+  command: 'flatpak override --env=GTK_THEME=Arc-Darker'
+  changed_when: false
