@@ -5,5 +5,10 @@
     mode: "0755"
 
 - name: install extensions from Git and enable extensions
-  include_tasks: extensions_install.yml
+  include_tasks: extensions/utils/install.yml
   loop: "{{ gnome_extensions }}"
+
+- name: enable extensions
+  community.general.dconf:
+    key: "/org/gnome/shell/enabled-extensions"
+    value: "[\"{{ gnome_extensions | map(attribute='name') | join('\",\"') }}\"]"

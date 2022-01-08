@@ -6,13 +6,17 @@ gnome_shell_packages:
   - gnome-shell-extensions
   - gnome-keyring
   - tracker # required by `gtk3`, `gtk4`...
+  - gnome-backgrounds
+  - gnome-system-monitor
   - gnome-control-center
   - gnome-tweaks
   - dconf-editor
 
 gnome_extensions:
 #  - name: GPaste@gnome-shell-extensions.gnome.org
-  - name: user-theme@gnome-shell-extensions.gcampax.github.com
+  - name: 'user-theme@gnome-shell-extensions.gcampax.github.com'
+  - name: 'trayIconsReloaded@selfmade.pl'
+    zip: 'https://github.com/MartinPL/Tray-Icons-Reloaded/releases/latest/download/trayIconsReloaded@selfmade.pl.zip'
 
 gnome_appearance_packages:
   - arc-gtk-theme
