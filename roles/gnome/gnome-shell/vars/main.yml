@@ -11,9 +11,10 @@ gnome_shell_packages:
   - gnome-control-center
   - gnome-tweaks
   - dconf-editor
+  - gpaste
 
 gnome_extensions:
-#  - name: GPaste@gnome-shell-extensions.gnome.org
+  - name: 'GPaste@gnome-shell-extensions.gnome.org'
   - name: 'user-theme@gnome-shell-extensions.gcampax.github.com'
   - name: 'trayIconsReloaded@selfmade.pl'
     zip: 'https://github.com/MartinPL/Tray-Icons-Reloaded/releases/latest/download/trayIconsReloaded@selfmade.pl.zip'
