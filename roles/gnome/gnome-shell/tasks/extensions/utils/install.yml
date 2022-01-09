@@ -23,3 +23,8 @@
     dest: "$HOME/.local/share/gnome-shell/extensions/{{ item.name }}"
     remote_src: yes
   when: item.zip is defined
+
+# Install from AUR
+- name: install {{ item.name }} from AUR
+  command: 'paru -S --noconfirm {{ item.aur }}'
+  when: item.aur is defined
