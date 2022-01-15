@@ -1,12 +1,7 @@
-ansible-role-power-management
+ansible-role-networkmanager
 =========
 
-> Power Management tools and settings
-
-<!-- TODO: Increase battery life -->
-
-- https://www.tecmint.com/tlp-increase-and-optimize-linux-battery-life/
-- https://www.tecmint.com/powertop-monitors-linux-laptop-battery-usage/
+> NetworkManager is a program for providing detection and configuration for systems to automatically connect to networks
 
 Requirements
 ------------
@@ -30,7 +25,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: power-management, x: 42 }
+         - { role: networkmanager, x: 42 }
 
 License
 -------

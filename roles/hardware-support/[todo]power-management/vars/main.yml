@@ -1,4 +1,0 @@
----
-# vars file for power-management
-power_management_packages:
-  - power-management
