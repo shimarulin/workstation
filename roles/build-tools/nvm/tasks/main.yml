@@ -1,0 +1,13 @@
+---
+# tasks file for nvm
+- name: get nvm latest release info
+  uri:
+    url: https://api.github.com/repos/nvm-sh/nvm/releases/latest
+    return_content: true
+  register: nvm_github_latest_release
+
+- name: nvm
+  shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_github_latest_release.json.tag_name }}/install.sh | bash
+  args:
+    creates: "{{ nvm_source_path }}"
