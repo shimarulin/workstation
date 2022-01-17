@@ -124,3 +124,10 @@ git = "https://github.com/romkatv/powerlevel10k"
 #
 [plugins.powerlevel10krc]
 local = "~/.config/zsh/themes"
+
+# NVM
+# -----------
+[plugins.nvm-ohmyzsh-plugin]
+git = 'https://github.com/ohmyzsh/ohmyzsh.git'
+dir = 'plugins'
+use = ['{nvm}/*.plugin.zsh']

@@ -1,0 +1,7 @@
+---
+# tasks file for nvm
+- name: nvm
+  shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  args:
+    creates: "{{ nvm_source_path }}"
