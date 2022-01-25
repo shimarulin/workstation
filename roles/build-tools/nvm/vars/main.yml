@@ -1,3 +1,6 @@
 ---
 # vars file for nvm
-nvm_source_path: "{{ lookup('env', 'XDG_CONFIG_HOME') | default(ansible_user_dir ~ '/.config', true) }}/nvm/nvm.sh"
+nvm_dir: "{{ ansible_user_dir }}/.config/nvm"
+nvm_source_path: "{{ nvm_dir }}/nvm.sh"
+nvm_env:
+  NVM_DIR: "{{ nvm_dir }}"
