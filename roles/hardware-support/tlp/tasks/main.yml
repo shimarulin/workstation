@@ -5,14 +5,6 @@
   pacman:
     name: "{{ tlp_packages }}"
 
-# GNOME 40 and newer
-- name: mask the Gnome power-profiles-daemon service
-  become: true
-  systemd:
-    name: power-profiles-daemon.service
-    state: stopped
-    masked: true
-
 - name: enable tlp service
   become: true
   systemd:

@@ -11,30 +11,37 @@
     mkdir -p $NVM_DIR
   environment: "{{ nvm_env }}"
 
-- name: nvm
+- name: install latest nvm release
   shell: >
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_github_latest_release.json.tag_name }}/install.sh | bash
   args:
     creates: "{{ nvm_source_path }}"
   environment: "{{ nvm_env }}"
 
+- name: loads nvm
+  blockinfile:
+    path: ~/.profile
+    block: |
+      export NVM_DIR="$HOME/.config/nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 - name: install latest Node.js
   shell: >
     source ~/.profile && nvm install node
   args:
-    executable: /usr/bin/zsh
+    executable: /usr/bin/bash
   environment: "{{ nvm_env }}"
 
 - name: enable Corepack
   shell: >
     source ~/.profile && corepack enable
   args:
-    executable: /usr/bin/zsh
+    executable: /usr/bin/bash
   environment: "{{ nvm_env }}"
 
 - name: prepare and update the "Last Known Good" version of all supported package managers
   shell: >
     source ~/.profile && corepack prepare --all --activate
   args:
-    executable: /usr/bin/zsh
+    executable: /usr/bin/bash
   environment: "{{ nvm_env }}"

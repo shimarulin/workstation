@@ -19,6 +19,7 @@ install_dependencies () {
   # Install dependencies
   python -m pip install --user ansible
   python -m pip install --user cookiecutter
+  python -m pip install --user psutil
 }
 
 clone_configuration () {

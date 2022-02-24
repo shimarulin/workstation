@@ -1,5 +1,19 @@
 ---
 # tasks file for dirs
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ dirs_packages }}'
+
+- name: check that the ~/.config/user-dirs.dirs already exist
+  stat:
+    path: ~/.config/user-dirs.dirs
+  register: userdirs_stat_result
+
+- name: update XDG user dirs
+  command: xdg-user-dirs-update
+  when: userdirs_stat_result.stat.exists == false
+
 - name: create extra directories
   file:
     path: "{{ item }}"

@@ -9,3 +9,12 @@
 - include_tasks: appearance.yml
 - include_tasks: shortcuts.yml
 - include_tasks: applications/firefox.yml
+
+# for tlp in GNOME 40 and newer
+- name: mask the Gnome power-profiles-daemon service
+  become: true
+  systemd:
+    name: power-profiles-daemon.service
+    state: stopped
+    masked: true
+  ignore_errors: true
