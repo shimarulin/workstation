@@ -7,7 +7,7 @@
 
 - include_tasks: extensions.yml
 - include_tasks: appearance.yml
-- include_tasks: shortcuts.yml
+- include_tasks: keyboard.yml
 - include_tasks: applications/firefox.yml
 
 # for tlp in GNOME 40 and newer

@@ -10,6 +10,7 @@
   shell: >
     mkdir -p $NVM_DIR
   environment: "{{ nvm_env }}"
+  changed_when: false
 
 - name: install latest nvm release
   shell: >
@@ -21,6 +22,7 @@
 - name: loads nvm
   blockinfile:
     path: ~/.profile
+    marker: "# {mark} ANSIBLE MANAGED BLOCK @nvm"
     block: |
       export NVM_DIR="$HOME/.config/nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -31,6 +33,7 @@
   args:
     executable: /usr/bin/bash
   environment: "{{ nvm_env }}"
+  changed_when: false
 
 - name: enable Corepack
   shell: >
@@ -38,6 +41,7 @@
   args:
     executable: /usr/bin/bash
   environment: "{{ nvm_env }}"
+  changed_when: false
 
 - name: prepare and update the "Last Known Good" version of all supported package managers
   shell: >
@@ -45,3 +49,4 @@
   args:
     executable: /usr/bin/bash
   environment: "{{ nvm_env }}"
+  changed_when: false

@@ -15,6 +15,7 @@
 - name: add $HOME/.local/bin to $PATH
   blockinfile:
     path: ~/.profile
+    marker: "# {mark} ANSIBLE MANAGED BLOCK @cargo"
     block: |
       # If user ID is greater than or equal to 1000 &
       # if ~/.cargo/bin exists and is a directory &

@@ -6,3 +6,17 @@
     name: "{{ tilix_packages }}"
 
 ## TODO: https://aur.archlinux.org/packages/gogh-git/
+
+- name: setup Tilix
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/com/gexperts/Tilix/keybindings/terminal-copy"
+      value: "'<Primary>c'"
+    - key: "/com/gexperts/Tilix/keybindings/terminal-paste"
+      value: "'<Primary>v'"
+    - key: "/com/gexperts/Tilix/theme-variant"
+      value: "'dark'"
+    - key: "/com/gexperts/Tilix/quake-height-percent"
+      value: "100"
