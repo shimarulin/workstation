@@ -22,5 +22,6 @@
 #    - ~/Проекты/
 #    - ~/Образы дисков/
     - ~/.local/opt/ # Сторонние приложения
+    - ~/.local/opt/AppImages/ # Образы AppImage приложений
     - ~/.local/share/applications/ # Ярлыки сторонних приложений
     - ~/.local/share/icons/hicolor/512x512/apps/ # Иконки сторонних приложений

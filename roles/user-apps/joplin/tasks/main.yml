@@ -12,7 +12,7 @@
 
 - name: check that the Joplin already installed
   stat:
-    path: ~/.local/opt/Joplin.AppImage
+    path: ~/.local/opt/AppImages/Joplin.AppImage
   register: joplin_appimage_stat_result
 
 - name: check local desktopfile
@@ -28,13 +28,13 @@
       dest: /tmp/ansible/
   - name: read version value
     set_fact:
-      joplin_current_release_version: "{{ lookup( 'ini', 'X-AppImage-AppVersion section=Desktop Entry file=/tmp/ansible/{{ inventory_hostname }}/{{ ansible_user_dir }}/.local/share/applications/appimagekit-joplin.desktop' ) }}"
+      joplin_current_release_version: "{{ lookup( 'ini', 'X-AppImage-Version section=Desktop Entry file=/tmp/ansible/{{ inventory_hostname }}/{{ ansible_user_dir }}/.local/share/applications/appimagekit-joplin.desktop' ) }}"
   when: joplin_desktopfile_stat_result.stat.exists == true
 
 - name: install 'Joplin' AppImage
   get_url:
     url: "https://github.com/laurent22/joplin/releases/download/v{{ joplin_latest_release.version }}/Joplin-{{ joplin_latest_release.version }}.AppImage"
-    dest: ~/.local/opt/Joplin.AppImage
+    dest: ~/.local/opt/AppImages/Joplin.AppImage
     mode: u+rwx,g=,o=
   when: joplin_appimage_stat_result.stat.exists == false or joplin_current_release_version != joplin_latest_release.version
 
