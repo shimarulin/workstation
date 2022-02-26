@@ -16,10 +16,28 @@ gnome_shell_packages:
 gnome_extensions:
   - name: 'GPaste@gnome-shell-extensions.gnome.org'
   - name: 'user-theme@gnome-shell-extensions.gcampax.github.com'
+  - name: 'drive-menu@gnome-shell-extensions.gcampax.github.com'
   - name: 'dash-to-panel@jderose9.github.com'
     aur: 'gnome-shell-extension-dash-to-panel'
+  - name: 'sound-output-device-chooser@kgshank.net'
+    aur: 'gnome-shell-extension-sound-output-device-chooser'
 #  - name: 'forge@jmmaranan.com'
 #    git: 'https://github.com/jmmaranan/forge'
+#  - name: 'GmailMessageTray@shuming0207.gmail.com'
+#    git: 'https://github.com/shumingch/gnome-email-notifications'
+  # ? https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
+  # ? https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/
+  # ? https://extensions.gnome.org/extension/4231/better-osd-gnome-40/
+  # ? https://extensions.gnome.org/extension/3981/guillotine/
+  # ? https://extensions.gnome.org/extension/3843/just-perfection/
+  - name: 'lockkeys@vaina.lt'
+    path: '/lockkeys@vaina.lt'
+    git: 'https://github.com/kazysmaster/gnome-shell-extension-lockkeys'
+  - name: 'BringOutSubmenuOfPowerOffLogoutButton@pratap.fastmail.fm'
+    path: '/src'
+    git: 'https://github.com/PRATAP-KUMAR/Bring-Out-Submenu-of-Power-Off-Logout'
+  - name: 'no-overview@fthx'
+    git: 'https://github.com/fthx/no-overview'
   - name: 'trayIconsReloaded@selfmade.pl'
     zip: 'https://github.com/MartinPL/Tray-Icons-Reloaded/releases/latest/download/trayIconsReloaded@selfmade.pl.zip'
 

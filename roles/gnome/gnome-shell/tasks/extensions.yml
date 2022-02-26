@@ -46,3 +46,13 @@
       value: "0"
     - key: "/org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal"
       value: "8"
+
+- name: Configure "Tray Icons Reloaded"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/lockkeys/style"
+      value: "'none'"
+    - key: "/org/gnome/shell/extensions/lockkeys/notification-preferences"
+      value: "'osd'"
