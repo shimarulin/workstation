@@ -30,3 +30,8 @@
   become: true
   command: 'flatpak override --env=GTK_THEME=Arc-Darker'
   changed_when: false
+
+- name: set GDM theme
+  become: true
+  command: 'set-gdm-theme set Arc-Dark'
+  changed_when: false
