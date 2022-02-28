@@ -15,7 +15,3 @@
   command: 'paru -S --noconfirm gdm-tools'
   changed_when: false
 
-- name: set GDM theme
-  become: true
-  command: 'set-gdm-theme set Arc-Dark'
-  changed_when: false
