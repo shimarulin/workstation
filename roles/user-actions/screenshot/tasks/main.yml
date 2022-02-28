@@ -5,7 +5,8 @@
   pacman:
     name: "{{ screenshot_packages }}"
 
-- name: copy eww config
+- name: copy user scripts
   copy:
-    src: home/.config/eww
-    dest: ~/.config
+    src: home/.local/bin/
+    dest: ~/.local/bin/
+    mode: u+rwx,g=,o=
