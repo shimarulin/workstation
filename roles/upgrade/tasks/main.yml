@@ -1,5 +1,10 @@
 ---
 # tasks file for upgrade
+- name: update pgp-keys database
+  become: true
+  command: pacman-key --populate archlinux
+  changed_when: false
+
 - name: update packages cache and upgrade system
   become: true
   pacman:

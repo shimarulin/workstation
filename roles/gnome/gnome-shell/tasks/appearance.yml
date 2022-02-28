@@ -1,0 +1,32 @@
+- name: install appearance dependencies
+  become: true
+  pacman:
+    name: "{{ gnome_appearance_packages }}"
+
+- name: set GTK and Gnome Shell theme
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/user-theme/name"
+      value: "'Arc-Dark'" # Arc-Dark-solid
+    - key: "/org/gnome/desktop/interface/gtk-theme"
+      value: "'Arc-Darker'" # Arc-Darker-solid
+    - key: "/org/gnome/desktop/interface/icon-theme"
+      value: "'Papirus'"
+
+- name: copy themes for use by Flatpack applications
+  copy:
+    src: /usr/share/themes/
+    dest: .themes
+    remote_src: yes
+
+- name: set Flatpack filesystem
+  become: true
+  command: 'flatpak override --filesystem={{ ansible_user_dir }}/.themes'
+  changed_when: false
+
+- name: set Flatpack applications GTK theme
+  become: true
+  command: 'flatpak override --env=GTK_THEME=Arc-Darker'
+  changed_when: false

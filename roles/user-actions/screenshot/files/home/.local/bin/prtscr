@@ -1,0 +1,67 @@
+#!/usr/bin/bash
+
+# 1. PrintScreen btn
+# 2. Select mode (screen, window, area) with eww or rofi or etc...
+# 3. make screenshot and pass to clipboard
+# 4. Select action (save to file, edit, upload) with eww or rofi or etc...
+
+# Set variables
+PRTSCR_INTERACTIVE="false"
+PRTSCR_DELAY=0
+
+############################################################
+# Help                                                     #
+############################################################
+Help()
+{
+   # Display Help
+   echo "Take and process screenshot"
+   echo
+   echo "Syntax: prtscr [-g|h|v|V]"
+   echo "options:"
+   echo "h     Print this Help."
+   echo "i     Interactive selection (window or region)."
+   echo
+}
+
+# Get the options
+while getopts ":h:id:" option; do
+  case $option in
+    h) # display Help
+      Help
+      exit;;
+    d) # PRTSCR_DELAY
+      PRTSCR_DELAY=$OPTARG;;
+    i) # capture
+      PRTSCR_INTERACTIVE="true";;
+    \?) # Invalid option
+      echo "Error: Invalid option"
+      exit;;
+  esac
+done
+
+Main()
+{
+  sleep "$PRTSCR_DELAY"
+
+  if [[ "${PRTSCR_INTERACTIVE}" == "true" ]]
+  then
+    maim -s | xclip -selection clipboard -t image/png
+  else
+    maim | xclip -selection clipboard -t image/png
+  fi
+
+  FILE_NAME="$(date +%s).png"
+  DIR_PATH="$(xdg-user-dir PICTURES)/Screenshots"
+  FILE_PATH=""$DIR_PATH/$FILE_NAME""
+
+  mkdir -p "$DIR_PATH"
+
+  xclip -selection clipboard -t image/png -o > "$FILE_PATH"
+
+  notify-send "$FILE_NAME" "Copied to clipboard and saved to $DIR_PATH" -i "$FILE_PATH"
+
+#  com.github.phase1geo.annotator --use-clipboard
+}
+
+Main

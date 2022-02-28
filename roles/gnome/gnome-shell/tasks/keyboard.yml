@@ -1,0 +1,27 @@
+- name: set keyboard layout
+  community.general.dconf:
+    key: /org/gnome/desktop/input-sources/sources
+    value: "[('xkb', 'us'), ('xkb', 'ru')]"
+
+- name: advanced keyboard options
+  community.general.dconf:
+    key: /org/gnome/desktop/input-sources/xkb-options
+    value: "['grp_led:scroll', 'compose:ralt', 'grp:caps_toggle']"
+
+- name: Configure keyboard shortcuts
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    # List of keybindings
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+      value:
+        "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/']"
+    # Tilix quake mode
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/name"
+      value: "'Tilix Quake mode'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/command"
+      value: "'tilix --quake'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/binding"
+      value: "'<Ctrl><Shift>space'"
+

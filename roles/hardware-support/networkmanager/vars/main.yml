@@ -1,0 +1,4 @@
+---
+# vars file for networkmanager
+networkmanager_packages:
+  - networkmanager

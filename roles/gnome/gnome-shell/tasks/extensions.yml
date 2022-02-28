@@ -1,0 +1,62 @@
+- name: create Gnome Shell extension directory if it does not exist
+  file:
+    path: "~/.local/share/gnome-shell/extensions"
+    state: directory
+    mode: "0755"
+
+- name: install extensions from Git and enable extensions
+  include_tasks: extensions/utils/install.yml
+  loop: "{{ gnome_extensions }}"
+
+- name: enable extensions
+  community.general.dconf:
+    key: "/org/gnome/shell/enabled-extensions"
+    value: "[\"{{ gnome_extensions | map(attribute='name') | join('\",\"') }}\"]"
+
+- name: Configure "Dash to panel"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/dash-to-panel/panel-positions"
+      value: "'{\"0\":\"TOP\"}'"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/panel-sizes"
+      value: "'{\"0\":32}'"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/panel-element-positions"
+      value: "'{\"0\":[{\"element\":\"showAppsButton\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"centerBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"dateMenu\",\"visible\":true,\"position\":\"centerMonitor\"},{\"element\":\"rightBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"desktopButton\",\"visible\":true,\"position\":\"stackedBR\"}]}'"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/appicon-margin"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/appicon-padding"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/tray-padding"
+      value: "4"
+
+- name: Configure "Tray Icons Reloaded"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/tray-margin-left"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/tray-margin-right"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/icon-size"
+      value: "20"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/icon-margin-horizontal"
+      value: "0"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal"
+      value: "8"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/dot-style-unfocused"
+      value: "'CILIORA'"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/dot-style-focused"
+      value: "'CILIORA'"
+
+- name: Configure "Tray Icons Reloaded"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/lockkeys/style"
+      value: "'none'"
+    - key: "/org/gnome/shell/extensions/lockkeys/notification-preferences"
+      value: "'osd'"

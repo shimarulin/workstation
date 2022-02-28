@@ -10,4 +10,5 @@
   shell: |
     python -m ensurepip --user
     python -m pip install --user --upgrade pip
+    python -m pip install --user psutil
   changed_when: false

@@ -1,13 +1,19 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Joplin
 Comment=Joplin for Desktop
-Exec=${HOME}/.local/opt/Joplin.AppImage
+Exec={{ ansible_user_dir }}/.local/opt/AppImages/Joplin.AppImage
 Icon=joplin
 StartupWMClass=Joplin
 Type=Application
 Categories=Office;
+Actions=Remove;
 MimeType=x-scheme-handler/joplin;
-X-AppImage-AppVersion={{ joplin_latest_release.version }}
+X-AppImage-Version={{ joplin_latest_release.version }}
 X-AppImage-SHA512={{ joplin_latest_release.sha512 }}
 X-AppImage-ReleaseDate={{ joplin_latest_release.releaseDate }}
+
+[Desktop Action Remove]
+Name=Remove AppImage from system
+Icon=user-trash
+Exec=rm "{{ ansible_user_dir }}/.local/opt/AppImages/Joplin.AppImage" "{{ ansible_user_dir }}/.local/share/applications/appimagekit-joplin.desktop"
+Name[ru]=Удалить Joplin из системы

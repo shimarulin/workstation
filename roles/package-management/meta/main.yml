@@ -21,6 +21,7 @@ galaxy_info:
 
 dependencies:
   - package-management/appimage-support
+  - package-management/flatpak
   - package-management/paru
   - package-management/update-notifier
 # List your role dependencies here, one per line. Be sure to remove the '[]' above,
