@@ -6,10 +6,19 @@
     name: "{{ gnome_files_packages }}"
 
 # Plugins
-- name: install nautilus-copy-path from AUR
-  shell: paru -S --noconfirm nautilus-copy-path
+- name: install plugins from AUR
+  shell: "paru -S --noconfirm {{ item }}"
   args:
     executable: /bin/bash
+  loop:
+    - nautilus-copy-path
+    - nautilus-compare
+    - gtkhash-nautilus
+#    - nautilus-metadata-editor
+#    - nautilus-ext-git
+#    - git-nautilus-icons
+#    - nautilus-annotations
+#    - nautilus-folder-icons
 
 - name: setup Gnome Files
   community.general.dconf:

@@ -6,3 +6,4 @@ gnome_files_packages:
   # - nautilus-terminal
   - python-nautilus
   - ffmpegthumbnailer
+  - meld
