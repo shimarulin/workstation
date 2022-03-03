@@ -5,6 +5,12 @@
   pacman:
     name: "{{ gnome_files_packages }}"
 
+# Plugins
+- name: install nautilus-copy-path from AUR
+  shell: paru -S --noconfirm nautilus-copy-path
+  args:
+    executable: /bin/bash
+
 - name: setup Gnome Files
   community.general.dconf:
     key: "{{ item.key }}"
