@@ -1,0 +1,14 @@
+---
+# tasks file for keychron-k3
+- name: add function keys switcher
+  become: true
+  copy:
+    src: usr/local/bin/
+    dest: /usr/local/bin/
+    mode: u=rwx,g=rx,o=rx
+
+- name: allow to execute without password
+  become: true
+  copy:
+    src: etc/sudoers.d/
+    dest: /etc/sudoers.d/

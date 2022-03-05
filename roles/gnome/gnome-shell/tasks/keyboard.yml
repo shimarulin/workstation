@@ -16,7 +16,10 @@
     # List of keybindings
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
       value:
-        "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/']"
+        "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-on/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/'
+        ]"
     # Tilix quake mode
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/name"
       value: "'Tilix Quake mode'"
@@ -24,4 +27,18 @@
       value: "'tilix --quake'"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/binding"
       value: "'<Ctrl><Shift>space'"
+    # Keychron K3 Fn On
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-on/name"
+      value: "'Keychron K3 Fn On'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-on/command"
+      value: "'kbd-set-fn-mode 0'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-on/binding"
+      value: "'<Alt>E'"
+    # Keychron K3 Fn Off
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/name"
+      value: "'Keychron K3 Fn Off'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/command"
+      value: "'kbd-set-fn-mode 1'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/binding"
+      value: "'<Alt>D'"
 

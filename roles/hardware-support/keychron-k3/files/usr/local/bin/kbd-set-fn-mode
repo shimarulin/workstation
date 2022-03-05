@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+if test "$(id -u)" -ne 0 ; then
+    sudo "$0" "$1"
+    exit $?
+fi
+
+if [[ "$1" =~ ^(0|1)$ ]] ; then
+    echo "$1" > /sys/module/hid_apple/parameters/fnmode
+else
+    echo "Invalid argument $1"
+    exit 1
+fi
