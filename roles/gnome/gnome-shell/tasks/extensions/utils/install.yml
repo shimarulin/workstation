@@ -6,8 +6,16 @@
     dest: "/tmp/{{ item.name }}"
   when: item.git is defined
 
+- name: remove '.git' directory  - {{ item.name }}
+  command: rm --rf /tmp/{{ item.name }}/.git
+  when: item.git is defined
+
 - name: copy Gnome Shell extension source - {{ item.name }}
   command: cp --recursive /tmp/{{ item.name }}{{ item.path | default('') }} $HOME/.local/share/gnome-shell/extensions/{{ item.name }}
+  when: item.git is defined
+
+- name: remove temporary directory  - {{ item.name }}
+  command: rm --rf /tmp/{{ item.name }}
   when: item.git is defined
 
 # Install from zip package
