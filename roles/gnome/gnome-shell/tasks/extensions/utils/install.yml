@@ -7,7 +7,7 @@
   when: item.git is defined
 
 - name: remove '.git' directory  - {{ item.name }}
-  command: rm --rf /tmp/{{ item.name }}/.git
+  command: rm -rf /tmp/{{ item.name }}/.git
   when: item.git is defined
 
 - name: copy Gnome Shell extension source - {{ item.name }}
