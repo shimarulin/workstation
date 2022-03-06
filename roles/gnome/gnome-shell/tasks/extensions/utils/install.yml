@@ -15,7 +15,7 @@
   when: item.git is defined
 
 - name: remove temporary directory  - {{ item.name }}
-  command: rm --rf /tmp/{{ item.name }}
+  command: rm -rf /tmp/{{ item.name }}
   when: item.git is defined
 
 # Install from zip package
