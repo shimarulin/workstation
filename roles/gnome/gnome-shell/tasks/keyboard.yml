@@ -38,7 +38,7 @@
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/name"
       value: "'Keychron K3 Fn Off'"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/command"
-      value: "'kbd-set-fn-mode 1 && notify-send \"Fn keys off\'"
+      value: "'kbd-set-fn-mode 1 && notify-send \"Fn keys off\"'"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/binding"
       value: "'<Alt>D'"
 
