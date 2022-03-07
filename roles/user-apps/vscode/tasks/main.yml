@@ -1,0 +1,32 @@
+---
+# tasks file for vscode
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ vscode_packages }}"
+
+#- name: Create custom desktop launcher
+#  template:
+#    src: home/.local/share/applications/code-oss.desktop.j2
+#    dest: ~/.local/share/applications/code-oss.desktop
+#
+#- name: Create custom desktop url launcher
+#  template:
+#    src: home/.local/share/applications/code-oss-url-handler.desktop.j2
+#    dest: ~/.local/share/applications/code-oss-url-handler.desktop
+
+- name: install extensions
+  shell: >
+    code --install-extension {{ item }}
+  changed_when: false
+  loop:
+    - donjayamanne.githistory
+    - eamodio.gitlens
+    - mhutchie.git-graph
+    - MS-CEINTL.vscode-language-pack-ru
+    - vivaxy.vscode-conventional-commits
+
+- name: copy settings
+  copy:
+    src: "home/.config/Code - OSS/User/settings.json"
+    dest: "{{ vscode_user_data_dir }}/User/settings.json"
