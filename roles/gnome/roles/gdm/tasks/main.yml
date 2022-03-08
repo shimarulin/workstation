@@ -1,17 +1,12 @@
 ---
 # tasks file for gdm
 - name: install dependencies
-  become: true
-  pacman:
+  kewlfft.aur.aur:
     name: "{{ gdm_packages }}"
+    use: paru
 
 - name: enable GDM service
   become: true
   systemd:
     name: gdm.service
     enabled: yes
-
-- name: install gdm-tools from AUR
-  command: 'paru -S --noconfirm gdm-tools'
-  changed_when: false
-

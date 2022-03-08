@@ -1,15 +1,9 @@
 ---
 # tasks file for applications
 - name: install dependencies
-  become: true
-  pacman:
+  kewlfft.aur.aur:
     name: "{{ applications_packages }}"
-
-- name: install applications from AUR
-  shell: "paru -S --noconfirm {{ item }}"
-  args:
-    executable: /bin/bash
-  loop: "{{ applications_aur_packages }}"
+    use: paru
 
 - name: Configure custom keyboard shortcuts for applications
   community.general.dconf:

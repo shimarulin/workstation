@@ -22,6 +22,5 @@ galaxy_info:
 dependencies:
   - hardware-support/keychron-k3
   - gnome/roles/applications/roles/file-roller
-  - gnome/roles/applications/roles/gnome-calculator
   - gnome/roles/applications/roles/gnome-files
   - gnome/roles/applications/roles/tilix

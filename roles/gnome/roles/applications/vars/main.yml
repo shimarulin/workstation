@@ -5,6 +5,4 @@ applications_packages:
   - gnome-calculator
   # Screen recorder
   - kooha
-
-applications_aur_packages:
   - lookbook-git

@@ -7,3 +7,11 @@ gnome_files_packages:
   - python-nautilus
   - ffmpegthumbnailer
   - meld
+  - nautilus-copy-path
+  - nautilus-compare
+  - gtkhash-nautilus
+#  - nautilus-metadata-editor
+#  - nautilus-ext-git
+#  - git-nautilus-icons
+#  - nautilus-annotations
+#  - nautilus-folder-icons

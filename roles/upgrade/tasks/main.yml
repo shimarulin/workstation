@@ -1,12 +1,24 @@
 ---
 # tasks file for upgrade
+- name: check that the Paru already installed
+  stat:
+    path: /usr/bin/paru
+  register: paru_stat_result
+
 - name: update pgp-keys database
   become: true
   command: pacman-key --populate archlinux
   changed_when: false
 
-- name: update packages cache and upgrade system
+- name: upgrade system
   become: true
-  pacman:
+  command: pacman -Syu
+  changed_when: false
+  when: paru_stat_result.stat.exists == false
+
+- name: update packages cache and upgrade system
+  kewlfft.aur.aur:
+    use: paru
     update_cache: yes
     upgrade: yes
+  when: paru_stat_result.stat.exists == true

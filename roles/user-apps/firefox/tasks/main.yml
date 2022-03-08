@@ -1,9 +1,9 @@
 ---
 # tasks file for firefox
 - name: install dependencies
-  become: true
-  pacman:
+  kewlfft.aur.aur:
     name: '{{ firefox_packages }}'
+    use: paru
 
 - name: enable smooth scroll
   become: true
@@ -37,11 +37,6 @@
 #    url: https://addons.mozilla.org/firefox/downloads/file/3859385/
 #    dest: /usr/lib/firefox/browser/extensions/plasma-browser-integration@kde.org.xpi
 
-- name: install native connector software for the 'Profile Switcher for Firefox' extension (binary files)
-  shell: paru -S --noconfirm firefox-profile-switcher-connector-bin
-  args:
-    executable: /bin/bash
-  changed_when: false
 
 # https://addons.mozilla.org/en-US/firefox/addon/profile-switcher/
 - name: install 'Profile Switcher for Firefox' extension
