@@ -1,7 +1,7 @@
-ansible-role-gnome-calculator
+ansible-role-applications
 =========
 
-> Gnome Calculator
+> GTK (Gnome) applications
 
 Requirements
 ------------
@@ -25,7 +25,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: gnome-calculator, x: 42 }
+         - { role: applications, x: 42 }
 
 License
 -------

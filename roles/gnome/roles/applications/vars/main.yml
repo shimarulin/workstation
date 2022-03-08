@@ -1,0 +1,10 @@
+---
+# vars file for applications
+applications_packages:
+  - evince
+  - gnome-calculator
+  # Screen recorder
+  - kooha
+
+applications_aur_packages:
+  - lookbook-git
