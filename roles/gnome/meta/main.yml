@@ -21,7 +21,6 @@ galaxy_info:
 
 dependencies:
   - systemd-graphical-target
-  - user-apps/firefox
   - gnome/roles/gdm
   - gnome/roles/gstreamer
   - gnome/roles/gnome-shell
