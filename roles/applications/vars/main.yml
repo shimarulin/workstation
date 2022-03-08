@@ -1,3 +1,4 @@
 ---
 # vars file for applications
 #applications_packages:
+#  - applications

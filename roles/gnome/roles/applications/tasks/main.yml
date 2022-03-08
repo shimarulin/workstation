@@ -1,10 +1,8 @@
 ---
 # tasks file for applications
-- name: install dependencies
-  kewlfft.aur.aur:
-    name: "{{ applications_packages }}"
-    use: paru
-
+- include_tasks: applications/firefox.yml
+- include_tasks: applications/kooha.yml
+#
 - name: Configure custom keyboard shortcuts for applications
   community.general.dconf:
     key: "{{ item.key }}"

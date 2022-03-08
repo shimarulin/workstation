@@ -29,21 +29,13 @@
     src: usr/lib/firefox/firefox.cfg
     dest: /usr/lib/firefox/
 
-# TODO: move to KDE
-# https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
-#- name: install 'Plasma Integration by KDE' extension
-#  become: true
-#  get_url:
-#    url: https://addons.mozilla.org/firefox/downloads/file/3859385/
-#    dest: /usr/lib/firefox/browser/extensions/plasma-browser-integration@kde.org.xpi
-
-
 # https://addons.mozilla.org/en-US/firefox/addon/profile-switcher/
 - name: install 'Profile Switcher for Firefox' extension
   become: true
   get_url:
     url: https://addons.mozilla.org/firefox/downloads/file/3809893/
     dest: /usr/lib/firefox/browser/extensions/profile-switcher-ff@nd.ax.xpi
+  ignore_errors: true
 
 # https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
 - name: install 'uBlock Origin' extension
@@ -51,6 +43,7 @@
   get_url:
     url: https://addons.mozilla.org/firefox/downloads/file/3853583/
     dest: /usr/lib/firefox/browser/extensions/uBlock0@raymondhill.net.xpi
+  ignore_errors: true
 
 # https://addons.mozilla.org/ru/firefox/addon/bitwarden-password-manager/
 - name: install 'Bitwarden password manager' extension
@@ -58,3 +51,4 @@
   get_url:
     url: https://addons.mozilla.org/firefox/downloads/file/3859577/
     dest: /usr/lib/firefox/browser/extensions/{446900e4-71c2-419f-a6a7-df9c091e268b}.xpi
+  ignore_errors: true

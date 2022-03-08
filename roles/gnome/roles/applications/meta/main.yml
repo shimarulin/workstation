@@ -20,7 +20,15 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
+  - applications/roles/bitwarden
+  - applications/roles/evince
+  - applications/roles/file-roller
+  - applications/roles/firefox
+  - applications/roles/gnome-calculator
+  - applications/roles/gnome-files
+  - applications/roles/joplin
+  - applications/roles/kooha
+  - applications/roles/lookbook
+  - applications/roles/tilix
+  - applications/roles/vscode
   - hardware-support/keychron-k3
-  - gnome/roles/applications/roles/file-roller
-  - gnome/roles/applications/roles/gnome-files
-  - gnome/roles/applications/roles/tilix

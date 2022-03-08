@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Vyacheslav Shimarulin
-  description: GStreamer
+  description: Elegantly record your screen
   license: MIT
   min_ansible_version: 2.8
 
@@ -21,3 +21,4 @@ galaxy_info:
 
 dependencies:
   - hardware-support/pipewire
+  - gnome/roles/gstreamer

@@ -1,0 +1,4 @@
+---
+# vars file for evince
+evince_packages:
+  - evince
