@@ -1,0 +1,4 @@
+---
+# vars file for simple-scan
+simple_scan_packages:
+  - simple-scan

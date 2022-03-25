@@ -1,0 +1,4 @@
+---
+# vars file for paperwork
+paperwork_packages:
+  - paperwork

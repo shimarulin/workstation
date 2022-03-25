@@ -1,0 +1,6 @@
+---
+# tasks file for paperwork
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ paperwork_packages }}"
