@@ -5,8 +5,14 @@
   command: pacman-key --populate archlinux
   changed_when: false
 
-- name: update packages cache and upgrade system
+- name: upgrade system
   become: true
-  pacman:
-    update_cache: yes
-    upgrade: yes
+  command: pacman -Syu --noconfirm
+  changed_when: false
+
+#- name: update packages cache and upgrade system
+#  become: true
+#  pacman:
+#    update_cache: yes
+#    upgrade: yes
+#  changed_when: false

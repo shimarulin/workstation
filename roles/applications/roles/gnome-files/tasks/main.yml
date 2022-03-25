@@ -1,0 +1,22 @@
+---
+# tasks file for gnome-files
+- name: install dependencies
+  kewlfft.aur.aur:
+    name: "{{ gnome_files_packages }}"
+    use: paru
+
+- name: setup Gnome Files
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/nautilus/preferences/default-folder-viewer"
+      value: "'list-view'"
+    - key: "/org/gnome/nautilus/list-view/use-tree-view"
+      value: "true"
+    - key: "/org/gnome/nautilus/list-view/default-zoom-level"
+      value: "'small'"
+    - key: "/org/gtk/settings/file-chooser/sort-directories-first"
+      value: "true"
+    - key: "/org/gtk/settings/file-chooser/show-hidden"
+      value: "true"

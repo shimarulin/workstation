@@ -1,0 +1,6 @@
+---
+# tasks file for lookbook
+- name: install dependencies
+  kewlfft.aur.aur:
+    name: "{{ lookbook_packages }}"
+    use: paru
