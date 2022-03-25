@@ -1,0 +1,45 @@
+# Install from git
+- name: clone Gnome Shell extension repo - {{ item.name }}
+  git:
+    repo: "{{ item.git }}"
+    depth: 1
+    dest: "/tmp/{{ item.name }}"
+  when: item.git is defined
+  changed_when: false
+
+- name: remove '.git' directory  - {{ item.name }}
+  command: rm -rf /tmp/{{ item.name }}/.git
+  when: item.git is defined
+  changed_when: false
+
+- name: copy Gnome Shell extension source - {{ item.name }}
+  command: cp --recursive /tmp/{{ item.name }}{{ item.path | default('') }} $HOME/.local/share/gnome-shell/extensions/{{ item.name }}
+  when: item.git is defined
+  changed_when: false
+
+- name: remove temporary directory  - {{ item.name }}
+  command: rm -rf /tmp/{{ item.name }}
+  when: item.git is defined
+  changed_when: false
+
+# Install from zip package
+- name: create extra directories
+  file:
+    path: "$HOME/.local/share/gnome-shell/extensions/{{ item.name }}"
+    state: directory
+  when: item.zip is defined
+
+- name: unarchive remote Gnome Shell extension arhive repo - {{ item.name }}
+  ansible.builtin.unarchive:
+    src: "{{ item.zip }}"
+    dest: "$HOME/.local/share/gnome-shell/extensions/{{ item.name }}"
+    remote_src: yes
+  when: item.zip is defined
+
+# Install from AUR
+- name: install {{ item.name }} from AUR
+  kewlfft.aur.aur:
+    name: "{{ item.aur }}"
+    use: paru
+  when: item.aur is defined
+  changed_when: false

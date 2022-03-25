@@ -5,23 +5,29 @@
   pacman:
     name: '{{ dirs_packages }}'
 
-- name: check that the ~/.config/user-dirs.dirs already exist
-  stat:
-    path: ~/.config/user-dirs.dirs
-  register: userdirs_stat_result
-
-- name: update XDG user dirs
-  command: xdg-user-dirs-update
-  when: userdirs_stat_result.stat.exists == false
-
 - name: create extra directories
   file:
     path: "{{ item }}"
     state: directory
   loop:
-#    - ~/Проекты/
-#    - ~/Образы дисков/
+    # XDG
+    - ~/Рабочий стол/
+    - ~/Загрузки/
+    - ~/Шаблоны/
+    - ~/Общедоступные/
+    - ~/Документы/
+    - ~/Музыка/
+    - ~/Изображения/
+    - ~/Видео/
+    # Other
+    - ~/Проекты/
+    - ~/Образы дисков/
     - ~/.local/opt/ # Сторонние приложения
     - ~/.local/opt/AppImages/ # Образы AppImage приложений
     - ~/.local/share/applications/ # Ярлыки сторонних приложений
     - ~/.local/share/icons/hicolor/512x512/apps/ # Иконки сторонних приложений
+
+- name: update XDG user dirs config
+  copy:
+    src: home/.config/
+    dest: ~/.config/

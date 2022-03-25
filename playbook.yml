@@ -16,8 +16,5 @@
     # Desktop environment
     - gnome
 
-    ## Common User Apps
-    - user-apps
-
     ## Virtualization tools
     - virtualization

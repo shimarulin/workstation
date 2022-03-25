@@ -1,0 +1,7 @@
+# https://addons.mozilla.org/ru/firefox/addon/gnome-shell-integration/
+- name: install native connector software and extension for the 'GNOME Shell integration' extension (binary files)
+  kewlfft.aur.aur:
+    name:
+      - chrome-gnome-shell-git
+      - firefox-extension-gnome-shell-integration
+    use: paru

@@ -1,9 +1,0 @@
----
-# vars file for gnome-files
-gnome_files_packages:
-  - nautilus
-  - sushi # Preview tool
-  # - nautilus-terminal
-  - python-nautilus
-  - ffmpegthumbnailer
-  - meld

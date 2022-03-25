@@ -1,6 +1,0 @@
-# https://addons.mozilla.org/ru/firefox/addon/gnome-shell-integration/
-- name: install native connector software and extension for the 'GNOME Shell integration' extension (binary files)
-  shell: paru -S --noconfirm chrome-gnome-shell-git firefox-extension-gnome-shell-integration
-  args:
-    executable: /bin/bash
-  changed_when: false

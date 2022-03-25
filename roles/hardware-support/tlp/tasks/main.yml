@@ -30,5 +30,4 @@
   become: true
   systemd:
     name: NetworkManager-dispatcher.service
-    state: started
     enabled: yes
