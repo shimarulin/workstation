@@ -32,7 +32,7 @@ dependencies:
   - applications/roles/kooha
   - applications/roles/lollypop
   - applications/roles/lookbook
-  - applications/roles/paperwork
+#  - applications/roles/paperwork
   - applications/roles/simple-scan
   - applications/roles/tilix
   - applications/roles/vscode
