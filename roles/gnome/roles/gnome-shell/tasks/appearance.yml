@@ -18,7 +18,7 @@
 - name: copy themes for use by Flatpack applications
   copy:
     src: /usr/share/themes/
-    dest: .themes
+    dest: ~/.themes
     remote_src: yes
 
 - name: set Flatpack filesystem
