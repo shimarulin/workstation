@@ -1,0 +1,9 @@
+---
+# vars file for printers-and-scanners
+printers_and_scanners_packages:
+#  - avahi
+#  - nss-mdns
+  - cups
+  - cups-pdf
+  - sane
+  - hplip

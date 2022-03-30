@@ -1,0 +1,21 @@
+---
+# tasks file for printers-and-scanners
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ printers_and_scanners_packages }}"
+
+- name: enable CUPS service
+  become: true
+  systemd:
+    name: cups.service
+    state: started
+    enabled: yes
+
+# https://wiki.archlinux.org/title/Avahi#Hostname_resolution
+#- name: enable Avahi daemon service
+#  become: true
+#  systemd:
+#    name: avahi-daemon.service
+#    state: started
+#    enabled: yes
