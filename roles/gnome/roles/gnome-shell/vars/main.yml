@@ -18,9 +18,10 @@ gnome_extensions:
   - name: 'user-theme@gnome-shell-extensions.gcampax.github.com'
   - name: 'drive-menu@gnome-shell-extensions.gcampax.github.com'
   - name: 'dash-to-panel@jderose9.github.com'
-    aur: 'gnome-shell-extension-dash-to-panel'
+    zip: 'https://github.com/home-sweet-gnome/dash-to-panel/releases/download/latest/dash-to-panel@jderose9.github.com_v46.zip'
   - name: 'sound-output-device-chooser@kgshank.net'
-    aur: 'gnome-shell-extension-sound-output-device-chooser'
+    path: '/sound-output-device-chooser@kgshank.net'
+    git: 'https://github.com/kgshank/gse-sound-output-device-chooser.git'
 #  - name: 'forge@jmmaranan.com'
 #    git: 'https://github.com/jmmaranan/forge'
 #  - name: 'GmailMessageTray@shuming0207.gmail.com'
@@ -36,10 +37,10 @@ gnome_extensions:
   - name: 'BringOutSubmenuOfPowerOffLogoutButton@pratap.fastmail.fm'
     path: '/src'
     git: 'https://github.com/PRATAP-KUMAR/Bring-Out-Submenu-of-Power-Off-Logout'
-  - name: 'no-overview@fthx'
-    git: 'https://github.com/fthx/no-overview'
   - name: 'trayIconsReloaded@selfmade.pl'
     zip: 'https://github.com/MartinPL/Tray-Icons-Reloaded/releases/latest/download/trayIconsReloaded@selfmade.pl.zip'
+  - name: 'task-widget@juozasmiskinis.gitlab.io'
+    zip: 'https://gitlab.com/jmiskinis/gnome-shell-extension-task-widget/uploads/a2017eb1058d8a665aa78565d9cf2b29/task-widget_juozasmiskinis.gitlab.io.zip'
 
 gnome_appearance_packages:
   - arc-gtk-theme

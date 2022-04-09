@@ -30,6 +30,8 @@
       value: "4"
     - key: "/org/gnome/shell/extensions/dash-to-panel/tray-padding"
       value: "4"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/hide-overview-on-startup"
+      value: "true"
 
 - name: Configure "Tray Icons Reloaded"
   community.general.dconf:
