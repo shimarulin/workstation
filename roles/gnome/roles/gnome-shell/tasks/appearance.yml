@@ -24,6 +24,7 @@
       export GTK_THEME=Arc-Dark
 
 - name: Install Flatpak themes
+  become: true
   community.general.flatpak:
     name:
 #      - org.gtk.Gtk3theme.Arc-Dark-solid
