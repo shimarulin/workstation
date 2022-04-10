@@ -62,3 +62,11 @@
   become: true
   command: 'sudo -u gdm dbus-launch gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"'
   changed_when: false
+
+- name: configure panel DateTime
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/desktop/interface/clock-show-date"
+      value: "true"
