@@ -23,6 +23,7 @@ dependencies:
   - applications/roles/baobab
   - applications/roles/bitwarden
   - applications/roles/celluloid
+  - applications/roles/eog
   - applications/roles/evince
   - applications/roles/file-roller
   - applications/roles/firefox

@@ -1,0 +1,6 @@
+---
+# vars file for eog
+eog_packages:
+  - eog
+  - eog-docs
+  - eog-plugins
