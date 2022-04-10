@@ -35,3 +35,11 @@
       value: "'kbd-set-fn-mode 1 && notify-send \"Fn keys off\"'"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/binding"
       value: "'<Alt>D'"
+
+- name: configure favorite apps
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/favorite-apps"
+      value: "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.gexperts.Tilix.desktop']"
