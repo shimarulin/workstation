@@ -1,4 +1,0 @@
----
-# vars file for gnome-font-viewer
-gnome_font_viewer_packages:
-  - gnome-font-viewer

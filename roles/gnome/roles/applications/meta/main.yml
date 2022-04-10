@@ -32,7 +32,6 @@ dependencies:
   - applications/roles/gnome-calendar
   - applications/roles/gnome-contacts
   - applications/roles/gnome-files
-  - applications/roles/gnome-font-viewer
   - applications/roles/gnome-todo
   - applications/roles/joplin
   - applications/roles/kooha
