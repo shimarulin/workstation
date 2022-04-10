@@ -1,0 +1,6 @@
+---
+# tasks file for gnome-font-viewer
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ gnome_font_viewer_packages }}"
