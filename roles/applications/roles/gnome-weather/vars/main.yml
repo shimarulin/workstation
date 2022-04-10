@@ -1,0 +1,4 @@
+---
+# vars file for gnome-weather
+gnome_weather_packages:
+  - gnome-weather

@@ -34,6 +34,7 @@ dependencies:
   - applications/roles/gnome-contacts
   - applications/roles/gnome-files
   - applications/roles/gnome-todo
+  - applications/roles/gnome-weather
   - applications/roles/joplin
   - applications/roles/kooha
   - applications/roles/lollypop
