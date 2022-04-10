@@ -1,7 +1,6 @@
 ---
 # tasks file for applications
 - include_tasks: applications/firefox.yml
-- include_tasks: applications/kooha.yml
 #
 - name: Configure custom keyboard shortcuts for applications
   community.general.dconf:
