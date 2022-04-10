@@ -26,8 +26,12 @@ dependencies:
   - applications/roles/file-roller
   - applications/roles/firefox
   - applications/roles/foliate
+  - applications/roles/geary
   - applications/roles/gnome-calculator
+  - applications/roles/gnome-calendar
+  - applications/roles/gnome-contacts
   - applications/roles/gnome-files
+  - applications/roles/gnome-todo
   - applications/roles/joplin
   - applications/roles/kooha
   - applications/roles/lollypop
