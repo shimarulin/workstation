@@ -56,3 +56,8 @@
   become: true
   command: 'set-gdm-theme set Arc-Dark'
   changed_when: false
+
+- name: set GDM icon theme
+  become: true
+  command: 'sudo -u gdm dbus-launch gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"'
+  changed_when: false
