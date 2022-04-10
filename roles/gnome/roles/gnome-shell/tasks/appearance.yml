@@ -11,9 +11,17 @@
     - key: "/org/gnome/shell/extensions/user-theme/name"
       value: "'Arc-Dark'" # Arc-Dark-solid
     - key: "/org/gnome/desktop/interface/gtk-theme"
-      value: "'Arc-Darker'" # Arc-Darker-solid
+      value: "'Arc-Dark'" # Arc-Darker-solid
     - key: "/org/gnome/desktop/interface/icon-theme"
       value: "'Papirus'"
+
+# To GTK4 apps
+- name: add $GTK_THEME environment variable
+  blockinfile:
+    path: ~/.profile
+    marker: "# {mark} ANSIBLE MANAGED BLOCK @gtk-theme"
+    block: |
+      export GTK_THEME=Arc-Dark
 
 - name: Install Flatpak themes
   community.general.flatpak:
