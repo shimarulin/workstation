@@ -18,10 +18,11 @@
 # To GTK4 apps
 - name: add $GTK_THEME environment variable
   blockinfile:
-    path: ~/.profile
+    path: ~/.pam_environment
+    create: true
     marker: "# {mark} ANSIBLE MANAGED BLOCK @gtk-theme"
     block: |
-      export GTK_THEME=Arc-Dark
+      GTK_THEME=Arc-Dark
 
 - name: Install Flatpak themes
   become: true
