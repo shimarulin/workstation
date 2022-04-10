@@ -20,6 +20,7 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
+  - applications/roles/baobab
   - applications/roles/bitwarden
   - applications/roles/celluloid
   - applications/roles/evince
