@@ -9,6 +9,7 @@ gnome_shell_packages:
   - gnome-backgrounds
   - gnome-system-monitor
   - gnome-control-center
+  - gnome-user-docs
   - gnome-tweaks
   - dconf-editor
   - gpaste
