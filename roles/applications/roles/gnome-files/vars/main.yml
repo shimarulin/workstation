@@ -15,3 +15,14 @@ gnome_files_packages:
 #  - git-nautilus-icons
 #  - nautilus-annotations
 #  - nautilus-folder-icons
+  - gvfs
+  - gvfs-afc
+  - gvfs-goa
+  - gvfs-google
+  - gvfs-gphoto2
+  - gvfs-mtp
+  - gvfs-nfs
+  - gvfs-smb
+
+# https://wiki.archlinux.org/title/GNOME/Files
+# https://github.com/rofirrim/eiciel
