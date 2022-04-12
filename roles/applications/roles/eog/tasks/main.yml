@@ -1,0 +1,6 @@
+---
+# tasks file for eog
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ eog_packages }}"

@@ -4,6 +4,12 @@ fonts_packages:
   # Fonts
   ## Adobe Source family
   - adobe-source-code-pro-fonts
+  - adobe-source-sans-fonts
+  - adobe-source-serif-fonts
+  ## Noto
+  - noto-fonts
+  - noto-fonts-emoji
+  - noto-fonts-extra
 
   # Tools
   - fontconfig

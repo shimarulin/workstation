@@ -1,0 +1,4 @@
+---
+# vars file for font-manager
+font_manager_packages:
+  - font-manager

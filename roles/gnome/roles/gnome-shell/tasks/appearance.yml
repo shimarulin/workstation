@@ -11,11 +11,21 @@
     - key: "/org/gnome/shell/extensions/user-theme/name"
       value: "'Arc-Dark'" # Arc-Dark-solid
     - key: "/org/gnome/desktop/interface/gtk-theme"
-      value: "'Arc-Darker'" # Arc-Darker-solid
+      value: "'Arc-Dark'" # Arc-Darker-solid
     - key: "/org/gnome/desktop/interface/icon-theme"
-      value: "'Papirus'"
+      value: "'Papirus-Dark'"
+
+# To GTK4 apps
+- name: add $GTK_THEME environment variable
+  blockinfile:
+    path: ~/.pam_environment
+    create: true
+    marker: "# {mark} ANSIBLE MANAGED BLOCK @gtk-theme"
+    block: |
+      GTK_THEME=Arc-Dark
 
 - name: Install Flatpak themes
+  become: true
   community.general.flatpak:
     name:
 #      - org.gtk.Gtk3theme.Arc-Dark-solid
@@ -47,3 +57,16 @@
   become: true
   command: 'set-gdm-theme set Arc-Dark'
   changed_when: false
+
+- name: set GDM icon theme
+  become: true
+  command: 'sudo -u gdm dbus-launch gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"'
+  changed_when: false
+
+- name: configure panel DateTime
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/desktop/interface/clock-show-date"
+      value: "true"
