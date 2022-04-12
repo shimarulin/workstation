@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Vyacheslav Shimarulin
-  description: Eye of Gnome: An image viewing and cataloging program
+  description: "Eye of Gnome: An image viewing and cataloging program"
   license: MIT
   min_ansible_version: 2.8
 
