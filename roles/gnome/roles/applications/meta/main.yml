@@ -32,6 +32,7 @@ dependencies:
   - applications/roles/geary
   - applications/roles/gnome-calculator
   - applications/roles/gnome-calendar
+  - applications/roles/gnome-characters
   - applications/roles/gnome-contacts
   - applications/roles/gnome-files
   - applications/roles/gnome-todo
