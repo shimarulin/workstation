@@ -15,3 +15,4 @@
     - { name: 'user.email', value: '{{ git_user_email }}' }
     - { name: 'core.autocrlf', value: 'input' }
     - { name: 'ui.color', value: 'True' }
+    - { name: 'init.defaultBranch', value: 'main' }
