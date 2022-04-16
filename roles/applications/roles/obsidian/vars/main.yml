@@ -1,0 +1,4 @@
+---
+# vars file for obsidian
+obsidian_packages:
+  - obsidian
