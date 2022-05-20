@@ -19,7 +19,7 @@ gnome_extensions:
   - name: 'user-theme@gnome-shell-extensions.gcampax.github.com'
   - name: 'drive-menu@gnome-shell-extensions.gcampax.github.com'
   - name: 'dash-to-panel@jderose9.github.com'
-    zip: 'https://github.com/home-sweet-gnome/dash-to-panel/releases/latest/download/dash-to-panel@jderose9.github.com_v46.zip'
+    zip: 'https://github.com/home-sweet-gnome/dash-to-panel/releases/latest/download/dash-to-panel@jderose9.github.com_v50.zip'
   - name: 'sound-output-device-chooser@kgshank.net'
     path: '/sound-output-device-chooser@kgshank.net'
     git: 'https://github.com/kgshank/gse-sound-output-device-chooser.git'
