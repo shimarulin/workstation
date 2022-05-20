@@ -1,0 +1,7 @@
+---
+# vars file for man
+man_packages:
+  - man-db
+  - man-pages
+  # AUR
+  # - man-pages-ru
