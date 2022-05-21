@@ -32,6 +32,7 @@ dependencies:
   - applications/roles/geary
   - applications/roles/gnome-calculator
   - applications/roles/gnome-calendar
+  - applications/roles/gnome-characters
   - applications/roles/gnome-contacts
   - applications/roles/gnome-files
   - applications/roles/gnome-todo
@@ -40,6 +41,7 @@ dependencies:
   - applications/roles/kooha
   - applications/roles/lollypop
   - applications/roles/lookbook
+  - applications/roles/obsidian
   - applications/roles/tilix
   - applications/roles/vscode
   - hardware-support/keychron-k3

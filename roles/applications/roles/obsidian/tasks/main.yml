@@ -1,0 +1,11 @@
+---
+# tasks file for obsidian
+- name: install dependencies
+  kewlfft.aur.aur:
+    name: "obsidian-appimage"
+    use: paru
+
+- name: create obsidian vaults directory
+  file:
+    path: ~/.local/share/obsidian/
+    state: directory

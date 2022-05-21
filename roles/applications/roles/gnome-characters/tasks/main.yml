@@ -1,0 +1,6 @@
+---
+# tasks file for gnome-characters
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ gnome_characters_packages }}"
