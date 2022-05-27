@@ -24,7 +24,20 @@
     block: |
       GTK_THEME=Arc-Dark
 
-- name: copy themes for use by Flatpak applications
+- name: Install Flatpak themes from Flathub
+  become: true
+  community.general.flatpak:
+    name:
+#      - org.gtk.Gtk3theme.Arc-Dark-solid
+      - org.gtk.Gtk3theme.Arc-Dark
+#      - org.gtk.Gtk3theme.Arc-Darker-solid
+      - org.gtk.Gtk3theme.Arc-Darker
+#      - org.gtk.Gtk3theme.Arc-Lighter-solid
+#      - org.gtk.Gtk3theme.Arc-Lighter
+#      - org.gtk.Gtk3theme.Arc-solid
+#      - org.gtk.Gtk3theme.Arc
+
+- name: copy themes for use by Flatpak GTK4 applications
   copy:
     src: /usr/share/themes/
     dest: ~/.themes
