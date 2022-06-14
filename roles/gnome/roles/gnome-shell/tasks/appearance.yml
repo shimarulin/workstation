@@ -11,14 +11,36 @@
     - key: "/org/gnome/shell/extensions/user-theme/name"
       value: "'Arc-Dark'" # Arc-Dark-solid
     - key: "/org/gnome/desktop/interface/gtk-theme"
-      value: "'Arc-Darker'" # Arc-Darker-solid
+      value: "'Arc-Dark'" # Arc-Darker-solid
     - key: "/org/gnome/desktop/interface/icon-theme"
-      value: "'Papirus'"
+      value: "'Papirus-Dark'"
 
-- name: copy themes for use by Flatpack applications
+# To GTK4 apps
+- name: add $GTK_THEME environment variable
+  blockinfile:
+    path: ~/.pam_environment
+    create: true
+    marker: "# {mark} ANSIBLE MANAGED BLOCK @gtk-theme"
+    block: |
+      GTK_THEME=Arc-Dark
+
+- name: Install Flatpak themes from Flathub
+  become: true
+  community.general.flatpak:
+    name:
+#      - org.gtk.Gtk3theme.Arc-Dark-solid
+      - org.gtk.Gtk3theme.Arc-Dark
+#      - org.gtk.Gtk3theme.Arc-Darker-solid
+      - org.gtk.Gtk3theme.Arc-Darker
+#      - org.gtk.Gtk3theme.Arc-Lighter-solid
+#      - org.gtk.Gtk3theme.Arc-Lighter
+#      - org.gtk.Gtk3theme.Arc-solid
+#      - org.gtk.Gtk3theme.Arc
+
+- name: copy themes for use by Flatpak GTK4 applications
   copy:
     src: /usr/share/themes/
-    dest: .themes
+    dest: ~/.themes
     remote_src: yes
 
 - name: set Flatpack filesystem
@@ -28,10 +50,23 @@
 
 - name: set Flatpack applications GTK theme
   become: true
-  command: 'flatpak override --env=GTK_THEME=Arc-Darker'
+  command: 'flatpak override --env=GTK_THEME=Arc-Dark'
   changed_when: false
 
 - name: set GDM theme
   become: true
   command: 'set-gdm-theme set Arc-Dark'
   changed_when: false
+
+- name: set GDM icon theme
+  become: true
+  command: 'sudo -u gdm dbus-launch gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"'
+  changed_when: false
+
+- name: configure panel DateTime
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/desktop/interface/clock-show-date"
+      value: "true"

@@ -24,6 +24,7 @@ dependencies:
   - common/git
   - common/ssh
   - common/env
+  - common/man
   - common/fonts
   - common/localization
   - common/dirs

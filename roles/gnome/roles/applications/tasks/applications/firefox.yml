@@ -5,3 +5,38 @@
       - chrome-gnome-shell-git
       - firefox-extension-gnome-shell-integration
     use: paru
+
+# Override Firefox launcher
+- name: create temporary Firefox launcher
+  copy:
+    src: /usr/share/applications/firefox.desktop
+    dest: /tmp/firefox.desktop
+    remote_src: true
+  changed_when: false
+
+- name: add environment variables to Firefox launcher
+  lineinfile:
+    path: /tmp/firefox.desktop
+    regexp: '^Exec=/usr/lib/firefox/firefox %u'
+    line: Exec=env GTK_THEME=Arc-Darker /usr/lib/firefox/firefox %u
+  changed_when: false
+
+- name: add environment variables to Firefox launcher
+  lineinfile:
+    path: /tmp/firefox.desktop
+    regexp: '^Exec=/usr/lib/firefox/firefox --new-window %u'
+    line: Exec=env GTK_THEME=Arc-Darker /usr/lib/firefox/firefox --new-window %u
+  changed_when: false
+
+- name: add environment variables to Firefox launcher
+  lineinfile:
+    path: /tmp/firefox.desktop
+    regexp: '^Exec=/usr/lib/firefox/firefox --private-window %u'
+    line: Exec=env GTK_THEME=Arc-Darker /usr/lib/firefox/firefox --private-window %u
+  changed_when: false
+
+- name: create user defined Firefox launcher
+  copy:
+    src: /tmp/firefox.desktop
+    dest: ~/.local/share/applications/firefox.desktop
+    remote_src: true
