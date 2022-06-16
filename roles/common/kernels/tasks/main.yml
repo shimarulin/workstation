@@ -1,0 +1,7 @@
+---
+# tasks file for kernels
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ kernels_packages }}"
+  notify: grub-mkconfig
