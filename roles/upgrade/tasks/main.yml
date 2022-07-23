@@ -2,7 +2,7 @@
 # tasks file for upgrade
 - name: update archlinux-keyring
   become: true
-  command: sudo pacman -Sy archlinux-keyring
+  command: sudo pacman -Sy archlinux-keyring --noconfirm
   changed_when: false
 
 - name: update pgp-keys database
