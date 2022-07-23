@@ -2,7 +2,7 @@
 - name: install native connector software and extension for the 'GNOME Shell integration' extension (binary files)
   kewlfft.aur.aur:
     name:
-      - chrome-gnome-shell-git
+      - gnome-browser-connector
       - firefox-extension-gnome-shell-integration
     use: paru
 
