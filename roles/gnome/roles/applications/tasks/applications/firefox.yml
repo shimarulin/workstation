@@ -1,10 +1,22 @@
-# https://addons.mozilla.org/ru/firefox/addon/gnome-shell-integration/
-- name: install native connector software and extension for the 'GNOME Shell integration' extension (binary files)
+- name: create Firefox global extensions directory if it does not exist
+  become: true
+  file:
+    path: /usr/lib/firefox/browser/extensions/
+    state: directory
+
+- name: install native connector software for the 'GNOME Shell integration' extension (binary files)
   kewlfft.aur.aur:
     name:
       - gnome-browser-connector
-      - firefox-extension-gnome-shell-integration
     use: paru
+
+# https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+- name: install 'GNOME Shell integration' Firefox extension
+  become: true
+  get_url:
+    url: https://addons.mozilla.org/firefox/downloads/file/3974897/
+    dest: /usr/lib/firefox/browser/extensions/chrome-gnome-shell@gnome.org.xpi
+  ignore_errors: true
 
 # Override Firefox launcher
 - name: create temporary Firefox launcher

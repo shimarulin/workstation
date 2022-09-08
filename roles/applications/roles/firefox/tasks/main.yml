@@ -5,13 +5,13 @@
     name: '{{ firefox_packages }}'
     use: paru
 
-- name: enable smooth scroll
+- name: enable smooth scroll in Firefox
   become: true
   copy:
     src: etc/profile.d/
     dest: /etc/profile.d/
 
-- name: create firefox global extension directory
+- name: create Firefox global extensions directory if it does not exist
   become: true
   file:
     path: /usr/lib/firefox/browser/extensions/
@@ -23,7 +23,7 @@
     src: usr/lib/firefox/defaults/pref/autoconfig.js
     dest: /usr/lib/firefox/defaults/pref/
 
-- name: copy global config
+- name: copy Firefox global config
   become: true
   copy:
     src: usr/lib/firefox/firefox.cfg
@@ -38,7 +38,7 @@
   ignore_errors: true
 
 # https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
-- name: install 'uBlock Origin' extension
+- name: install 'uBlock Origin' Firefox extension
   become: true
   get_url:
     url: https://addons.mozilla.org/firefox/downloads/file/3853583/
@@ -46,7 +46,7 @@
   ignore_errors: true
 
 # https://addons.mozilla.org/ru/firefox/addon/bitwarden-password-manager/
-- name: install 'Bitwarden password manager' extension
+- name: install 'Bitwarden password manager' Firefox extension
   become: true
   get_url:
     url: https://addons.mozilla.org/firefox/downloads/file/3859577/
