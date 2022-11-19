@@ -5,6 +5,22 @@
   pacman:
     name: "{{ reflector_packages }}"
 
+- name: setup country
+  become: true
+  lineinfile:
+    path: /etc/xdg/reflector/reflector.conf
+    regexp: '^# --country France,Germany'
+    line: '--country Russia,Germany'
+  changed_when: false
+
+- name: setup repo count
+  become: true
+  lineinfile:
+    path: /etc/xdg/reflector/reflector.conf
+    regexp: '^--latest 5'
+    line: '--latest 20'
+  changed_when: false
+
 - name: enable reflector service
   become: true
   systemd:
@@ -17,7 +33,3 @@
     name: reflector.timer
     state: started
     enabled: yes
-
-#  /etc/xdg/reflector/reflector.conf
-# || # --country France,Germany || => || --country Russia,Germany ||
-# || --latest 5 || => || --latest 20 ||
