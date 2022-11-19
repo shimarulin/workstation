@@ -46,6 +46,4 @@ gnome_extensions:
 #    git: 'https://github.com/fthx/workspaces-bar.git'
 
 gnome_appearance_packages:
-  - arc-gtk-theme
-  - arc-solid-gtk-theme
   - papirus-icon-theme
