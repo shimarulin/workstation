@@ -1,0 +1,23 @@
+---
+# tasks file for reflector
+- name: install dependencies
+  become: true
+  pacman:
+    name: "{{ reflector_packages }}"
+
+- name: enable reflector service
+  become: true
+  systemd:
+    name: reflector.service
+    enabled: yes
+
+- name: Enable mirror list update schedule.
+  become: true
+  systemd:
+    name: reflector.timer
+    state: started
+    enabled: yes
+
+#  /etc/xdg/reflector/reflector.conf
+# || # --country France,Germany || => || --country Russia,Germany ||
+# || --latest 5 || => || --latest 20 ||
