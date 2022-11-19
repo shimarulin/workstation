@@ -38,7 +38,7 @@ gnome_extensions:
   - name: 'trayIconsReloaded@selfmade.pl'
     zip: 'https://github.com/MartinPL/Tray-Icons-Reloaded/releases/latest/download/trayIconsReloaded@selfmade.pl.zip'
   - name: 'task-widget@juozasmiskinis.gitlab.io'
-    zip: 'https://gitlab.com/jmiskinis/gnome-shell-extension-task-widget/uploads/a2017eb1058d8a665aa78565d9cf2b29/task-widget_juozasmiskinis.gitlab.io.zip'
+    zip: 'https://gitlab.com/jmiskinis/gnome-shell-extension-task-widget/uploads/3acdf6d11dbb1cfa44171f21ef184259/task-widget_juozasmiskinis.gitlab.io.zip'
 #  - name: 'workspaces-bar@fthx'
 #    git: 'https://github.com/fthx/workspaces-bar.git'
 
