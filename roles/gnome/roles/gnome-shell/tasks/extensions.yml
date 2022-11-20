@@ -60,7 +60,7 @@
     - key: "/org/gnome/shell/extensions/dash-to-panel/dot-style-focused"
       value: "'CILIORA'"
 
-- name: Configure "Tray Icons Reloaded"
+- name: Configure "Lock Keys"
   community.general.dconf:
     key: "{{ item.key }}"
     value: "{{ item.value }}"
@@ -69,3 +69,11 @@
       value: "'none'"
     - key: "/org/gnome/shell/extensions/lockkeys/notification-preferences"
       value: "'osd'"
+
+- name: Configure "Bluetooth Quick Connect"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/bluetooth-quick-connect/show-battery-value-on"
+      value: "true"
