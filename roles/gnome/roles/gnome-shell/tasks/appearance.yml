@@ -1,7 +1,7 @@
-- name: install appearance dependencies
-  become: true
-  pacman:
+- name: install Gnome appearance dependencies
+  kewlfft.aur.aur:
     name: "{{ gnome_appearance_packages }}"
+    use: paru
 
 - name: set Icons, GTK and Gnome Shell theme
   community.general.dconf:
@@ -10,6 +10,10 @@
   loop:
     - key: "/org/gnome/desktop/interface/icon-theme"
       value: "'Papirus-Dark'"
+#    - key: "/org/gnome/shell/extensions/user-theme/name"
+#      value: "'Arc-Dark'" # Arc-Dark-solid
+    - key: "/org/gnome/desktop/interface/gtk-theme"
+      value: "'adw-gtk3-dark'"
 
 - name: set GDM icon theme
   become: true

@@ -60,3 +60,5 @@ gnome_extensions:
 
 gnome_appearance_packages:
   - papirus-icon-theme
+  - adw-gtk3
+  - gradience
