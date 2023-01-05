@@ -5,7 +5,7 @@ gnome_shell_packages:
   - gnome-session # required by `gdm`
   - gnome-shell-extensions
   - gnome-keyring
-  - tracker # required by `gtk3`, `gtk4`...
+  - tracker3 # required by `gtk3`, `gtk4`...
   - gnome-backgrounds
   - gnome-system-monitor
   - gnome-control-center
