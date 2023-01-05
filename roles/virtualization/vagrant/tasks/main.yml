@@ -7,12 +7,8 @@
 
 - name: install python-vagrant (required by ansible provisioner)
   pip:
-    name: setuptools
+    name:
+      - setuptools
+      - python-vagrant
     executable: ~/.local/bin/pip
-    extra_args: --user
-
-- name: install python-vagrant (required by ansible provisioner)
-  pip:
-    name: python-vagrant
-    executable: ~/.local/bin/pip
-    extra_args: --user
+    extra_args: "--user --upgrade"
