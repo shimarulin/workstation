@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-cd ~/.config/localhost && ansible-playbook playbook.yml
+~/.config/localhost/run
