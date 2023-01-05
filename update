@@ -4,4 +4,3 @@ git pull
 python -m pip install --user --upgrade pip
 python -m pip install --user --upgrade ansible psutil cookiecutter
 ansible-galaxy install -r requirements.yml --force
-
