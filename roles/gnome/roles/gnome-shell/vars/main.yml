@@ -42,5 +42,22 @@ gnome_extensions:
 # https://extensions.gnome.org/extension/5278/pano/
 # - https://extensions.gnome.org/extension/5489/search-light/
 
+# TODO: appearance extensions
+# https://github.com/yilozt/rounded-window-corners
+# https://github.com/aunetx/blur-my-shell
+
+# TODO: themes
+# https://github.com/witalihirsch/Mono-gtk-theme
+# ===> https://github.com/lassekongo83/adw-gtk3 + https://github.com/lassekongo83/adw-colors + https://github.com/GradienceTeam/Gradience
+# https://github.com/EliverLara/Nordic
+# https://github.com/odziom91/libadwaita-themes
+# https://gitlab.gnome.org/GNOME/gtk/-/tree/main/gtk/theme
+
+# TODO: firefox themes
+# https://github.com/rafaelmardojai/firefox-gnome-theme
+
+
 gnome_appearance_packages:
   - papirus-icon-theme
+  - adw-gtk3
+  - gradience
