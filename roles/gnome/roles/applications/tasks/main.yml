@@ -25,14 +25,14 @@
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-on/name"
       value: "'Keychron K3 Fn On'"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-on/command"
-      value: "'kbd-set-fn-mode 0 && notify-send \"Fn keys on\"'"
+      value: "'bash -c 'kbd-set-fn-mode 0 && notify-send -i ibus-keyboard \"Fn keys on\" \"Now you can use functional keys\"''"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-on/binding"
       value: "'<Alt>E'"
     # Keychron K3 Fn Off
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/name"
       value: "'Keychron K3 Fn Off'"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/command"
-      value: "'kbd-set-fn-mode 1 && notify-send \"Fn keys off\"'"
+      value: "'bash -c 'kbd-set-fn-mode 1 && notify-send -i keyboard \"Fn keys off\" \"Now you can use media keys\"''"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/keychron-k3-fn-off/binding"
       value: "'<Alt>D'"
 
