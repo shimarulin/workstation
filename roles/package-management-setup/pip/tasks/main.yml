@@ -1,0 +1,13 @@
+---
+# tasks file for pip
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ pip_packages }}'
+    extra_args: --needed
+
+- name: install pip
+  shell: |
+    python -m ensurepip --user
+    python -m pip install --user --upgrade pip
+  changed_when: false

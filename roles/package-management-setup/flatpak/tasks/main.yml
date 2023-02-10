@@ -1,0 +1,10 @@
+---
+# tasks file for flatpak
+- name: install dependencies
+  become: true
+  pacman:
+    name: '{{ flatpak_packages }}'
+
+- name: upgrade installed Flatpak packages
+  command: flatpak update -y
+  changed_when: false

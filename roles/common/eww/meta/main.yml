@@ -20,5 +20,6 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - build-tools/rust
-  - common/git
+  - upgrade/system-upgrade
+  - build-dependencies/git
+  - development-tools/rust

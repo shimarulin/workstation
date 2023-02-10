@@ -1,3 +1,19 @@
+## Update notify
+
+```
+# TODO: Use SystemD (timer+service+script) and libnotify for universal update notifier with AUR support
+# If you use the default "checkupdates" way you will need to install "pacman-contrib".
+
+# See
+# - https://github.com/fellchase/update-notification
+# - https://gitlab.com/artafinde/aarchup/-/tree/master/extra
+# - https://github.com/Chrysostomus/update-notifier
+# - https://gitlab.manjaro.org/applications/manjaro-system-ng/-/tree/master
+# - https://jjacky.com/kalu/
+# - https://gist.github.com/logarytm/575263a76d22f29ef721f40b2785d5c8
+# - https://bbs.archlinux.org/viewtopic.php?id=260353
+```
+
 ## TTY terminal
 
 issues:

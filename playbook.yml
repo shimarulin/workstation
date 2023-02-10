@@ -5,16 +5,18 @@
   hosts: all
   roles:
     # Upgrade and prepare system
-    - upgrade
-    - build-tools
-    - package-management
-    - common
+    - package-management-setup
+    - system-setup
+#    - upgrade
+#    - build-tools
+#    - package-management
+#    - common
 
-    # Hardware
-    - hardware-support
+# Hardware
+#    - hardware-support
 
-    # Desktop environment
-    - gnome
+# Desktop environment
+#    - gnome
 
-    ## Virtualization tools
-    - virtualization
+## Virtualization tools
+#    - virtualization

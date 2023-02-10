@@ -1,0 +1,4 @@
+---
+# vars file for base-devel
+base_devel_packages:
+  - base-devel

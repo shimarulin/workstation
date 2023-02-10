@@ -95,7 +95,29 @@ variables before run playbook for setup target environment.
 cookiecutter --output-dir roles templates/role
 ```
 
-### Create Vagrant box for test role from existing virtual machine
+### Run playbook on VirtualBox VM directly with shared folders
+
+#### Setup VM
+
+VM Settings -> Shared Folders -> Adds new shared folder:
+
+- Folder Path: /home/username/path-to-project/workstation
+- Folder Name: workstation
+- Mount point: /home/username/workstation
+- Auto mount: enable
+
+#### Setup guest OS
+
+```shell
+sudo pacman -Sy virtualbox-guest-utils-nox
+sudo systemctl enable vboxservice.service
+sudo gpasswd -a user vboxsf
+sudo reboot
+```
+
+### Run playbook on VirtualBox VM with Vagrant
+
+#### Create Vagrant box for test role from existing virtual machine
 
 Create new virtual machine and install target distributive. In according to Vagrant conventions, create user `vagrant`
 with password `vagrant`. This password don't need to run playbook and you can choice other if you need. After this it
@@ -125,7 +147,7 @@ editor) these strings to connect to virtual machine via ssh without password:
 
 ```
 # Vagrant required
-vagrant ALL=(ALL) NOPASSWD: ALL
+vagrant ALL=(ALL:ALL) NOPASSWD: ALL
 ```
 
 To make you own box you should run command
@@ -141,7 +163,7 @@ After this you can add you box:
 vagrant box add ./arch.box --name vagrant/arch
 ```
 
-### Use Vagrant to play tasks
+#### Use Vagrant to play tasks
 
 ```bash
 # Start VM
@@ -160,7 +182,7 @@ Connect to virtual machine by ssh
 vagrant ssh
 ```
 
-### Delete default VM and box
+#### Delete default VM and box
 
 In project root:
 
@@ -168,7 +190,7 @@ In project root:
 vagrant destroy
 ```
 
-### Setup VirtualBox Guest Addition
+#### Setup VirtualBox Guest Addition
 
 ```shell
 pacman -S virtualbox-guest-utils

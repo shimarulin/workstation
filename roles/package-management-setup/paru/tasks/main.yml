@@ -1,0 +1,32 @@
+---
+# tasks file for paru
+- name: check that the Paru already installed
+  stat:
+    path: /usr/bin/paru
+  register: paru_stat_result
+
+- name: get source
+  become: yes
+  shell: git clone https://aur.archlinux.org/paru.git
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  when: paru_stat_result.stat.exists == false
+
+- name: recursively change ownership of the source directory
+  become: yes
+  file:
+    path: /tmp/paru
+    state: directory
+    recurse: yes
+    owner: '{{ ansible_user_id }}'
+    group: '{{ ansible_user_id }}'
+  when: paru_stat_result.stat.exists == false
+
+- name: make and install
+  shell: makepkg -si --noconfirm
+  args:
+    chdir: /tmp/paru
+    executable: /bin/bash
+  when: paru_stat_result.stat.exists == false
+# TODO: add alias like 'pkg update', 'pkg upgrade', 'pkg install', 'pkg install-alternative'?
