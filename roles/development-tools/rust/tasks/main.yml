@@ -25,3 +25,8 @@
       then
           export PATH=$HOME/.cargo/bin:${PATH}
       fi
+
+- name: update Rust tools
+  command: ~/.cargo/bin/rustup update
+  when: cargo_stat_result.stat.exists == true
+  changed_when: false

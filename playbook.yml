@@ -7,6 +7,7 @@
     # Upgrade and prepare system
     - package-management-setup
     - system-setup
+    - development-tools
 #    - upgrade
 #    - build-tools
 #    - package-management

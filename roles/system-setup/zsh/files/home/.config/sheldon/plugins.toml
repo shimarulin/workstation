@@ -131,3 +131,10 @@ local = "~/.config/zsh/themes"
 git = 'https://github.com/ohmyzsh/ohmyzsh.git'
 dir = 'plugins'
 use = ['{nvm}/*.plugin.zsh']
+
+# Rust
+# -----------
+[plugins.rust-ohmyzsh-plugin]
+git = 'https://github.com/ohmyzsh/ohmyzsh.git'
+dir = 'plugins'
+use = ['{nvm}/*.plugin.zsh']
