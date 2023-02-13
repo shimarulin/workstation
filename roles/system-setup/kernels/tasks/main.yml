@@ -2,6 +2,5 @@
 # tasks file for kernels
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: '{{ kernels_packages }}'
-  notify: grub-mkconfig -o /esp/GRUB/grub/grub.cfg

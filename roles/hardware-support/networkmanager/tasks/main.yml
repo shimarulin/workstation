@@ -2,8 +2,8 @@
 # tasks file for networkmanager
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ networkmanager_packages }}"
+  community.general.pacman:
+    name: '{{ networkmanager_packages }}'
 
 - name: enable NetworkManager service
   become: true
@@ -18,4 +18,3 @@
     name: wpa_supplicant.service
     state: started
     enabled: yes
-

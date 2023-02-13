@@ -20,13 +20,18 @@
     creates: '{{ nvm_source_path }}'
   environment: '{{ nvm_env }}'
 
-- name: loads nvm
-  blockinfile:
-    path: ~/.profile
-    marker: '# {mark} ANSIBLE MANAGED BLOCK @nvm'
-    block: |
-      export NVM_DIR="$HOME/.config/nvm"
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+- name: copy ~/.config/profile.d
+  copy:
+    src: home/.config/profile.d
+    dest: ~/.config/
+
+#- name: loads nvm
+#  blockinfile:
+#    path: ~/.profile
+#    marker: '# {mark} ANSIBLE MANAGED BLOCK @nvm'
+#    block: |
+#      export NVM_DIR="$HOME/.config/nvm"
+#      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 - name: install latest Node.js
   shell: >

@@ -2,8 +2,8 @@
 # tasks file for vscode
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ vscode_packages }}"
+  community.general.pacman:
+    name: '{{ vscode_packages }}'
 
 #- name: Create custom desktop launcher
 #  template:
@@ -28,5 +28,5 @@
 
 - name: copy settings
   copy:
-    src: "home/.config/Code - OSS/User/settings.json"
-    dest: "{{ vscode_user_data_dir }}/User/settings.json"
+    src: 'home/.config/Code - OSS/User/settings.json'
+    dest: '{{ vscode_user_data_dir }}/User/settings.json'

@@ -21,4 +21,5 @@ galaxy_info:
 
 dependencies:
   - upgrade/system-upgrade
+  - system-setup/env
   - system-setup/utils

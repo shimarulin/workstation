@@ -21,13 +21,13 @@ shell = "zsh"
 [plugins.powerlevel10k_instant_promptrc]
 local = "~/.config/zsh/themes"
 
-# OMZ config
+# Oh-My-Zsh config
 # -----------
 
 [plugins.omzrc]
 local = "~/.config/zsh/env"
 
-# Oh My Zsh
+# Oh-My-Zsh
 # -----------
 
 # https://github.com/ohmyzsh/ohmyzsh
@@ -87,6 +87,20 @@ git = 'https://github.com/zsh-users/zsh-autosuggestions'
 git = 'https://github.com/junegunn/fzf'
 use = ['shell/completion.zsh']
 
+# NVM
+# -----------
+[plugins.nvm-ohmyzsh-plugin]
+git = 'https://github.com/ohmyzsh/ohmyzsh.git'
+dir = 'plugins'
+use = ['{nvm}/*.plugin.zsh']
+
+# Rust
+# -----------
+[plugins.rust-ohmyzsh-plugin]
+git = 'https://github.com/ohmyzsh/ohmyzsh.git'
+dir = 'plugins'
+use = ['{rust}/*.plugin.zsh']
+
 # Highlighting
 # -----------
 
@@ -124,17 +138,3 @@ git = "https://github.com/romkatv/powerlevel10k"
 #
 [plugins.powerlevel10krc]
 local = "~/.config/zsh/themes"
-
-# NVM
-# -----------
-[plugins.nvm-ohmyzsh-plugin]
-git = 'https://github.com/ohmyzsh/ohmyzsh.git'
-dir = 'plugins'
-use = ['{nvm}/*.plugin.zsh']
-
-# Rust
-# -----------
-[plugins.rust-ohmyzsh-plugin]
-git = 'https://github.com/ohmyzsh/ohmyzsh.git'
-dir = 'plugins'
-use = ['{nvm}/*.plugin.zsh']

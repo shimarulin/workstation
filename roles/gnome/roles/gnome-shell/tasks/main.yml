@@ -2,8 +2,8 @@
 # tasks file for gnome-shell
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ gnome_shell_packages }}"
+  community.general.pacman:
+    name: '{{ gnome_shell_packages }}'
 
 - include_tasks: extensions.yml
 - include_tasks: appearance.yml

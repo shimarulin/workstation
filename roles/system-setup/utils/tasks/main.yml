@@ -2,6 +2,6 @@
 # tasks file for utils
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: '{{ utils_packages }}'
     extra_args: --needed

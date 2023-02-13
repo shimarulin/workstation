@@ -115,6 +115,12 @@ sudo gpasswd -a user vboxsf
 sudo reboot
 ```
 
+#### Install Ansible and run playbook
+
+```shell
+cd ~/workstation && ./get
+```
+
 ### Run playbook on VirtualBox VM with Vagrant
 
 #### Create Vagrant box for test role from existing virtual machine

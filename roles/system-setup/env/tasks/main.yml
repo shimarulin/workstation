@@ -1,3 +1,17 @@
 ---
 # tasks file for env
 - include_tasks: etc/profile.d.yml
+
+- name: setup .profile to use .config/profile.d
+  blockinfile:
+    path: ~/.profile
+    create: true
+    marker: '# {mark} ANSIBLE MANAGED BLOCK @profile.d'
+    block: |
+      # Load profiles from ~/.config/profile.d
+      if test -d ~/.config/profile.d; then
+          for profile in ~/.config/profile.d/*.sh; do
+              test -r "$profile" && . "$profile"
+          done
+          unset profile
+      fi

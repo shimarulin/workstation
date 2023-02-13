@@ -2,5 +2,5 @@
 # tasks file for gnome-todo
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ gnome_todo_packages }}"
+  community.general.pacman:
+    name: '{{ gnome_todo_packages }}'

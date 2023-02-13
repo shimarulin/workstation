@@ -2,8 +2,8 @@
 # tasks file for eww
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ eww_packages }}"
+  community.general.pacman:
+    name: '{{ eww_packages }}'
 
 - name: check that the eww already local installed
   stat:

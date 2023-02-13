@@ -2,9 +2,8 @@
 # tasks file for bluetooth
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ bluetooth_packages }}"
-
+  community.general.pacman:
+    name: '{{ bluetooth_packages }}'
 
 - name: add the user to 'lp' group
   become: true
@@ -19,4 +18,3 @@
     name: bluetooth.service
     state: started
     enabled: yes
-

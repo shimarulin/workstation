@@ -5,7 +5,7 @@
 # - https://github.com/fcambus/spleen
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: terminus-font
 
 - name: Create /etc/vconsole.conf

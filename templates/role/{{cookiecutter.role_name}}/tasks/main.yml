@@ -2,5 +2,5 @@
 # tasks file for {{ cookiecutter.role_name }}
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: "{{ '{{' }} {{ cookiecutter.role_name|replace('-', '_') }}_packages {{ '}}' }}"

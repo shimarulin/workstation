@@ -2,8 +2,8 @@
 # tasks file for virtualbox-guest-prestart
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ virtualbox_guest_prestart_packages }}"
+  community.general.pacman:
+    name: '{{ virtualbox_guest_prestart_packages }}'
     extra_args: --needed
 
 - name: install pip

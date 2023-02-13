@@ -2,5 +2,5 @@
 # tasks file for gstreamer
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ gstreamer_packages }}"
+  community.general.pacman:
+    name: '{{ gstreamer_packages }}'

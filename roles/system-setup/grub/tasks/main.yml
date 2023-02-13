@@ -2,7 +2,7 @@
 # tasks file for grub
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: '{{ grub_packages }}'
 # https://stackoverflow.com/questions/55844981/ansible-insert-word-in-grub-cmdline
 #- name: Disable GRUB submenu
@@ -32,3 +32,10 @@
 #    regexp: "^#GRUB_SAVEDEFAULT=true"
 #    line: 'GRUB_SAVEDEFAULT=true'
 #  notify: grub-mkconfig
+
+- name: update GRUB config
+  become: true
+  shell: grub-mkconfig -o /esp/GRUB/grub/grub.cfg
+  args:
+    executable: /usr/bin/bash
+  changed_when: false

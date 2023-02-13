@@ -2,3 +2,30 @@
 # vars file for base-devel
 base_devel_packages:
   - base-devel
+  - fakeroot
+  - sudo
+  - texinfo
+#  - archlinux-keyring
+#  - autoconf
+#  - automake
+#  - binutils
+#  - bison
+#  - debugedit
+#  - file
+#  - findutils
+#  - flex
+#  - gawk
+#  - gcc
+#  - gettext
+#  - grep
+#  - groff
+#  - gzip
+#  - libtool
+#  - m4
+#  - make
+#  - pacman
+#  - patch
+#  - pkgconf
+#  - sed
+#  - which
+

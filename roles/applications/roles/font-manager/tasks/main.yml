@@ -2,5 +2,5 @@
 # tasks file for font-manager
 - name: install dependencies
   become: true
-  pacman:
-    name: "{{ font_manager_packages }}"
+  community.general.pacman:
+    name: '{{ font_manager_packages }}'

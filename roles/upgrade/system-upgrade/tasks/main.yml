@@ -2,7 +2,7 @@
 # tasks file for system-upgrade
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: '{{ system_upgrade_packages }}'
     extra_args: --needed
 
@@ -13,6 +13,6 @@
 
 - name: update packages cache and upgrade system
   become: true
-  pacman:
+  community.general.pacman:
     update_cache: yes
     upgrade: yes

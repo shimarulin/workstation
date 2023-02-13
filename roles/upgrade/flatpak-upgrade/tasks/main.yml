@@ -2,7 +2,7 @@
 # tasks file for flatpak-upgrade
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: '{{ flatpak_upgrade_packages }}'
 
 - name: upgrade installed Flatpak packages

@@ -3,7 +3,7 @@
 # TODO: set zsh as default shell for new users (skeleton)
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: '{{ zsh_packages }}'
 
 - include_tasks: sheldon.yml

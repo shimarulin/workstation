@@ -2,7 +2,7 @@
 # tasks file for virtualbox-guest
 - name: install dependencies
   become: true
-  pacman:
+  community.general.pacman:
     name: '{{ virtualbox_guest_packages }}'
 
 - name: enable vboxservice service
