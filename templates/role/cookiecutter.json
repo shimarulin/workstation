@@ -1,7 +1,7 @@
 {
     "role_name": "role_name",
-    "author": "Vyacheslav Shimarulin",
     "description": "your description",
+    "author": "Vyacheslav Shimarulin",
     "license": ["MIT", "BSD", "Apache", "CC-BY"],
     "min_ansible_version": 2.8
 }
