@@ -1,8 +1,0 @@
----
-# tasks file for aur-upgrade
-- name: update AUR packages cache and upgrade packages
-  kewlfft.aur.aur:
-    use: paru
-    update_cache: yes
-    upgrade: yes
-  when: paru_stat_result.stat.exists == true

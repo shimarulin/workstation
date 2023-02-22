@@ -26,10 +26,22 @@ See https://github.com/shimarulin/workstation/blob/main/get for details.
 > cd ~/.config/localhost && python -m cookiecutter -f templates/vars
 > ```
 
-Run playbook on localhost
+Run playbook on localhost with common configuration
 
 ```bash
 cd ~/.config/localhost && ansible-playbook playbook.yml
+```
+
+Run playbook on localhost for desktop setup
+
+```bash
+cd ~/.config/localhost && ansible-playbook playbook.yml --tags "desktop"
+```
+
+Run playbook on localhost for laptop setup
+
+```bash
+cd ~/.config/localhost && ansible-playbook playbook.yml --tags "laptop"
 ```
 
 ## Development

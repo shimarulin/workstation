@@ -1,6 +1,6 @@
 ---
 # tasks file for base-devel
-- name: install dependencies
+- name: Install dependencies
   become: true
   community.general.pacman:
     name: '{{ base_devel_packages }}'

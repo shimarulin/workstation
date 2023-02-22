@@ -1,0 +1,6 @@
+---
+# vars file for gnome-shell-appearance
+gnome_shell_appearance_packages:
+  - gnome-backgrounds
+  - gnome-shell-extensions
+  - gpaste

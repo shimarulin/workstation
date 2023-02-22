@@ -1,0 +1,33 @@
+---
+# tasks file for reflector
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ reflector_packages }}'
+
+- name: Setup country
+  become: true
+  lineinfile:
+    path: /etc/xdg/reflector/reflector.conf
+    regexp: '^# --country France,Germany'
+    line: '--country Russia,Germany'
+
+- name: Setup repo count
+  become: true
+  lineinfile:
+    path: /etc/xdg/reflector/reflector.conf
+    regexp: '^--latest 5'
+    line: '--latest 20'
+
+- name: Enable reflector service
+  become: true
+  systemd:
+    name: reflector.service
+    enabled: yes
+
+- name: Enable mirror list update schedule.
+  become: true
+  systemd:
+    name: reflector.timer
+    state: started
+    enabled: yes

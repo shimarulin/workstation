@@ -1,0 +1,18 @@
+---
+# tasks file for packages-upgrade
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ packages_upgrade_packages }}'
+    extra_args: --needed
+
+- name: Update pgp-keys database
+  become: true
+  command: pacman-key --populate archlinux
+  changed_when: false
+
+- name: Update packages cache and upgrade system packages
+  become: true
+  community.general.pacman:
+    update_cache: yes
+    upgrade: yes

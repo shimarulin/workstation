@@ -1,0 +1,16 @@
+---
+# tasks file for appimage-support
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ appimage_support_packages }}'
+
+- name: Create AppImage user dirs
+  file:
+    path: '{{ item }}'
+    state: directory
+    recurse: true
+  loop:
+    - ~/.local/opt/AppImages/ # Образы AppImage приложений
+    - ~/.local/share/applications/ # Ярлыки сторонних приложений
+    - ~/.local/share/icons/hicolor/512x512/apps/ # Иконки сторонних приложений

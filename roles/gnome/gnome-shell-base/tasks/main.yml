@@ -1,0 +1,16 @@
+---
+# tasks file for gnome-shell-base
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ gnome_shell_base_packages }}'
+
+# for tlp in GNOME 40 and newer
+- name: Mask the Gnome power-profiles-daemon service
+  become: true
+  systemd:
+    name: power-profiles-daemon.service
+    state: stopped
+    masked: true
+  ignore_errors: true
+  when: '"laptop" in ansible_run_tags'

@@ -1,0 +1,27 @@
+---
+# vars file for gnome-files
+gnome_files_packages:
+  - nautilus
+  - sushi # Preview tool
+  # - nautilus-terminal
+  - python-nautilus
+  - ffmpegthumbnailer
+  - meld
+  - nautilus-copy-path
+  - nautilus-compare
+  - gtkhash-nautilus
+  #  - nautilus-metadata-editor
+  #  - nautilus-ext-git
+  #  - git-nautilus-icons
+  #  - nautilus-annotations
+  #  - nautilus-folder-icons
+  - gvfs
+  - gvfs-afc
+  - gvfs-goa
+  - gvfs-google
+  - gvfs-gphoto2
+  - gvfs-mtp
+  - gvfs-nfs
+  - gvfs-smb
+# https://wiki.archlinux.org/title/GNOME/Files
+# https://github.com/rofirrim/eiciel

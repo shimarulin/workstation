@@ -1,23 +1,54 @@
 ---
 # This playbook deploys the whole application stack.
 
-- name: apply common configuration to all nodes
+- name: Apply common configuration to all nodes
   hosts: all
   roles:
-    # Upgrade and prepare system
-    - package-management-setup
-    - system-setup
-    - development-tools
-#    - upgrade
-#    - build-tools
-#    - package-management
-#    - common
+    # Setup package management
+    - package-management-tools/reflector
+    - package-management-tools/paru
+    - package-management-tools/flatpak
+    - package-management-tools/appimage-support
 
-# Hardware
-#    - hardware-support
+    # Setup runtime
+    - runtime/kernels
+    - runtime/env
+    - runtime/localization
+    - runtime/xdg-user-dirs
 
-# Desktop environment
-#    - gnome
+    #    - system-setup
+    #    - development-tools
+    #    - upgrade
+    #    - build-tools
+    #    - package-management
+    #    - common
 
+    # Hardware
+    - hardware/sof-firmware
+    - hardware/networkmanager
+    - role: hardware/bluez
+      tags:
+        - laptop
+        - desktop
+    - role: hardware/pipewire
+      tags:
+        - laptop
+        - desktop
+    - role: hardware/tlp
+      tags:
+        - laptop
+
+    # Setup boot
+    - boot/grub
+
+    # Desktop environment
+    - role: gnome/gnome-shell-base
+      tags:
+        - laptop
+        - desktop
+    - role: gnome/gnome-shell-appearance
+      tags:
+        - laptop
+        - desktop
 ## Virtualization tools
 #    - virtualization

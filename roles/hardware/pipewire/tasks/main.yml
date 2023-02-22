@@ -1,0 +1,11 @@
+---
+# tasks file for pipewire
+# https://roosnaflak.com/tech-and-research/transitioning-to-pipewire/
+# https://wiki.archlinux.org/title/PipeWire#Audio
+# https://wiki.archlinux.org/title/GStreamer#PipeWire
+# https://wiki.archlinux.org/title/KDE#Phonon
+- name: Install PipeWire
+  become: true
+  community.general.pacman:
+    name: '{{ pipewire_packages }}'
+    extra_args: --ask 4 # undocumented option (--ask BITMASK) https://unix.stackexchange.com/a/584001

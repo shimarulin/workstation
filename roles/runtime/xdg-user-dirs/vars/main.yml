@@ -1,0 +1,4 @@
+---
+# vars file for xdg-user-dirs
+xdg_user_dirs_packages:
+  - xdg-user-dirs

@@ -1,0 +1,20 @@
+---
+# tasks file for networkmanager
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ networkmanager_packages }}'
+
+- name: Enable NetworkManager service
+  become: true
+  systemd:
+    name: NetworkManager.service
+    state: started
+    enabled: yes
+
+- name: Enable wpa_supplicant service (Wi-Fi backend)
+  become: true
+  systemd:
+    name: wpa_supplicant.service
+    state: started
+    enabled: yes

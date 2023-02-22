@@ -1,0 +1,12 @@
+---
+# tasks file for gdm
+- name: Install dependencies
+  kewlfft.aur.aur:
+    name: '{{ gdm_packages }}'
+    use: paru
+
+- name: Enable GDM service
+  become: true
+  systemd:
+    name: gdm.service
+    enabled: yes

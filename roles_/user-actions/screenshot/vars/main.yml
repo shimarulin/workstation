@@ -1,0 +1,16 @@
+---
+# vars file for screenshot
+screenshot_packages:
+  - maim
+  - xclip
+  - feh
+  - xdotool
+  # Eww required
+  - gtk3
+  #  - gtk-layer-shell #only on Wayland
+  - pango
+  - gdk-pixbuf2
+  - cairo
+  - glib2
+  - gcc-libs
+  - glibc

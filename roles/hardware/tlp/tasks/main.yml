@@ -1,0 +1,33 @@
+---
+# tasks file for tlp
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ tlp_packages }}'
+
+- name: Enable tlp service
+  become: true
+  systemd:
+    name: tlp.service
+    state: started
+    enabled: yes
+
+- name: Mask rfkill service
+  become: true
+  systemd:
+    name: systemd-rfkill.service
+    state: stopped
+    masked: true
+
+- name: Mask rfkill socket
+  become: true
+  systemd:
+    name: systemd-rfkill.socket
+    state: stopped
+    masked: true
+
+- name: Enable NetworkManager-dispatcher service
+  become: true
+  systemd:
+    name: NetworkManager-dispatcher.service
+    enabled: yes

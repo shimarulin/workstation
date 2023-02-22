@@ -1,0 +1,33 @@
+---
+# tasks file for dirs
+- name: install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ dirs_packages }}'
+
+- name: create extra directories
+  file:
+    path: '{{ item }}'
+    state: directory
+  loop:
+    # XDG
+    #    - ~/Рабочий стол/
+    #    - ~/Загрузки/
+    #    - ~/Шаблоны/
+    #    - ~/Общедоступные/
+    #    - ~/Документы/
+    #    - ~/Музыка/
+    #    - ~/Изображения/
+    #    - ~/Видео/
+    # Other
+    - ~/Проекты/
+    - ~/Образы дисков/
+    - ~/.local/opt/ # Сторонние приложения
+#    - ~/.local/opt/AppImages/ # Образы AppImage приложений
+#    - ~/.local/share/applications/ # Ярлыки сторонних приложений
+#    - ~/.local/share/icons/hicolor/512x512/apps/ # Иконки сторонних приложений
+
+- name: update XDG user dirs config
+  copy:
+    src: home/.config/
+    dest: ~/.config/

@@ -1,4 +1,0 @@
----
-# vars file for flatpak-upgrade
-flatpak_upgrade_packages:
-  - flatpak

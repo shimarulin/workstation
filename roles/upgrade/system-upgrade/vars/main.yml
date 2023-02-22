@@ -1,4 +1,0 @@
----
-# vars file for system-upgrade
-system_upgrade_packages:
-  - archlinux-keyring

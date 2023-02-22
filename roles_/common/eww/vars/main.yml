@@ -1,0 +1,12 @@
+---
+# vars file for eww
+eww_packages:
+  # Eww required libs
+  - gtk3
+  #  - gtk-layer-shell #only on Wayland
+  - pango
+  - gdk-pixbuf2
+  - cairo
+  - glib2
+  - gcc-libs
+  - glibc
