@@ -214,29 +214,3 @@ vagrant destroy
 pacman -S virtualbox-guest-utils
 sudo systemctl enable vboxservice
 ```
-
-### Watch DConf changes
-
-```bash
-dconf watch /
-```
-
-## Related projects
-
-- [Arch Linux Install Script](https://picodotdev.github.io/alis/)
-- [My Arch Setup](https://github.com/raphiz/my-arch-setup) - Ansible based automation scripts for my Arch Linux machines
-- [archfi](https://github.com/MatMoul/archfi)
-- [Spark](https://github.com/pigmonkey/spark) - Arch Linux Provisioning with Ansible
-- [arch-install](https://github.com/wrzlbrmft/arch-install)
-- [krushn-arch](https://github.com/krushndayshmookh/krushn-arch)
-
-## Docs and articles
-
-- https://wiki.archlinux.org/
-- https://ctlos.github.io/wiki
-- https://regolith-linux.org/
-- https://instantos.io/
-- https://pikedom.com/install-ansible-on-arch-linux/
-- https://blackarch.ru/?p=198
-- https://computingforgeeks.com/arch-linux-easy-and-fast-installation-with-archfi-installer/
-- https://disconnected.systems/blog/archlinux-installer/#setting-variables-and-collecting-user-input

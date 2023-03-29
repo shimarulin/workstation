@@ -1,0 +1,265 @@
+{
+  "main": {
+    "id": "803caa4966c2bdff",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ab54d45a4e1d2b1",
+        "type": "split",
+        "children": [
+          {
+            "id": "74c27982b0387c27",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "8970f892d75cd084",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "README.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "ed1358f289b36d4c",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/Gnome/Gnome Wayland session issues.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "0ac86f7d5f9c7eb3",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/Ansible/External links.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "89090f865618506b",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/References/Linux distributions.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "f9db5baaa4672aa9",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dcfdbe4169f9d927",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/Gnome/DConf.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "517cc473a4062ae2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/Ansible/Use QEMU&KVM and Virt Manager.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "8150e4cbb31907c5",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/Ansible/Use VirtualBox.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "76458261e33e8ad7",
+    "type": "split",
+    "children": [
+      {
+        "id": "6d11a44c9ccc4272",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "10386014e971db29",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1b0a656f0d40e012",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d5809211fb583d26",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "510c63b96ecd6947",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ec16f363d708f73",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aa75e6acd3795495",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/Gnome/Gnome Wayland session issues.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "11aaa31bbd586ecd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/Gnome/Gnome Wayland session issues.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "463e4e7d5b84768b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "7064c1575b2dfe92",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/Gnome/Gnome Wayland session issues.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:Создать новый холст": false,
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "ed1358f289b36d4c",
+  "lastOpenFiles": [
+    "README.md",
+    "docs/Ansible/External links.md",
+    "docs/Gnome/DConf.md",
+    "docs/index.md",
+    "docs/Gnome/Gnome Wayland session issues.md",
+    "docs/Gnome",
+    "docs/Ansible/Use VirtualBox.md",
+    "docs/tmp/TODO.md",
+    "docs/tmp/rice.md",
+    "docs/tmp/NOTES.md",
+    "docs/tmp/keyboard.md",
+    "docs/tmp/hardware.md",
+    "docs/tmp/directories_and_files.md",
+    "docs/tmp/awesome-tools.md",
+    "docs/tmp/keybindings.md",
+    "docs/tmp/index.md",
+    "docs/tmp/_notes.md",
+    "docs/References/Linux distributions.md",
+    "docs/References",
+    "docs/Ansible/Use QEMU&KVM and Virt Manager.md",
+    "docs/index.md~",
+    "roles/zsh/tasks/sheldon.yml~",
+    "roles/zsh/tasks/main.yml~",
+    "roles/fonts/README.md",
+    "docs/tmp/xdg.md",
+    "roles_/user-actions/README.md",
+    "docs/Ansible"
+  ]
+}

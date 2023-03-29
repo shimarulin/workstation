@@ -1,0 +1,14 @@
+{
+  "spellcheckLanguages": [
+    "ru",
+    "en"
+  ],
+  "alwaysUpdateLinks": false,
+  "useMarkdownLinks": true,
+  "userIgnoreFilters": [
+    "node_modules/",
+    "group_vars/",
+    "templates/"
+  ],
+  "showInlineTitle": false
+}
