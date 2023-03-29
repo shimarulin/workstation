@@ -1,11 +1,13 @@
 ---
 # tasks file for env
-- include_tasks: etc/profile.d.yml
+- name: Include the environment variables management task
+  ansible.builtin.include_tasks: etc/profile.d.yml
 
-- name: setup .profile to use .config/profile.d
-  blockinfile:
+- name: Setup .profile to use .config/profile.d
+  ansible.builtin.blockinfile:
     path: ~/.profile
     create: true
+    mode: '0644'
     marker: '# {mark} ANSIBLE MANAGED BLOCK @profile.d'
     block: |
       # Load profiles from ~/.config/profile.d

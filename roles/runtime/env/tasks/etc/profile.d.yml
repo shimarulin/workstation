@@ -1,7 +1,8 @@
 ---
 # tasks file for /etc/profile.d
-- name: add XDG variables
+- name: Copy the environment variable helpers
   become: true
-  copy:
+  ansible.builtin.copy:
     src: etc/profile.d/
     dest: /etc/profile.d/
+    mode: '0644'
