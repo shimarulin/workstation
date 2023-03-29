@@ -6,5 +6,6 @@
     name: '{{ flatpak_packages }}'
 
 - name: Upgrade installed Flatpak packages
-  command: flatpak update -y
-  changed_when: false
+  ansible.builtin.command: flatpak update -y
+  register: flatpak_update_result
+  changed_when: flatpak_update_result.rc == 0
