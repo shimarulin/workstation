@@ -6,9 +6,10 @@
     name: '{{ xdg_user_dirs_packages }}'
 
 - name: Create XDG user dirs
-  file:
+  ansible.builtin.file:
     path: '{{ item }}'
     state: directory
+    mode: '0755'
   loop:
     - ~/Рабочий стол/
     - ~/Загрузки/
@@ -20,6 +21,7 @@
     - ~/Видео/
 
 - name: Update XDG user dirs config
-  copy:
+  ansible.builtin.copy:
     src: home/.config/
     dest: ~/.config/
+    mode: '0644'
