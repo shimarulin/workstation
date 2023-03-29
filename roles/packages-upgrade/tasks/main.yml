@@ -8,11 +8,12 @@
 
 - name: Update pgp-keys database
   become: true
-  command: pacman-key --populate archlinux
-  changed_when: false
+  ansible.builtin.command: pacman-key --populate archlinux
+  register: pacman_key_result
+  changed_when: pacman_key_result.rc == 0
 
 - name: Update packages cache and upgrade system packages
   become: true
   community.general.pacman:
-    update_cache: yes
-    upgrade: yes
+    update_cache: true
+    upgrade: true
