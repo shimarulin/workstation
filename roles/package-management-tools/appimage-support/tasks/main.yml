@@ -6,7 +6,7 @@
     name: '{{ appimage_support_packages }}'
 
 - name: Create AppImage user dirs
-  file:
+  ansible.builtin.file:
     path: '{{ item }}'
     state: directory
     recurse: true
