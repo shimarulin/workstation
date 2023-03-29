@@ -1,0 +1,4 @@
+---
+# vars file for seahorse
+seahorse_packages:
+  - seahorse

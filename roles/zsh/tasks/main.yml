@@ -1,0 +1,46 @@
+---
+# tasks file for zsh
+# TODO: set zsh as default shell for new users (skeleton)
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ zsh_packages }}'
+
+- name: Setup Sheldon
+  ansible.builtin.include_tasks: sheldon.yml
+
+- name: Copy ~/.zshenv
+  ansible.builtin.copy:
+    src: home/.zshenv
+    dest: ~/.zshenv
+    mode: '0644'
+
+- name: Copy ~/.config/zsh
+  ansible.builtin.copy:
+    src: home/.config/zsh
+    dest: ~/.config/
+    mode: '0755'
+
+- name: Create histdb data directory
+  ansible.builtin.file:
+    path: ~/.local/share/histdb
+    state: directory
+    mode: '0644'
+
+- name: Set zsh as default shell
+  become: true
+  ansible.builtin.user:
+    name: '{{ ansible_user_id }}'
+    shell: /usr/bin/zsh
+
+- name: Synchronize the pkgfile database
+  become: true
+  ansible.builtin.command: 'pkgfile -u'
+  changed_when: false
+
+- name: Enable automatically synchronizing the pkgfile database
+  become: true
+  ansible.builtin.systemd:
+    name: pkgfile-update.timer
+    state: started
+    enabled: true

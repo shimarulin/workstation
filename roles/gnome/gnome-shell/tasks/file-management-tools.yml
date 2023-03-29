@@ -1,0 +1,5 @@
+---
+# Install file management tools
+- name: Install Nautilus
+  include_role:
+    name: applications/nautilus

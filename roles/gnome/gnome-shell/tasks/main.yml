@@ -1,0 +1,13 @@
+---
+# tasks file for gnome-shell
+
+- name: Minimal GNOME shell installation
+  ansible.builtin.include_role:
+    name: gnome/gnome-shell-base
+
+- name: Install terminal emulator
+  ansible.builtin.include_role:
+    name: applications/tilix
+
+- name: Install file management tools
+  ansible.builtin.include_tasks: file-management-tools.yml

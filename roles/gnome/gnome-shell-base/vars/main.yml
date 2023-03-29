@@ -31,6 +31,9 @@ gnome_shell_base_packages:
   # power-profiles-daemon (optional) - Power profile switching
   # switcheroo-control (optional) - Multi-GPU support
   - gnome-shell # required by `gdm`
+
+  # GNOME user docs
+  # ---
   - gnome-user-docs
 
   # GNOME configuration tools
@@ -75,17 +78,13 @@ gnome_shell_base_packages:
   - gnome-tweaks
   - dconf-editor
 
-  # GNOME security tools
-  - gnome-keyring
-  - seahorse
+  # GNOME monitoring tools
+  # ---
+  #  - gnome-system-monitor
+  #  - baobab
+  #  - gnome-disk-utility
+  #  - gnome-logs
 
   # A backend implementation for xdg-desktop-portal (a portal frontend service for Flatpak
   # and possibly other desktop containment frameworks) for the GNOME desktop environment
   - xdg-desktop-portal-gnome
-
-  #  - tracker3 # required by `gtk3`, `gtk4`...
-  #  - gnome-system-monitor
-
-  # GNOME utils
-  # ---
-  - gnome-console

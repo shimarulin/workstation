@@ -1,0 +1,4 @@
+---
+# vars file for gnome-disk-utility
+gnome_disk_utility_packages:
+  - gnome-disk-utility

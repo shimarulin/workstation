@@ -1,0 +1,6 @@
+---
+# tasks file for gnome-disk-utility
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ gnome_disk_utility_packages }}'

@@ -1,18 +1,18 @@
 ---
 # vars file for gnome-shell
 gnome_shell_packages:
-  - gnome-shell # required by `gdm`
-  - gnome-session # required by `gdm`
-  - gnome-shell-extensions
-  - gnome-keyring
-  - tracker3 # required by `gtk3`, `gtk4`...
-  - gnome-backgrounds
-  - gnome-system-monitor
-  - gnome-control-center
-  - gnome-user-docs
-  - gnome-tweaks
-  - dconf-editor
-  - gpaste
+  #  - gnome-shell # required by `gdm`
+  #  - gnome-session # required by `gdm`
+  #  - gnome-shell-extensions
+  #  - gnome-keyring
+  #  - tracker3 # required by `gtk3`, `gtk4`...
+  #  - gnome-backgrounds
+  #  - gnome-system-monitor
+  #  - gnome-control-center
+  #  - gnome-user-docs
+  #  - gnome-tweaks
+  #  - dconf-editor
+  #  - gpaste
   - gnome-console
 
 gnome_extensions:

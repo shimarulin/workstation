@@ -1,0 +1,4 @@
+---
+# vars file for gnome-logs
+gnome_logs_packages:
+  - gnome-logs

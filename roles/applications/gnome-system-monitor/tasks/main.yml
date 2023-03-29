@@ -1,0 +1,6 @@
+---
+# tasks file for gnome-system-monitor
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ gnome_system_monitor_packages }}'

@@ -1,0 +1,6 @@
+---
+# tasks file for gnome-logs
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ gnome_logs_packages }}'

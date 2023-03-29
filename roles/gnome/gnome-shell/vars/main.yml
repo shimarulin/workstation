@@ -1,0 +1,31 @@
+---
+# vars file for gnome-shell
+#gnome_shell_packages:
+#  # GNOME shell
+#  # ---
+#  - gnome-shell
+#
+#  # GNOME user docs
+#  # ---
+#  - gnome-user-docs
+#
+#  # GNOME configuration tools
+#  # ---
+#  - gnome-control-center
+#  - gnome-tweaks
+#  - dconf-editor
+#
+#  # GNOME monitoring tools
+#  # ---
+#  - gnome-system-monitor
+#  - baobab
+#  - gnome-disk-utility
+#  #- gnome-logs
+#
+#  # A backend implementation for xdg-desktop-portal (a portal frontend service for Flatpak
+#  # and possibly other desktop containment frameworks) for the GNOME desktop environment
+#  - xdg-desktop-portal-gnome
+#
+#  # GNOME terminal emulator
+#  # ---
+#  - gnome-console

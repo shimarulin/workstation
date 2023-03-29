@@ -3,4 +3,3 @@
 gnome_shell_appearance_packages:
   - gnome-backgrounds
   - gnome-shell-extensions
-  - gpaste

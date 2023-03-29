@@ -1,0 +1,4 @@
+---
+# vars file for gnome-system-monitor
+gnome_system_monitor_packages:
+  - gnome-system-monitor

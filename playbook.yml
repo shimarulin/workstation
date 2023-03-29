@@ -16,13 +16,6 @@
     - runtime/localization
     - runtime/xdg-user-dirs
 
-    #    - system-setup
-    #    - development-tools
-    #    - upgrade
-    #    - build-tools
-    #    - package-management
-    #    - common
-
     # Hardware
     - hardware/sof-firmware
     - hardware/networkmanager
@@ -41,14 +34,20 @@
     # Setup boot
     - boot/grub
 
+    # Install and setup commandline tools
+    - cli/git
+    - cli/ssh
+    - cli/common-cli-tools
+    - cli/man
+
+    # Install and setup shell
+    - zsh
+
     # Desktop environment
-    - role: gnome/gnome-shell-base
+    - role: gnome/gnome-shell
       tags:
         - laptop
         - desktop
-    - role: gnome/gnome-shell-appearance
-      tags:
-        - laptop
-        - desktop
-## Virtualization tools
+
+    # Virtualization tools
 #    - virtualization
