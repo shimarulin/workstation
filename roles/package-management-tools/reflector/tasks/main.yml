@@ -7,27 +7,27 @@
 
 - name: Setup country
   become: true
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/xdg/reflector/reflector.conf
     regexp: '^# --country France,Germany'
     line: '--country Russia,Germany'
 
 - name: Setup repo count
   become: true
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/xdg/reflector/reflector.conf
     regexp: '^--latest 5'
     line: '--latest 20'
 
 - name: Enable reflector service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: reflector.service
-    enabled: yes
+    enabled: true
 
 - name: Enable mirror list update schedule.
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: reflector.timer
     state: started
-    enabled: yes
+    enabled: true
