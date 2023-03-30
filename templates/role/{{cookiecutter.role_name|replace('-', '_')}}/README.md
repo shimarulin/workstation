@@ -1,4 +1,4 @@
-Ansible Role "{{ cookiecutter.role_name }}"
+Ansible Role "{{ cookiecutter.role_name|replace('-', '_') }}"
 =========
 
 > {{ cookiecutter.description }}
