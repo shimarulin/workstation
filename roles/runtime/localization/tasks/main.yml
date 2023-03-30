@@ -1,4 +1,7 @@
 ---
 # tasks file for localization
-- include_tasks: locale.yml
-- include_tasks: vconsole.yml
+- name: Setup locale
+  ansible.builtin.include_tasks: locale.yml
+
+- name: Setup vconsole
+  ansible.builtin.include_tasks: vconsole.yml
