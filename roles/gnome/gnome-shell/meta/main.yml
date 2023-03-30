@@ -27,10 +27,10 @@ dependencies: []
 #  - applications/nautilus
 #
 #  # Monitoring and diagnostic tools
-#  - applications/gnome-system-monitor
+#  - applications/gnome_system_monitor
 #  - applications/baobab
-#  - applications/gnome-disk-utility
-#  - applications/gnome-logs
+#  - applications/gnome_disk_utility
+#  - applications/gnome_logs
 #
 #  # Clipboard, screenshot and screen-recording tools
 #  - applications/gpaste
