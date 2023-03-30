@@ -5,7 +5,7 @@
   community.general.pacman:
     name: '{{ grub_packages }}'
 # https://stackoverflow.com/questions/55844981/ansible-insert-word-in-grub-cmdline
-#- name: Disable GRUB submenu
+# - name: Disable GRUB submenu
 #  become: true
 #  lineinfile:
 #    path: /etc/default/grub
@@ -17,7 +17,7 @@
 # because grub cannot write to btrfs.
 # But it will generate a misleading error message:
 # "sparse file not allowed. Press any key to continue.".
-#- name: Recall previous GRUB entry
+# - name: Recall previous GRUB entry
 #  become: true
 #  lineinfile:
 #    path: /etc/default/grub
@@ -25,7 +25,7 @@
 #    line: 'GRUB_DEFAULT=saved'
 #  notify: grub-mkconfig
 #
-#- name: Save selected GRUB menu item
+# - name: Save selected GRUB menu item
 #  become: true
 #  lineinfile:
 #    path: /etc/default/grub
@@ -35,7 +35,8 @@
 
 - name: Update GRUB config
   become: true
-  shell: grub-mkconfig -o /esp/GRUB/grub/grub.cfg
+  ansible.builtin.shell: grub-mkconfig -o /esp/GRUB/grub/grub.cfg
   args:
     executable: /usr/bin/bash
-  changed_when: false
+  register: grub_mkconfig_result
+  changed_when: grub_mkconfig_result.rc == 0

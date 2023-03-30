@@ -1,5 +1,8 @@
 ---
 # handlers file for grub
-- name: grub-mkconfig
+# TODO: don't need?
+- name: Execute grub-mkconfig handler
   become: true
-  command: grub-mkconfig -o /boot/grub/grub.cfg
+  ansible.builtin.command: grub-mkconfig -o /esp/GRUB/grub/grub.cfg
+  register: grub_mkconfig_handler_result
+  changed_when: grub_mkconfig_handler_result.rc == 0
