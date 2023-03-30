@@ -1,5 +1,5 @@
 ---
-# tasks file for gnome-system-monitor
+# tasks file for "gnome_system_monitor" role
 - name: Install dependencies
   become: true
   community.general.pacman:

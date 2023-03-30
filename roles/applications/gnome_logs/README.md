@@ -1,4 +1,4 @@
-# ansible-role-gnome-logs
+# Ansible Role "gnome_logs"
 
 > A log viewer for the systemd journal
 

@@ -1,4 +1,4 @@
-# ansible-role-gnome-disk-utility
+# Ansible Role "gnome_disk_utility"
 
 > Disk Management Utility for GNOME
 

@@ -1,5 +1,5 @@
 ---
-# tasks file for gnome-logs
+# tasks file for "gnome_logs" role
 - name: Install dependencies
   become: true
   community.general.pacman:

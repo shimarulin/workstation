@@ -1,4 +1,4 @@
-# ansible-role-gnome-system-monitor
+# Ansible Role "gnome_system_monitor"
 
 > View current processes and monitor system state
 
