@@ -1,4 +1,4 @@
-ansible-role-{{ cookiecutter.role_name }}
+Ansible Role "{{ cookiecutter.role_name }}"
 =========
 
 > {{ cookiecutter.description }}
