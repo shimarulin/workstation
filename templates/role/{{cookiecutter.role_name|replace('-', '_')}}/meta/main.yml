@@ -3,7 +3,7 @@ galaxy_info:
   author: {{ cookiecutter.author }}
   description: {{ cookiecutter.description }}
   license: {{ cookiecutter.license }}
-  min_ansible_version: {{ cookiecutter.min_ansible_version }}
+  min_ansible_version: "{{ cookiecutter.min_ansible_version }}"
 
   # Platforms is a list of platforms, and each platform has a name and a list of versions.
   platforms:
