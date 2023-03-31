@@ -20,7 +20,7 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - packages-upgrade
-  - cli/common-cli-tools
-  - runtime/env
-  - fonts
+  - role: packages-upgrade
+  - role: cli/fzf
+  - role: runtime/env
+  - role: fonts

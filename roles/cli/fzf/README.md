@@ -1,6 +1,6 @@
-# ansible-role-common-cli-tools
+# Ansible Role "fzf"
 
-> Common commandline tools and utils
+> A command-line fuzzy finder (https://github.com/junegunn/fzf)
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: common-cli-tools, x: 42 }
+         - { role: fzf, x: 42 }
 
 ## License
 

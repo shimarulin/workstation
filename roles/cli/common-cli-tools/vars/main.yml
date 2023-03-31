@@ -1,4 +1,0 @@
----
-# vars file for common-cli-tools
-common_cli_tools_packages:
-  - fzf

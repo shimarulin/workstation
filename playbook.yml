@@ -1,7 +1,7 @@
 ---
 # This playbook deploys the whole application stack.
 
-- name: Apply common configuration to all nodes
+- name: Apply common configuration to all nodes # noqa: role-name[path]
   hosts: all
   roles:
     # Setup package management
@@ -19,15 +19,15 @@
     # Hardware
     - hardware/sof-firmware
     - hardware/networkmanager
-    - role: hardware/bluez
+    - role: hardware/bluez # noqa: role-name[path]
       tags:
         - laptop
         - desktop
-    - role: hardware/pipewire
+    - role: hardware/pipewire # noqa: role-name[path]
       tags:
         - laptop
         - desktop
-    - role: hardware/tlp
+    - role: hardware/tlp # noqa: role-name[path]
       tags:
         - laptop
 
@@ -37,14 +37,14 @@
     # Install and setup commandline tools
     - cli/git
     - cli/ssh
-    - cli/common-cli-tools
+    - cli/fzf
     - cli/man
 
     # Install and setup shell
     - zsh
 
     # Desktop environment
-    - role: gnome/gnome-shell
+    - role: gnome/gnome-shell # noqa: role-name[path]
       tags:
         - laptop
         - desktop

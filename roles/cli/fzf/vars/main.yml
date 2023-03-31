@@ -1,0 +1,4 @@
+---
+# vars file for "fzf" role
+fzf_packages:
+  - fzf
