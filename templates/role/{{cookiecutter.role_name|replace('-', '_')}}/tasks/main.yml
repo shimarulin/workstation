@@ -3,4 +3,4 @@
 - name: Install dependencies
   become: true
   community.general.pacman:
-    name: "{{ '{{' }} {{ cookiecutter.role_name|replace('-', '_') }}_packages {{ '}}' }}"
+    name: '{{ '{{' }} {{ cookiecutter.role_name|replace('-', '_') }}_packages {{ '}}' }}'
