@@ -1,6 +1,6 @@
 ---
 # vars file for gnome_shell
-#gnome_shell_packages:
+# gnome_shell_packages:
 #  # GNOME shell
 #  # ---
 #  - gnome_shell

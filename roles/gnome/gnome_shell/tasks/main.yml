@@ -3,11 +3,11 @@
 
 - name: Minimal GNOME shell installation
   ansible.builtin.include_role:
-    name: gnome/gnome_shell_base
+    name: gnome/gnome_shell_base # noqa: role-name[path]
 
 - name: Install terminal emulator
   ansible.builtin.include_role:
-    name: applications/tilix
+    name: applications/tilix # noqa: role-name[path]
 
 - name: Install file management tools
   ansible.builtin.include_tasks: file-management-tools.yml
