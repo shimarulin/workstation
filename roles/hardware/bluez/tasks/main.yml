@@ -7,14 +7,14 @@
 
 - name: Add the user to 'lp' group
   become: true
-  user:
+  ansible.builtin.user:
     name: '{{ ansible_user_id }}'
     groups: lp
-    append: yes
+    append: true
 
 - name: Enable bluetooth service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: bluetooth.service
     state: started
-    enabled: yes
+    enabled: true
