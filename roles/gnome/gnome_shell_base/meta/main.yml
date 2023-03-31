@@ -20,8 +20,8 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - packages-upgrade
-  - package-management-tools/flatpak
-  - boot/systemd_graphical_target
-  - boot/gdm
-  - media/gstreamer
+  - role: packages-upgrade
+  - role: package-management-tools/flatpak
+  - role: boot/systemd_graphical_target
+  - role: boot/gdm
+  - role: media/gstreamer

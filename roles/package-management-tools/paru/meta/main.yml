@@ -20,6 +20,6 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - packages-upgrade
-  - build-dependencies/base_devel
-  - build-dependencies/git
+  - role: packages-upgrade
+  - role: build-dependencies/base_devel
+  - role: build-dependencies/git
