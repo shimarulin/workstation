@@ -8,16 +8,16 @@
     - package-management-tools/reflector
     - package-management-tools/paru
     - package-management-tools/flatpak
-    - package-management-tools/appimage-support
+    - package-management-tools/appimage_support
 
     # Setup runtime
     - runtime/kernels
     - runtime/env
     - runtime/localization
-    - runtime/xdg-user-dirs
+    - runtime/xdg_user_dirs
 
     # Hardware
-    - hardware/sof-firmware
+    - hardware/sof_firmware
     - hardware/networkmanager
     - role: hardware/bluez # noqa: role-name[path]
       tags:
@@ -44,7 +44,7 @@
     - zsh
 
     # Desktop environment
-    - role: gnome/gnome-shell # noqa: role-name[path]
+    - role: gnome/gnome_shell # noqa: role-name[path]
       tags:
         - laptop
         - desktop
