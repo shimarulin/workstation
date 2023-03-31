@@ -1,9 +1,9 @@
 ---
-# vars file for gnome-shell
+# vars file for gnome_shell
 gnome_shell_packages:
-  #  - gnome-shell # required by `gdm`
+  #  - gnome_shell # required by `gdm`
   #  - gnome-session # required by `gdm`
-  #  - gnome-shell-extensions
+  #  - gnome_shell-extensions
   #  - gnome-keyring
   #  - tracker3 # required by `gtk3`, `gtk4`...
   #  - gnome-backgrounds

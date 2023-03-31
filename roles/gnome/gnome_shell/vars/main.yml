@@ -1,9 +1,9 @@
 ---
-# vars file for gnome-shell
+# vars file for gnome_shell
 #gnome_shell_packages:
 #  # GNOME shell
 #  # ---
-#  - gnome-shell
+#  - gnome_shell
 #
 #  # GNOME user docs
 #  # ---

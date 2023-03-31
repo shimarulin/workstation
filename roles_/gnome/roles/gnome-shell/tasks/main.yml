@@ -1,5 +1,5 @@
 ---
-# tasks file for gnome-shell
+# tasks file for gnome_shell
 - name: install dependencies
   become: true
   community.general.pacman:

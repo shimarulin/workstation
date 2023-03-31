@@ -1,5 +1,5 @@
 ---
-# tasks file for gnome-shell
+# tasks file for gnome_shell
 
 - name: Minimal GNOME shell installation
   ansible.builtin.include_role:
