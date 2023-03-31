@@ -1,5 +1,5 @@
 ---
-# tasks file for xdg-user-dirs
+# tasks file for xdg_user_dirs
 - name: Install dependencies
   become: true
   community.general.pacman:
