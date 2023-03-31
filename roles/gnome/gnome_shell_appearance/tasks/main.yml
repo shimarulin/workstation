@@ -1,5 +1,5 @@
 ---
-# tasks file for gnome-shell-appearance
+# tasks file for gnome_shell_appearance
 - name: Install dependencies
   become: true
   community.general.pacman:
