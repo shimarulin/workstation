@@ -1,5 +1,5 @@
 ---
-# tasks file for packages-upgrade
+# tasks file for pacman_upgrade
 - name: Install dependencies
   become: true
   community.general.pacman:

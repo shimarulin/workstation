@@ -1,4 +1,4 @@
 ---
-# vars file for packages-upgrade
+# vars file for pacman_upgrade
 packages_upgrade_packages:
   - archlinux-keyring
