@@ -7,27 +7,27 @@
 
 - name: Enable tlp service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: tlp.service
     state: started
-    enabled: yes
+    enabled: true
 
 - name: Mask rfkill service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: systemd-rfkill.service
     state: stopped
     masked: true
 
 - name: Mask rfkill socket
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: systemd-rfkill.socket
     state: stopped
     masked: true
 
 - name: Enable NetworkManager-dispatcher service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: NetworkManager-dispatcher.service
-    enabled: yes
+    enabled: true
