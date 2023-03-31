@@ -1,5 +1,5 @@
 ---
-# vars file for gnome-shell-base
+# vars file for gnome_shell_base
 gnome_shell_base_packages:
   # GNOME shell
   # ---

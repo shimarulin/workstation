@@ -21,7 +21,7 @@ galaxy_info:
 
 dependencies: []
 #  # GNOME base
-#  - gnome/gnome-shell-base
+#  - gnome/gnome_shell_base
 #
 #  # File management
 #  - applications/nautilus

@@ -3,7 +3,7 @@
 
 - name: Minimal GNOME shell installation
   ansible.builtin.include_role:
-    name: gnome/gnome-shell-base
+    name: gnome/gnome_shell_base
 
 - name: Install terminal emulator
   ansible.builtin.include_role:

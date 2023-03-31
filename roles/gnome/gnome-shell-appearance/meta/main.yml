@@ -20,7 +20,7 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - role: gnome/gnome-shell-base
+  - role: gnome/gnome_shell_base
     tags:
       - laptop
       - desktop
