@@ -22,5 +22,5 @@ galaxy_info:
 dependencies:
   - upgrade/system-upgrade
   - system-setup/env
-  - build-dependencies/base-devel
+  - build-dependencies/base_devel
   - build-dependencies/git

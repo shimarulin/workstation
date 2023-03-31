@@ -1,5 +1,5 @@
 ---
-# tasks file for base-devel
+# tasks file for base_devel
 - name: Install dependencies
   become: true
   community.general.pacman:

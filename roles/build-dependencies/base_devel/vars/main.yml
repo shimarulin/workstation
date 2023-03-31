@@ -1,5 +1,5 @@
 ---
-# vars file for base-devel
+# vars file for base_devel
 base_devel_packages:
   - base-devel
   - fakeroot
@@ -28,4 +28,3 @@ base_devel_packages:
 #  - pkgconf
 #  - sed
 #  - which
-
