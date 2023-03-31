@@ -1,6 +1,6 @@
 ---
 # tasks file for man
-- name: install dependencies
+- name: Install dependencies
   become: true
   community.general.pacman:
     name: '{{ man_packages }}'
