@@ -1,5 +1,5 @@
 ---
-# tasks file for appimage-support
+# tasks file for appimage_support
 - name: Install dependencies
   become: true
   community.general.pacman:
