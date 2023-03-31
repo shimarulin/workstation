@@ -20,4 +20,4 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - packages-upgrade
+  - role: packages-upgrade
