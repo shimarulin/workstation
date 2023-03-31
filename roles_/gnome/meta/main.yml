@@ -20,7 +20,7 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - systemd-graphical-target
+  - systemd_graphical_target
   - gnome/roles/gdm
   - gnome/roles/gstreamer
   - gnome/roles/gnome-shell

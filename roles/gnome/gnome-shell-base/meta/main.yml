@@ -22,6 +22,6 @@ galaxy_info:
 dependencies:
   - packages-upgrade
   - package-management-tools/flatpak
-  - boot/systemd-graphical-target
+  - boot/systemd_graphical_target
   - boot/gdm
   - media/gstreamer
