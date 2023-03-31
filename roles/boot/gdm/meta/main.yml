@@ -20,6 +20,6 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - packages-upgrade
-  - package-management-tools/paru
-  - boot/systemd-graphical-target
+  - role: packages-upgrade
+  - role: package-management-tools/paru
+  - role: boot/systemd_graphical_target
