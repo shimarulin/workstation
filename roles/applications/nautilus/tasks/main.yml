@@ -5,6 +5,20 @@
   community.general.pacman:
     name: '{{ nautilus_packages }}'
 
+- name: Get default file manager
+  ansible.builtin.command: xdg-mime query default inode/directory
+  register: xdg_mime_query_inode_result
+  changed_when: false
+
+# Set ~/.config/mimeapps.list to override /usr/share/applications/mimeinfo.cache
+# `sudo update-desktop-database` will update /usr/share/applications/mimeinfo.cache
+# inode/directory=code.desktop;kitty-open.desktop;org.gnome.Nautilus.desktop;
+- name: Set Nautilus (Gnome Files) as default file manager
+  ansible.builtin.command: xdg-mime default org.gnome.Nautilus.desktop inode/directory
+  register: xdg_mime_inode_result
+  when: xdg_mime_query_inode_result.stdout != org.gnome.Nautilus.desktop
+  changed_when: xdg_mime_inode_result.rc == 0
+
 - name: Setup Nautilus (Gnome Files)
   community.general.dconf:
     key: '{{ item.key }}'
