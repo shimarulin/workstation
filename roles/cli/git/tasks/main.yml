@@ -1,13 +1,13 @@
 ---
 # tasks file for git
-- name: install dependencies
+- name: Install dependencies
   become: true
   community.general.pacman:
     name: '{{ git_packages }}'
     extra_args: --needed
 
-- name: setup default git configuraiton
-  git_config:
+- name: Setup default git configuration
+  community.general.git_config:
     name: '{{ item.name }}'
     scope: global
     value: '{{ item.value }}'
@@ -16,3 +16,4 @@
     - { name: 'user.email', value: '{{ git_user_email }}' }
     - { name: 'core.autocrlf', value: 'input' }
     - { name: 'ui.color', value: 'True' }
+    - { name: 'init.defaultBranch', value: 'main' }
