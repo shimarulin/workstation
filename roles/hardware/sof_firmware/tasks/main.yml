@@ -1,5 +1,5 @@
 ---
-# tasks file for sof-firmware
+# tasks file for sof_firmware
 - name: Install dependencies
   become: true
   community.general.pacman:
