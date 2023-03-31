@@ -7,14 +7,14 @@
 
 - name: Enable NetworkManager service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: NetworkManager.service
     state: started
-    enabled: yes
+    enabled: true
 
 - name: Enable wpa_supplicant service (Wi-Fi backend)
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: wpa_supplicant.service
     state: started
-    enabled: yes
+    enabled: true
