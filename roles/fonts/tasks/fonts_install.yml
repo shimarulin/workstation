@@ -6,27 +6,27 @@
 #  - path (zip-only): path to the font directory relative to the archive root
 #  - urls (source-only): an array of links to font files for direct download
 
-- name: Check the {{ item.name }} font already installed
+- name: Check the {{ item.name }} font already installed # noqa: name[template]
   ansible.builtin.stat:
     path: /usr/share/fonts/external/{{ item.name }}
   register: current_font_stat_result
 
 ### Load ZIP-packed font
-- name: Create directory for unarchive {{ item.name }} font
+- name: Create directory for unarchive {{ item.name }} font # noqa: name[template]
   ansible.builtin.file:
     path: '/tmp/{{ item.name }}'
     state: directory
     mode: '0755'
   when: not current_font_stat_result.stat.exists and item.url is defined
 
-- name: Download and unarchive {{ item.name }} font
+- name: Download and unarchive {{ item.name }} font # noqa: name[template]
   ansible.builtin.unarchive:
     src: '{{ item.url }}'
     dest: '/tmp/{{ item.name }}'
     remote_src: true
   when: not current_font_stat_result.stat.exists and item.url is defined
 
-- name: Copy {{ item.name }} font files
+- name: Copy {{ item.name }} font files # noqa: name[template]
   become: true
   ansible.builtin.command: cp --recursive /tmp/{{ item.name }}{{ item.path }} /usr/share/fonts/external/{{ item.name }}
   register: font_copy_result
@@ -34,20 +34,21 @@
   changed_when: font_copy_result.rc == 0
 
 ### Load font files directly
-- name: Create a directory for the {{ item.name }} font
+- name: Create a directory for the {{ item.name }} font # noqa: name[template]
   become: true
   ansible.builtin.file:
     path: '/usr/share/fonts/external/{{ item.name }}'
     state: directory
     mode: '0755'
-  when: current_font_stat_result.stat.exists == false and item.urls is defined
+  when: not current_font_stat_result.stat.exists and item.urls is defined
 
-- name: Load extra fonts directly
+- name: Load extra fonts directly # noqa: name[template]
   become: true
   ansible.builtin.get_url:
     url: '{{ font_url }}'
     dest: '/usr/share/fonts/external/{{ item.name }}/'
+    mode: '0644'
   loop: '{{ item.urls }}'
   loop_control:
     loop_var: font_url
-  when: current_font_stat_result.stat.exists == false and item.urls is defined
+  when: not current_font_stat_result.stat.exists and item.urls is defined
