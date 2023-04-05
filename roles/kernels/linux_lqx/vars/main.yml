@@ -1,0 +1,5 @@
+---
+# vars file for "linux_lqx" role
+linux_lqx_packages:
+  - linux-lqx
+  - linux-lqx-headers

@@ -1,0 +1,7 @@
+---
+# tasks file for "linux_zen" role
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ linux_zen_packages }}'
+    extra_args: --needed

@@ -1,0 +1,5 @@
+---
+# vars file for "linux_zen" role
+linux_zen_packages:
+  - linux-zen
+  - linux-zen-headers

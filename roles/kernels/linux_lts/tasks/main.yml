@@ -1,0 +1,7 @@
+---
+# tasks file for "linux_lts" role
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ linux_lts_packages }}'
+    extra_args: --needed
