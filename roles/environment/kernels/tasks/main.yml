@@ -1,6 +1,0 @@
----
-# tasks file for kernels
-- name: Install dependencies
-  become: true
-  community.general.pacman:
-    name: '{{ kernels_packages }}'

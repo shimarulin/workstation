@@ -1,7 +1,0 @@
----
-# vars file for kernels
-kernels_packages:
-  - linux
-  - linux-headers
-  - linux-lts
-  - linux-lts-headers

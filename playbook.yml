@@ -18,8 +18,16 @@
     ## Upgrade Flatpak packages
     - package-management/upgrade_flatpak_packages
 
+    # Install linux kernels
+    - kernels/linux
+    - role: kernels/linux_lts # noqa: role-name[path]
+      tags:
+        - virtualbox
+    - role: kernels/linux_lqx # noqa: role-name[path]
+      tags:
+        - av-production
+
     # Setup environment
-    - environment/kernels
     - environment/env
     - environment/localization
     - environment/xdg_user_dirs
