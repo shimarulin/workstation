@@ -29,6 +29,8 @@
 
     # Setup environment
     - environment/env
+    - environment/xdg_basedir
+    - environment/path
     - environment/localization
     - environment/xdg_user_dirs
 

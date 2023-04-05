@@ -1,6 +1,6 @@
 ---
-# tasks file for /etc/profile.d
-- name: Copy the environment variable helpers
+# tasks file for "path" role
+- name: Copy the $PATH variable helper
   become: true
   ansible.builtin.copy:
     src: etc/profile.d/

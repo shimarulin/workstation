@@ -1,0 +1,3 @@
+---
+# vars file for "xdg_basedir" role
+xdg_basedir_packages: []

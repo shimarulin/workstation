@@ -1,8 +1,5 @@
 ---
 # tasks file for env
-- name: Include the environment variables management task
-  ansible.builtin.include_tasks: etc/profile.d.yml
-
 - name: Setup .profile to use .config/profile.d
   ansible.builtin.blockinfile:
     path: ~/.profile

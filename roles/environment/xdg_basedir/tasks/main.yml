@@ -1,0 +1,8 @@
+---
+# tasks file for "xdg_basedir" role
+- name: Copy the "xdg_basedir" helper
+  become: true
+  ansible.builtin.copy:
+    src: etc/profile.d/
+    dest: /etc/profile.d/
+    mode: '0644'
