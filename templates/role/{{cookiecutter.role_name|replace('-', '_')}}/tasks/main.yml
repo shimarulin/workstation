@@ -4,3 +4,4 @@
   become: true
   community.general.pacman:
     name: '{{ '{{' }} {{ cookiecutter.role_name|replace('-', '_') }}_packages {{ '}}' }}'
+    extra_args: --needed
