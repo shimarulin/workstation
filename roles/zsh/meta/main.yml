@@ -20,7 +20,6 @@ galaxy_info:
   #       Maximum 20 tags per role.
 
 dependencies:
-  - role: pacman_upgrade
   - role: cli/fzf
-  - role: runtime/env
+  - role: environment/env
   - role: fonts

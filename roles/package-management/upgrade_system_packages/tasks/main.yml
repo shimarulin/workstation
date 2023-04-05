@@ -1,0 +1,18 @@
+---
+# tasks file for "upgrade_system_packages" role
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ upgrade_system_packages_packages }}'
+
+- name: Update pgp-keys database
+  become: true
+  ansible.builtin.command: pacman-key --populate archlinux
+  register: pacman_key_result
+  changed_when: pacman_key_result.rc == 0
+
+- name: Update packages cache and upgrade system packages
+  become: true
+  community.general.pacman:
+    update_cache: true
+    upgrade: true

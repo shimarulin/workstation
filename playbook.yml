@@ -5,16 +5,24 @@
   hosts: all
   roles:
     # Setup package management
-    - package-management-tools/reflector
-    - package-management-tools/paru
-    - package-management-tools/flatpak
-    - package-management-tools/appimage_support
+    ## Upgrade system packages
+    - package-management/upgrade_system_packages
+    ## Setup pacman mirror list
+    - package-management/reflector
+    ## Setup additional installation tools
+    - package-management/paru
+    - package-management/flatpak
+    - package-management/appimage_support
+    ## Upgrade AUR packages
+    - package-management/upgrade_aur_packages
+    ## Upgrade Flatpak packages
+    - package-management/upgrade_flatpak_packages
 
-    # Setup runtime
-    - runtime/kernels
-    - runtime/env
-    - runtime/localization
-    - runtime/xdg_user_dirs
+    # Setup environment
+    - environment/kernels
+    - environment/env
+    - environment/localization
+    - environment/xdg_user_dirs
 
     # Hardware
     - hardware/sof_firmware

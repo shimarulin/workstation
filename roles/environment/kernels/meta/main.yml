@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Vyacheslav Shimarulin
-  description: Setup GRUB bootloader
+  description: setup Linux kernels
   license: MIT
   min_ansible_version: '2.8'
 
@@ -19,5 +19,4 @@ galaxy_info:
   # NOTE: A tag is limited to a single word comprised of alphanumeric characters.
   #       Maximum 20 tags per role.
 
-dependencies:
-  - role: environment/kernels
+dependencies: []
