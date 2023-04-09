@@ -4,3 +4,4 @@
   become: true
   community.general.pacman:
     name: '{{ flatpak_packages }}'
+    extra_args: --needed
