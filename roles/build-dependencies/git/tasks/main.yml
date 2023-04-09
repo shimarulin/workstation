@@ -1,6 +1,0 @@
----
-# tasks file for git
-- name: Install dependencies
-  become: true
-  community.general.pacman:
-    name: '{{ git_packages }}'

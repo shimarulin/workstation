@@ -1,6 +1,6 @@
-# ansible-role-git
+# Ansible Role "base_devel"
 
-> Install Git version management
+> Basic tools to build Arch Linux packages
 
 ## Requirements
 
@@ -26,7 +26,7 @@ users too:
 
     - hosts: servers
       roles:
-         - { role: git, x: 42 }
+         - { role: base-devel, x: 42 }
 
 ## License
 

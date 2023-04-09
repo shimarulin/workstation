@@ -7,30 +7,19 @@
   register: paru_stat_result
 
 - name: Get source from AUR
-  become: true
-  ansible.builtin.shell: rm -rf /tmp/paru && git clone https://aur.archlinux.org/paru.git
+  ansible.builtin.shell: rm -rf /tmp/paru-bin && git clone https://aur.archlinux.org/paru-bin.git
   args:
     chdir: /tmp
     executable: /usr/bin/bash
   when: not paru_stat_result.stat.exists
   register: paru_get_result
-  changed_when: paru_get_result.rc == 0
-
-- name: Recursively change ownership of the source directory
-  become: true
-  ansible.builtin.file:
-    path: /tmp/paru
-    state: directory
-    recurse: true
-    owner: '{{ ansible_user_id }}'
-    group: '{{ ansible_user_id }}'
-  when: paru_get_result.rc == 0
+  changed_when: paru_get_result.rc is defined and paru_get_result.rc == 0
 
 - name: Make and install
   ansible.builtin.shell: makepkg -si --noconfirm
   args:
-    chdir: /tmp/paru
+    chdir: /tmp/paru-bin
     executable: /bin/bash
   register: paru_install_result
-  when: paru_get_result.rc == 0
-  changed_when: paru_install_result.rc == 0
+  when: paru_get_result.rc is defined and paru_get_result.rc == 0
+  changed_when: paru_install_result.rc is defined and paru_install_result.rc == 0

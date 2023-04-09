@@ -1,0 +1,32 @@
+---
+# vars file for "base_devel" role
+base_devel_packages:
+  - base-devel
+  # NOTE: Ansible module 'community.general.pacman' not install correctly metapackage dependencies.
+  # Install it directly.
+  - archlinux-keyring
+  - autoconf
+  - automake
+  - binutils
+  - bison
+  - debugedit
+  - fakeroot
+  - file
+  - findutils
+  - flex
+  - gawk
+  - gcc
+  - gettext
+  - grep
+  - groff
+  - gzip
+  - libtool
+  - m4
+  - make
+  - pacman
+  - patch
+  - pkgconf
+  - sed
+  - sudo
+  - texinfo
+  - which

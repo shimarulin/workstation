@@ -1,6 +1,7 @@
 ---
-# tasks file for base_devel
+# tasks file for "base_devel" role
 - name: Install dependencies
   become: true
   community.general.pacman:
     name: '{{ base_devel_packages }}'
+    extra_args: --needed

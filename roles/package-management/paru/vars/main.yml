@@ -1,2 +1,3 @@
 ---
 # vars file for paru
+paru_packages: []
