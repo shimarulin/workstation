@@ -3,4 +3,4 @@
 - name: Upgrade installed Flatpak packages
   ansible.builtin.command: flatpak update -y
   register: flatpak_update_result
-  changed_when: flatpak_update_result.rc == 0
+  changed_when: 'not "Nothing to do" in flatpak_update_result.stdout'
