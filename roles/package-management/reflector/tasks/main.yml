@@ -4,6 +4,7 @@
   become: true
   community.general.pacman:
     name: '{{ reflector_packages }}'
+    extra_args: --needed
 
 - name: Setup country
   become: true

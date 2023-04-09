@@ -4,12 +4,13 @@
   become: true
   community.general.pacman:
     name: '{{ upgrade_system_packages_packages }}'
+    extra_args: --needed
 
 - name: Update pgp-keys database
   become: true
   ansible.builtin.command: pacman-key --populate archlinux
   register: pacman_key_result
-  changed_when: pacman_key_result.rc == 0
+  changed_when: false
 
 - name: Update packages cache and upgrade system packages
   become: true

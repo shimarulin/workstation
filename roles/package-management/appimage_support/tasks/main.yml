@@ -4,6 +4,7 @@
   become: true
   community.general.pacman:
     name: '{{ appimage_support_packages }}'
+    extra_args: --needed
 
 - name: Create AppImage user dirs
   ansible.builtin.file:
