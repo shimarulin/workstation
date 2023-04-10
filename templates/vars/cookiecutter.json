@@ -2,6 +2,7 @@
   "git_user_name": "John Doe",
   "git_user_email": "username@example.com",
   "vars": ["group_vars", "host_vars"],
+  "default_cli_text_editor": ["micro", "neovim", "helix", "nano"],
   "font_ui": ["Roboto", "Open Sans", "Montserrat", "Source Sans Pro", "Noto Sans", "Ubuntu", "Exo 2", "Inter", "Rubik"],
   "font_terminal": ["Source Code Pro"]
 }

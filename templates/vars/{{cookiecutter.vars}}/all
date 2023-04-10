@@ -1,7 +1,10 @@
 ---
-# file: group_vars/all
+# Git variables
 git_user_name: {{ cookiecutter.git_user_name }}
 git_user_email: {{ cookiecutter.git_user_email }}
+
+# Default CLI Text Editor
+default_cli_text_editor: {{ cookiecutter.default_cli_text_editor }}
 
 # Theme variables
 font_ui: {{ cookiecutter.font_ui }}
