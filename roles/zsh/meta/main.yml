@@ -21,5 +21,4 @@ galaxy_info:
 
 dependencies:
   - role: cli/fzf
-  - role: environment/env
   - role: fonts
