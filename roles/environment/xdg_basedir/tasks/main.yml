@@ -6,8 +6,3 @@
     src: etc/profile.d/
     dest: /etc/profile.d/
     mode: '0644'
-
-- name: Export "xdg_basedir" variables to current shell # noqa: command-instead-of-shell
-  ansible.builtin.shell: source /etc/profile.d/00.xdg_basedir.sh
-  register: xdg_basedir_source_result
-  changed_when: false
