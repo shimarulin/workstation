@@ -1,0 +1,8 @@
+---
+# vars file for "virt_manager" role
+virt_manager_packages:
+  - virt-manager
+  # required for default NAT/DHCP for guests
+  - dnsmasq
+  # DMI system info support
+  - dmidecode

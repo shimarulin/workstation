@@ -1,0 +1,7 @@
+---
+# tasks file for "virt_manager" role
+- name: Install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ virt_manager_packages }}'
+    extra_args: --needed
