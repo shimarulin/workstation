@@ -24,7 +24,21 @@ Enable `libvirtd.service`
 sudo systemctl enable --now libvirtd.service
 ```
 
-## Virtual mashine settings
+### Enable virtual network
+
+Virtual network https://blog.programster.org/kvm-missing-default-network
+
+![Virtual Machine Manager - Network](../assets/virt-manager_network.png)
+
+## Virtual machine settings
+
+### Setup machine network
+
+![Virtual Machine - Network](../assets/virt-manager_vm_network.png)
+
+### Setup disk
+
+![Virtual Machine - SATA disk](../assets/virt-manager_vm_sata_hdd.png)
 
 ### Share host directory to guest OS
 
