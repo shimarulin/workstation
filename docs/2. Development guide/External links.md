@@ -30,6 +30,7 @@
 - [Ansible - Linux Workstation Management](https://blog.while-true-do.io/ansible-linux-workstation-management/)
 - [Ansible Best Practices: Part 2 — Polar Squad](https://polarsquad.com/blog/ansible-best-practices-part-2)
 - [Основы Ansible, без которых ваши плейбуки — комок слипшихся макарон / Хабр](https://habr.com/ru/post/508762/)
+- [Using Ansible templates to maintain partial file blocks](https://garthkerr.com/using-ansible-template-for-partial-file-block/)
 
 ## Arch Linux
 
