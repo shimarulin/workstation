@@ -1,0 +1,37 @@
+---
+# questions
+vars_scope:
+  type: str
+  help: Select variables scope
+  default: group_vars
+  choices:
+    - group_vars
+    - host_vars
+
+git_user_name:
+  type: str
+  help: 'Git user name:'
+  placeholder: John Doe
+  validator: >-
+    {% if not git_user_name %}
+    Git user name is required
+    {% endif %}
+
+git_user_email:
+  type: str
+  help: 'Git user email:'
+  placeholder: john-doe@example.com
+  validator: >-
+    {% if not git_user_email %}
+    Git user email is required
+    {% endif %}
+
+default_cli_text_editor:
+  type: str
+  help: 'Default CLI Text Editor:'
+  default: micro
+  choices:
+    - micro
+    - neovim
+    - helix
+    - nano
