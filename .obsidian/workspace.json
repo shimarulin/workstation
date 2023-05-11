@@ -4,108 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "4ab54d45a4e1d2b1",
-        "type": "split",
+        "id": "49f183be0a0d6a30",
+        "type": "tabs",
         "children": [
           {
-            "id": "74c27982b0387c27",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "8970f892d75cd084",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "README.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "ed1358f289b36d4c",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/Gnome/Gnome Wayland session issues.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "0ac86f7d5f9c7eb3",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/Ansible/External links.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "89090f865618506b",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/References/Linux distributions.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
+            "id": "dee0e6984a8d382a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/2. Development guide/2. Bash script development.md",
+                "mode": "source",
+                "source": false
               }
-            ],
-            "currentTab": 1
-          },
-          {
-            "id": "f9db5baaa4672aa9",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "dcfdbe4169f9d927",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/Gnome/DConf.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "517cc473a4062ae2",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/Ansible/Use QEMU&KVM and Virt Manager.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "8150e4cbb31907c5",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/Ansible/Use VirtualBox.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
+            }
           }
-        ],
-        "direction": "horizontal"
+        ]
       }
     ],
     "direction": "vertical"
@@ -150,6 +64,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "f508e03f552b1892",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -171,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Gnome/Gnome Wayland session issues.md",
+                "file": "docs/2. Development guide/2. Bash script development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Gnome/Gnome Wayland session issues.md",
+                "file": "docs/2. Development guide/2. Bash script development.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -211,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Gnome/Gnome Wayland session issues.md"
+                "file": "docs/2. Development guide/2. Bash script development.md"
               }
             }
           }
@@ -232,34 +154,43 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "ed1358f289b36d4c",
+  "active": "dee0e6984a8d382a",
   "lastOpenFiles": [
-    "README.md",
-    "docs/Ansible/External links.md",
-    "docs/Gnome/DConf.md",
+    "tools/build/build-scripts.sh~",
+    "tools/src/mkrole.m4~",
+    "roles/aw/README.md",
+    "roles/aw/templates",
+    "roles/aw/handlers/main.yml",
+    "roles/aw/handlers",
+    "roles/aw/defaults/main.yml",
+    "roles/aw/defaults",
+    "roles/aw/tasks/main.yml",
+    "roles/aw/tasks",
+    "roles/aw/files",
+    "roles/aw/vars/main.yml",
+    "roles/boot/fd/README.md",
+    "roles/a/README.md",
+    "tools/a/README.md",
+    "tools/roles/a/README.md",
+    "docs/2. Development guide/1. Getting started.md",
+    "docs/1. User guide/1. Getting started.md",
+    "docs/2. Development guide/2. Bash script development.md",
+    "roles/a1/README.md",
+    "roles/sh/README.md",
+    "docs/Bash script development.md",
+    "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
+    "docs/2. Development guide/External links.md",
     "docs/index.md",
     "docs/Gnome/Gnome Wayland session issues.md",
-    "docs/Gnome",
-    "docs/Ansible/Use VirtualBox.md",
+    "docs/2. Development guide/Use VirtualBox.md",
+    "docs/Gnome/DConf.md",
+    "docs/References/Linux distributions.md",
+    "README.md",
     "docs/tmp/TODO.md",
     "docs/tmp/rice.md",
     "docs/tmp/NOTES.md",
     "docs/tmp/keyboard.md",
     "docs/tmp/hardware.md",
-    "docs/tmp/directories_and_files.md",
-    "docs/tmp/awesome-tools.md",
-    "docs/tmp/keybindings.md",
-    "docs/tmp/index.md",
-    "docs/tmp/_notes.md",
-    "docs/References/Linux distributions.md",
-    "docs/References",
-    "docs/Ansible/Use QEMU&KVM and Virt Manager.md",
-    "docs/index.md~",
-    "roles/zsh/tasks/sheldon.yml~",
-    "roles/zsh/tasks/main.yml~",
-    "roles/fonts/README.md",
-    "docs/tmp/xdg.md",
-    "roles_/user-actions/README.md",
-    "docs/Ansible"
+    "docs/tmp/directories_and_files.md"
   ]
 }
