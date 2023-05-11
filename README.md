@@ -57,10 +57,6 @@ Documentation:
 - [Argbash documentation](https://argbash.readthedocs.io/en/stable/)
 - [Vagrant Documentation](https://www.vagrantup.com/docs/)
 
-### Articles
-
-- [Using Ansible templates to maintain partial file blocks](https://garthkerr.com/using-ansible-template-for-partial-file-block/)
-
 ### Getting started
 
 Requirements:
@@ -69,18 +65,23 @@ Requirements:
 - Ansible
 - VirtualBox
 - Vagrant
-- Cookiecutter
+- Cookiecutter ([Copier](https://github.com/copier-org/copier))
 
 Addition requirements:
 
 - NodeJS
 - Yarn
 
-Also you should install `python-vagrant` and `cookiecutter` packages via pip:
+Also, you should install `python-vagrant` and `cookiecutter`(`copier`) packages via pip:
 
 ```bash
 # Install packages
 pip install -U python-vagrant cookiecutter
+```
+
+```bash
+# Install packages
+pip install -U python-vagrant copier
 ```
 
 For enable Git Hook's to autoformatting files with [Prettier](https://prettier.io/) just install NodeJS packages with
@@ -97,7 +98,15 @@ yarn
 cookiecutter -f templates/vars
 ```
 
-If you add variables manually, don't forget to change variables template in `templates/vars`. It will used for setup
+```bash
+# Setup Ansible variables
+copier tools/templates/template_ansible_vars ./
+
+# or
+# ./tools/scripts/setvars.sh
+```
+
+If you add variables manually, don't forget to change variables template in `templates/vars`. It will be used for setup
 variables before run playbook for setup target environment.
 
 ### Create Ansible role
@@ -105,6 +114,14 @@ variables before run playbook for setup target environment.
 ```bash
 # Create Ansible role
 cookiecutter --output-dir roles templates/role
+```
+
+```bash
+# Create Ansible role
+copier tools/templates/template_ansible_role roles
+
+# or
+# ./tools/scripts/mkrole.sh
 ```
 
 ### Run playbook on VirtualBox VM directly with shared folders
@@ -138,8 +155,8 @@ cd ~/workstation && ./get
 #### Create Vagrant box for test role from existing virtual machine
 
 Create new virtual machine and install target distributive. In according to Vagrant conventions, create user `vagrant`
-with password `vagrant`. This password don't need to run playbook and you can choice other if you need. After this it
-need setup to use as Vagrant box.
+with password `vagrant`. This password don't need to run playbook, and you can choose other if you need. After this it
+needs setup to use as Vagrant box.
 
 Install and enable SSH server:
 
