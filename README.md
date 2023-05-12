@@ -19,11 +19,11 @@ See https://github.com/shimarulin/workstation/blob/main/get for details.
 ## Usage
 
 > :warning: Before starting the configuration, make sure that the variables in the `group_vars/all` file in the
-> repository root are defined. If not, you can set up it via cookiecutter template:
+> repository root are defined. If not, you can set up it via `setvars` script:
 >
 > ```bash
 > # Setup Ansible variables
-> cd ~/.config/localhost && python -m cookiecutter -f templates/vars
+> ~/.config/workstation/tools/bin/setvars
 > ```
 
 Run playbook on localhost with common configuration
@@ -53,7 +53,7 @@ Documentation:
 - [Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
   - [Ansible Module Index](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)
   - [Vagrant Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_vagrant.html)
-- [Cookiecutter documentation](https://cookiecutter.readthedocs.io/en/latest/readme.html)
+- [Copier](https://copier.readthedocs.io/en/latest/)
 - [Argbash documentation](https://argbash.readthedocs.io/en/stable/)
 - [Vagrant Documentation](https://www.vagrantup.com/docs/)
 
@@ -65,19 +65,14 @@ Requirements:
 - Ansible
 - VirtualBox
 - Vagrant
-- Cookiecutter ([Copier](https://github.com/copier-org/copier))
+- [Copier](https://github.com/copier-org/copier)
 
 Addition requirements:
 
 - NodeJS
 - Yarn
 
-Also, you should install `python-vagrant` and `cookiecutter`(`copier`) packages via pip:
-
-```bash
-# Install packages
-pip install -U python-vagrant cookiecutter
-```
+Also, you should install `python-vagrant` and `copier` packages via pip:
 
 ```bash
 # Install packages
@@ -95,7 +90,7 @@ yarn
 
 ```bash
 # Setup Ansible variables
-cookiecutter -f templates/vars
+./tools/bin/setvars
 ```
 
 ```bash
@@ -113,15 +108,7 @@ variables before run playbook for setup target environment.
 
 ```bash
 # Create Ansible role
-cookiecutter --output-dir roles templates/role
-```
-
-```bash
-# Create Ansible role
-copier tools/templates/template_ansible_role roles
-
-# or
-# ./tools/scripts/mkrole.sh
+./tools/bin/mkrole
 ```
 
 ### Run playbook on VirtualBox VM directly with shared folders

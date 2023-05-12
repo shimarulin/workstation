@@ -154,8 +154,12 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "dee0e6984a8d382a",
+  "active": "10386014e971db29",
   "lastOpenFiles": [
+    "docs/2. Development guide/2. Bash script development.md~",
+    "README.md~",
+    "tools/templates/template_ansible_role/README.md~",
+    "tools/templates/template_ansible_role/README.md",
     "docs/Bash script development.md",
     "docs/2. Development guide/2. Bash script development.md",
     "tools/build/build-scripts.sh~",
@@ -167,8 +171,6 @@
     "roles/aw/defaults/main.yml",
     "roles/aw/defaults",
     "roles/aw/tasks/main.yml",
-    "roles/aw/tasks",
-    "roles/aw/files",
     "roles/boot/fd/README.md",
     "roles/a/README.md",
     "tools/a/README.md",
@@ -189,7 +191,6 @@
     "docs/tmp/rice.md",
     "docs/tmp/NOTES.md",
     "docs/tmp/keyboard.md",
-    "docs/tmp/hardware.md",
-    "docs/tmp/directories_and_files.md"
+    "docs/tmp/hardware.md"
   ]
 }

@@ -1,4 +1,0 @@
----
-# vars file for "{{ cookiecutter.role_name|replace('-', '_') }}" role
-{{ cookiecutter.role_name|replace('-', '_') }}_packages:
-  - {{ cookiecutter.role_name }}
