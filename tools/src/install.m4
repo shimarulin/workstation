@@ -7,10 +7,14 @@ exit 11  #)Created by argbash-init v2.10.0
 # ARG_OPTIONAL_BOOLEAN([development], [d], [Install development requirements])
 # ARG_POSITIONAL_SINGLE([destination], [Project path, '~/.config/workstation' by default or './workstation' for --development option], [""])
 # ARG_HELP([Get the workstation Ansible configuration, install the configuration dependencies and configuration setup])
-# ARG_VERSION([_ARGBASH_VERSION])
+# DEFINE_SCRIPT_DIR_GNU
 # ARGBASH_GO
 
 # [ <-- needed because of Argbash
+
+SCRIPT_DIR_NAME="${script_dir%"${script_dir##*[!/]}"}" # extglob-free multi-trailing-/ trim
+SCRIPT_DIR_NAME="${SCRIPT_DIR_NAME##*/}"               # remove everything before the last /
+SCRIPT_DIR_NAME=${SCRIPT_DIR_NAME:-/}                  # correct for dirname=/ case
 
 if [ -z "$_arg_destination" ]
 then
@@ -22,6 +26,11 @@ then
   fi
 else
   TARGET_PATH="$_arg_destination"
+fi
+
+if [ "$SCRIPT_DIR_NAME" = bin ]
+then
+  TARGET_PATH=$(readlink -f "$script_dir/../../")
 fi
 
 TARGET_DIR=$(dirname "$TARGET_PATH")
@@ -79,8 +88,13 @@ then
 fi
 
 export_path
-ensure_target_dir
-clone_configuration
+
+if [ "$SCRIPT_DIR_NAME" != bin ]
+then
+  ensure_target_dir
+  clone_configuration
+fi
+
 install_ansible_galaxy_roles
 setup_ansible_vars
 
