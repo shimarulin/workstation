@@ -40,20 +40,27 @@ upgrade_system () {
 }
 
 install_system_requirements () {
-  sudo pacman -S git python --needed --noconfirm
+  sudo pacman -S git python python-pipx --needed
 }
 
-install_pip () {
-  python -m ensurepip --user
-  python -m pip install --user --upgrade pip
+install_development_system_requirements () {
+  sudo pacman -S shfmt --needed
 }
 
 install_common_python_modules () {
-  python -m pip install --user --upgrade ansible psutil copier
+  pipx install --include-deps ansible
+  pipx install psutil
+
+  # Install Copier template render (https://github.com/copier-org/copier)
+  pipx install copier
+  pipx inject copier jinja2_getenv_extension
 }
 
 install_development_python_modules () {
-  python -m pip install --user --upgrade jinja2_getenv_extension
+  pipx install ansible-lint
+
+  pipx install mdformat
+  pipx inject mdformat mdformat-shfmt
 }
 
 export_path () {
@@ -68,6 +75,12 @@ clone_configuration () {
   git clone https://github.com/shimarulin/workstation.git "$TARGET_PATH"
 }
 
+enable_git_hooks () {
+  cd "$TARGET_PATH" || return
+  git config core.hooksPath ".hooks"
+  cd - || return
+}
+
 install_ansible_galaxy_roles () {
   ansible-galaxy install -r "$TARGET_PATH/requirements.yml"
 }
@@ -79,7 +92,12 @@ setup_ansible_vars () {
 # Installation flow
 upgrade_system
 install_system_requirements
-install_pip
+
+if [ "$_arg_development" = on ]
+then
+  install_development_system_requirements
+fi
+
 install_common_python_modules
 
 if [ "$_arg_development" = on ]
@@ -93,6 +111,11 @@ if [ "$SCRIPT_DIR_NAME" != bin ]
 then
   ensure_target_dir
   clone_configuration
+fi
+
+if [ "$_arg_development" = on ]
+then
+  enable_git_hooks
 fi
 
 install_ansible_galaxy_roles
