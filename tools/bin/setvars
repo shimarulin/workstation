@@ -72,6 +72,6 @@ script_dir="$(cd "$(dirname "$(readlink -e "${BASH_SOURCE[0]}")")" && pwd)" || {
 TEMPLATE_DIR=$(readlink -f "$script_dir/../templates/template_ansible_vars")
 TARGET_DIR=$(readlink -f "$script_dir/../..")
 
-copier "$TEMPLATE_DIR" "$TARGET_DIR"
+copier copy "$TEMPLATE_DIR" "$TARGET_DIR"
 
 # ] <-- needed because of Argbash

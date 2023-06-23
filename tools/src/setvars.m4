@@ -13,6 +13,6 @@ exit 11  #)Created by argbash-init v2.10.0
 TEMPLATE_DIR=$(readlink -f "$script_dir/../templates/template_ansible_vars")
 TARGET_DIR=$(readlink -f "$script_dir/../..")
 
-copier "$TEMPLATE_DIR" "$TARGET_DIR"
+copier copy "$TEMPLATE_DIR" "$TARGET_DIR"
 
 # ] <-- needed because of Argbash

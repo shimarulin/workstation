@@ -113,6 +113,6 @@ else
   TARGET_DIR="$_arg_destination"
 fi
 
-env ANSIBLE_ROLE_AUTHOR="$ANSIBLE_ROLE_AUTHOR" copier "$TEMPLATE_DIR" "$TARGET_DIR"
+env ANSIBLE_ROLE_AUTHOR="$ANSIBLE_ROLE_AUTHOR" copier copy --UNSAFE "$TEMPLATE_DIR" "$TARGET_DIR"
 
 # ] <-- needed because of Argbash
