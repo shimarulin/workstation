@@ -1,3 +1,5 @@
+---
+
 # https://github.com/rossmacarthur/sheldon
 - name: Check that the sheldon already local installed
   ansible.builtin.stat:
@@ -46,7 +48,8 @@
 - name: Copy config file
   ansible.builtin.copy:
     src: home/.config/sheldon/plugins.toml
-    dest: ~/.config/sheldon/ # If dest is a non-existent path and if either dest ends with "/" or src is a directory, dest is created.
+    # If dest is a non-existent path and if either dest ends with "/" or src is a directory, dest is created.
+    dest: ~/.config/sheldon/
     mode: '0644'
 
 - name: Create data directory
