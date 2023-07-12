@@ -1,39 +1,53 @@
 ---
 # questions
 role_name:
-  type: str
+  type: 'str'
   help: 'Name:'
-  placeholder: new-role
+  placeholder: 'new-role'
   validator: >-
     {% if not role_name %}
     Ansible role name is required
     {% endif %}
 
 role_description:
-  type: str
+  type: 'str'
   help: 'Description:'
   default: 'Ansible role "{{ role_name }}"'
 
 role_author:
-  type: str
+  type: 'str'
   help: 'Author:'
-  placeholder: new-role
+  placeholder: 'new-role'
   default: "{{ 'ANSIBLE_ROLE_AUTHOR' | getenv('John Doe') }}"
 
 role_license:
-  type: str
+  type: 'str'
   help: 'License:'
   choices:
-    - MIT
-    - BSD
-    - Apache
-    - CC-BY
-  default: MIT
+    - 'MIT'
+    - 'BSD'
+    - 'Apache'
+    - 'CC-BY'
+  default: 'MIT'
 
 min_ansible_version:
-  type: str
+  type: 'str'
   help: 'Minimal Ansible version:'
   default: '2.8'
 
 _jinja_extensions:
-    - jinja2_getenv_extension.GetenvExtension
+  - 'jinja2_getenv_extension.GetenvExtension'
+
+#_subdirectory: '{{role_name|replace(''-'', ''_'')}}'
+
+_exclude:
+  - "copier.yaml"
+  - "copier.yml"
+  - "~*"
+  - "*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"
+  - "README.md"
+  - "!*/README.md"
