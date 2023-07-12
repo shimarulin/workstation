@@ -8,12 +8,6 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 
-[tool.poetry.scripts]
-fix = "yamlfix .pre-commit-config.yaml"
-
-[tool.poetry.group.dev.dependencies]
-yamlfix = "^1.11.0"
-
 [tool.poe.tasks]
 "mkrole" = "./tools/bin/mkrole"
 "setvars" = "./tools/bin/setvars"

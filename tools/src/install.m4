@@ -58,6 +58,7 @@ install_common_python_modules () {
 
 install_development_python_modules () {
   pipx install poethepoet
+  pipx install yamlfix
   pipx inject --include-apps ansible ansible-lint
   # DOWN: pipx runpip ansible uninstall ansible-lint
 
