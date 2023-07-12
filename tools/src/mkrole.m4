@@ -2,7 +2,7 @@
 
 # m4_ignore(
 echo "This is just a script template, not the script (yet) - pass it to 'argbash' to fix this." >&2
-exit 11  #)Created by argbash-init v2.10.0
+exit 11 #)Created by argbash-init v2.10.0
 # DEFINE_SCRIPT_DIR
 # Rearrange the order of options below according to what you would like to see in the help message.
 # ARG_POSITIONAL_SINGLE([destination], [Destination role path], [""])
@@ -17,8 +17,7 @@ GIT_USER_NAME=$(git config user.name)
 GIT_USER_EMAIL=$(git config user.email)
 ANSIBLE_ROLE_AUTHOR="$GIT_USER_NAME <$GIT_USER_EMAIL>"
 
-if [ -z "$_arg_destination" ]
-then
+if [ -z "$_arg_destination" ]; then
   TARGET_DIR=$(readlink -f "$script_dir/../../roles")
 else
   TARGET_DIR="$_arg_destination"

@@ -106,8 +106,7 @@ GIT_USER_NAME=$(git config user.name)
 GIT_USER_EMAIL=$(git config user.email)
 ANSIBLE_ROLE_AUTHOR="$GIT_USER_NAME <$GIT_USER_EMAIL>"
 
-if [ -z "$_arg_destination" ]
-then
+if [ -z "$_arg_destination" ]; then
   TARGET_DIR=$(readlink -f "$script_dir/../../roles")
 else
   TARGET_DIR="$_arg_destination"

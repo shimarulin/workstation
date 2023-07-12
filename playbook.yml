@@ -1,10 +1,14 @@
 ---
 # This playbook deploys the whole application stack.
-
 - name: Apply common configuration to all nodes # noqa: role-name[path]
   hosts: all
   roles:
-    # Setup package management
+    # System folders
+    ## Setup $PATH
+    - environment/path
+    ## Setup XDG basedir
+    - environment/xdg_basedir
+    # Package management
     ## Upgrade system packages
     - package-management/upgrade_system_packages
     ## Setup pacman mirror list
@@ -17,9 +21,14 @@
     - package-management/upgrade_aur_packages
     ## Upgrade Flatpak packages
     - package-management/upgrade_flatpak_packages
+    # Default CLI editor
+    - environment/default_cli_text_editor
 
-    # Install linux kernels
-    - kernels/linux
+    # Linux Kernels
+    - role: kernels/linux # noqa: role-name[path]
+      tags:
+        - laptop
+        - desktop
     - role: kernels/linux_lts # noqa: role-name[path]
       tags:
         - virtualbox
@@ -27,17 +36,9 @@
       tags:
         - av-production
 
-    # Setup environment
-    - environment/env
-    - environment/xdg_basedir
-    - environment/path
-    - environment/localization
-    - environment/xdg_user_dirs
-
     # Hardware
-    - hardware/sof_firmware
     - hardware/networkmanager
-    - role: hardware/bluez # noqa: role-name[path]
+    - role: hardware/sof_firmware # noqa: role-name[path]
       tags:
         - laptop
         - desktop
@@ -45,27 +46,34 @@
       tags:
         - laptop
         - desktop
-    - role: hardware/tlp # noqa: role-name[path]
-      tags:
-        - laptop
-
-    # Setup boot
-    - boot/grub
-
-    # Install and setup commandline tools
-    - cli/git
-    - cli/ssh
-    - cli/fzf
-    - cli/man
-
-    # Install and setup shell
-    - zsh
-
-    # Desktop environment
-    - role: gnome/gnome_shell # noqa: role-name[path]
+    - role: hardware/bluez # noqa: role-name[path]
       tags:
         - laptop
         - desktop
-
-    # Virtualization tools
+    - role: hardware/tlp # noqa: role-name[path]
+      tags:
+        - laptop
+#    # Linux console
+#    # - kmscon?
+#    # Languages and Localization
+#    - environment/localization
+#    - environment/xdg_user_dirs
+#    # Setup boot
+#    - boot/grub
+#
+#    # Install and setup commandline tools
+#    - cli/git
+#    - cli/ssh
+#    - cli/fzf
+#    - cli/man
+#
+#    # Install and setup shell
+#    - zsh
+#
+#    # Desktop environment
+#    - role: gnome/gnome_shell  # noqa: role-name[path]
+#      tags:
+#        - laptop
+#        - desktop
+#    # Virtualization tools
 #    - virtualization

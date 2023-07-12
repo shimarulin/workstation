@@ -44,12 +44,12 @@ install_system_requirements () {
 }
 
 install_development_system_requirements () {
-  sudo pacman -S shfmt --needed
+  sudo pacman -S shfmt python-poetry --needed
 }
 
 install_common_python_modules () {
   pipx install --include-deps ansible
-  pipx install psutil
+  pipx inject ansible psutil
 
   # Install Copier template render (https://github.com/copier-org/copier)
   pipx install copier
@@ -57,10 +57,13 @@ install_common_python_modules () {
 }
 
 install_development_python_modules () {
-  pipx install ansible-lint
+  pipx install poethepoet
+  pipx inject --include-apps ansible ansible-lint
+  # DOWN: pipx runpip ansible uninstall ansible-lint
 
   pipx install mdformat
   pipx inject mdformat mdformat-shfmt
+  # DOWN: pipx runpip mdformat uninstall mdformat-shfmt
 }
 
 export_path () {
@@ -92,16 +95,11 @@ setup_ansible_vars () {
 # Installation flow
 upgrade_system
 install_system_requirements
-
-if [ "$_arg_development" = on ]
-then
-  install_development_system_requirements
-fi
-
 install_common_python_modules
 
 if [ "$_arg_development" = on ]
 then
+  install_development_system_requirements
   install_development_python_modules
 fi
 

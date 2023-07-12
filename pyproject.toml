@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "workstation"
+version = "0.1.0"
+description = "nstallation scripts and Ansible config for my own workstation"
+authors = ["Vyacheslav Shimarulin <shimarulin@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.scripts]
+fix = "yamlfix .pre-commit-config.yaml"
+
+[tool.poetry.group.dev.dependencies]
+yamlfix = "^1.11.0"
+
+[tool.poe.tasks]
+"mkrole" = "./tools/bin/mkrole"
+"setvars" = "./tools/bin/setvars"
+"build:scripts" = "./tools/build/build-scripts.sh"
+"lint:ansible" = "ansible-lint"
+"lint:md" = "mdformat --check **/*.md"
+"fmt:md" = "mdformat **/*.md"
+"fmt:yaml" = "yamlfix **/*.{yml,yaml}"
+"vm:build" = "vagrant provision"
+"vm:start" = "vagrant up"
+"vm:stop" = "vagrant halt"
+"vm:restart" = "vagrant halt && vagrant up"
+"vm:rebuild" = "vagrant halt && vagrant destroy && vagrant up"
+
+[tool.yamlfix]
+comments_min_spaces_from_content = 1
+comments_require_starting_space = true
+comments_whitelines = 0
+explicit_start = true
+none_representation = "null"
+preserve_quotes = false
+quote_basic_values = false
+quote_representation = "'"
+section_whitelines = 1
+sequence_style = "block_style"
+whitelines = 1
