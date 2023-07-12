@@ -2,7 +2,7 @@
 
 > Simple X hotkey daemon
 
-```bash
+```shell
 journalctl --user -u sxhkd.service
 systemctl --user status sxhkd.service
 ```
@@ -29,9 +29,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: sxhkd, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: sxhkd, x: 42 }
+```
 
 ## License
 

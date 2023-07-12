@@ -21,26 +21,26 @@ See https://github.com/shimarulin/workstation/blob/main/get for details.
 > :warning: Before starting the configuration, make sure that the variables in the `group_vars/all` file in the
 > repository root are defined. If not, you can set up it via `setvars` script:
 >
-> ```bash
+> ```shell
 > # Setup Ansible variables
 > ~/.config/workstation/tools/bin/setvars
 > ```
 
 Run playbook on localhost with common configuration
 
-```bash
+```shell
 cd ~/.config/localhost && ansible-playbook playbook.yml
 ```
 
 Run playbook on localhost for desktop setup
 
-```bash
+```shell
 cd ~/.config/localhost && ansible-playbook playbook.yml --tags "desktop"
 ```
 
 Run playbook on localhost for laptop setup
 
-```bash
+```shell
 cd ~/.config/localhost && ansible-playbook playbook.yml --tags "laptop"
 ```
 
@@ -74,7 +74,7 @@ Addition requirements:
 
 Also, you should install `python-vagrant` and `copier` packages via pip:
 
-```bash
+```shell
 # Install packages
 pip install -U python-vagrant copier
 ```
@@ -82,18 +82,18 @@ pip install -U python-vagrant copier
 For enable Git Hook's to autoformatting files with [Prettier](https://prettier.io/) just install NodeJS packages with
 Yarn:
 
-```bash
+```shell
 yarn
 ```
 
 ### Configure Ansible variables
 
-```bash
+```shell
 # Setup Ansible variables
 ./tools/bin/setvars
 ```
 
-```bash
+```shell
 # Setup Ansible variables
 copier tools/templates/template_ansible_vars ./
 
@@ -106,7 +106,7 @@ variables before run playbook for setup target environment.
 
 ### Create Ansible role
 
-```bash
+```shell
 # Create Ansible role
 ./tools/bin/mkrole
 ```
@@ -147,14 +147,14 @@ needs setup to use as Vagrant box.
 
 Install and enable SSH server:
 
-```bash
+```shell
 sudo pacman -Sy openssh
 sudo systemctl enable sshd.service
 ```
 
 Add unsafe public key:
 
-```bash
+```shell
 mkdir -pm 700 ~/.ssh
 curl -L https://git.io/v47gO -o ~/.ssh/authorized_keys
 # or
@@ -174,20 +174,20 @@ vagrant ALL=(ALL:ALL) NOPASSWD: ALL
 
 To make you own box you should run command
 
-```bash
+```shell
 # VirtualBox VM name: Arch
 vagrant package --base Arch --output arch.box
 ```
 
 After this you can add you box:
 
-```bash
+```shell
 vagrant box add ./arch.box --name vagrant/arch
 ```
 
 #### Use Vagrant to play tasks
 
-```bash
+```shell
 # Start VM
 vagrant up
 # Replay tasks
@@ -208,7 +208,7 @@ vagrant ssh
 
 In project root:
 
-```bash
+```shell
 vagrant destroy
 ```
 

@@ -2,6 +2,6 @@
 
 ### Watch DConf changes
 
-```bash
+```shell
 dconf watch /
 ```
