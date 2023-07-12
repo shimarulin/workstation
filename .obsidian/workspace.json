@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/2. Development guide/2. Bash script development.md",
+                "file": "docs/2. Development guide/1. Getting started.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/2. Development guide/2. Bash script development.md",
+                "file": "docs/2. Development guide/1. Getting started.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/2. Development guide/2. Bash script development.md",
+                "file": "docs/2. Development guide/1. Getting started.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/2. Development guide/2. Bash script development.md"
+                "file": "docs/2. Development guide/1. Getting started.md"
               }
             }
           }
@@ -154,33 +154,36 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "10386014e971db29",
+  "active": "dee0e6984a8d382a",
   "lastOpenFiles": [
-    "docs/2. Development guide/2. Bash script development.md~",
-    "README.md~",
-    "tools/templates/template_ansible_role/README.md~",
+    "roles/zsh/README.md",
+    "docs/2. Development guide/1. Getting started.md",
+    "yarn.lock",
+    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/meta/main.yml",
+    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/templates",
+    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/meta",
+    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/files",
+    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/README.md",
+    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}",
+    "templates/role",
+    "templates",
+    "docs/2. Development guide/2. Bash script development.md",
+    "package.json~",
+    "docs/2. Development guide/2. Ansible Style Guide.md",
+    "roles/cli/git/tasks/main.yml~",
+    "docs/2. Development guide/3. Bash script development.md",
+    "docs/2. Development guide/External links.md",
     "tools/templates/template_ansible_role/README.md",
     "docs/Bash script development.md",
-    "docs/2. Development guide/2. Bash script development.md",
-    "tools/build/build-scripts.sh~",
-    "tools/src/mkrole.m4~",
     "roles/aw/README.md",
-    "roles/aw/templates",
-    "roles/aw/handlers/main.yml",
-    "roles/aw/handlers",
-    "roles/aw/defaults/main.yml",
-    "roles/aw/defaults",
-    "roles/aw/tasks/main.yml",
     "roles/boot/fd/README.md",
     "roles/a/README.md",
     "tools/a/README.md",
     "tools/roles/a/README.md",
-    "docs/2. Development guide/1. Getting started.md",
     "docs/1. User guide/1. Getting started.md",
     "roles/a1/README.md",
     "roles/sh/README.md",
     "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
-    "docs/2. Development guide/External links.md",
     "docs/index.md",
     "docs/Gnome/Gnome Wayland session issues.md",
     "docs/2. Development guide/Use VirtualBox.md",
@@ -188,9 +191,6 @@
     "docs/References/Linux distributions.md",
     "README.md",
     "docs/tmp/TODO.md",
-    "docs/tmp/rice.md",
-    "docs/tmp/NOTES.md",
-    "docs/tmp/keyboard.md",
-    "docs/tmp/hardware.md"
+    "docs/tmp/rice.md"
   ]
 }
