@@ -1,6 +1,6 @@
 ---
 # This playbook deploys the whole application stack.
-- name: Apply common configuration to all nodes # noqa: role-name[path]
+- name: Apply common configuration to all nodes
   hosts: all
   roles:
     # System folders
@@ -25,32 +25,32 @@
     - environment/default_cli_text_editor
 
     # Linux Kernels
-    - role: kernels/linux # noqa: role-name[path]
+    - role: kernels/linux
       tags:
         - laptop
         - desktop
-    - role: kernels/linux_lts # noqa: role-name[path]
+    - role: kernels/linux_lts
       tags:
         - virtualbox
-    - role: kernels/linux_lqx # noqa: role-name[path]
+    - role: kernels/linux_lqx
       tags:
         - av-production
 
     # Hardware
     - hardware/networkmanager
-    - role: hardware/sof_firmware # noqa: role-name[path]
+    - role: hardware/sof_firmware
       tags:
         - laptop
         - desktop
-    - role: hardware/pipewire # noqa: role-name[path]
+    - role: hardware/pipewire
       tags:
         - laptop
         - desktop
-    - role: hardware/bluez # noqa: role-name[path]
+    - role: hardware/bluez
       tags:
         - laptop
         - desktop
-    - role: hardware/tlp # noqa: role-name[path]
+    - role: hardware/tlp
       tags:
         - laptop
 #    # Linux console
@@ -71,7 +71,7 @@
 #    - zsh
 #
 #    # Desktop environment
-#    - role: gnome/gnome_shell  # noqa: role-name[path]
+#    - role: gnome/gnome_shell
 #      tags:
 #        - laptop
 #        - desktop

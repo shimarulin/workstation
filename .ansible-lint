@@ -22,4 +22,5 @@ enable_list:
   - yaml
 
 skip_list:
+  - role-name[path]
   - yaml[line-length]
