@@ -17,7 +17,6 @@
   project is [a set of Free and Open Source tools](https://github.com/debops/debops) that let users bootstrap and manage
   an IT infrastructure based on [Debian](https://en.wikipedia.org/wiki/Debian) or [Ubuntu](https://www.ubuntu.com/)
   operating systems.
-- [GitHub - raphiz/my-arch-setup: Ansible based automation scripts for my Arch Linux machines](https://github.com/raphiz/my-arch-setup)
 - [GitHub - dschier-wtd/fedora-workstation: Ansible setup of my development workstation](https://github.com/dschier-wtd/fedora-workstation)
 - [GitHub - whiletruedoio/whiletruedoio.desktop: Ansible collection for desktop workstation and notebook plugins, roles and playbooks.](https://github.com/whiletruedoio/whiletruedoio.desktop)
 - [GitHub - LearnLinuxTV/personal_ansible_desktop_configs](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)

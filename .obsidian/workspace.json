@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/2. Development guide/1. Getting started.md",
+                "file": "docs/2. Development guide/2. Project directory structure.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "705434e6238cb910",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/2. Development guide/1. Getting started.md",
+                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/2. Development guide/1. Getting started.md",
+                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/2. Development guide/1. Getting started.md"
+                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md"
               }
             }
           }
@@ -154,25 +167,35 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "dee0e6984a8d382a",
+  "active": "705434e6238cb910",
   "lastOpenFiles": [
-    "roles/zsh/README.md",
-    "docs/2. Development guide/1. Getting started.md",
-    "yarn.lock",
-    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/meta/main.yml",
-    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/templates",
-    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/meta",
-    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/files",
-    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/README.md",
-    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}",
-    "templates/role",
-    "templates",
-    "docs/2. Development guide/2. Bash script development.md",
-    "package.json~",
-    "docs/2. Development guide/2. Ansible Style Guide.md",
-    "roles/cli/git/tasks/main.yml~",
-    "docs/2. Development guide/3. Bash script development.md",
+    "docs/2. Development guide/5. Test Ansible Playbook.md",
     "docs/2. Development guide/External links.md",
+    "playbook.yml~",
+    "roles/s1_d/README.md",
+    "roles/s1_d/templates",
+    "roles/s1_d/handlers/main.yml",
+    "roles/s1_d/handlers",
+    "roles/s1_d/defaults/main.yml",
+    "roles/s1_d/defaults",
+    "roles/s1_d/tasks/main.yml",
+    "roles/s1_d/tasks",
+    "roles/s1_d/files",
+    "roles/s1_d/vars/main.yml",
+    "roles/{s_d/README.md",
+    "roles/{*s_d/README.md",
+    "roles/hardware/sof_firmware/README.md",
+    "roles/hardware/]sof-firmware/README.md",
+    "roles/]sof-firmware/README.md",
+    "roles/sof-firmware/README.md",
+    "roles/hardware/sof-firmware/README.md",
+    "docs/2. Development guide/2. Project directory structure.md",
+    "docs/2. Development guide/4. Bash script development.md",
+    "docs/2. Development guide/3. Ansible Style Guide.md",
+    "docs/2. Development guide/1. Getting started.md",
+    "roles/zsh/README.md",
+    "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/README.md",
+    "docs/2. Development guide/2. Bash script development.md",
     "tools/templates/template_ansible_role/README.md",
     "docs/Bash script development.md",
     "roles/aw/README.md",
@@ -181,16 +204,6 @@
     "tools/a/README.md",
     "tools/roles/a/README.md",
     "docs/1. User guide/1. Getting started.md",
-    "roles/a1/README.md",
-    "roles/sh/README.md",
-    "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
-    "docs/index.md",
-    "docs/Gnome/Gnome Wayland session issues.md",
-    "docs/2. Development guide/Use VirtualBox.md",
-    "docs/Gnome/DConf.md",
-    "docs/References/Linux distributions.md",
-    "README.md",
-    "docs/tmp/TODO.md",
-    "docs/tmp/rice.md"
+    "roles/a1/README.md"
   ]
 }
