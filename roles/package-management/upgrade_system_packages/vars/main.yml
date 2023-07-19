@@ -1,4 +1,4 @@
 ---
 # vars file for "upgrade_system_packages" role
 upgrade_system_packages_packages:
-  - archlinux-keyring
+  - "archlinux-keyring"
