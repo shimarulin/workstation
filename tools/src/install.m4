@@ -8,7 +8,7 @@ set -e
 
 # m4_ignore(
 echo "This is just a script template, not the script (yet) - pass it to 'argbash' to fix this." >&2
-exit 11  #)Created by argbash-init v2.10.0
+exit 11 #)Created by argbash-init v2.10.0
 # Rearrange the order of options below according to what you would like to see in the help message.
 # ARG_OPTIONAL_BOOLEAN([development], [d], [Install development requirements])
 # ARG_OPTIONAL_BOOLEAN([setup], [s], [Setup Ansible vars], [on])
@@ -41,10 +41,8 @@ SCRIPT_DIR_NAME=${SCRIPT_DIR_NAME:-/}                  # correct for dirname=/ c
 # ----------------------------------
 # Resolve path to clone configuration
 # ----------------------------------
-if [ -z "$_arg_destination" ]
-then
-  if [ "$_arg_development" = on ]
-  then
+if [ -z "$_arg_destination" ]; then
+  if [ "$_arg_development" = on ]; then
     TARGET_PATH=./workstation
   else
     TARGET_PATH=~/.config/workstation
@@ -53,8 +51,7 @@ else
   TARGET_PATH="$_arg_destination"
 fi
 
-if [ "$SCRIPT_DIR_NAME" = bin ]
-then
+if [ "$SCRIPT_DIR_NAME" = bin ]; then
   TARGET_PATH=$(readlink -f "$script_dir/../../")
 fi
 
@@ -63,12 +60,12 @@ fi
 # ----------------------------------
 TARGET_DIR=$(dirname "$TARGET_PATH")
 
-upgrade_system () {
+upgrade_system() {
   echo "${STYLE_INFO}Upgrade system packages${STYLE_OFF}"
   sudo pacman -Syu
 }
 
-install_system_requirements () {
+install_system_requirements() {
   echo "${STYLE_INFO}Install Ansible configuration requirements${STYLE_OFF}"
   sudo pacman -S ansible git python-pipx --needed
 
@@ -77,7 +74,7 @@ install_system_requirements () {
   pipx inject copier jinja2_getenv_extension
 }
 
-install_development_system_requirements () {
+install_development_system_requirements() {
   echo "${STYLE_INFO}Install Ansible configuration development requirements${STYLE_OFF}"
   # - Argbash [https://argbash.readthedocs.io/en/stable/index.html]
   # - Ansible Lint [https://ansible.readthedocs.io/projects/lint/]
@@ -101,37 +98,36 @@ install_development_system_requirements () {
   pipx inject mdformat mdformat-shfmt
 }
 
-export_path () {
+export_path() {
   echo "${STYLE_INFO}Add ${STYLE_PATH}${USER_BIN}${STYLE_OFF} ${STYLE_INFO}to \$PATH temporary${STYLE_OFF}"
   export PATH="${USER_BIN}:${PATH}"
 }
 
-ensure_target_dir () {
-  if [ "$TARGET_DIR" != '.' ]
-  then
+ensure_target_dir() {
+  if [ "$TARGET_DIR" != '.' ]; then
     echo "${STYLE_INFO}Create '${TARGET_DIR}'${STYLE_OFF}"
     mkdir -p "$TARGET_DIR"
   fi
 }
 
-clone_configuration () {
+clone_configuration() {
   echo "${STYLE_INFO}Clone Ansible configuration to ${STYLE_PATH}${TARGET_PATH}${STYLE_OFF}"
   git clone https://github.com/shimarulin/workstation.git "$TARGET_PATH"
 }
 
-enable_git_hooks () {
+enable_git_hooks() {
   echo "${STYLE_INFO}Enable Git hooks${STYLE_OFF}"
   cd "$TARGET_PATH" || return
   pre-commit install
   cd - || return
 }
 
-install_ansible_galaxy_roles () {
+install_ansible_galaxy_roles() {
   echo "${STYLE_INFO}Install required Ansible Galaxy roles${STYLE_OFF}"
   ansible-galaxy install -r "$TARGET_PATH/requirements.yml"
 }
 
-setup_ansible_vars () {
+setup_ansible_vars() {
   echo "${STYLE_INFO}Setup Ansible variables${STYLE_OFF}"
   source "$TARGET_PATH/tools/bin/setvars"
 }
@@ -140,27 +136,23 @@ setup_ansible_vars () {
 upgrade_system
 install_system_requirements
 
-if [ "$_arg_development" = on ]
-then
+if [ "$_arg_development" = on ]; then
   install_development_system_requirements
 fi
 
 export_path
 
-if [[ ! -d "$TARGET_PATH/.git" ]]
-then
+if [[ ! -d "$TARGET_PATH/.git" ]]; then
   ensure_target_dir
   clone_configuration
 fi
 
-if [ "$_arg_development" = on ]
-then
+if [ "$_arg_development" = on ]; then
   enable_git_hooks
 fi
 
 install_ansible_galaxy_roles
-if [ "$_arg_setup" = on ]
-then
+if [ "$_arg_setup" = on ]; then
   setup_ansible_vars
 fi
 
