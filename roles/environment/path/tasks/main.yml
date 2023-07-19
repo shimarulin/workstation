@@ -1,8 +1,14 @@
 ---
 # tasks file for "path" role
-- name: Copy the $PATH variable helper
+- name: "Create '~/.local/bin' directory"
+  ansible.builtin.file:
+    path: "~/.local/bin"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+
+- name: "Copy the $PATH variable helper"
   become: true
   ansible.builtin.copy:
-    src: etc/profile.d/
-    dest: /etc/profile.d/
-    mode: '0644'
+    src: "etc/profile.d/"
+    dest: "/etc/profile.d/"
+    mode: "u=rw,g=r,o=r"
