@@ -1,24 +1,4 @@
 ---
-# settings
-_jinja_extensions:
-  - "jinja2_getenv_extension.GetenvExtension"
-  - "copier_templates_extensions.TemplateExtensionLoader"
-  - "extensions/context.py:ContextUpdater"
-  - "extensions/country_lang.py:CountryLangExtension"
-
-_exclude:
-  - copier.yaml
-  - copier.yml
-  - ~*
-  - '**/*.py[co]'
-  - __pycache__
-  - .git
-  - .DS_Store
-  - .svn
-  - README.md
-  - '!*/README.md'
-  - extensions
-
 # questions
 vars_scope:
   type: "str"
@@ -227,3 +207,23 @@ mirror_country_code:
       value: "UZ"
     Vietnam:
       value: "VN"
+
+# settings
+_jinja_extensions:
+  - "jinja2_getenv_extension.GetenvExtension"
+  - "copier_templates_extensions.TemplateExtensionLoader"
+  - "extensions/context.py:ContextUpdater"
+  - "extensions/country_lang.py:CountryLangExtension"
+
+_exclude:
+  - "copier.yaml"
+  - "copier.yml"
+  - "~*"
+  - "**/*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"
+  - "README.md"
+  - "!*/README.md"
+  - "extensions"
