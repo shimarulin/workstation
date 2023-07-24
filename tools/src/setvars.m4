@@ -13,6 +13,10 @@ exit 11  #)Created by argbash-init v2.10.0
 TEMPLATE_DIR=$(readlink -f "$script_dir/../templates/template_ansible_vars")
 TARGET_DIR=$(readlink -f "$script_dir/../..")
 
-copier copy "$TEMPLATE_DIR" "$TARGET_DIR"
+GIT_USER_NAME=$(git config user.name)
+GIT_USER_EMAIL=$(git config user.email)
+IP_COUNTRY_CODE=$(curl https://ipapi.co/country/)
+
+env GIT_USER_NAME="$GIT_USER_NAME" GIT_USER_EMAIL="$GIT_USER_EMAIL" COUNTRY_CODE="$IP_COUNTRY_CODE" copier copy --UNSAFE "$TEMPLATE_DIR" "$TARGET_DIR"
 
 # ] <-- needed because of Argbash

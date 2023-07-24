@@ -72,6 +72,7 @@ install_system_requirements() {
   # Install Copier template render [https://github.com/copier-org/copier]
   pipx install copier
   pipx inject copier jinja2_getenv_extension
+  pipx inject copier copier-templates-extensions
 }
 
 install_development_system_requirements() {
@@ -129,7 +130,7 @@ install_ansible_galaxy_roles() {
 
 setup_ansible_vars() {
   echo "${STYLE_INFO}Setup Ansible variables${STYLE_OFF}"
-  source "$TARGET_PATH/tools/bin/setvars"
+  "$TARGET_PATH/tools/bin/setvars"
 }
 
 # Installation flow
