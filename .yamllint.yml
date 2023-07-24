@@ -6,7 +6,7 @@ rules:
     max: 120
     level: warning
   quoted-strings:
-    quote-type: single
+    quote-type: double
     required: false
     allow-quoted-quotes: true
   braces:

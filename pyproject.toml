@@ -25,12 +25,12 @@ python = "^3.11"
 [tool.yamlfix]
 comments_min_spaces_from_content = 1
 comments_require_starting_space = true
-comments_whitelines = 0
+comments_whitelines = 1
 explicit_start = true
 none_representation = "null"
 preserve_quotes = false
-quote_basic_values = false
-quote_representation = "'"
+quote_basic_values = true
+quote_representation = '"'
 section_whitelines = 1
 sequence_style = "block_style"
 whitelines = 1
