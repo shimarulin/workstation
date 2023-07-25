@@ -1,4 +1,4 @@
 ---
 # vars file for reflector
 reflector_packages:
-  - reflector
+  - "reflector"

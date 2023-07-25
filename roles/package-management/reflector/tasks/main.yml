@@ -1,34 +1,51 @@
 ---
 # tasks file for reflector
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ reflector_packages }}'
-    extra_args: --needed
+    name: "{{ reflector_packages }}"
+    extra_args: "--needed"
 
-- name: Setup country
+- name: "Disable country"
   become: true
   ansible.builtin.lineinfile:
-    path: /etc/xdg/reflector/reflector.conf
-    regexp: '^# --country France,Germany'
-    line: '--country Russia,Germany'
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--country.*"
+    line: "# --country France,Germany"
+  when: reflector_country_list | length == 0
 
-- name: Setup repo count
+- name: "Setup country"
   become: true
   ansible.builtin.lineinfile:
-    path: /etc/xdg/reflector/reflector.conf
-    regexp: '^--latest 5'
-    line: '--latest 20'
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--country.*"
+    line: "--country {{ reflector_country_list }}"
+  when: reflector_country_list | length > 0
 
-- name: Enable reflector service
+- name: "Setup repo count"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--latest.*"
+    line: "--latest {{ reflector_mirrors_count }}"
+
+- name: "Setup sort"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--sort.*"
+    line: "--sort {{ reflector_sort }}"
+
+- name: "Enable reflector service"
   become: true
   ansible.builtin.systemd:
-    name: reflector.service
+    name: "reflector.service"
+    state: "started"
     enabled: true
 
-- name: Enable mirror list update schedule.
+- name: "Enable mirror list update schedule."
   become: true
   ansible.builtin.systemd:
-    name: reflector.timer
-    state: started
+    name: "reflector.timer"
+    state: "started"
     enabled: true
