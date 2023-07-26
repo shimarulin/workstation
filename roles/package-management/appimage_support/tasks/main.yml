@@ -1,17 +1,17 @@
 ---
 # tasks file for appimage_support
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ appimage_support_packages }}'
-    extra_args: --needed
+    name: "{{ appimage_support_packages }}"
+    extra_args: "--needed"
 
-- name: Create AppImage user dirs
+- name: "Create AppImage user dirs"
   ansible.builtin.file:
-    path: '{{ item }}'
-    state: directory
+    path: "{{ item }}"
+    state: "directory"
     recurse: true
   loop:
-    - ~/.local/opt/AppImages/ # Образы AppImage приложений
-    - ~/.local/share/applications/ # Ярлыки сторонних приложений
-    - ~/.local/share/icons/hicolor/512x512/apps/ # Иконки сторонних приложений
+    - "~/.local/opt/AppImages/"
+    - "~/.local/share/applications/"
+    - "~/.local/share/icons/hicolor/512x512/apps/"
