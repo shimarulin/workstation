@@ -12,7 +12,8 @@
     path: "/etc/xdg/reflector/reflector.conf"
     regexp: "^(#\\s)*--country.*"
     line: "# --country France,Germany"
-  when: reflector_country_list | length == 0
+  when: "reflector_country_list | length == 0"
+  register: "reflector_conf_country"
 
 - name: "Setup country"
   become: true
@@ -20,7 +21,8 @@
     path: "/etc/xdg/reflector/reflector.conf"
     regexp: "^(#\\s)*--country.*"
     line: "--country {{ reflector_country_list }}"
-  when: reflector_country_list | length > 0
+  when: "reflector_country_list | length > 0"
+  register: "reflector_conf_country"
 
 - name: "Setup repo count"
   become: true
@@ -28,6 +30,7 @@
     path: "/etc/xdg/reflector/reflector.conf"
     regexp: "^(#\\s)*--latest.*"
     line: "--latest {{ reflector_mirrors_count }}"
+  register: "reflector_conf_count"
 
 - name: "Setup sort"
   become: true
@@ -35,13 +38,24 @@
     path: "/etc/xdg/reflector/reflector.conf"
     regexp: "^(#\\s)*--sort.*"
     line: "--sort {{ reflector_sort }}"
+  register: "reflector_conf_sort"
 
 - name: "Enable reflector service"
   become: true
   ansible.builtin.systemd:
     name: "reflector.service"
+    enabled: true
+
+- name: "Start reflector service"
+  become: true
+  ansible.builtin.systemd:
+    name: "reflector.service"
     state: "started"
     enabled: true
+  when: |-
+    reflector_conf_country is changed
+    or reflector_conf_count is changed
+    or reflector_conf_sort is changed
 
 - name: "Enable mirror list update schedule."
   become: true
