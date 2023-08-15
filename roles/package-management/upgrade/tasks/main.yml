@@ -1,0 +1,8 @@
+---
+# tasks file for "upgrade" role
+- name: "Update packages cache and upgrade system packages with {{ 'paru' if (paru_stat_result.stat.exists) else 'pacman' }}"
+  become: true
+  community.general.pacman:
+    executable: "{{ 'paru' if (paru_stat_result.stat.exists) else 'pacman' }}"
+    update_cache: true
+    upgrade: true

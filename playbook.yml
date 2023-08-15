@@ -8,19 +8,18 @@
     - environment/path
     ## Setup XDG basedir
     - environment/xdg_basedir
+
     # Package management
-    ## Upgrade system packages
-    - package-management/upgrade_system_packages
+    ## Update package database
+    - package-management/update
     ## Setup pacman mirror list
     - package-management/reflector
-    ## Setup additional installation tools
+    ## Setup AUR helper
+    - package-management/build_tools
     - package-management/paru
-    - package-management/flatpak
-    - package-management/appimage_support
-    ## Upgrade AUR packages
-    - package-management/upgrade_aur_packages
-    ## Upgrade Flatpak packages
-    - package-management/upgrade_flatpak_packages
+    ## Upgrade system
+    - package-management/upgrade
+
     # Default CLI editor
     - environment/default_cli_text_editor
 
@@ -36,23 +35,23 @@
       tags:
         - av-production
 
-    # Hardware
-    - hardware/networkmanager
-    - role: hardware/sof_firmware
-      tags:
-        - laptop
-        - desktop
-    - role: hardware/pipewire
-      tags:
-        - laptop
-        - desktop
-    - role: hardware/bluez
-      tags:
-        - laptop
-        - desktop
-    - role: hardware/tlp
-      tags:
-        - laptop
+#    # Hardware
+#    - hardware/networkmanager
+#    - role: hardware/sof_firmware
+#      tags:
+#        - laptop
+#        - desktop
+#    - role: hardware/pipewire
+#      tags:
+#        - laptop
+#        - desktop
+#    - role: hardware/bluez
+#      tags:
+#        - laptop
+#        - desktop
+#    - role: hardware/tlp
+#      tags:
+#        - laptop
 #    # Linux console
 #    # - kmscon?
 #    # Languages and Localization

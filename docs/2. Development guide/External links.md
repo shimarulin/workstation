@@ -20,6 +20,10 @@
 - [GitHub - dschier-wtd/fedora-workstation: Ansible setup of my development workstation](https://github.com/dschier-wtd/fedora-workstation)
 - [GitHub - whiletruedoio/whiletruedoio.desktop: Ansible collection for desktop workstation and notebook plugins, roles and playbooks.](https://github.com/whiletruedoio/whiletruedoio.desktop)
 - [GitHub - LearnLinuxTV/personal_ansible_desktop_configs](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
+- [GitHub - jsf9k/ansible-arch-install: Ansible code for installing and configuring Arch Linux](https://github.com/jsf9k/ansible-arch-install)
+- [GitHub - binary-manu/arch-ansible: An Ansible playbook to install Arch Linux](https://github.com/binary-manu/arch-ansible)
+- [GitHub - id101010/ansible-archlinux: Automated arch linux desktop environment](https://github.com/id101010/ansible-archlinux)
+- [GitHub - omarahm3/ansible-local: Arch linux ansible setup playbook](https://github.com/omarahm3/ansible-local)
 
 ### Articles
 

@@ -1,0 +1,16 @@
+---
+# tasks file for "update" role
+#
+# https://wiki.archlinux.org/title/Pacman/Package_signing#Upgrade_system_regularly
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ update_packages }}"
+    extra_args: "--needed"
+    update_cache: true
+
+- name: "Update pgp-keys database"
+  become: true
+  ansible.builtin.command: "pacman-key --populate archlinux"
+  register: "pacman_key_result"
+  changed_when: false

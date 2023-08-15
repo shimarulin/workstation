@@ -1,4 +1,0 @@
----
-# vars file for "upgrade_aur_packages" role
-upgrade_aur_packages_packages:
-  - "upgrade-aur-packages"

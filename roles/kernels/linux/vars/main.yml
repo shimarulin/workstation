@@ -1,5 +1,5 @@
 ---
 # vars file for "linux" role
 linux_packages:
-  - linux
-  - linux-headers
+  - "linux"
+  - "linux-headers"

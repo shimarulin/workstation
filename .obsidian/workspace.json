@@ -25,14 +25,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
+                "file": "docs/2. Development guide/3. Ansible Style Guide.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fa77311727cc187f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/2. Development guide/4. Bash script development.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d2036f6f276435a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/2. Development guide/5. Test Ansible Playbook.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9b4362b2bee359e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Gnome/Gnome Wayland session issues.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -71,15 +107,7 @@
             }
           },
           {
-            "id": "d5809211fb583d26",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {}
-            }
-          },
-          {
-            "id": "f508e03f552b1892",
+            "id": "70d21b7415f1b0f6",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -106,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
+                "file": "docs/Gnome/Gnome Wayland session issues.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
+                "file": "docs/Gnome/Gnome Wayland session issues.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md"
+                "file": "docs/Gnome/Gnome Wayland session issues.md"
               }
             }
           }
@@ -162,26 +190,31 @@
       "canvas:Создать новый холст": false,
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
-      "daily-notes:Сегодняшняя заметка": false,
-      "templates:Вставить шаблон": false,
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "705434e6238cb910",
+  "active": "9b4362b2bee359e0",
   "lastOpenFiles": [
-    "docs/2. Development guide/5. Test Ansible Playbook.md",
     "docs/2. Development guide/External links.md",
-    "playbook.yml~",
+    "docs/2. Development guide/2. Project directory structure.md",
+    "docs/2. Development guide/5. Test Ansible Playbook.md",
+    "docs/2. Development guide/4. Bash script development.md",
+    "docs/2. Development guide/3. Ansible Style Guide.md",
+    "tools/templates/template_ansible_vars/README.md~",
+    "tools/templates/template_ansible_vars/README.md",
+    "sl.js~",
+    "tools/templates/template_ansible_vars/copier.yml~",
+    "data/mirror_countries.json~",
+    "data/mirror_countries.json",
+    "c.js~",
+    "data/data_json.json~",
+    "sl.js",
+    "data/data_json.json",
+    "data/language-codes_json.json~",
+    "docs/2. Development guide/Use QEMU&KVM and Virt Manager.md",
+    "docs/2. Development guide/3. Bash script development.md",
+    "docs/2. Development guide/2. Ansible Style Guide.md",
     "roles/s1_d/README.md",
-    "roles/s1_d/templates",
-    "roles/s1_d/handlers/main.yml",
-    "roles/s1_d/handlers",
-    "roles/s1_d/defaults/main.yml",
-    "roles/s1_d/defaults",
-    "roles/s1_d/tasks/main.yml",
-    "roles/s1_d/tasks",
-    "roles/s1_d/files",
-    "roles/s1_d/vars/main.yml",
     "roles/{s_d/README.md",
     "roles/{*s_d/README.md",
     "roles/hardware/sof_firmware/README.md",
@@ -189,9 +222,6 @@
     "roles/]sof-firmware/README.md",
     "roles/sof-firmware/README.md",
     "roles/hardware/sof-firmware/README.md",
-    "docs/2. Development guide/2. Project directory structure.md",
-    "docs/2. Development guide/4. Bash script development.md",
-    "docs/2. Development guide/3. Ansible Style Guide.md",
     "docs/2. Development guide/1. Getting started.md",
     "roles/zsh/README.md",
     "templates/role/{{cookiecutter.role_name|replace('-', '_')}}/README.md",
@@ -199,11 +229,6 @@
     "tools/templates/template_ansible_role/README.md",
     "docs/Bash script development.md",
     "roles/aw/README.md",
-    "roles/boot/fd/README.md",
-    "roles/a/README.md",
-    "tools/a/README.md",
-    "tools/roles/a/README.md",
-    "docs/1. User guide/1. Getting started.md",
-    "roles/a1/README.md"
+    "roles/boot/fd/README.md"
   ]
 }

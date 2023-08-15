@@ -1,7 +1,0 @@
----
-# tasks file for "upgrade_aur_packages" role
-- name: "Update AUR packages cache and upgrade packages"
-  kewlfft.aur.aur:
-    use: "paru"
-    update_cache: true
-    upgrade: true
