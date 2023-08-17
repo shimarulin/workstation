@@ -1,6 +1,6 @@
 ---
 # tasks file for "fzf" role
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ fzf_packages }}'
+    name: "{{ fzf_packages }}"

@@ -1,20 +1,20 @@
 ---
 # tasks file for bluez
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ bluez_packages }}'
+    name: "{{ bluez_packages }}"
 
-- name: Add the user to 'lp' group
+- name: "Add the user to 'lp' group"
   become: true
   ansible.builtin.user:
-    name: '{{ ansible_user_id }}'
-    groups: lp
+    name: "{{ ansible_user_id }}"
+    groups: "lp"
     append: true
 
-- name: Enable bluetooth service
+- name: "Enable bluetooth service"
   become: true
   ansible.builtin.systemd:
-    name: bluetooth.service
-    state: started
+    name: "bluetooth.service"
+    state: "started"
     enabled: true

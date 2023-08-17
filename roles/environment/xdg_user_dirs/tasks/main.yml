@@ -1,27 +1,27 @@
 ---
 # tasks file for xdg_user_dirs
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ xdg_user_dirs_packages }}'
+    name: "{{ xdg_user_dirs_packages }}"
 
-- name: Create XDG user dirs
+- name: "Create XDG user dirs"
   ansible.builtin.file:
-    path: '{{ item }}'
-    state: directory
-    mode: '0755'
+    path: "{{ item }}"
+    state: "directory"
+    mode: "0755"
   loop:
-    - ~/Рабочий стол/
-    - ~/Загрузки/
-    - ~/Шаблоны/
-    - ~/Общедоступные/
-    - ~/Документы/
-    - ~/Музыка/
-    - ~/Изображения/
-    - ~/Видео/
+    - "~/Рабочий стол/"
+    - "~/Загрузки/"
+    - "~/Шаблоны/"
+    - "~/Общедоступные/"
+    - "~/Документы/"
+    - "~/Музыка/"
+    - "~/Изображения/"
+    - "~/Видео/"
 
-- name: Update XDG user dirs config
+- name: "Update XDG user dirs config"
   ansible.builtin.copy:
-    src: home/.config/
-    dest: ~/.config/
-    mode: '0644'
+    src: "home/.config/"
+    dest: "~/.config/"
+    mode: "0644"

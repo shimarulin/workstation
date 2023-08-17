@@ -3,9 +3,9 @@
 
 # https://wiki.archlinux.org/index.php/Systemd#Change_default_target_to_boot_into
 # systemctl set-default graphical.target
-- name: Change default target to graphical.target
+- name: "Change default target to graphical.target"
   become: true
   ansible.builtin.file:
-    src: /usr/lib/systemd/system/graphical.target
-    dest: /etc/systemd/system/default.target
-    state: link
+    src: "/usr/lib/systemd/system/graphical.target"
+    dest: "/etc/systemd/system/default.target"
+    state: "link"

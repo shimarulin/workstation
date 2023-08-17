@@ -1,4 +1,4 @@
 ---
 # vars file for "gnome_system_monitor" role
 gnome_system_monitor_packages:
-  - gnome-system-monitor
+  - "gnome-system-monitor"

@@ -1,6 +1,6 @@
 ---
 # tasks file for gpaste
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ gpaste_packages }}'
+    name: "{{ gpaste_packages }}"

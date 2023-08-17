@@ -5,3 +5,4 @@
   community.general.pacman:
     name: "{{ linux_zen_packages }}"
     extra_args: "--needed"
+  register: "kernel_zen"

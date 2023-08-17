@@ -1,6 +1,6 @@
 ---
 # tasks file for sof_firmware
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ sof_firmware_packages }}'
+    name: "{{ sof_firmware_packages }}"

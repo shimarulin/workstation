@@ -7,38 +7,35 @@
 #  - email: user email for use with this key (optional)
 #  - username: username for use with this key (optional)
 
-- name: Create user keys directory
+- name: "Create user keys directory"
   ansible.builtin.file:
-    path: ~/.ssh/{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email }}
-    state: directory
-    mode: u+rw,g=,o=
+    path: "~/.ssh/{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email }}"
+    state: "directory"
+    mode: "u+rw,g=,o="
 
-- name: Check the {{ item.host | default(item) }} key already present # noqa: name[template]
+- name: "Check the {{ item.host | default(item) }} key already present" # noqa: name[template]
   ansible.builtin.stat:
-    path:
-      ~/.ssh/{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email }}/{{ item.host |
-      default(item) }}_key
-  register: current_host_stat_result
+    path: "~/.ssh/{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email }}/{{\
+      \ item.host | default(item) }}_key"
+  register: "current_host_stat_result"
 
 # https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_keypair_module.html
-- name: Generate the {{ item.host | default(item) }} keypair # noqa: name[template]
+- name: "Generate the {{ item.host | default(item) }} keypair" # noqa: name[template]
   community.crypto.openssh_keypair:
-    backend: opensshbin
-    comment:
-      '{{ ansible_hostname }}:{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email
-      }}({{ item.host | default(item) }})'
-    path:
-      ~/.ssh/{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email }}/{{ item.host |
-      default(item) }}_key
+    backend: "opensshbin"
+    comment: "{{ ansible_hostname }}:{{ (item.email | default(false)) or (item.username\
+      \ | default(false)) or git_user_email }}({{ item.host | default(item) }})"
+    path: "~/.ssh/{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email }}/{{\
+      \ item.host | default(item) }}_key"
     type: "{{ item.alg | default('ed25519') }}"
-    size: '{{ item.size | default(omit) }}'
-    mode: '0400'
+    size: "{{ item.size | default(omit) }}"
+    mode: "0400"
 
-- name: Insert/update configuration block in ~/.ssh/config
+- name: "Insert/update configuration block in ~/.ssh/config"
   ansible.builtin.blockinfile:
-    path: ~/.ssh/config
-    marker: '# {mark} ANSIBLE MANAGED BLOCK {{ item.host | default(item) }}'
-    block: |
+    path: "~/.ssh/config"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.host | default(item) }}"
+    block: |-
       Host {{ item.host | default(item) }}
         PreferredAuthentications publickey
         IdentityFile ~/.ssh/{{ (item.email | default(false)) or (item.username | default(false)) or git_user_email }}/{{ item.host | default(item) }}_key

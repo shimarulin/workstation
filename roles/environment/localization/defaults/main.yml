@@ -1,8 +1,8 @@
 ---
 # defaults file for localization
 
-localization_user_language_name: 'ru_RU'
-localization_system_language_name: 'en_US'
+localization_user_language_name: "ru_RU"
+localization_system_language_name: "en_US"
 
-localization_vconsole_font: 'ter-c16n'
-localization_vconsole_keymap: 'ru'
+localization_vconsole_font: "ter-c16n"
+localization_vconsole_keymap: "ru"

@@ -1,6 +1,6 @@
 ---
 # tasks file for baobab
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ baobab_packages }}'
+    name: "{{ baobab_packages }}"

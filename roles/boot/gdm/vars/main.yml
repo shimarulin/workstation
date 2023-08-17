@@ -1,5 +1,5 @@
 ---
 # vars file for gdm
 gdm_packages:
-  - gdm
-  - gdm-tools
+  - "gdm"
+  - "gdm-tools"

@@ -1,5 +1,5 @@
 ---
 # vars file for bluez
 bluez_packages:
-  - bluez
-  - bluez-utils
+  - "bluez"
+  - "bluez-utils"

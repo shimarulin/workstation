@@ -1,4 +1,4 @@
 ---
 # vars file for baobab
 baobab_packages:
-  - baobab
+  - "baobab"

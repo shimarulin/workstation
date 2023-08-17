@@ -1,33 +1,33 @@
 ---
 # tasks file for tlp
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ tlp_packages }}'
+    name: "{{ tlp_packages }}"
 
-- name: Enable tlp service
+- name: "Enable tlp service"
   become: true
   ansible.builtin.systemd:
-    name: tlp.service
-    state: started
+    name: "tlp.service"
+    state: "started"
     enabled: true
 
-- name: Mask rfkill service
+- name: "Mask rfkill service"
   become: true
   ansible.builtin.systemd:
-    name: systemd-rfkill.service
-    state: stopped
+    name: "systemd-rfkill.service"
+    state: "stopped"
     masked: true
 
-- name: Mask rfkill socket
+- name: "Mask rfkill socket"
   become: true
   ansible.builtin.systemd:
-    name: systemd-rfkill.socket
-    state: stopped
+    name: "systemd-rfkill.socket"
+    state: "stopped"
     masked: true
 
-- name: Enable NetworkManager-dispatcher service
+- name: "Enable NetworkManager-dispatcher service"
   become: true
   ansible.builtin.systemd:
-    name: NetworkManager-dispatcher.service
+    name: "NetworkManager-dispatcher.service"
     enabled: true

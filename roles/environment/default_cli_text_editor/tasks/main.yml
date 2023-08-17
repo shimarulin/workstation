@@ -1,14 +1,14 @@
 ---
 # tasks file for "default_cli_text_editor" role
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ default_cli_text_editor_packages_map[default_cli_text_editor] }}'
-    extra_args: --needed
+    name: "{{ default_cli_text_editor_packages_map[default_cli_text_editor] }}"
+    extra_args: "--needed"
 
-- name: Create the $EDITOR variable helper
+- name: "Create the $EDITOR variable helper"
   become: true
   ansible.builtin.template:
-    src: etc/profile.d/00.editor.sh.j2
-    dest: /etc/profile.d/00.editor.sh
-    mode: '0644'
+    src: "etc/profile.d/00.editor.sh.j2"
+    dest: "/etc/profile.d/00.editor.sh"
+    mode: "0644"

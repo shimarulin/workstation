@@ -5,6 +5,7 @@ networkmanager_packages:
   # VPN
   - networkmanager-openconnect
   - networkmanager-openvpn
+
 #  - networkmanager-pptp
 #  - networkmanager-vpnc
 #  - network-manager-sstp #?

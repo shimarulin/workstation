@@ -1,21 +1,21 @@
 ---
 # tasks file for fonts
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ fonts_packages }}'
+    name: "{{ fonts_packages }}"
 
-- name: Create external fonts directory if it does not exist
+- name: "Create external fonts directory if it does not exist"
   become: true
   ansible.builtin.file:
-    path: '/usr/share/fonts/external'
-    state: directory
-    mode: '0755'
+    path: "/usr/share/fonts/external"
+    state: "directory"
+    mode: "0755"
 
-- name: Install fonts from remote sources
-  ansible.builtin.include_tasks: fonts_install.yml
-  loop: '{{ fonts_remotes }}'
+- name: "Install fonts from remote sources"
+  ansible.builtin.include_tasks: "fonts_install.yml"
+  loop: "{{ fonts_remotes }}"
 
-- name: Rebuild the font cache
-  ansible.builtin.command: fc-cache -vf
+- name: "Rebuild the font cache"
+  ansible.builtin.command: "fc-cache -vf"
   changed_when: false

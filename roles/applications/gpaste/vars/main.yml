@@ -1,4 +1,4 @@
 ---
 # vars file for gpaste
 gpaste_packages:
-  - gpaste
+  - "gpaste"

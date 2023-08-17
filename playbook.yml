@@ -5,23 +5,23 @@
   roles:
     # System folders
     ## Setup $PATH
-    - environment/path
+    - role: environment/path
     ## Setup XDG basedir
     - environment/xdg_basedir
 
     # Package management
     ## Update package database
-    - package-management/update
+    - role: package-management/update
     ## Setup pacman mirror list
-    - package-management/reflector
+    - role: package-management/reflector
     ## Setup AUR helper
-    - package-management/build_tools
-    - package-management/paru
+    - role: package-management/build_tools
+    - role: package-management/paru
     ## Upgrade system
-    - package-management/upgrade
+    - role: package-management/upgrade
 
     # Default CLI editor
-    - environment/default_cli_text_editor
+    - role: environment/default_cli_text_editor
 
     # Linux Kernels
     - role: kernels/linux
@@ -35,39 +35,53 @@
       tags:
         - av-production
 
-#    # Hardware
-#    - hardware/networkmanager
-#    - role: hardware/sof_firmware
-#      tags:
-#        - laptop
-#        - desktop
-#    - role: hardware/pipewire
-#      tags:
-#        - laptop
-#        - desktop
-#    - role: hardware/bluez
-#      tags:
-#        - laptop
-#        - desktop
-#    - role: hardware/tlp
-#      tags:
-#        - laptop
-#    # Linux console
-#    # - kmscon?
-#    # Languages and Localization
-#    - environment/localization
-#    - environment/xdg_user_dirs
-#    # Setup boot
-#    - boot/grub
-#
-#    # Install and setup commandline tools
-#    - cli/git
-#    - cli/ssh
-#    - cli/fzf
-#    - cli/man
-#
-#    # Install and setup shell
-#    - zsh
+    # Hardware
+    ### Network
+    - role: hardware/networkmanager
+    ### Sound card firmware
+    - role: hardware/sof_firmware
+      tags:
+        - laptop
+        - desktop
+    ### Audio
+    - role: hardware/pipewire
+      tags:
+        - laptop
+        - desktop
+    ### Bluetooth
+    - role: hardware/bluez
+      tags:
+        - laptop
+        - desktop
+    ### Power management
+    - role: hardware/tlp
+      tags:
+        - laptop
+
+    # Languages and Localization
+    # TODO: locale variables
+    # TODO: vconsole font
+    - environment/localization
+    # TODO: Map folder names
+    - environment/xdg_user_dirs
+
+    # Setup boot
+    # TODO: add theme
+    - boot/grub
+
+    # Install and setup commandline tools
+    - cli/git
+    - cli/ssh
+    # TODO: setup fzf
+    - cli/fzf
+    # - cli/man
+
+    # Install and setup shell
+    # TODO: split vconsole and include font settings
+    - zsh
+
+    # Linux console
+    # - kmscon?
 #
 #    # Desktop environment
 #    - role: gnome/gnome_shell

@@ -1,12 +1,12 @@
 ---
 # tasks file for gdm
-- name: Install dependencies
+- name: "Install dependencies"
   kewlfft.aur.aur:
-    name: '{{ gdm_packages }}'
-    use: paru
+    name: "{{ gdm_packages }}"
+    use: "paru"
 
-- name: Enable GDM service
+- name: "Enable GDM service"
   become: true
   ansible.builtin.systemd:
-    name: gdm.service
+    name: "gdm.service"
     enabled: true
