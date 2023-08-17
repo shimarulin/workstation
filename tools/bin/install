@@ -184,7 +184,7 @@ upgrade_system() {
 
 install_system_requirements() {
   echo "${STYLE_INFO}Install Ansible configuration requirements${STYLE_OFF}"
-  sudo pacman -S ansible git python-pipx --needed
+  sudo pacman -S ansible git python-pipx python-github3py python-pyjwt --needed
 
   # Install Copier template render [https://github.com/copier-org/copier]
   pipx install copier
