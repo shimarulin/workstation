@@ -1,42 +1,51 @@
 ---
 # tasks file for grub
-- name: Install dependencies
+- name: "Install dependencies"
   become: true
   community.general.pacman:
-    name: '{{ grub_packages }}'
+    name: "{{ grub_packages }}"
+
 # https://stackoverflow.com/questions/55844981/ansible-insert-word-in-grub-cmdline
-# - name: Disable GRUB submenu
-#  become: true
-#  lineinfile:
-#    path: /etc/default/grub
-#    regexp: "^#GRUB_DISABLE_SUBMENU=y"
-#    line: 'GRUB_DISABLE_SUBMENU=y'
-#  notify: grub-mkconfig
+- name: "Disable GRUB submenu"
+  become: true
+  lineinfile:
+    path: "/etc/default/grub"
+    regexp: "^#GRUB_DISABLE_SUBMENU=y"
+    line: "GRUB_DISABLE_SUBMENU=y"
+  register: "grub_config_grub_disable_submenu"
 
 # This will only work if /boot is not a btrfs,
 # because grub cannot write to btrfs.
 # But it will generate a misleading error message:
 # "sparse file not allowed. Press any key to continue.".
-# - name: Recall previous GRUB entry
-#  become: true
-#  lineinfile:
-#    path: /etc/default/grub
-#    regexp: "^GRUB_DEFAULT=[0-9]*"
-#    line: 'GRUB_DEFAULT=saved'
-#  notify: grub-mkconfig
-#
-# - name: Save selected GRUB menu item
-#  become: true
-#  lineinfile:
-#    path: /etc/default/grub
-#    regexp: "^#GRUB_SAVEDEFAULT=true"
-#    line: 'GRUB_SAVEDEFAULT=true'
-#  notify: grub-mkconfig
-
-- name: Update GRUB config
+- name: "Recall previous GRUB entry"
   become: true
-  ansible.builtin.shell: grub-mkconfig -o /esp/GRUB/grub/grub.cfg
+  lineinfile:
+    path: "/etc/default/grub"
+    regexp: "^GRUB_DEFAULT=[0-9]*"
+    line: "GRUB_DEFAULT=saved"
+  register: "grub_config_grub_default"
+
+- name: "Save selected GRUB menu item"
+  become: true
+  lineinfile:
+    path: "/etc/default/grub"
+    regexp: "^#GRUB_SAVEDEFAULT=true"
+    line: "GRUB_SAVEDEFAULT=true"
+  register: "grub_config_grub_savedefault"
+
+- name: "Update GRUB config"
+  become: true
+  ansible.builtin.shell: "grub-mkconfig -o /esp/GRUB/grub/grub.cfg"
   args:
-    executable: /usr/bin/bash
-  register: grub_mkconfig_result
-  changed_when: grub_mkconfig_result.rc == 0
+    executable: "/usr/bin/bash"
+  register: "grub_mkconfig_result"
+  when: |-
+    grub_config_grub_disable_submenu is changed
+    or grub_config_grub_default is changed
+    or grub_config_grub_savedefault is changed
+    or (kernel_latest is defined and kernel_latest is changed)
+    or (kernel_lts is defined and kernel_lts is changed)
+    or (kernel_lqx is defined and kernel_lqx is changed)
+    or (kernel_zen is defined and kernel_zen is changed)
+  changed_when: "grub_mkconfig_result.rc == 0"
