@@ -1,1 +1,4 @@
-emulate sh -c 'source ~/.profile'
+if [[ -f "$HOME/.profile" ]]
+then
+  emulate sh -c 'source ~/.profile'
+fi
