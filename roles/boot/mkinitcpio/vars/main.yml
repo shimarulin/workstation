@@ -1,0 +1,3 @@
+---
+# vars file for "mkinitcpio" role
+mkinitcpio_packages: []

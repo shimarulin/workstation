@@ -20,20 +20,27 @@
     ## Upgrade system
     - role: package-management/upgrade
 
-    # Default CLI editor
-    - role: environment/default_cli_text_editor
+    # Setup and create initial ramdisk images for existing Linux kernels if it needs
+    - role: boot/mkinitcpio
 
-    # Linux Kernels
+    # Install Linux Kernels and (re)create initial ramdisk images automatically
     - role: kernels/linux
       tags:
         - laptop
         - desktop
+        - kernel-latest
     - role: kernels/linux_lts
       tags:
         - virtualbox
+        - kernel-lts
     - role: kernels/linux_lqx
       tags:
         - av-production
+        - kernel-lqx
+
+    # Setup boot
+    # TODO: add theme
+    - role: boot/grub
 
     # Hardware
     ### Network
@@ -58,16 +65,15 @@
       tags:
         - laptop
 
+    # Default CLI editor
+    - role: environment/default_cli_text_editor
+
     # Languages and Localization
     # TODO: locale variables
     # TODO: vconsole font
     - environment/localization
     # TODO: Map folder names
     - environment/xdg_user_dirs
-
-    # Setup boot
-    # TODO: add theme
-    - boot/grub
 
     # Install and setup commandline tools
     - cli/git
