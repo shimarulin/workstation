@@ -18,3 +18,4 @@
     name: "bluetooth.service"
     state: "started"
     enabled: true
+  changed_when: false
