@@ -38,6 +38,3 @@
     name: "pkgfile-update.timer"
     state: "started"
     enabled: true
-
-- name: "Setup zsh-histdb"
-  ansible.builtin.include_tasks: "zsh-histdb.yml"

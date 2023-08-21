@@ -65,6 +65,9 @@ local = "~/.config/zsh/env"
 [plugins.zsh-histdb]
 git = 'https://github.com/larkery/zsh-histdb'
 
+[plugins.histdb-init]
+local = "~/.config/zsh/plugins"
+
 # fzf reverse search
 # should be loaded after ohmyzsh key bindings
 # https://github.com/junegunn/fzf
