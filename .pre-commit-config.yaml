@@ -1,23 +1,23 @@
 ---
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
-exclude: '^.obsidian/'
+exclude: "^.obsidian/"
 
 repos:
-  - repo: 'https://github.com/pre-commit/pre-commit-hooks'
-    rev: 'v4.4.0'
+  - repo: "https://github.com/pre-commit/pre-commit-hooks"
+    rev: "v4.4.0"
     hooks:
-      - id: 'trailing-whitespace'
-      - id: 'end-of-file-fixer'
+      - id: "trailing-whitespace"
+      - id: "end-of-file-fixer"
 
-  - repo: 'https://github.com/ansible/ansible-lint'
-    rev: 'v6.17.2'
+  - repo: "https://github.com/ansible/ansible-lint"
+    rev: "v6.17.2"
     hooks:
-      - id: 'ansible-lint'
+      - id: "ansible-lint"
 
-  - repo: 'https://github.com/executablebooks/mdformat'
-    rev: '0.7.16'
+  - repo: "https://github.com/executablebooks/mdformat"
+    rev: "0.7.16"
     hooks:
-      - id: 'mdformat'
+      - id: "mdformat"
         additional_dependencies:
-          - 'mdformat-shfmt'
+          - "mdformat-shfmt"
