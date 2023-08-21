@@ -184,6 +184,10 @@ upgrade_system() {
 
 install_system_requirements() {
   echo "${STYLE_INFO}Install Ansible configuration requirements${STYLE_OFF}"
+  # Ansible community.general.github_release module requirements:
+  # - python-github3py
+  # - python-pyjwt
+  # See https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html#requirements
   sudo pacman -S ansible git python-pipx python-github3py python-pyjwt --needed
 
   # Install Copier template render [https://github.com/copier-org/copier]
