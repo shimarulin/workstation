@@ -1,6 +1,6 @@
-# ansible-role-gnome-shell-appearance
+# ansible-role-gnome-shell
 
-> Gnome Shell User Interface config
+> GNOME shell
 
 ## Requirements
 
@@ -24,9 +24,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: gnome-shell-appearance, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: gnome-shell, x: 42 }
+```
 
 ## License
 
