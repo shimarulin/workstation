@@ -12,6 +12,13 @@
     groups: "lp"
     append: true
 
+- name: "Enable D-Bus experimental interfaces (allow get device power level)"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/bluetooth/main.conf"
+    regexp: "^(#)*Experimental.*"
+    line: "Experimental = true"
+
 - name: "Enable bluetooth service"
   become: true
   ansible.builtin.systemd:
