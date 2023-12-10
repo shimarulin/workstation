@@ -2,17 +2,16 @@
 # Setup locale
 # https://www.gnu.org/software/gettext/manual/html_node/Locale-Environment-Variables.html
 
-- name: "Ensure localisation files for '{{ localization_system_language }}' are\
-    \ available"                                                                       # noqa: name[template]
+- name: "Ensure localisation files for '{{ system_lang }}' are available"                                                                       # noqa: name[template]
   become: true
   community.general.locale_gen:
-    name: "{{ localization_system_language }}"
+    name: "{{ system_lang }}"
     state: "present"
 
-- name: "Ensure localisation files for '{{ localization_user_language }}' are available" # noqa: name[template]
+- name: "Ensure localisation files for '{{ locale_lang }}' are available" # noqa: name[template]
   become: true
   community.general.locale_gen:
-    name: "{{ localization_user_language }}"
+    name: "{{ locale_lang }}"
     state: "present"
 
 - name: "Get current locale and language configuration"
@@ -22,13 +21,13 @@
 
 - name: "Parse 'LANG' from current locale and language configuration"
   ansible.builtin.set_fact:
-    locale_lang: "{{ locale_status.stdout | regex_search('LANG=([^\n]+)', '\\1') | first }}"
+    current_locale_lang: "{{ locale_status.stdout | regex_search('LANG=([^\n]+)', '\\1') | first }}"
 
 - name: "Parse 'LANGUAGE' from current locale and language configuration"
   ansible.builtin.set_fact:
-    locale_language: "{{ locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([locale_lang], true) | first }}"
+    current_locale_language: "{{ locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([current_locale_lang], true) | first }}"
 
-- name: "Configure system locale to '{{ localization_lang }}' and language to '{{ localization_language }}'" # noqa: name[template]
+- name: "Configure system locale to '{{ locale_lang }}' and language to '{{ locale_language }}'" # noqa: name[template]
   become: true
-  ansible.builtin.command: "localectl set-locale LANG={{ localization_lang }} LANGUAGE={{ localization_language }}"
-  changed_when: "locale_lang != localization_lang or locale_language != localization_language"
+  ansible.builtin.command: "localectl set-locale LANG={{ locale_lang }} LANGUAGE={{ locale_language }}"
+  changed_when: "current_locale_lang != locale_lang or current_locale_language != locale_language"

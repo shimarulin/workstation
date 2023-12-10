@@ -14,3 +14,14 @@ reflector_sort: "rate"
 # Country and language
 country_code: "{{ country_code }}"
 language_code: "{{ language_code }}"
+
+# Locale
+locale_encoding: "UTF-8"
+system_lang_name: "en_US"
+system_lang: {% raw %}"{{ system_lang_name }}.{{ locale_encoding }}"{% endraw %}
+locale_lang_name: {% raw %}"{{ language_code }}_{{ country_code }}"{% endraw %}
+locale_lang: {% raw %}"{{ locale_lang_name }}.{{ locale_encoding }}"{% endraw %}
+
+# vconsole
+vconsole_font: "ter-c16b"
+vconsole_keymap: "ru"

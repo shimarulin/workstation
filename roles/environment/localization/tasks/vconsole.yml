@@ -3,7 +3,8 @@
 # https://files.ax86.net/terminus-ttf/README.Terminus.txt
 # See also:
 # - https://github.com/fcambus/spleen
-- name: "Install dependencies"
+# TODO: Extract to vconsole-font role
+- name: "Install Linux console font"
   become: true
   community.general.pacman:
     name: "terminus-font"

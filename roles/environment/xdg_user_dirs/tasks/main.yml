@@ -5,23 +5,6 @@
   community.general.pacman:
     name: "{{ xdg_user_dirs_packages }}"
 
-- name: "Create XDG user dirs"
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: "directory"
-    mode: "0755"
-  loop:
-    - "~/Рабочий стол/"
-    - "~/Загрузки/"
-    - "~/Шаблоны/"
-    - "~/Общедоступные/"
-    - "~/Документы/"
-    - "~/Музыка/"
-    - "~/Изображения/"
-    - "~/Видео/"
-
-- name: "Update XDG user dirs config"
-  ansible.builtin.copy:
-    src: "home/.config/"
-    dest: "~/.config/"
-    mode: "0644"
+- name: "Create XDG user dirs and update XDG user dirs config for user locale"
+  ansible.builtin.command: "xdg-user-dirs-update"
+  changed_when: false

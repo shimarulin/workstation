@@ -1,0 +1,10 @@
+---
+# This playbook deploys the whole application stack.
+- name: Apply common configuration to all nodes
+  hosts: all
+  roles:
+    # Default VISUAL editor
+    # - role: environment/default_cli_text_editor
+
+    # XDG user dirs
+    - environment/xdg_user_dirs
