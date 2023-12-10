@@ -8,8 +8,10 @@ default_cli_text_editor_packages_map:
   helix: "helix"
   nano: "nano"
 
-default_cli_text_editor_executables_map:
+default_cli_text_editor_executable_paths_map:
   neovim: "/usr/bin/nvim"
   micro: "/usr/bin/micro"
   helix: "/usr/bin/helix"
   nano: "/usr/bin/nano"
+
+default_cli_text_editor_executable_path: "{{ default_cli_text_editor_executable_paths_map[default_cli_text_editor] }}"

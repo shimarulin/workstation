@@ -1,0 +1,4 @@
+---
+# vars file for "gnome_text_editor" role
+gnome_text_editor_packages:
+  - "gnome-text-editor"

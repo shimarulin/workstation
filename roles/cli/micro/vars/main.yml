@@ -1,0 +1,4 @@
+---
+# vars file for "micro" role
+micro_packages:
+  - "micro"

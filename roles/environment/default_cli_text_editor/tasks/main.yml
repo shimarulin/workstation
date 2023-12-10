@@ -1,10 +1,8 @@
 ---
 # tasks file for "default_cli_text_editor" role
-- name: "Install dependencies"
-  become: true
-  community.general.pacman:
-    name: "{{ default_cli_text_editor_packages_map[default_cli_text_editor] }}"
-    extra_args: "--needed"
+- name: "Install default cli text editor"
+  ansible.builtin.include_role:
+    name: "cli/{{ default_cli_text_editor_packages_map[default_cli_text_editor] | replace('-', '_') }}"
 
 - name: "Create the $EDITOR variable helper"
   become: true

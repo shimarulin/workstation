@@ -1,0 +1,12 @@
+---
+# tasks file for "default_visual_text_editor" role
+- name: "Install default visual text editor"
+  ansible.builtin.include_role:
+    name: "applications/{{ default_visual_text_editor_packages_map[default_visual_text_editor] | replace('-', '_') }}"
+
+- name: "Create the $VISUAL variable helper"
+  become: true
+  ansible.builtin.template:
+    src: "etc/profile.d/00.visual.sh.j2"
+    dest: "/etc/profile.d/00.visual.sh"
+    mode: "0644"
