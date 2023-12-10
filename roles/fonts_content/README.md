@@ -1,4 +1,4 @@
-# ansible-role-fonts
+# ansible-role-fonts-content
 
 > Font collection and setting
 
@@ -27,7 +27,7 @@
 
 - https://birdfont.org/
 
----
+______________________________________________________________________
 
 extra/noto-fonts 20190926-4 Google Noto TTF fonts extra/noto-fonts-cjk 20190409-2 Google Noto CJK fonts
 extra/noto-fonts-emoji 20200720-1 Google Noto emoji fonts extra/noto-fonts-extra 20190926-4 Google Noto TTF fonts -
@@ -38,7 +38,7 @@ fonts extra/xorg-fonts-75dpi 1.0.3-7 (xorg) X.org 75dpi fonts extra/xorg-fonts-a
 files - 100dpi font familiy extra/xorg-fonts-alias-75dpi 1.0.4-1 X.org font alias files - 75dpi font familiy
 extra/xorg-fonts-alias-cyrillic 1.0.4-1 X.org font alias files - cyrillic font familiy extra/xorg-fonts-alias-misc
 1.0.4-1 X.org font alias files - misc font familiy extra/xorg-fonts-cyrillic 1.0.3-6 X.org cyrillic fonts
-extra/xorg-fonts-encodings 1.0.5-2 (xorg-fonts xorg) [установлен] X.org font encoding files extra/xorg-fonts-misc
+extra/xorg-fonts-encodings 1.0.5-2 (xorg-fonts xorg) \[установлен\] X.org font encoding files extra/xorg-fonts-misc
 1.0.3-10 X.org misc fonts extra/xorg-fonts-type1 7.7-6 X.org Type1 fonts extra/xorg-mkfontscale 1.2.1-2 (xorg-apps xorg)
 Create an index of scalable font files for X extra/xorg-xfd 1.1.3-2 Displays all the characters in a font using either
 the X11 core protocol or libXft2 extra/xorg-xfontsel 1.0.6-3 Point and click selection of X11 font names
@@ -72,9 +72,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: fonts, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: fonts, x: 42 }
+```
 
 ## License
 

@@ -1,5 +1,5 @@
 ---
-# vars file for fonts
+# vars file for fonts_content
 fonts_packages:
   # Fonts
   ## Adobe Source family

@@ -1,5 +1,5 @@
 ---
-# tasks file for fonts
+# tasks file for fonts_content
 - name: "Install dependencies"
   become: true
   community.general.pacman:

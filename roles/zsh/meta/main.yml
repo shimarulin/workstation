@@ -13,4 +13,3 @@ galaxy_info:
 
 dependencies:
   - role: "cli/fzf"
-  - role: "fonts"
