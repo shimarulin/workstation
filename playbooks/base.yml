@@ -10,15 +10,13 @@
     - role: environment/xdg_basedir
 
     # Package management
-    ## Update package database
+    ## Update packages database and upgrade system
     - role: package-management/update
     ## Setup pacman mirror list
     - role: package-management/reflector
     ## Setup AUR helper
     - role: package-management/build_tools
     - role: package-management/paru
-    ## Upgrade system
-    - role: package-management/upgrade
 
     # Setup and create initial ramdisk images for existing Linux kernels if it needs
     - role: boot/mkinitcpio
