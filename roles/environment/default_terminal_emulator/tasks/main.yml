@@ -1,0 +1,5 @@
+---
+# tasks file for "default_terminal_emulator" role
+- name: "Install default visual text editor"
+  ansible.builtin.include_role:
+    name: "{{ default_terminal_emulator_role }}"

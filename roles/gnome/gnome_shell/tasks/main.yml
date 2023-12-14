@@ -1,0 +1,11 @@
+---
+# tasks file for "gnome_shell" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ gnome_shell_packages }}"
+    extra_args: "--needed"
+
+- name: "Run default terminal emulator role"
+  ansible.builtin.include_role:
+    name: "environment/default_terminal_emulator"

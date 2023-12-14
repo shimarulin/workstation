@@ -3,6 +3,9 @@
 - name: Include the base play
   ansible.builtin.import_playbook: base.yml
 
+- name: Include the Desktop Environment play
+  ansible.builtin.import_playbook: gnome.yml
+
 - name: Apply post-install configuration to all nodes
   hosts: all
   roles:

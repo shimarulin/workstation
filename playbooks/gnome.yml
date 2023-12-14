@@ -1,0 +1,6 @@
+---
+# This playbook deploys the whole application stack.
+- name: Apply GNOME configuration to all nodes
+  hosts: all
+  roles:
+    - role: gnome/gnome_shell
