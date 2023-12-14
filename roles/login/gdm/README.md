@@ -1,6 +1,6 @@
-# ansible-role-gdm
+# Ansible Role "gdm"
 
-> Gnome Display Manager
+> GDM - GNOME Display manager and login screen
 
 ## Requirements
 
@@ -24,9 +24,22 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: gdm, x: 42 }
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - gdm
+```
+
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - role: gdm # noqa: role-name[path]
+      tags:
+        - laptop
+        - desktop
+```
 
 ## License
 

@@ -9,3 +9,7 @@
 - name: "Run default terminal emulator role"
   ansible.builtin.include_role:
     name: "environment/default_terminal_emulator"
+
+- name: "Run Display manager and login screen role"
+  ansible.builtin.include_role:
+    name: "login/gdm"

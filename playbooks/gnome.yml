@@ -1,6 +1,12 @@
 ---
 # This playbook deploys the whole application stack.
-- name: Apply GNOME configuration to all nodes
+- name: Include the base play
+  ansible.builtin.import_playbook: base.yml
+
+- name: Apply the GNOME configuration to all nodes
   hosts: all
   roles:
     - role: gnome/gnome_shell
+
+- name: Include a common graphical configuration play
+  ansible.builtin.import_playbook: graphical_environment.yml

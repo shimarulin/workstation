@@ -1,9 +1,10 @@
 ---
-# tasks file for gdm
+# tasks file for "gdm" role
 - name: "Install dependencies"
-  kewlfft.aur.aur:
+  become: true
+  community.general.pacman:
     name: "{{ gdm_packages }}"
-    use: "paru"
+    extra_args: "--needed"
 
 - name: "Enable GDM service"
   become: true

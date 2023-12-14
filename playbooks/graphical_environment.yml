@@ -1,12 +1,6 @@
 ---
 # This playbook deploys the whole application stack.
-- name: Include the base play
-  ansible.builtin.import_playbook: base.yml
-
-- name: Include the Desktop Environment play
-  ansible.builtin.import_playbook: gnome.yml
-
-- name: Apply post-install configuration to all nodes
+- name: Apply a common graphical configuration to all nodes
   hosts: all
   roles:
     # Default VISUAL editor
@@ -14,3 +8,6 @@
 
     # XDG user dirs
     - role: environment/xdg_user_dirs
+
+    # Enable graphical login
+    - role: boot/systemd_graphical_target
