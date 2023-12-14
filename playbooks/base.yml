@@ -6,8 +6,6 @@
     # System folders
     ## Setup $PATH
     - role: environment/path
-    ## Setup XDG basedir
-    - role: environment/xdg_basedir
 
     # Package management
     ## Update packages database and upgrade system
