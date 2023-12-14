@@ -1,0 +1,6 @@
+---
+# vars file for "terminus_font" role
+# https://terminus-font.sourceforge.net/
+# https://files.ax86.net/terminus-ttf/README.Terminus.txt
+terminus_font_packages:
+  - "terminus-font"

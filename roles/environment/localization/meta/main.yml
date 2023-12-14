@@ -11,4 +11,5 @@ galaxy_info:
       versions:
         - "all"
 
-dependencies: []
+dependencies:
+  - role: "fonts/terminus_font"
