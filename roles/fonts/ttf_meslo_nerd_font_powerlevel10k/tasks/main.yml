@@ -1,0 +1,7 @@
+---
+# tasks file for "ttf_meslo_nerd_font_powerlevel10k" role
+- name: "Install dependencies"
+  kewlfft.aur.aur:
+    name: "{{ ttf_meslo_nerd_font_powerlevel10k_packages }}"
+    use: paru
+    extra_args: "--needed"
