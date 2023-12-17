@@ -1,6 +1,0 @@
----
-# tasks file for "gnome_logs" role
-- name: "Install dependencies"
-  become: true
-  community.general.pacman:
-    name: "{{ gnome_logs_packages }}"

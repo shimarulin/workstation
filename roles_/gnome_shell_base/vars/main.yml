@@ -30,11 +30,6 @@ gnome_shell_base_packages:
   # gst-plugins-good (optional) - Screen recording
   # power-profiles-daemon (optional) - Power profile switching
   # switcheroo-control (optional) - Multi-GPU support
-  - gnome_shell # required by `gdm`
-
-  # GNOME user docs
-  # ---
-  - gnome-user-docs
 
   # GNOME configuration tools
   #
@@ -74,17 +69,3 @@ gnome_shell_base_packages:
   # power-profiles-daemon (optional) - power profiles
   # rygel (optional) - media sharing
   # system-config-printer (optional) - printer settings
-  - gnome-control-center
-  - gnome-tweaks
-  - dconf-editor
-
-  # GNOME monitoring tools
-  # ---
-  #  - gnome-system-monitor
-  #  - baobab
-  #  - gnome-disk-utility
-  #  - gnome-logs
-
-  # A backend implementation for xdg-desktop-portal (a portal frontend service for Flatpak
-  # and possibly other desktop containment frameworks) for the GNOME desktop environment
-  - xdg-desktop-portal-gnome

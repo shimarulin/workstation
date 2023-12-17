@@ -1,9 +1,0 @@
----
-# vars file for file-roller
-file_roller_packages:
-  - file-roller
-  - lrzip
-  - p7zip
-  - squashfs-tools
-  - unace
-  - unrar

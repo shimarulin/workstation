@@ -1,4 +1,0 @@
----
-# vars file for "gnome_disk_utility" role
-gnome_disk_utility_packages:
-  - "gnome-disk-utility"

@@ -16,7 +16,7 @@
 - name: "Set Nautilus (Gnome Files) as default file manager"
   ansible.builtin.command: "xdg-mime default org.gnome.Nautilus.desktop inode/directory"
   register: "xdg_mime_inode_result"
-  when: "xdg_mime_query_inode_result.stdout != org.gnome.Nautilus.desktop"
+  when: "xdg_mime_query_inode_result.stdout != 'org.gnome.Nautilus.desktop'"
   changed_when: "xdg_mime_inode_result.rc == 0"
 
 - name: "Setup Nautilus (Gnome Files)"

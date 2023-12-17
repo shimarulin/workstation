@@ -1,0 +1,9 @@
+---
+# vars file for "file_roller" role
+file_roller_packages:
+  - "file-roller"
+  - "lrzip"
+  - "p7zip"
+  - "squashfs-tools"
+  - "unace"
+  - "unrar"

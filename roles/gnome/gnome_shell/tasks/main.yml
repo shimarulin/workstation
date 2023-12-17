@@ -6,10 +6,18 @@
     name: "{{ gnome_shell_packages }}"
     extra_args: "--needed"
 
-- name: "Run default terminal emulator role"
+- name: "Run a default terminal emulator role"
   ansible.builtin.include_role:
     name: "environment/default_terminal_emulator"
 
-- name: "Run Display manager and login screen role"
+- name: "Run a Display manager and login screen role"
   ansible.builtin.include_role:
     name: "login/gdm"
+
+- name: "Run an file manager role"
+  ansible.builtin.include_role:
+    name: "applications/nautilus"
+
+- name: "Run an archive manager role"
+  ansible.builtin.include_role:
+    name: "applications/file_roller"

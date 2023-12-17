@@ -1,4 +1,0 @@
----
-# vars file for "gnome_logs" role
-gnome_logs_packages:
-  - "gnome-logs"

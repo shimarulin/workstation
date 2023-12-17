@@ -1,4 +1,33 @@
 ---
 # vars file for "gnome_shell" role
 gnome_shell_packages:
+  # Core
   - "gnome-shell"
+
+  # A backend implementation for xdg-desktop-portal (a portal frontend service for Flatpak
+  # and possibly other desktop containment frameworks) for the GNOME desktop environment
+  - "xdg-desktop-portal-gnome"
+
+  # Settings
+  - "dconf-editor"
+  - "gnome-control-center"
+  - "gnome-tweaks"
+
+  # Monitoring
+  - "baobab"
+  - "gnome-disk-utility"
+  - "gnome-logs"
+  - "gnome-system-monitor"
+
+  # Viewers TODO: Need Review
+  ## Document viewer
+  - "evince"
+  ## Image viewer
+  - "loupe"
+  ## Audio
+  # - "decibels" # AUR
+  ## Video
+
+  # Help
+  - "gnome-user-docs"
+  - "yelp"

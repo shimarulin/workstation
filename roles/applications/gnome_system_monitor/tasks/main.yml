@@ -1,6 +1,0 @@
----
-# tasks file for "gnome_system_monitor" role
-- name: "Install dependencies"
-  become: true
-  community.general.pacman:
-    name: "{{ gnome_system_monitor_packages }}"

@@ -71,7 +71,9 @@ install_system_requirements() {
   # - python-github3py
   # - python-pyjwt
   # See https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html#requirements
-  sudo pacman -S ansible git python-pipx python-github3py python-pyjwt --needed
+  # Ansible community.general.dconf module requirements:
+  # - python-psutil
+  sudo pacman -S ansible git python-pipx python-github3py python-pyjwt python-psutil --needed
 
   # Install Copier template render [https://github.com/copier-org/copier]
   pipx install copier
