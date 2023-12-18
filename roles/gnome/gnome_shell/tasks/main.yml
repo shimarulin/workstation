@@ -30,3 +30,9 @@
     masked: true
   failed_when: false
   when: "'laptop' in ansible_run_tags"
+
+- name: "Install Flatpak permissions manager"
+  kewlfft.aur.aur:
+    name: "flatseal"
+    use: "paru"
+    extra_args: "--needed"

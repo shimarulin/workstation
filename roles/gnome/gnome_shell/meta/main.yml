@@ -21,3 +21,6 @@ dependencies:
   - role: "hardware/tlp"
     tags:
       - laptop
+  - role: "package-management/flatpak"
+  - role: "package-management/upgrade_flatpak_packages"
+  - role: "package-management/appimage_support"
