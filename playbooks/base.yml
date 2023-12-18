@@ -6,6 +6,7 @@
     # System folders
     ## Setup $PATH
     - role: environment/path
+    - role: environment/xdg_basedir
 
     # Package management
     ## Update packages database and upgrade system

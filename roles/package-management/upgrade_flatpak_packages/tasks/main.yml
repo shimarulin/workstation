@@ -2,5 +2,7 @@
 # tasks file for "upgrade_flatpak_packages" role
 - name: "Upgrade installed Flatpak packages"
   ansible.builtin.command: "flatpak update -y"
+  environment:
+    LANGUAGE: "en_US.UTF-8"
   register: "flatpak_update_result"
   changed_when: "not 'Nothing to do' in flatpak_update_result.stdout"
