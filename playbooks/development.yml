@@ -6,3 +6,6 @@
     # Install and setup commandline tools
     - role: cli/git
     - role: cli/ssh
+
+    # Programming language
+    - role: development/rust

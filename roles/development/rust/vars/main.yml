@@ -1,0 +1,8 @@
+---
+# vars file for "rust" role
+rust_packages:
+  - "curl"
+  - "git"
+  - "libiconv"
+  - "pkgconf"
+  - "python"

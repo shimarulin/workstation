@@ -1,6 +1,6 @@
-# ansible-role-rust
+# Ansible Role "rust"
 
-> Install Rust language
+> Rust programming language toolset
 
 ## Requirements
 
@@ -24,9 +24,22 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: rust, x: 42 }
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - rust
+```
+
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - role: rust # noqa: role-name[path]
+      tags:
+        - laptop
+        - desktop
+```
 
 ## License
 
