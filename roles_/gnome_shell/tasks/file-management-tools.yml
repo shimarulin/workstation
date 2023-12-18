@@ -1,5 +1,0 @@
----
-# Install file management tools
-- name: Install Nautilus
-  ansible.builtin.include_role:
-    name: applications/nautilus # noqa: role-name[path]

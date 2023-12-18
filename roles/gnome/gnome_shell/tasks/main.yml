@@ -21,3 +21,12 @@
 - name: "Run an archive manager role"
   ansible.builtin.include_role:
     name: "applications/file_roller"
+
+- name: "Mask the Gnome power-profiles-daemon service for 'tlp' in GNOME 40 and newer"
+  become: true
+  ansible.builtin.systemd:
+    name: "power-profiles-daemon.service"
+    state: "stopped"
+    masked: true
+  failed_when: false
+  when: "'laptop' in ansible_run_tags"

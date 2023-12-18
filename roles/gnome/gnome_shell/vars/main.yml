@@ -19,6 +19,18 @@ gnome_shell_packages:
   - "gnome-logs"
   - "gnome-system-monitor"
 
+  # Media subsystem
+  # see https://wiki.archlinux.org/title/GStreamer#Hardware_video_acceleration
+  # and https://wiki.archlinux.org/title/Hardware_video_acceleration
+  - "gst-libav"
+  - "gst-plugin-pipewire"
+  - "gst-plugins-bad"
+  - "gst-plugins-base"
+  - "gst-plugins-good"
+  - "gst-plugins-ugly"
+  - "gstreamer"
+  - "gstreamer-vaapi"
+
   # Viewers TODO: Need Review
   ## Document viewer
   - "evince"
