@@ -1,5 +1,21 @@
----
-# vars file for fonts
+# Font collection
+
+## Bitmap fonts for Linux Console
+
+### [Terminus](https://terminus-font.sourceforge.net/)
+
+Monospace bitmap font (for X11 and Linux console)
+
+```yaml
+dependencies:
+  - role: "fonts/collection/terminus_font"
+```
+
+## Monospaced fonts
+
+## Other
+
+```yaml
 # TODO:
 # - http://mplus-fonts.osdn.jp/about-en.html
 # - http://www.latofonts.com/
@@ -45,14 +61,4 @@ fonts_remotes:
   #  - name: FiraCode
   #    url: https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
   #    path: "/ttf"
-
-  - name: MesloLGS NF
-    urls:
-      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
-      - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
-
-  - name: Material Design Icons
-    urls:
-      - https://github.com/Templarian/MaterialDesign-Webfont/raw/master/fonts/materialdesignicons-webfont.ttf
+```
