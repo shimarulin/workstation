@@ -1,6 +1,0 @@
----
-# tasks file for gnome_shell_appearance
-- name: Install dependencies
-  become: true
-  community.general.pacman:
-    name: '{{ gnome_shell_appearance_packages }}'
