@@ -1,0 +1,31 @@
+---
+# tasks file for "firefox" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ firefox_packages }}"
+    extra_args: "--needed"
+
+- name: "Enable smooth scroll in Firefox"
+  become: true
+  copy:
+    src: "etc/profile.d/"
+    dest: "/etc/profile.d/"
+    mode: "u=rw,g=r,o=r"
+
+- name: "Copy global pref"
+  become: true
+  copy:
+    src: "usr/lib/firefox/defaults/pref/autoconfig.js"
+    dest: "/usr/lib/firefox/defaults/pref/"
+    mode: "u=rw,g=r,o=r"
+
+- name: "Copy Firefox global config"
+  become: true
+  copy:
+    src: "usr/lib/firefox/firefox.cfg"
+    dest: "/usr/lib/firefox/"
+    mode: "u=rw,g=r,o=r"
+
+- name: "Apply extensions tasks"
+  ansible.builtin.include_tasks: "extensions.yml"

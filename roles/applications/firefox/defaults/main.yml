@@ -1,0 +1,3 @@
+---
+# defaults file for "firefox" role
+firefox_i18n_language_code: "{{ language_code }}"

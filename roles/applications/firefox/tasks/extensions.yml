@@ -1,0 +1,16 @@
+---
+- name: "Create Firefox global extensions directory if it does not exist"
+  become: true
+  file:
+    path: "/usr/lib/firefox/browser/extensions/"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+
+- name: "Apply 'Profile Switcher for Firefox' extension tasks"
+  ansible.builtin.include_tasks: "extensions/profile_switcher.yml"
+
+- name: "Apply 'uBlock Origin' extension tasks"
+  ansible.builtin.include_tasks: "extensions/ublock_origin.yml"
+
+- name: "Apply 'Bitwarden password manager' extension tasks"
+  ansible.builtin.include_tasks: "extensions/bitwarden.yml"

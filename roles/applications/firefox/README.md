@@ -1,6 +1,6 @@
-# ansible-role-firefox
+# Ansible Role "firefox"
 
-> Firefox web browser
+> Firefox - Standalone web browser from mozilla.org (https://www.mozilla.org/firefox/)
 
 ## Requirements
 
@@ -24,9 +24,22 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: firefox, x: 42 }
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - firefox
+```
+
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - role: firefox # noqa: role-name[path]
+      tags:
+        - laptop
+        - desktop
+```
 
 ## License
 
