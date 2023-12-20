@@ -1,0 +1,11 @@
+---
+# tasks file for "fontconfig" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ fontconfig_packages }}"
+    extra_args: "--needed"
+
+- name: "Rebuild the font cache"
+  command: "fc-cache -vf"
+  changed_when: false
