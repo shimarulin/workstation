@@ -12,4 +12,4 @@ galaxy_info:
         - "all"
 
 dependencies:
-  - role: "fonts/terminus_font"
+  - role: "fonts/collection/terminus_font"

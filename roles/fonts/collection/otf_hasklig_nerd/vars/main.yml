@@ -1,0 +1,4 @@
+---
+# vars file for "otf_hasklig_nerd" role
+otf_hasklig_nerd_packages:
+  - "otf-hasklig-nerd"

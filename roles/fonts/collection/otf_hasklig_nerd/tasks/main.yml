@@ -1,0 +1,7 @@
+---
+# tasks file for "otf_hasklig_nerd" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ otf_hasklig_nerd_packages }}"
+    extra_args: "--needed"
