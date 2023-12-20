@@ -13,4 +13,4 @@ galaxy_info:
 
 dependencies:
   - role: "zsh"
-  - role: "fonts/collection/ttf_meslo_nerd_font_powerlevel10k"
+  - role: "fonts/collections/ttf_meslo_nerd_font_powerlevel10k"

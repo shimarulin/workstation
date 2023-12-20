@@ -8,7 +8,7 @@ Monospace bitmap font (for X11 and Linux console)
 
 ```yaml
 dependencies:
-  - role: "fonts/collection/terminus_font"
+  - role: "fonts/collections/terminus_font"
 ```
 
 ## Monospaced fonts
