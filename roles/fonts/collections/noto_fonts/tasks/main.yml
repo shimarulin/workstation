@@ -1,0 +1,7 @@
+---
+# tasks file for "noto_fonts" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ noto_fonts_packages }}"
+    extra_args: "--needed"
