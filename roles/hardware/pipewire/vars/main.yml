@@ -1,7 +1,9 @@
 ---
 # vars file for pipewire
 pipewire_packages:
-  - pipewire
-  - pipewire-jack
-  - pipewire-pulse
-  - wireplumber # Session / policy manager implementation for PipeWire (replace	pipewire-media-session)
+  - "pipewire"
+  - "pipewire-jack"
+  - "pipewire-pulse"
+
+  # Session / policy manager implementation for PipeWire (replace pipewire-media-session)
+  - "wireplumber"
