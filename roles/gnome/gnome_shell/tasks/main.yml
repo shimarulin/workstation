@@ -6,13 +6,21 @@
     name: "{{ gnome_shell_packages }}"
     extra_args: "--needed"
 
+- name: "Run a Display manager and login screen role"
+  ansible.builtin.include_role:
+    name: "login/gdm"
+
 - name: "Run a default terminal emulator role"
   ansible.builtin.include_role:
     name: "environment/default_terminal_emulator"
 
-- name: "Run a Display manager and login screen role"
+- name: "Run a default visual editor role"
   ansible.builtin.include_role:
-    name: "login/gdm"
+    name: "environment/default_visual_text_editor"
+
+- name: "Run a XDG user dirs role"
+  ansible.builtin.include_role:
+    name: "environment/xdg_user_dirs"
 
 - name: "Run an file manager role"
   ansible.builtin.include_role:

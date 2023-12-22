@@ -28,39 +28,16 @@
         - kernel-latest
     - role: kernels/linux_lts
       tags:
-        - virtualbox
+        - laptop
+        - desktop
         - kernel-lts
     - role: kernels/linux_lqx
       tags:
-        - av-production
         - kernel-lqx
 
     # Setup boot
     # TODO: add theme
     - role: boot/grub
-
-    # Hardware
-    ### Network
-    - role: hardware/networkmanager
-    ### Sound card firmware
-    - role: hardware/sof_firmware
-      tags:
-        - laptop
-        - desktop
-    ### Audio
-    - role: hardware/pipewire
-      tags:
-        - laptop
-        - desktop
-    ### Bluetooth
-    - role: hardware/bluez
-      tags:
-        - laptop
-        - desktop
-    ### Power management
-    - role: hardware/tlp
-      tags:
-        - laptop
 
     # Default CLI editor
     - role: environment/default_cli_text_editor

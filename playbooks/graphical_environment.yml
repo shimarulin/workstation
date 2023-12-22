@@ -3,11 +3,5 @@
 - name: Apply a common graphical configuration to all nodes
   hosts: all
   roles:
-    # Default VISUAL editor
-    - role: environment/default_visual_text_editor
-
-    # XDG user dirs
-    - role: environment/xdg_user_dirs
-
     # Enable graphical login
     - role: boot/systemd_graphical_target
