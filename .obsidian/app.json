@@ -1,8 +1,5 @@
 {
-  "spellcheckLanguages": [
-    "ru",
-    "en"
-  ],
+  "spellcheckLanguages": null,
   "alwaysUpdateLinks": false,
   "useMarkdownLinks": true,
   "userIgnoreFilters": [
