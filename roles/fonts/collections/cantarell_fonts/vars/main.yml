@@ -1,0 +1,4 @@
+---
+# vars file for "cantarell_fonts" role
+cantarell_fonts_packages:
+  - "cantarell-fonts"
