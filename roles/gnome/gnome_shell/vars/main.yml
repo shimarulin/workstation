@@ -31,15 +31,6 @@ gnome_shell_packages:
   - "gstreamer"
   - "gstreamer-vaapi"
 
-  # Viewers TODO: Need Review
-  ## Document viewer
-  - "evince"
-  ## Image viewer
-  - "loupe"
-  ## Audio
-  # - "decibels" # AUR
-  ## Video
-
   # Help
   - "gnome-user-docs"
   - "yelp"

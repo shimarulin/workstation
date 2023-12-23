@@ -21,6 +21,7 @@
         - laptop
 
     - role: gnome/gnome_shell
+    - role: gnome/gnome_apps
 
 - name: Include a common graphical configuration play
   ansible.builtin.import_playbook: graphical_environment.yml

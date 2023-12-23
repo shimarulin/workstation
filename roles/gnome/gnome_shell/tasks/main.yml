@@ -14,21 +14,9 @@
   ansible.builtin.include_role:
     name: "environment/default_terminal_emulator"
 
-- name: "Run a default visual editor role"
-  ansible.builtin.include_role:
-    name: "environment/default_visual_text_editor"
-
 - name: "Run a XDG user dirs role"
   ansible.builtin.include_role:
     name: "environment/xdg_user_dirs"
-
-- name: "Run an file manager role"
-  ansible.builtin.include_role:
-    name: "applications/nautilus"
-
-- name: "Run an archive manager role"
-  ansible.builtin.include_role:
-    name: "applications/file_roller"
 
 - name: "Mask the Gnome power-profiles-daemon service for 'tlp' in GNOME 40 and newer"
   become: true
