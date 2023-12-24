@@ -1,0 +1,3 @@
+---
+# vars file for "authenticator" role
+authenticator_packages: []
