@@ -19,3 +19,6 @@
 
 - name: "Install and set default browser"
   ansible.builtin.include_tasks: "default_browser.yml"
+
+- name: "Install safety apps"
+  ansible.builtin.include_tasks: "safety.yml"
