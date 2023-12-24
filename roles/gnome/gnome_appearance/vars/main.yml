@@ -5,10 +5,15 @@ gnome_appearance_packages:
 
 gnome_appearance_gtk_theme: "{{ gnome_appearance_default_gtk_theme }}"
 gnome_appearance_gtk_theme_role_map:
+  "adw-gtk3": "gtk/adw_gtk3"
   "adw-gtk3-dark": "gtk/adw_gtk3"
-  "adw-gtk3-light": "gtk/adw_gtk3"
+gnome_appearance_gtk_color_scheme_map:
+  "adw-gtk3": "'default'"
+  "adw-gtk3-dark": "'prefer-dark'"
+gnome_appearance_gtk_color_scheme: "{{ gnome_appearance_gtk_color_scheme_map[gnome_appearance_gtk_theme] }}"
 
 gnome_appearance_icon_theme: "{{ gnome_appearance_default_icon_theme }}"
 gnome_appearance_icon_theme_role_map:
-  "Papirus-Dark": "icons/papirus_icon_theme"
+  "Papirus": "icons/papirus_icon_theme"
   "Papirus-Light": "icons/papirus_icon_theme"
+  "Papirus-Dark": "icons/papirus_icon_theme"

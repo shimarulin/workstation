@@ -3,6 +3,11 @@
   ansible.builtin.include_role:
     name: "{{ gnome_appearance_gtk_theme_role_map[gnome_appearance_gtk_theme] }}"
 
+- name: "Set color scheme"
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/color-scheme"
+    value: "{{ gnome_appearance_gtk_color_scheme }}"
+
 - name: "Set selected GTK Theme"
   community.general.dconf:
     key: "/org/gnome/desktop/interface/gtk-theme"
