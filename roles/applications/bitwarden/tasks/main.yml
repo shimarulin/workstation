@@ -1,0 +1,7 @@
+---
+# tasks file for "bitwarden" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ bitwarden_packages }}"
+    extra_args: "--needed"
