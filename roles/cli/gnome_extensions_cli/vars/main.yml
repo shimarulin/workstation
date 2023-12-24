@@ -1,0 +1,4 @@
+---
+# vars file for "gnome_extensions_cli" role
+gnome_extensions_cli_packages:
+  - "gnome-extensions-cli"

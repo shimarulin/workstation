@@ -1,0 +1,7 @@
+---
+# tasks file for "gnome_extensions_cli" role
+- name: "Install dependencies"
+  kewlfft.aur.aur:
+    name: "{{ gnome_extensions_cli_packages }}"
+    use: "paru"
+    extra_args: "--needed"
