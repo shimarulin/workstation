@@ -1,8 +1,8 @@
 ---
-- name: "Install dependencies"
-  kewlfft.aur.aur:
-    name:
-      - "authenticator"
-      - "bitwarden"
-    use: "paru"
-    extra_args: "--needed"
+- name: "Run a password manager role"
+  ansible.builtin.include_role:
+    name: "applications/bitwarden"
+
+- name: "Run a 2FA code generator role"
+  ansible.builtin.include_role:
+    name: "applications/authenticator"
