@@ -1,0 +1,7 @@
+---
+# tasks file for "adw_gtk3" role
+- name: "Install dependencies"
+  kewlfft.aur.aur:
+    name: "{{ adw_gtk3_packages }}"
+    use: "paru"
+    extra_args: "--needed"

@@ -1,0 +1,4 @@
+---
+# vars file for "papirus_icon_theme" role
+papirus_icon_theme_packages:
+  - "papirus-icon-theme"

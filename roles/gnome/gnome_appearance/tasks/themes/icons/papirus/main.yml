@@ -1,0 +1,7 @@
+---
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name:
+      - "papirus-icon-theme"
+    extra_args: "--needed"

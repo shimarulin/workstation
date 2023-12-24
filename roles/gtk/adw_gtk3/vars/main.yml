@@ -1,0 +1,4 @@
+---
+# vars file for "adw_gtk3" role
+adw_gtk3_packages:
+  - "adw-gtk3"
