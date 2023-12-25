@@ -34,7 +34,7 @@
     mode: "u=rwx,g=rx,o=rx"
   when: "not gnome_shell_extension_stat_result.stat.exists"
 
-- name: "Compile GSettings Schema {{ ~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}/schemas/gschemas.compiled }}" # noqa: name[template]
+- name: "Compile GSettings Schema ~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}/schemas/gschemas.compiled" # noqa: name[template]
   ansible.builtin.command:
     cmd: "glib-compile-schemas ~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}/schemas"
     creates: "~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}/schemas/gschemas.compiled"
