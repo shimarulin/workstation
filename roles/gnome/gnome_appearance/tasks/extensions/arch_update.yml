@@ -14,3 +14,21 @@
   vars:
     # https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/
     gnome_shell_extension_id: "1010"
+
+- name: "Configure 'Arch Update'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/arch-update/show-count"
+      value: "false"
+    - key: "/org/gnome/shell/extensions/arch-update/always-visible"
+      value: "false"
+    - key: "/org/gnome/shell/extensions/arch-update/use-buildin-icons"
+      value: "false"
+    - key: "/org/gnome/shell/extensions/arch-update/notify"
+      value: "true"
+    - key: "/org/gnome/shell/extensions/arch-update/howmuch"
+      value: "0"
+    - key: "/org/gnome/shell/extensions/arch-update/strip-versions-in-notification"
+      value: "false"

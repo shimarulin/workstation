@@ -1,0 +1,9 @@
+---
+#
+#
+- name: "Install and enable '' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    #
+    gnome_shell_extension_id: ""

@@ -24,7 +24,10 @@
   ansible.builtin.include_tasks: "extensions/task_widget.yml"
 
 - name: "Apply 'Tray Icons Reloaded' tasks"
-  ansible.builtin.include_tasks: "extensions/tray-icon-reloaded.yml"
+  ansible.builtin.include_tasks: "extensions/tray_icon_reloaded.yml"
 
 - name: "Apply 'User Theme' tasks"
   ansible.builtin.include_tasks: "extensions/user_theme.yml"
+
+- name: "Apply 'Quick Settings Avatar' tasks"
+  ansible.builtin.include_tasks: "extensions/quick_settings_avatar.yml"
