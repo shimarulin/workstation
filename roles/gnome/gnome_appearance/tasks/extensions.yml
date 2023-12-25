@@ -1,0 +1,30 @@
+---
+- name: "Apply 'Dash to Panel' tasks"
+  ansible.builtin.include_tasks: "extensions/dash_to_panel.yml"
+
+- name: "Apply 'Arch Update' tasks"
+  ansible.builtin.include_tasks: "extensions/arch_update.yml"
+
+- name: "Apply 'Bring Out Submenu of Power Off Button' tasks"
+  ansible.builtin.include_tasks: "extensions/bring_out_submenu_of_power_off_logout.yml"
+
+- name: "Apply 'Bluetooth Quick Connect' tasks"
+  ansible.builtin.include_tasks: "extensions/bluetooth_quick_connect.yml"
+
+- name: "Apply 'Lock Keys' tasks"
+  ansible.builtin.include_tasks: "extensions/lockkeys.yml"
+
+- name: "Apply 'Removable Drive Menu' tasks"
+  ansible.builtin.include_tasks: "extensions/removable_drive_menu.yml"
+
+- name: "Apply 'Space Bar' tasks"
+  ansible.builtin.include_tasks: "extensions/space_bar.yml"
+
+- name: "Apply 'Task Widget' tasks"
+  ansible.builtin.include_tasks: "extensions/task_widget.yml"
+
+- name: "Apply 'Tray Icons Reloaded' tasks"
+  ansible.builtin.include_tasks: "extensions/tray-icon-reloaded.yml"
+
+- name: "Apply 'User Theme' tasks"
+  ansible.builtin.include_tasks: "extensions/user_theme.yml"

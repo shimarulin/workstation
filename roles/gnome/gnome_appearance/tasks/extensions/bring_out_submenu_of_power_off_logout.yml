@@ -1,0 +1,9 @@
+---
+# Bring Out Submenu of Power Off Button
+# https://github.com/PRATAP-KUMAR/bring-out-submenu-of-power-off-logout
+- name: "Install and enable 'Bring Out Submenu of Power Off Button' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/2917/bring-out-submenu-of-power-offlogout-button/
+    gnome_shell_extension_id: "2917"

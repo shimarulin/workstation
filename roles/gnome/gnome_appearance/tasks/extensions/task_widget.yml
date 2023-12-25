@@ -1,0 +1,9 @@
+---
+# Display tasks next to the calendar widget.
+# https://gitlab.com/jmiskinis/gnome-shell-extension-task-widget
+- name: "Install and enable 'Task Widget' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/3569/task-widget/
+    gnome_shell_extension_id: "3569"

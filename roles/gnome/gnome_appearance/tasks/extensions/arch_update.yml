@@ -1,0 +1,16 @@
+---
+# Update indicator for Arch Linux and GNOME Shell
+# https://github.com/RaphaelRochet/arch-update
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name:
+      - "pacman-contrib"
+    extra_args: "--needed"
+
+- name: "Install and enable 'Arch Update' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/
+    gnome_shell_extension_id: "1010"

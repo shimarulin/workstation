@@ -1,0 +1,9 @@
+---
+# Load shell themes from user directory
+# https://gitlab.gnome.org/GNOME/gnome-shell-extensions/-/tree/main/extensions/user-theme?ref_type=heads
+- name: "Install and enable 'User Theme' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/19/user-themes/
+    gnome_shell_extension_id: "19"
