@@ -1,0 +1,4 @@
+---
+# vars file for "gnome_shell_extension" role
+# gnome_shell_extension_packages:
+#  - "gnome-shell-extension"

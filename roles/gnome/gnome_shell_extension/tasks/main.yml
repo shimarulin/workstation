@@ -1,0 +1,47 @@
+---
+- name: "Create GNOME Shell extensions directory if it does not exist"
+  file:
+    path: "~/.local/share/gnome-shell/extensions/"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+  register: "gnome_shell_extension_create_dir_result"
+  when: "gnome_shell_extension_create_dir_result is not defined"
+
+- name: "Get Gnome Shell extension info for {{ gnome_shell_extension_id }}"
+  ansible.builtin.uri:
+    url: "https://extensions.gnome.org/extension-info/?pk={{ gnome_shell_extension_id }}&shell_version={{ gnome_shell_version }}"
+    return_content: true
+  register: "gnome_shell_extension_info"
+  when: "gnome_shell_extension_id"
+
+- name: "Check that the GNOME Shell extension '{{ gnome_shell_extension_info.json.name }}' already local installed" # noqa: name[template]
+  ansible.builtin.stat:
+    path: "~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}"
+  register: "gnome_shell_extension_stat_result"
+
+- name: "Create extension directory for uuid: {{ gnome_shell_extension_info.json.uuid }}"
+  file:
+    path: "~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+  when: "not gnome_shell_extension_stat_result.stat.exists"
+
+- name: "Download and install GNOME Shell extension '{{ gnome_shell_extension_info.json.name }}' from https://extensions.gnome.org" # noqa: name[template]
+  ansible.builtin.unarchive:
+    src: "https://extensions.gnome.org{{ gnome_shell_extension_info.json.download_url }}"
+    dest: "~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}"
+    remote_src: true
+    mode: "u=rwx,g=rx,o=rx"
+  when: "not gnome_shell_extension_stat_result.stat.exists"
+
+- name: "Compile GSettings Schema {{ ~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}/schemas/gschemas.compiled }}" # noqa: name[template]
+  ansible.builtin.command:
+    cmd: "glib-compile-schemas ~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}/schemas"
+    creates: "~/.local/share/gnome-shell/extensions/{{ gnome_shell_extension_info.json.uuid }}/schemas/gschemas.compiled"
+  when: "not gnome_shell_extension_stat_result.stat.exists"
+
+- name: "Enable GNOME Shell extension '{{ gnome_shell_extension_info.json.name }}'" # noqa: name[template]
+  ansible.builtin.command: "gnome-extensions-cli --filesystem enable {{ gnome_shell_extension_info.json.uuid }}"
+  register: "gnome_shell_extension_enabled"
+  when: "not gnome_shell_extension_stat_result.stat.exists"
+  changed_when: "not gnome_shell_extension_stat_result.stat.exists and 'Enable' in gnome_shell_extension_enabled.stdout"
