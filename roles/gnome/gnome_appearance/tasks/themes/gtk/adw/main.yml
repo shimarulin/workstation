@@ -1,7 +1,0 @@
----
-- name: "Install 'adw-gtk3' dependencies"
-  kewlfft.aur.aur:
-    name:
-      - "adw-gtk3"
-    use: "paru"
-    extra_args: "--needed"
