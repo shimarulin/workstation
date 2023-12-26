@@ -27,6 +27,9 @@
   failed_when: false
   when: "'laptop' in ansible_run_tags"
 
+- name: "Apply keyboard tasks"
+  ansible.builtin.include_tasks: "keyboard.yml"
+
 - name: "Install Flatpak permissions manager"
   kewlfft.aur.aur:
     name: "flatseal"
