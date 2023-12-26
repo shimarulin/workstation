@@ -12,3 +12,5 @@
   become: true
   command: "sudo -u gdm dbus-launch gsettings set org.gnome.desktop.interface icon-theme '{{ gnome_appearance_icon_theme }}'"
   changed_when: false
+
+# TODO: add icon theme to Flatpak apps

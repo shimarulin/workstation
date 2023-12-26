@@ -12,3 +12,5 @@
   community.general.dconf:
     key: "/org/gnome/desktop/interface/gtk-theme"
     value: "'{{ gnome_appearance_gtk_theme }}'"
+
+# TODO: add GTK theme to Flatpak apps
