@@ -7,3 +7,11 @@
   vars:
     # https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
     gnome_shell_extension_id: "1401"
+
+- name: "Configure 'Bluetooth Quick Connect'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/bluetooth-quick-connect/show-battery-value-on"
+      value: "true"
