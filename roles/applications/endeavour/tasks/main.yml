@@ -1,0 +1,7 @@
+---
+# tasks file for "endeavour" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ endeavour_packages }}"
+    extra_args: "--needed"

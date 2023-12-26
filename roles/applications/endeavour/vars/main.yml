@@ -1,0 +1,4 @@
+---
+# vars file for "endeavour" role
+endeavour_packages:
+  - "endeavour"

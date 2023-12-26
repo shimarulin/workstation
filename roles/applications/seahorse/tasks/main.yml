@@ -1,0 +1,7 @@
+---
+# tasks file for "seahorse" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ seahorse_packages }}"
+    extra_args: "--needed"

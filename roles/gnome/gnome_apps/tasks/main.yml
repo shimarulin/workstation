@@ -22,3 +22,6 @@
 
 - name: "Install safety apps"
   ansible.builtin.include_tasks: "safety.yml"
+
+- name: "Install PIM apps"
+  ansible.builtin.include_tasks: "pim.yml"
