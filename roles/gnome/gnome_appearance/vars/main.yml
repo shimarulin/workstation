@@ -17,3 +17,9 @@ gnome_appearance_icon_theme_role_map:
   "Papirus": "icons/papirus_icon_theme"
   "Papirus-Light": "icons/papirus_icon_theme"
   "Papirus-Dark": "icons/papirus_icon_theme"
+
+gnome_appearance_upgrade_command_map:
+  "GNOME Console": "kgx -- /bin/sh -c \"paru -Syu\""
+  "Tilix": ""
+
+gnome_appearance_upgrade_command: "{{ gnome_appearance_upgrade_command_map[default_terminal_emulator] }}"
