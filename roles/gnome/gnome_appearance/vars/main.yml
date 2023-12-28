@@ -19,6 +19,7 @@ gnome_appearance_icon_theme_role_map:
   "Papirus-Dark": "icons/papirus_icon_theme"
 
 gnome_appearance_upgrade_command_map:
+  "Black Box": "blackbox -- /bin/sh -c \"paru -Syu ; echo Done - Press enter to exit; read _\""
   "GNOME Console": "kgx -- /bin/sh -c \"paru -Syu\""
   "Tilix": ""
 

@@ -1,0 +1,33 @@
+---
+# tasks file for "blackbox_terminal" role
+- name: "Install dependencies"
+  kewlfft.aur.aur:
+    name: "{{ blackbox_terminal_packages }}"
+    use: "paru"
+    extra_args: "--needed"
+
+- name: "Configure 'Black Box' terminal emulator"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/com/raggesilver/BlackBox/scrollback-mode"
+      value: "uint32 0"
+    - key: "/com/raggesilver/BlackBox/scrollback-lines"
+      value: "uint32 32000"
+    - key: "/com/raggesilver/BlackBox/font"
+      value: "'Source Code Pro 10'"
+    - key: "/com/raggesilver/BlackBox/easy-copy-paste"
+      value: "true"
+    - key: "/com/raggesilver/BlackBox/remember-window-size"
+      value: "true"
+    - key: "/com/raggesilver/BlackBox/headerbar-drag-area"
+      value: "true"
+    - key: "/com/raggesilver/BlackBox/floating-controls"
+      value: "true"
+    - key: "/com/raggesilver/BlackBox/floating-controls-hover-area"
+      value: "uint32 48"
+    - key: "/com/raggesilver/BlackBox/delay-before-showing-floating-controls"
+      value: "uint32 150"
+    - key: "/com/raggesilver/BlackBox/show-headerbar"
+      value: "true"
