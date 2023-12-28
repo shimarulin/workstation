@@ -5,3 +5,23 @@
   community.general.pacman:
     name: "{{ gnome_text_editor_packages }}"
     extra_args: "--needed"
+
+- name: "Configure 'GNOME Text Editor'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/TextEditor/highlight-current-line"
+      value: "true"
+    - key: "/org/gnome/TextEditor/right-margin-position"
+      value: "uint32 120"
+    - key: "/org/gnome/TextEditor/indent-style"
+      value: "'space'"
+    - key: "/org/gnome/TextEditor/tab-width"
+      value: "uint32 2"
+    - key: "/org/gnome/TextEditor/wrap-text"
+      value: "false"
+    - key: "/org/gnome/TextEditor/show-line-numbers"
+      value: "true"
+    - key: "/org/gnome/TextEditor/show-right-margin"
+      value: "true"
