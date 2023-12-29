@@ -3,18 +3,12 @@
 ## Installation
 
 ```shell
-# Download https://raw.githubusercontent.com/shimarulin/workstation/main/get
+# Download https://raw.githubusercontent.com/shimarulin/workstation/main/tools/bin/install
 # with Curl
-curl -L https://git.io/JPBef --output get
-# or Wget
-wget https://git.io/JPBef -O get
-# Mark the file as executable
-chmod +x get
-# Run
-./get
+curl -sSL https://shorturl.at/chkyU | bash
 ```
 
-See https://github.com/shimarulin/workstation/blob/main/get for details.
+See [User guide / Getting started](docs/1.%20User%20guide/1.%20Getting%20started.md) for details.
 
 ## Usage
 
