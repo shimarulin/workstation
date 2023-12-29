@@ -1,9 +1,0 @@
-- name: set keyboard layout
-  community.general.dconf:
-    key: /org/gnome/desktop/input-sources/sources
-    value: "[('xkb', 'us'), ('xkb', 'ru')]"
-
-- name: advanced keyboard options
-  community.general.dconf:
-    key: /org/gnome/desktop/input-sources/xkb-options
-    value: "['grp_led:scroll', 'compose:ralt', 'grp:caps_toggle']"

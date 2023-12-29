@@ -32,3 +32,6 @@
       value: "0"
     - key: "/org/gnome/shell/extensions/arch-update/strip-versions-in-notification"
       value: "false"
+      # gnome-terminal -- /bin/sh -c "sudo pacman -Syu ; echo Done - Press enter to exit; read _"
+    - key: "/org/gnome/shell/extensions/arch-update/update-cmd"
+      value: "'{{ gnome_appearance_upgrade_command }}'"

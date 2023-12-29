@@ -6,6 +6,9 @@
     name: "{{ gnome_appearance_packages }}"
     extra_args: "--needed"
 
+- name: "Apply keybindings tasks"
+  ansible.builtin.include_tasks: "keybindings.yml"
+
 - name: "Apply GTK Theme tasks"
   ansible.builtin.include_tasks: "gtk.yml"
 

@@ -1,14 +1,15 @@
 ---
-- name: "Configure keyboard"
+# Use CapsLock to change keyboard layout
+# Use "Scroll Lock" led to indicate alternative keyboard layout
+# Use Right Alt as Compose button
+- name: "Configure xkb options"
   community.general.dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"
-  loop:
-    - key: "/org/gnome/desktop/input-sources/sources"
-      value: "[('xkb', 'us'), ('xkb', '{{ keyboard_layout }}')]"
-    - key: "/org/gnome/desktop/input-sources/xkb-options"
-      # Use CapsLock to change keyboard layout
-      # Use "Scroll Lock" led to indicate alternative keyboard layout
-      # Use Right Alt as Compose button
-      value: "['grp:caps_toggle', 'grp_led:scroll', 'compose:ralt']"
+    key: "/org/gnome/desktop/input-sources/xkb-options"
+    value: "['grp:caps_toggle', 'grp_led:scroll', 'compose:ralt']"
+
+- name: "Configure keyboard input sources"
+  community.general.dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    # Dirty hack to render value with paired outer square brackets '[('xkb', 'us'), ('xkb', '<layout>')]'
+    value: "{{ [('xkb', 'us'), ('xkb', '<layout>')] | replace('<layout>', keyboard_layout) | string }}"
   when: "keyboard_layout is defined"

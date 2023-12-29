@@ -31,3 +31,10 @@
 
 - name: "Apply 'Quick Settings Avatar' tasks"
   ansible.builtin.include_tasks: "extensions/quick_settings_avatar.yml"
+
+# - name: "Apply 'Quick Settings Tweaks' tasks"
+#   ansible.builtin.include_tasks: "extensions/quick_settings_tweaks.yml"
+
+# Breaks 'Quick Settings Avatar' extension
+# - name: "Apply 'Quick Settings Audio Panel' tasks"
+#   ansible.builtin.include_tasks: "extensions/quick_settings_audio_panel.yml"

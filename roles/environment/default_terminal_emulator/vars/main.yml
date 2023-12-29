@@ -3,11 +3,13 @@
 default_terminal_emulator_packages: []
 
 default_terminal_emulator_packages_map:
+  "Black Box": "blackbox-terminal"
   "GNOME Console": "gnome-console"
   "Tilix": "tilix"
 
 default_terminal_emulator_executable_paths_map:
-  "GNOME Console": "/usr/bin/gnome-console"
+  "Black Box": "/usr/bin/blackbox"
+  "GNOME Console": "/usr/bin/kgx"
   "Tilix": "/usr/bin/tilix"
 
 default_terminal_emulator_package: "{{ default_terminal_emulator_packages_map[default_terminal_emulator] }}"

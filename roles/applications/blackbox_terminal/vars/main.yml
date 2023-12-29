@@ -1,0 +1,5 @@
+---
+# vars file for "blackbox_terminal" role
+blackbox_terminal_packages:
+  - "blackbox-terminal"
+  - "nautilus-open-in-blackbox"

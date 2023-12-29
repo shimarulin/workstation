@@ -1,6 +1,6 @@
-# ansible-role-gnome-shell
+# Ansible Role "blackbox_terminal"
 
-> Gnome Shell
+> Black Box - an elegant and customizable terminal for GNOME
 
 ## Requirements
 
@@ -24,9 +24,22 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: gnome-shell, x: 42 }
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - blackbox-terminal
+```
+
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - role: blackbox-terminal # noqa: role-name[path]
+      tags:
+        - laptop
+        - desktop
+```
 
 ## License
 
