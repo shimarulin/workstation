@@ -57,7 +57,7 @@
     or reflector_conf_count is changed
     or reflector_conf_sort is changed
 
-- name: "Enable mirror list update schedule."
+- name: "Enable mirror list update schedule"
   become: true
   ansible.builtin.systemd:
     name: "reflector.timer"
