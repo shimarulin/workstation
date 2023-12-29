@@ -1,0 +1,28 @@
+---
+# tasks file for "update" role
+#
+# https://wiki.archlinux.org/title/Pacman/Package_signing#Upgrade_system_regularly
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ update_packages }}"
+    extra_args: "--needed"
+    update_cache: true
+
+- name: "Update pgp-keys database"
+  become: true
+  ansible.builtin.command: "pacman-key --populate archlinux"
+  register: "pacman_key_result"
+  changed_when: false
+
+- name: "Check that the Paru installed"
+  ansible.builtin.stat:
+    path: "/usr/bin/paru"
+  register: "paru_stat_result"
+
+- name: "Update packages cache and upgrade system packages with {{ 'paru' if (paru_stat_result.stat.exists) else 'pacman' }}"
+  become: true
+  community.general.pacman:
+    executable: "{{ 'paru' if (paru_stat_result.stat.exists) else 'pacman' }}"
+    update_cache: true
+    upgrade: true

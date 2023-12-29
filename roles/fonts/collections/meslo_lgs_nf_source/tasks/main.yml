@@ -1,0 +1,7 @@
+---
+# tasks file for "meslo_lgs_nf_source" role
+- name: "Install MesloLGS NF from sources"
+  ansible.builtin.include_role:
+    name: "fonts/install_fonts"
+  vars:
+    item: "{{ meslo_lgs_nf_source_item }}" # noqa: var-naming[no-role-prefix]

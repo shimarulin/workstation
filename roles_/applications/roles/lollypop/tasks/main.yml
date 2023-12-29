@@ -1,0 +1,6 @@
+---
+# tasks file for lollypop
+- name: install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ lollypop_packages }}'

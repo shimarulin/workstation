@@ -1,0 +1,4 @@
+---
+- name: "Run a default visual editor role"
+  ansible.builtin.include_role:
+    name: "environment/default_visual_text_editor"

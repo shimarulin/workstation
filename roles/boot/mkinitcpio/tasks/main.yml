@@ -1,0 +1,44 @@
+---
+# tasks file for "mkinitcpio" role
+- name: "Setup MODULES"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/mkinitcpio.conf"
+    regexp: "^MODULES=.*"
+    line: "MODULES=()"
+  register: "mkinitcpio_modules"
+
+- name: "Setup BINARIES"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/mkinitcpio.conf"
+    regexp: "^BINARIES=.*"
+    line: "BINARIES=(setfont)"
+  register: "mkinitcpio_binaries"
+
+- name: "Setup FILES"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/mkinitcpio.conf"
+    regexp: "^FILES=.*"
+    line: "FILES=()"
+  register: "mkinitcpio_files"
+
+# https://wiki.archlinux.org/title/mkinitcpio#Common_hooks
+- name: "Setup HOOKS"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/mkinitcpio.conf"
+    regexp: "^HOOKS=.*"
+    # Default: "HOOKS=(base udev autodetect modconf kms keyboard keymap consolefont block filesystems)"
+    line: "HOOKS=(base udev block keyboard autodetect modconf kms keymap consolefont filesystems)"
+  register: "mkinitcpio_hooks"
+
+- name: "Generate all existing mkinitcpio presets"
+  become: true
+  ansible.builtin.command: "mkinitcpio -P"
+  when: |-
+    mkinitcpio_modules is changed
+    or mkinitcpio_binaries is changed
+    or mkinitcpio_files is changed
+    or mkinitcpio_hooks is changed

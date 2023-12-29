@@ -1,0 +1,7 @@
+---
+# vars file for zsh
+zsh_packages:
+  - "zsh"
+  - "git"
+  - "pkgfile"
+  - "sqlite"

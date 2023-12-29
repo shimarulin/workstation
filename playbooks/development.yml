@@ -1,0 +1,11 @@
+---
+# This playbook deploys the whole application stack.
+- name: Apply a common development configuration to all nodes
+  hosts: all
+  roles:
+    # Install and setup commandline tools
+    - role: cli/git
+    - role: cli/ssh
+
+    # Programming language
+    - role: development/rust

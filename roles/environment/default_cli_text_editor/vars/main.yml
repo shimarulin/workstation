@@ -1,0 +1,17 @@
+---
+# vars file for "default_cli_text_editor" role
+default_cli_text_editor_packages: []
+
+default_cli_text_editor_packages_map:
+  neovim: "neovim"
+  micro: "micro"
+  helix: "helix"
+  nano: "nano"
+
+default_cli_text_editor_executable_paths_map:
+  neovim: "/usr/bin/nvim"
+  micro: "/usr/bin/micro"
+  helix: "/usr/bin/helix"
+  nano: "/usr/bin/nano"
+
+default_cli_text_editor_executable_path: "{{ default_cli_text_editor_executable_paths_map[default_cli_text_editor] }}"

@@ -1,0 +1,16 @@
+---
+- name: "Run a mail client role"
+  ansible.builtin.include_role:
+    name: "applications/geary"
+
+- name: "Run a calendar role"
+  ansible.builtin.include_role:
+    name: "applications/gnome_calendar"
+
+- name: "Run a contact manager role"
+  ansible.builtin.include_role:
+    name: "applications/gnome_contacts"
+
+- name: "Run a tasks manager role"
+  ansible.builtin.include_role:
+    name: "applications/endeavour"

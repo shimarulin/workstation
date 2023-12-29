@@ -1,0 +1,26 @@
+---
+# tasks file for bluez
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ bluez_packages }}"
+
+- name: "Add the user to 'lp' group"
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: "lp"
+    append: true
+
+- name: "Enable D-Bus experimental interfaces (allow get device power level)"
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/bluetooth/main.conf"
+    regexp: "^(#)*Experimental.*"
+    line: "Experimental = true"
+
+- name: "Enable bluetooth service"
+  become: true
+  ansible.builtin.systemd:
+    name: "bluetooth.service"
+    enabled: true

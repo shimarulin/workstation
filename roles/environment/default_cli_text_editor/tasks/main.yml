@@ -1,0 +1,12 @@
+---
+# tasks file for "default_cli_text_editor" role
+- name: "Install default cli text editor"
+  ansible.builtin.include_role:
+    name: "cli/{{ default_cli_text_editor_packages_map[default_cli_text_editor] | replace('-', '_') }}"
+
+- name: "Create the $EDITOR variable helper"
+  become: true
+  ansible.builtin.template:
+    src: "etc/profile.d/00.editor.sh.j2"
+    dest: "/etc/profile.d/00.editor.sh"
+    mode: "0644"

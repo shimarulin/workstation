@@ -1,6 +1,0 @@
----
-# tasks file for celluloid
-- name: install dependencies
-  become: true
-  pacman:
-    name: "{{ celluloid_packages }}"

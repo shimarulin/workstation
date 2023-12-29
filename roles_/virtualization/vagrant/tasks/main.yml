@@ -1,0 +1,14 @@
+---
+# tasks file for vagrant
+- name: install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ vagrant_packages }}'
+
+- name: install python-vagrant (required by ansible provisioner)
+  pip:
+    name:
+      - setuptools
+      - python-vagrant
+    executable: ~/.local/bin/pip
+    extra_args: '--user --upgrade'

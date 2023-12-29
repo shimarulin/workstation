@@ -1,0 +1,7 @@
+---
+# tasks file for "micro" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ micro_packages }}"
+    extra_args: "--needed"

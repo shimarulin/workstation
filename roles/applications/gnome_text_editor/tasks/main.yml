@@ -1,0 +1,7 @@
+---
+# tasks file for "gnome_text_editor" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ gnome_text_editor_packages }}"
+    extra_args: "--needed"

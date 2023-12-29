@@ -10,6 +10,6 @@ insert_final_newline = true
 max_line_length = 120
 tab_width = 2
 
-[*.sh]
+[*.py]
 indent_size = 4
 tab_width = 4

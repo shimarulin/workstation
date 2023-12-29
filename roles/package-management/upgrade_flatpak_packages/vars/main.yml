@@ -1,0 +1,3 @@
+---
+# vars file for "upgrade_flatpak_packages" role
+upgrade_flatpak_packages_packages: []

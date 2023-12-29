@@ -1,0 +1,4 @@
+---
+# vars file for "update" role
+update_packages:
+  - "archlinux-keyring"

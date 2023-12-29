@@ -1,6 +1,0 @@
----
-# vars file for pipewire
-pipewire_packages:
-  - pipewire
-  - pipewire-pulse
-  - wireplumber # Session / policy manager implementation for PipeWire (replace	pipewire-media-session)

@@ -1,7 +1,0 @@
----
-# tasks file for /etc/profile.d
-- name: add XDG variables
-  become: true
-  copy:
-    src: etc/profile.d/
-    dest: /etc/profile.d/

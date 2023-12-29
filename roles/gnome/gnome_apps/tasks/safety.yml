@@ -1,0 +1,12 @@
+---
+- name: "Run a password manager role"
+  ansible.builtin.include_role:
+    name: "applications/bitwarden"
+
+- name: "Run a 2FA code generator role"
+  ansible.builtin.include_role:
+    name: "applications/authenticator"
+
+- name: "Run a PGP keys manager role"
+  ansible.builtin.include_role:
+    name: "applications/seahorse"

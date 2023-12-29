@@ -1,4 +1,4 @@
 ---
 # vars file for flatpak
 flatpak_packages:
-  - flatpak
+  - "flatpak"

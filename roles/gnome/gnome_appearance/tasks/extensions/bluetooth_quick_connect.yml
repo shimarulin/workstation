@@ -1,0 +1,17 @@
+---
+# This extension allows paired Bluetooth devices to be connected and disconnected via the GNOME system menu, Shows battery status and more
+# https://github.com/Extensions-Valhalla/gnome-bluetooth-quick-connect
+- name: "Install and enable 'Bluetooth Quick Connect' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
+    gnome_shell_extension_id: "1401"
+
+- name: "Configure 'Bluetooth Quick Connect'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/bluetooth-quick-connect/show-battery-value-on"
+      value: "true"

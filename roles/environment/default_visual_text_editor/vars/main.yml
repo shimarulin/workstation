@@ -1,0 +1,11 @@
+---
+# vars file for "default_visual_text_editor" role
+default_visual_text_editor_packages: []
+
+default_visual_text_editor_packages_map:
+  "GNOME Text Editor": "gnome-text-editor"
+
+default_visual_text_editor_executable_paths_map:
+  "GNOME Text Editor": "/usr/bin/gnome-text-editor"
+
+default_visual_text_editor_executable_path: "{{ default_visual_text_editor_executable_paths_map[default_visual_text_editor] }}"

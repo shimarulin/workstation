@@ -1,0 +1,36 @@
+---
+# An icon taskbar for the Gnome Shell
+# https://github.com/home-sweet-gnome/dash-to-panel
+- name: "Install and enable 'Dash to Panel' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/1160/dash-to-panel/
+    gnome_shell_extension_id: "1160"
+
+- name: "Configure 'Dash to panel'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/dash-to-panel/panel-positions"
+      value: '''{"0":"TOP"}'''
+    - key: "/org/gnome/shell/extensions/dash-to-panel/panel-sizes"
+      value: '''{"0":32}'''
+    - key: "/org/gnome/shell/extensions/dash-to-panel/panel-element-positions"
+      # Classic mode
+      value: '''{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'''
+      # Date right
+      # value: '''{\"0\":[{\"element\":\"showAppsButton\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"leftBox\",\"visible\":true,\"position\":\"centerMonitor\"},{\"element\":\"centerBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"rightBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"desktopButton\",\"visible\":true,\"position\":\"stackedBR\"}]}'''
+      # Date right before system menu
+      # value: '''{\"0\":[{\"element\":\"showAppsButton\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"leftBox\",\"visible\":true,\"position\":\"centerMonitor\"},{\"element\":\"centerBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"rightBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"desktopButton\",\"visible\":true,\"position\":\"stackedBR\"}]}'''
+      # Date center, workspaces right before others
+      # value: '''{\"0\":[{\"element\":\"showAppsButton\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},{\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},{\"element\":\"dateMenu\",\"visible\":true,\"position\":\"centerMonitor\"},{\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"centerBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"rightBox\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},{\"element\":\"desktopButton\",\"visible\":true,\"position\":\"stackedBR\"}]}'''
+    - key: "/org/gnome/shell/extensions/dash-to-panel/appicon-margin"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/appicon-padding"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/tray-padding"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/hide-overview-on-startup"
+      value: "true"

@@ -1,6 +1,0 @@
----
-# tasks file for xst
-- name: install xst from AUR
-  kewlfft.aur.aur:
-    name: "{{ xst-git }}"
-    use: paru

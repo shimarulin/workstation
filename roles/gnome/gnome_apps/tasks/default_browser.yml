@@ -1,0 +1,3 @@
+---
+- name: "Install Firefox with GNOME integrations"
+  ansible.builtin.include_tasks: "applications/firefox.yml"

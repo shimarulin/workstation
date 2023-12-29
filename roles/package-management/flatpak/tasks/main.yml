@@ -1,6 +1,7 @@
 ---
 # tasks file for flatpak
-- name: install dependencies
+- name: "Install dependencies"
   become: true
-  pacman:
+  community.general.pacman:
     name: "{{ flatpak_packages }}"
+    extra_args: "--needed"

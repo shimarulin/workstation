@@ -1,7 +1,0 @@
----
-# This playbook deploys the alternative apps.
-
-- name: apply alternative configuration to all nodes
-  hosts: all
-  roles:
-    - alternatives

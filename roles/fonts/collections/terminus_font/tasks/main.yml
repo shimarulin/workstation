@@ -1,0 +1,7 @@
+---
+# tasks file for "terminus_font" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ terminus_font_packages }}"
+    extra_args: "--needed"

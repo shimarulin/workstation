@@ -1,0 +1,5 @@
+---
+# vars file for tlp
+tlp_packages:
+  - "tlp"
+  - "tlp-rdw"

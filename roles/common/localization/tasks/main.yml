@@ -1,4 +1,0 @@
----
-# tasks file for localization
-- include_tasks: locale.yml
-- include_tasks: vconsole.yml

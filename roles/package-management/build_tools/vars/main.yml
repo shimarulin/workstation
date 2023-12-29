@@ -1,0 +1,36 @@
+---
+# vars file for "build_tools" role
+build_tools_packages:
+  ### Git
+  - "git"
+
+  ### 'base-devel' (includes 'archlinux-keyring')
+  - "base-devel"
+  # NOTE: Ansible module 'community.general.pacman' not install correctly metapackage dependencies.
+  # Install it directly.
+  - "archlinux-keyring"
+  - "autoconf"
+  - "automake"
+  - "binutils"
+  - "bison"
+  - "debugedit"
+  - "fakeroot"
+  - "file"
+  - "findutils"
+  - "flex"
+  - "gawk"
+  - "gcc"
+  - "gettext"
+  - "grep"
+  - "groff"
+  - "gzip"
+  - "libtool"
+  - "m4"
+  - "make"
+  - "pacman"
+  - "patch"
+  - "pkgconf"
+  - "sed"
+  - "sudo"
+  - "texinfo"
+  - "which"

@@ -1,7 +1,0 @@
----
-# This playbook deploys the whole application stack to virtual machine.
-
-- name: setup VirtualBox Guest OS before running tasks
-  hosts: all
-  roles:
-    - virtualization/virtualbox-guest-prestart

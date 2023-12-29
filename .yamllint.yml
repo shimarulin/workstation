@@ -1,0 +1,19 @@
+---
+extends: default
+
+rules:
+  line-length:
+    max: 120
+    level: warning
+  quoted-strings:
+    quote-type: double
+    required: false
+    allow-quoted-quotes: true
+  braces:
+    forbid: false
+    min-spaces-inside: 1
+    max-spaces-inside: 1
+  comments:
+    require-starting-space: true
+    ignore-shebangs: true
+    min-spaces-from-content: 1

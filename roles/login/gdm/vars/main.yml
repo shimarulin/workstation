@@ -1,0 +1,4 @@
+---
+# vars file for "gdm" role
+gdm_packages:
+  - "gdm"

@@ -1,0 +1,7 @@
+---
+# tasks file for "build_tools" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ build_tools_packages }}"
+    extra_args: "--needed"

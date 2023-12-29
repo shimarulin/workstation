@@ -1,0 +1,13 @@
+---
+# tasks file for "gdm" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ gdm_packages }}"
+    extra_args: "--needed"
+
+- name: "Enable GDM service"
+  become: true
+  ansible.builtin.systemd:
+    name: "gdm.service"
+    enabled: true

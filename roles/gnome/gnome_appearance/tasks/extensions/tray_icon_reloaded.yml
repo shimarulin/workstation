@@ -1,0 +1,29 @@
+---
+# GNOME Shell extension which bring back Tray Icons to top panel, with additional features
+# https://github.com/MartinPL/Tray-Icons-Reloaded
+- name: "Install and enable 'Tray Icons Reloaded' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
+    gnome_shell_extension_id: "2890"
+
+- name: "Configure 'Tray Icons Reloaded'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/tray-margin-left"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/tray-margin-right"
+      value: "4"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/icon-size"
+      value: "20"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/icon-margin-horizontal"
+      value: "0"
+    - key: "/org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal"
+      value: "8"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/dot-style-unfocused"
+      value: "'CILIORA'"
+    - key: "/org/gnome/shell/extensions/dash-to-panel/dot-style-focused"
+      value: "'CILIORA'"

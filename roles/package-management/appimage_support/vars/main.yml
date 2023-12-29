@@ -1,0 +1,4 @@
+---
+# vars file for appimage_support
+appimage_support_packages:
+  - "fuse2"

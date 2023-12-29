@@ -1,0 +1,12 @@
+---
+# tasks file for screenshot
+- name: install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ screenshot_packages }}'
+
+- name: copy user scripts
+  copy:
+    src: home/.local/bin/
+    dest: ~/.local/bin/
+    mode: u+rwx,g=,o=

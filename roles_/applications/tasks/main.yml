@@ -1,0 +1,6 @@
+---
+# tasks file for applications
+#- name: install dependencies
+#  become: true
+#  community.general.pacman:
+#    name: "{{ applications_packages }}"

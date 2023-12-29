@@ -1,0 +1,27 @@
+---
+# tasks file for "linux_lqx" role
+# See https://liquorix.net/install-liquorix.sh
+- name: "Add Liquorix key"
+  become: true
+  community.general.pacman_key:
+    id: "9AE4078033F8024D"
+    keyserver: "keyserver.ubuntu.com"
+
+- name: "Add Liquorix repository"
+  become: true
+  ansible.builtin.blockinfile:
+    dest: "/etc/pacman.conf"
+    state: "present"
+    marker: "# {mark} Ansible managed Liquorix repository"
+    marker_begin: "Begin"
+    marker_end: "End"
+    block: |
+      [liquorix]
+      Server = https://liquorix.net/archlinux/$repo/$arch'
+
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ linux_lqx_packages }}"
+    extra_args: "--needed"
+  register: "kernel_lqx"

@@ -1,0 +1,19 @@
+---
+# Numlock & Capslock status on the panel
+# https://github.com/kazysmaster/gnome-shell-extension-lockkeys
+- name: "Install and enable 'Lock Keys' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/36/lock-keys/
+    gnome_shell_extension_id: "36"
+
+- name: "Configure 'Lock Keys'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/lockkeys/style"
+      value: "'none'"
+    - key: "/org/gnome/shell/extensions/lockkeys/notification-preferences"
+      value: "'osd'"

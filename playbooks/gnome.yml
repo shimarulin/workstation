@@ -1,0 +1,28 @@
+---
+# This playbook deploys the whole application stack.
+- name: Include the base play
+  ansible.builtin.import_playbook: base.yml
+
+- name: Apply the GNOME configuration to all nodes
+  hosts: all
+  roles:
+    # Hardware
+    ### Network
+    - role: hardware/networkmanager
+    ### Sound card firmware
+    - role: hardware/sof_firmware
+    ### Audio
+    - role: hardware/pipewire
+    ### Bluetooth
+    - role: hardware/bluez
+    ### Power management
+    - role: hardware/tlp
+      tags:
+        - laptop
+
+    - role: gnome/gnome_shell
+    - role: gnome/gnome_apps
+    - role: gnome/gnome_appearance
+
+- name: Include a common graphical configuration play
+  ansible.builtin.import_playbook: graphical_environment.yml

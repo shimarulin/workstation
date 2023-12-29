@@ -1,0 +1,16 @@
+---
+# defaults file for localization
+locale_encoding: "UTF-8"
+
+# System locale
+system_lang_name: "en_US"
+system_lang: "{{ system_lang_name }}.{{ locale_encoding }}"
+
+# User locale
+locale_lang_name: "{{ system_lang_name }}"
+locale_lang: "{{ system_lang_name }}.{{ locale_encoding }}"
+locale_language: "{{ locale_lang }}:{{ system_lang }}"
+
+# vconsole
+vconsole_font: "ter-c16n"
+vconsole_keymap: "us"

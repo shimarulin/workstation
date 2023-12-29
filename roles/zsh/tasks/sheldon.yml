@@ -1,0 +1,61 @@
+---
+
+# https://github.com/rossmacarthur/sheldon
+- name: "Check that the sheldon already local installed"
+  ansible.builtin.stat:
+    path: "~/.local/bin/sheldon"
+  register: "sheldon_stat_result"
+
+- name: "Install sheldon"
+  ansible.builtin.shell: |
+    set -o pipefail
+    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+  when: "not sheldon_stat_result.stat.exists"
+  register: "sheldon_install_result"
+  changed_when: "sheldon_install_result.rc == 0"
+
+- name: "Check installed sheldon version"
+  ansible.builtin.command: "~/.local/bin/sheldon -V"
+  when: "sheldon_stat_result.stat.exists"
+  register: "sheldon_check_version_result"
+  changed_when: false
+
+- name: "Print installed sheldon version"
+  ansible.builtin.debug:
+    msg: "Installed sheldon version {{ sheldon_check_version_result.stdout.split(' ')[1] }}"
+  when: "sheldon_stat_result.stat.exists"
+
+- name: "Get latest release of sheldon from GitHub releases"
+  community.general.github_release:
+    user: "rossmacarthur"
+    repo: "sheldon"
+    action: "latest_release"
+  when: "sheldon_stat_result.stat.exists"
+  register: "sheldon_latest_version_result"
+  changed_when: false
+
+- name: "Print latest release of sheldon from GitHub releases"
+  ansible.builtin.debug:
+    msg: "Latest sheldon version {{ sheldon_latest_version_result.tag }}"
+  when: "sheldon_stat_result.stat.exists"
+
+- name: "Upgrade sheldon"
+  ansible.builtin.shell: |
+    set -o pipefail
+    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin --force
+  when: "sheldon_stat_result.stat.exists and sheldon_latest_version_result.tag is version(sheldon_check_version_result.stdout.split(' ')[1], '>')"
+  register: "sheldon_upgrade_result"
+  changed_when: "sheldon_upgrade_result.rc == 0"
+
+- name: "Copy config file"
+  ansible.builtin.copy:
+    src: "home/.config/sheldon/plugins.toml"
+    # If dest is a non-existent path and if either dest ends with "/" or src is a directory, dest is created.
+    dest: "~/.config/sheldon/"
+    mode: "0644"
+
+- name: "Create data directory"
+  ansible.builtin.file:
+    path: "~/.local/share/sheldon"
+    state: "directory"
+    mode: "0755"

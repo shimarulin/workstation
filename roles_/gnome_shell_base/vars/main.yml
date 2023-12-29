@@ -1,0 +1,71 @@
+---
+# vars file for gnome_shell_base
+gnome_shell_base_packages:
+  # GNOME shell
+  # ---
+  # accountsservice
+  # gcr-4
+  # gjs
+  # gnome-autoar
+  # gnome-session
+  # gnome-settings-daemon
+  # gsettings-desktop-schemas
+  # gtk4
+  # libcanberra-pulse (libcanberra)
+  # libgdm
+  # libgweather-4
+  # libibus
+  # libmutter-11.so=0-64 (mutter)
+  # libnma
+  # libsecret
+  # libsoup3
+  # mutter
+  # unzip
+  # upower
+  # evolution-data-server (optional) - Evolution calendar integration
+  # gnome-bluetooth-3.0 (optional) - Bluetooth support
+  # gnome-control-center (optional) - System settings
+  # gnome-disk-utility (optional) - Mount with keyfiles
+  # gst-plugin-pipewire (optional) - Screen recording
+  # gst-plugins-good (optional) - Screen recording
+  # power-profiles-daemon (optional) - Power profile switching
+  # switcheroo-control (optional) - Multi-GPU support
+
+  # GNOME configuration tools
+  #
+  # GNOME's main interface to configure various aspects of the desktop
+  # ---
+  # accountsservice
+  # bolt
+  # colord-gtk4
+  # cups-pk-helper
+  # gcr
+  # gnome-bluetooth-3.0
+  # gnome-color-manager
+  # gnome-desktop-4
+  # gnome-online-accounts
+  # gnome-settings-daemon
+  # gsettings-desktop-schemas
+  # gsound
+  # gtk4
+  # libadwaita
+  # libgnomekbd
+  # libgtop
+  # libgudev
+  # libibus
+  # libmalcontent
+  # libmm-glib
+  # libnma-gtk4
+  # libpwquality
+  # smbclient
+  # sound-theme-freedesktop
+  # udisks2
+  # upower
+  # fwupd (optional) - device security panel
+  # gnome-remote-desktop (optional) - screen sharing
+  # gnome-user-share (optional) - WebDAV file sharing
+  # malcontent (optional) - application permission control
+  # openssh (optional) - remote login
+  # power-profiles-daemon (optional) - power profiles
+  # rygel (optional) - media sharing
+  # system-config-printer (optional) - printer settings

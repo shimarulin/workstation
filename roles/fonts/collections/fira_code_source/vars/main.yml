@@ -1,0 +1,8 @@
+---
+# vars file for "fira_code_source" role
+fira_code_source_version: "6.2"
+
+fira_code_source_item:
+  name: "FiraCode"
+  url: "https://github.com/tonsky/FiraCode/releases/download/{{ fira_code_version }}/Fira_Code_v{{ fira_code_version }}.zip"
+  path: "/ttf"

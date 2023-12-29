@@ -1,0 +1,10 @@
+---
+# vars file for vscode
+vscode_packages:
+  - code
+
+#vscode_user_data_dir: "~/.config/code-oss"
+#vscode_extensions_dir: "{{ vscode_user_data_dir }}/Extensions"
+
+vscode_user_data_dir: '~/.config/Code - OSS'
+vscode_extensions_dir: '~/.vscode-oss'

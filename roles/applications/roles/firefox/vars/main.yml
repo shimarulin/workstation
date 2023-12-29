@@ -1,7 +1,0 @@
----
-# vars file for firefox
-firefox_packages:
-  - firefox
-  - firefox-i18n-ru
-  - firefox-spell-ru
-  - firefox-profile-switcher-connector-bin

@@ -1,0 +1,13 @@
+---
+# vars file for "gnome_apps" role
+gnome_apps_packages:
+  - "gnome-calculator"
+
+  # Viewers TODO: Need Review
+  ## Document viewer
+  - "evince"
+  ## Image viewer
+  - "loupe"
+  ## Audio
+  # - "decibels" # AUR
+  ## Video

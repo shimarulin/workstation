@@ -1,0 +1,26 @@
+---
+# https://ansible-lint.readthedocs.io/configuring/#ansible-lint-configuration
+profile: safety
+# exclude_paths included in this file are parsed relative to this file's location
+# and not relative to the CWD of execution. CLI arguments passed to the --exclude
+# option are parsed relative to the CWD of execution.
+exclude_paths:
+  - .obsidian/   # implicit unless exclude_paths is defined in config
+  - .vagrant/
+  - docs/
+  - node_modules/
+  - templates/
+  - roles_/
+  - playbook_alternatives.yml
+  - playbook_virtualbox.yml
+  - playbook_virtualbox_prestart.yml
+  - temp/
+
+enable_list:
+  # add yaml here if you want to avoid ignoring yaml checks when yamllint
+  # library is missing. Normally its absence just skips using that rule.
+  - yaml
+
+skip_list:
+  - role-name[path]
+  - yaml[line-length]

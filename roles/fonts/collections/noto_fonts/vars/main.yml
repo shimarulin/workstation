@@ -1,0 +1,7 @@
+---
+# vars file for "noto_fonts" role
+noto_fonts_packages:
+  - "noto-fonts"
+  - "noto-fonts-cjk"
+  - "noto-fonts-emoji"
+  - "noto-fonts-extra"

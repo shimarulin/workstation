@@ -1,5 +1,0 @@
----
-# vars file for build-deps
-build_deps_packages:
-  - git
-  - base-devel

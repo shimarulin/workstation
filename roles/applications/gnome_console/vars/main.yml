@@ -1,0 +1,4 @@
+---
+# vars file for "gnome_console" role
+gnome_console_packages:
+  - "gnome-console"

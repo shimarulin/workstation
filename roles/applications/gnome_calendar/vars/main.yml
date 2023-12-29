@@ -1,0 +1,4 @@
+---
+# vars file for "gnome_calendar" role
+gnome_calendar_packages:
+  - "gnome-calendar"

@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: "Vyacheslav Shimarulin"
+  description: "Git config"
+  license: "MIT"
+  min_ansible_version: "2.8"
+
+  # Platforms is a list of platforms, and each platform has a name and a list of versions.
+  platforms:
+    - name: "ArchLinux"
+      versions:
+        - "all"
+
+dependencies: []

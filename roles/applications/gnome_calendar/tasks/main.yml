@@ -1,0 +1,7 @@
+---
+# tasks file for "gnome_calendar" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ gnome_calendar_packages }}"
+    extra_args: "--needed"

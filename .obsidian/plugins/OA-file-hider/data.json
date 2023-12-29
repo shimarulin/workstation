@@ -1,0 +1,11 @@
+{
+  "hidden": true,
+  "hiddenList": [
+    "node_modules",
+    "group_vars",
+    "templates",
+    "utils",
+    "temp",
+    "roles_"
+  ]
+}

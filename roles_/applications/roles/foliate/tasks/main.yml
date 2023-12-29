@@ -1,0 +1,6 @@
+---
+# tasks file for foliate
+- name: install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ foliate_packages }}'

@@ -1,0 +1,26 @@
+---
+- name: "Run the firefox role"
+  ansible.builtin.include_role:
+    name: "applications/firefox"
+
+- name: "Create Firefox global extensions directory if it does not exist"
+  become: true
+  file:
+    path: "/usr/lib/firefox/browser/extensions/"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+
+- name: "Install native connector software for the 'GNOME Shell integration' extension"
+  become: true
+  community.general.pacman:
+    name: "gnome-browser-connector"
+    extra_args: "--needed"
+
+# https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+- name: "Install 'GNOME Shell integration' Firefox extension"
+  become: true
+  get_url:
+    url: "https://addons.mozilla.org/firefox/downloads/file/3974897/"
+    dest: "/usr/lib/firefox/browser/extensions/chrome-gnome-shell@gnome.org.xpi"
+    mode: "u=rw,g=r,o=r"
+  ignore_errors: true

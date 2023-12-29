@@ -1,0 +1,4 @@
+---
+# vars file for "bitwarden" role
+bitwarden_packages:
+  - "bitwarden"

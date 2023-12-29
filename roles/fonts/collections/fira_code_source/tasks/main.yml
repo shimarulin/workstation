@@ -1,0 +1,7 @@
+---
+# tasks file for "fira_code_source" role
+- name: "Install FiraCode font version {{ fira_code_source_version }} from sources" # noqa: name[template]
+  ansible.builtin.include_role:
+    name: "fonts/install_fonts"
+  vars:
+    item: "{{ fira_code_source_item }}" # noqa: var-naming[no-role-prefix]

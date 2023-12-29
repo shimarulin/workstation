@@ -1,0 +1,6 @@
+---
+# tasks file for gnome-calculator
+- name: install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ gnome_calculator_packages }}'

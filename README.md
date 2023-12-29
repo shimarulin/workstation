@@ -19,17 +19,29 @@ See https://github.com/shimarulin/workstation/blob/main/get for details.
 ## Usage
 
 > :warning: Before starting the configuration, make sure that the variables in the `group_vars/all` file in the
-> repository root are defined. If not, you can set up it via cookiecutter template:
+> repository root are defined. If not, you can set up it via `setvars` script:
 >
-> ```bash
+> ```shell
 > # Setup Ansible variables
-> cd ~/.config/localhost && python -m cookiecutter -f templates/vars
+> ~/.config/workstation/tools/bin/setvars
 > ```
 
-Run playbook on localhost
+Run playbook on localhost with common configuration
 
-```bash
+```shell
 cd ~/.config/localhost && ansible-playbook playbook.yml
+```
+
+Run playbook on localhost for desktop setup
+
+```shell
+cd ~/.config/localhost && ansible-playbook playbook.yml --tags "desktop"
+```
+
+Run playbook on localhost for laptop setup
+
+```shell
+cd ~/.config/localhost && ansible-playbook playbook.yml --tags "laptop"
 ```
 
 ## Development
@@ -41,13 +53,9 @@ Documentation:
 - [Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
   - [Ansible Module Index](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)
   - [Vagrant Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_vagrant.html)
-- [Cookiecutter documentation](https://cookiecutter.readthedocs.io/en/latest/readme.html)
+- [Copier](https://copier.readthedocs.io/en/latest/)
 - [Argbash documentation](https://argbash.readthedocs.io/en/stable/)
 - [Vagrant Documentation](https://www.vagrantup.com/docs/)
-
-### Articles
-
-- [Using Ansible templates to maintain partial file blocks](https://garthkerr.com/using-ansible-template-for-partial-file-block/)
 
 ### Getting started
 
@@ -57,60 +65,96 @@ Requirements:
 - Ansible
 - VirtualBox
 - Vagrant
-- Cookiecutter
+- [Copier](https://github.com/copier-org/copier)
 
 Addition requirements:
 
 - NodeJS
 - Yarn
 
-Also you should install `python-vagrant` and `cookiecutter` packages via pip:
+Also, you should install `python-vagrant` and `copier` packages via pip:
 
-```bash
+```shell
 # Install packages
-pip install -U python-vagrant cookiecutter
+pip install -U python-vagrant copier
 ```
 
 For enable Git Hook's to autoformatting files with [Prettier](https://prettier.io/) just install NodeJS packages with
 Yarn:
 
-```bash
+```shell
 yarn
 ```
 
 ### Configure Ansible variables
 
-```bash
+```shell
 # Setup Ansible variables
-cookiecutter -f templates/vars
+./tools/bin/setvars
 ```
 
-If you add variables manually, don't forget to change variables template in `templates/vars`. It will used for setup
+```shell
+# Setup Ansible variables
+copier tools/templates/template_ansible_vars ./
+
+# or
+# ./tools/scripts/setvars.sh
+```
+
+If you add variables manually, don't forget to change variables template in `templates/vars`. It will be used for setup
 variables before run playbook for setup target environment.
 
 ### Create Ansible role
 
-```bash
+```shell
 # Create Ansible role
-cookiecutter --output-dir roles templates/role
+./tools/bin/mkrole
 ```
 
-### Create Vagrant box for test role from existing virtual machine
+### Run playbook on VirtualBox VM directly with shared folders
+
+#### Setup VM
+
+VM Settings -> Shared Folders -> Adds new shared folder:
+
+- Folder Path: /home/username/path-to-project/workstation
+- Folder Name: workstation
+- Mount point: /home/username/workstation
+- Auto mount: enable
+
+#### Setup guest OS
+
+```shell
+sudo pacman -Sy virtualbox-guest-utils-nox
+sudo systemctl enable vboxservice.service
+sudo gpasswd -a user vboxsf
+sudo reboot
+```
+
+#### Install Ansible and run playbook
+
+```shell
+cd ~/workstation && ./get
+```
+
+### Run playbook on VirtualBox VM with Vagrant
+
+#### Create Vagrant box for test role from existing virtual machine
 
 Create new virtual machine and install target distributive. In according to Vagrant conventions, create user `vagrant`
-with password `vagrant`. This password don't need to run playbook and you can choice other if you need. After this it
-need setup to use as Vagrant box.
+with password `vagrant`. This password don't need to run playbook, and you can choose other if you need. After this it
+needs setup to use as Vagrant box.
 
 Install and enable SSH server:
 
-```bash
+```shell
 sudo pacman -Sy openssh
 sudo systemctl enable sshd.service
 ```
 
 Add unsafe public key:
 
-```bash
+```shell
 mkdir -pm 700 ~/.ssh
 curl -L https://git.io/v47gO -o ~/.ssh/authorized_keys
 # or
@@ -125,25 +169,25 @@ editor) these strings to connect to virtual machine via ssh without password:
 
 ```
 # Vagrant required
-vagrant ALL=(ALL) NOPASSWD: ALL
+vagrant ALL=(ALL:ALL) NOPASSWD: ALL
 ```
 
 To make you own box you should run command
 
-```bash
+```shell
 # VirtualBox VM name: Arch
 vagrant package --base Arch --output arch.box
 ```
 
 After this you can add you box:
 
-```bash
+```shell
 vagrant box add ./arch.box --name vagrant/arch
 ```
 
-### Use Vagrant to play tasks
+#### Use Vagrant to play tasks
 
-```bash
+```shell
 # Start VM
 vagrant up
 # Replay tasks
@@ -160,43 +204,17 @@ Connect to virtual machine by ssh
 vagrant ssh
 ```
 
-### Delete default VM and box
+#### Delete default VM and box
 
 In project root:
 
-```bash
+```shell
 vagrant destroy
 ```
 
-### Setup VirtualBox Guest Addition
+#### Setup VirtualBox Guest Addition
 
 ```shell
 pacman -S virtualbox-guest-utils
 sudo systemctl enable vboxservice
 ```
-
-### Watch DConf changes
-
-```bash
-dconf watch /
-```
-
-## Related projects
-
-- [Arch Linux Install Script](https://picodotdev.github.io/alis/)
-- [My Arch Setup](https://github.com/raphiz/my-arch-setup) - Ansible based automation scripts for my Arch Linux machines
-- [archfi](https://github.com/MatMoul/archfi)
-- [Spark](https://github.com/pigmonkey/spark) - Arch Linux Provisioning with Ansible
-- [arch-install](https://github.com/wrzlbrmft/arch-install)
-- [krushn-arch](https://github.com/krushndayshmookh/krushn-arch)
-
-## Docs and articles
-
-- https://wiki.archlinux.org/
-- https://ctlos.github.io/wiki
-- https://regolith-linux.org/
-- https://instantos.io/
-- https://pikedom.com/install-ansible-on-arch-linux/
-- https://blackarch.ru/?p=198
-- https://computingforgeeks.com/arch-linux-easy-and-fast-installation-with-archfi-installer/
-- https://disconnected.systems/blog/archlinux-installer/#setting-variables-and-collecting-user-input

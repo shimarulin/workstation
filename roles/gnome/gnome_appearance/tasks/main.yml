@@ -1,0 +1,16 @@
+---
+# tasks file for "gnome_appearance" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ gnome_appearance_packages }}"
+    extra_args: "--needed"
+
+- name: "Apply GTK Theme tasks"
+  ansible.builtin.include_tasks: "gtk.yml"
+
+- name: "Apply Icon Theme tasks"
+  ansible.builtin.include_tasks: "icons.yml"
+
+- name: "Apply GNOME Shell extensions tasks"
+  ansible.builtin.include_tasks: "extensions.yml"

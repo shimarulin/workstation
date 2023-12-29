@@ -1,0 +1,9 @@
+---
+# https://addons.mozilla.org/ru/firefox/addon/bitwarden-password-manager/
+- name: "Install 'Bitwarden password manager' Firefox extension"
+  become: true
+  get_url:
+    url: "https://addons.mozilla.org/firefox/downloads/file/3859577/"
+    dest: "/usr/lib/firefox/browser/extensions/{446900e4-71c2-419f-a6a7-df9c091e268b}.xpi"
+    mode: "u=rw,g=r,o=r"
+  ignore_errors: true

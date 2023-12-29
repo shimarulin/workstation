@@ -1,0 +1,9 @@
+---
+# https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+- name: "Install 'uBlock Origin' Firefox extension"
+  become: true
+  get_url:
+    url: "https://addons.mozilla.org/firefox/downloads/file/3853583/"
+    dest: "/usr/lib/firefox/browser/extensions/uBlock0@raymondhill.net.xpi"
+    mode: "u=rw,g=r,o=r"
+  ignore_errors: true

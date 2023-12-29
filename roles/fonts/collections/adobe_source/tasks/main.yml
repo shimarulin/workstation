@@ -1,0 +1,7 @@
+---
+# tasks file for "adobe_source" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ adobe_source_packages }}"
+    extra_args: "--needed"

@@ -1,0 +1,4 @@
+---
+# defaults file for "gnome_appearance" role
+gnome_appearance_default_gtk_theme: "adw-gtk3-dark"
+gnome_appearance_default_icon_theme: "Papirus-Dark"

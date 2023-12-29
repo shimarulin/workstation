@@ -1,0 +1,4 @@
+---
+# vars file for "helix" role
+helix_packages:
+  - "helix"

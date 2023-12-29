@@ -1,0 +1,7 @@
+---
+# This playbook deploys the whole application stack.
+- name: Apply a common graphical configuration to all nodes
+  hosts: all
+  roles:
+    # Enable graphical login
+    - role: boot/systemd_graphical_target

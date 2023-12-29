@@ -1,0 +1,16 @@
+---
+# https://addons.mozilla.org/en-US/firefox/addon/profile-switcher/
+- name: "Install 'Profile Switcher for Firefox' dependencies"
+  kewlfft.aur.aur:
+    name:
+      - "firefox-profile-switcher-connector-bin"
+    use: "paru"
+    extra_args: "--needed"
+
+- name: "Install 'Profile Switcher for Firefox' extension"
+  become: true
+  get_url:
+    url: "https://addons.mozilla.org/firefox/downloads/file/3809893/"
+    dest: "/usr/lib/firefox/browser/extensions/profile-switcher-ff@nd.ax.xpi"
+    mode: "u=rw,g=r,o=r"
+  ignore_errors: true

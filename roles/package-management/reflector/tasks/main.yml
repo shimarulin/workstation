@@ -1,35 +1,65 @@
 ---
 # tasks file for reflector
-- name: install dependencies
+- name: "Install dependencies"
   become: true
-  pacman:
+  community.general.pacman:
     name: "{{ reflector_packages }}"
+    extra_args: "--needed"
 
-- name: setup country
+- name: "Disable country"
   become: true
-  lineinfile:
-    path: /etc/xdg/reflector/reflector.conf
-    regexp: '^# --country France,Germany'
-    line: '--country Russia,Germany'
-  changed_when: false
+  ansible.builtin.lineinfile:
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--country.*"
+    line: "# --country France,Germany"
+  when: "reflector_country_list | length == 0"
+  register: "reflector_conf_country"
 
-- name: setup repo count
+- name: "Setup country"
   become: true
-  lineinfile:
-    path: /etc/xdg/reflector/reflector.conf
-    regexp: '^--latest 5'
-    line: '--latest 20'
-  changed_when: false
+  ansible.builtin.lineinfile:
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--country.*"
+    line: "--country {{ reflector_country_list }}"
+  when: "reflector_country_list | length > 0"
+  register: "reflector_conf_country"
 
-- name: enable reflector service
+- name: "Setup repo count"
   become: true
-  systemd:
-    name: reflector.service
-    enabled: yes
+  ansible.builtin.lineinfile:
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--latest.*"
+    line: "--latest {{ reflector_mirrors_count }}"
+  register: "reflector_conf_count"
 
-- name: Enable mirror list update schedule.
+- name: "Setup sort"
   become: true
-  systemd:
-    name: reflector.timer
-    state: started
-    enabled: yes
+  ansible.builtin.lineinfile:
+    path: "/etc/xdg/reflector/reflector.conf"
+    regexp: "^(#\\s)*--sort.*"
+    line: "--sort {{ reflector_sort }}"
+  register: "reflector_conf_sort"
+
+- name: "Enable reflector service"
+  become: true
+  ansible.builtin.systemd:
+    name: "reflector.service"
+    enabled: true
+
+- name: "Start reflector service"
+  become: true
+  ansible.builtin.systemd:
+    name: "reflector.service"
+    state: "started"
+    enabled: true
+  when: |-
+    reflector_conf_country is changed
+    or reflector_conf_count is changed
+    or reflector_conf_sort is changed
+
+- name: "Enable mirror list update schedule."
+  become: true
+  ansible.builtin.systemd:
+    name: "reflector.timer"
+    state: "started"
+    enabled: true

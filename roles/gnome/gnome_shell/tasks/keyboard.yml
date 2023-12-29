@@ -1,0 +1,14 @@
+---
+- name: "Configure keyboard"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/desktop/input-sources/sources"
+      value: "[('xkb', 'us'), ('xkb', '{{ keyboard_layout }}')]"
+    - key: "/org/gnome/desktop/input-sources/xkb-options"
+      # Use CapsLock to change keyboard layout
+      # Use "Scroll Lock" led to indicate alternative keyboard layout
+      # Use Right Alt as Compose button
+      value: "['grp:caps_toggle', 'grp_led:scroll', 'compose:ralt']"
+  when: "keyboard_layout is defined"

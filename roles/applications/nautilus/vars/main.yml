@@ -1,0 +1,8 @@
+---
+# vars file for nautilus
+nautilus_packages:
+  - nautilus
+
+  # Preview and thumbnail tools
+  - sushi
+  - ffmpegthumbnailer

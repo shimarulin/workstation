@@ -1,4 +1,0 @@
----
-# vars file for xorg
-xorg_packages:
-  - xorg-server

@@ -1,0 +1,37 @@
+---
+# tasks file for "gnome_shell" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ gnome_shell_packages }}"
+    extra_args: "--needed"
+
+- name: "Run a Display manager and login screen role"
+  ansible.builtin.include_role:
+    name: "login/gdm"
+
+- name: "Run a default terminal emulator role"
+  ansible.builtin.include_role:
+    name: "environment/default_terminal_emulator"
+
+- name: "Run a XDG user dirs role"
+  ansible.builtin.include_role:
+    name: "environment/xdg_user_dirs"
+
+- name: "Mask the Gnome power-profiles-daemon service for 'tlp' in GNOME 40 and newer"
+  become: true
+  ansible.builtin.systemd:
+    name: "power-profiles-daemon.service"
+    state: "stopped"
+    masked: true
+  failed_when: false
+  when: "'laptop' in ansible_run_tags"
+
+- name: "Apply keyboard tasks"
+  ansible.builtin.include_tasks: "keyboard.yml"
+
+- name: "Install Flatpak permissions manager"
+  kewlfft.aur.aur:
+    name: "flatseal"
+    use: "paru"
+    extra_args: "--needed"

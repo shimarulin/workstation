@@ -1,0 +1,27 @@
+---
+# tasks file for eww
+- name: install dependencies
+  become: true
+  community.general.pacman:
+    name: '{{ eww_packages }}'
+
+- name: check that the eww already local installed
+  stat:
+    path: ~/.local/bin/eww
+  register: eww_stat_result
+
+- name: build and install eww
+  shell: |
+    rm ~/.local/bin/eww
+    git clone https://github.com/elkowar/eww /tmp/eww
+    cd /tmp/eww
+    cargo build --release
+    cp /tmp/eww/target/release/eww ~/.local/bin/
+    chmod +x ~/.local/bin/eww
+    rm -rf /tmp/eww
+  when: eww_stat_result.stat.exists == false
+
+- name: copy eww config
+  copy:
+    src: home/.config/eww
+    dest: ~/.config

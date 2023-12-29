@@ -1,0 +1,27 @@
+---
+# tasks file for "gnome_apps" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ gnome_apps_packages }}"
+    extra_args: "--needed"
+
+- name: "Run an file manager role"
+  ansible.builtin.include_role:
+    name: "applications/nautilus"
+
+- name: "Run an archive manager role"
+  ansible.builtin.include_role:
+    name: "applications/file_roller"
+
+- name: "Install and set default text editor"
+  ansible.builtin.include_tasks: "default_visual_text_editor.yml"
+
+- name: "Install and set default browser"
+  ansible.builtin.include_tasks: "default_browser.yml"
+
+- name: "Install safety apps"
+  ansible.builtin.include_tasks: "safety.yml"
+
+- name: "Install PIM apps"
+  ansible.builtin.include_tasks: "pim.yml"

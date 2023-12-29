@@ -1,0 +1,13 @@
+---
+# tasks file for xdg_user_dirs
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ xdg_user_dirs_packages }}"
+
+- name: "Create XDG user dirs and update XDG user dirs config for user locale"
+  ansible.builtin.command: "xdg-user-dirs-update"
+  environment:
+    LANG: "{{ locale_lang }}"
+    LANGUAGE: "{{ locale_language }}"
+  changed_when: false

@@ -1,0 +1,9 @@
+---
+# GNOME Shell extension that replaces the 'Activities' button with an i3-like workspaces bar
+# https://github.com/christopher-l/space-bar
+- name: "Install and enable 'Space Bar' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/5090/space-bar/
+    gnome_shell_extension_id: "5090"

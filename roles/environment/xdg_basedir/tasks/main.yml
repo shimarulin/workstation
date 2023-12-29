@@ -1,0 +1,19 @@
+---
+# tasks file for "xdg_basedir" role
+- name: "Create XDG Base Directories in user space"
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+  loop:
+    - "~/.cache"
+    - "~/.config"
+    - "~/.local/share"
+    - "~/.local/state"
+
+- name: "Copy the 'xdg_basedir' helper"
+  become: true
+  ansible.builtin.copy:
+    src: "etc/profile.d/"
+    dest: "/etc/profile.d/"
+    mode: "u=rw,g=r,o=r"

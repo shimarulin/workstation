@@ -1,0 +1,7 @@
+---
+# tasks file for "papirus_icon_theme" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ papirus_icon_theme_packages }}"
+    extra_args: "--needed"

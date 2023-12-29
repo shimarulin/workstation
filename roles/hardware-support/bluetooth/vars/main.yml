@@ -1,5 +1,0 @@
----
-# vars file for bluetooth
-bluetooth_packages:
-  - bluez
-  - bluez-utils

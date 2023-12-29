@@ -1,0 +1,14 @@
+---
+# vars file for networkmanager
+networkmanager_packages:
+  - networkmanager
+  # VPN
+  - networkmanager-openconnect
+  - networkmanager-openvpn
+
+#  - networkmanager-pptp
+#  - networkmanager-vpnc
+#  - network-manager-sstp #?
+#  - networkmanager-fortisslvpn
+#  - networkmanager-l2tp #?
+#  - networkmanager-strongswan

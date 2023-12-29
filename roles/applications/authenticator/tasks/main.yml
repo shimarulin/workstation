@@ -1,0 +1,7 @@
+---
+- name: "Install authenticator by Flatpak"
+  ansible.builtin.command: "flatpak install -y flathub com.belmoussaoui.Authenticator"
+  environment:
+    LANGUAGE: "en_US.UTF-8"
+  register: "authenticator_flatpak_install_result"
+  changed_when: "not 'is already installed' in authenticator_flatpak_install_result.stderr"

@@ -1,0 +1,9 @@
+---
+# A status menu for accessing and unmounting removable devices
+# https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+- name: "Install and enable 'Removable Drive Menu' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/7/removable-drive-menu/
+    gnome_shell_extension_id: "7"

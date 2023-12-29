@@ -1,0 +1,33 @@
+---
+# Setup locale
+# https://www.gnu.org/software/gettext/manual/html_node/Locale-Environment-Variables.html
+
+- name: "Ensure localisation files for '{{ system_lang }}' are available"                                                                       # noqa: name[template]
+  become: true
+  community.general.locale_gen:
+    name: "{{ system_lang }}"
+    state: "present"
+
+- name: "Ensure localisation files for '{{ locale_lang }}' are available" # noqa: name[template]
+  become: true
+  community.general.locale_gen:
+    name: "{{ locale_lang }}"
+    state: "present"
+
+- name: "Get current locale and language configuration"
+  ansible.builtin.command: "localectl status"
+  register: "locale_status"
+  changed_when: false
+
+- name: "Parse 'LANG' from current locale and language configuration"
+  ansible.builtin.set_fact:
+    current_locale_lang: "{{ locale_status.stdout | regex_search('LANG=([^\n]+)', '\\1') | first }}"
+
+- name: "Parse 'LANGUAGE' from current locale and language configuration"
+  ansible.builtin.set_fact:
+    current_locale_language: "{{ locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([current_locale_lang], true) | first }}"
+
+- name: "Configure system locale to '{{ locale_lang }}' and language to '{{ locale_language }}'" # noqa: name[template]
+  become: true
+  ansible.builtin.command: "localectl set-locale LANG={{ locale_lang }} LANGUAGE={{ locale_language }}"
+  changed_when: "current_locale_lang != locale_lang or current_locale_language != locale_language"

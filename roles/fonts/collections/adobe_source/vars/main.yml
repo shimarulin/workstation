@@ -1,0 +1,6 @@
+---
+# vars file for "adobe_source" role
+adobe_source_packages:
+  - "adobe-source-code-pro-fonts"
+  - "adobe-source-sans-fonts"
+  - "adobe-source-serif-fonts"
