@@ -1,0 +1,23 @@
+---
+# https://github.com/qwreey/quick-settings-tweaks
+# Quick Settings Tweaker. You can add Media Controls, Notifications, Volume Mixer on quick settings and remove useless buttons
+- name: "Install and enable 'Quick Settings Tweaks' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/5446/quick-settings-tweaker/
+    gnome_shell_extension_id: "5446"
+
+- name: "Configure 'Quick Settings Tweaks'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/quick-settings-tweaks/volume-mixer-enabled"
+      value: "true"
+    - key: "/org/gnome/shell/extensions/quick-settings-tweaks/notifications-max-height"
+      value: "306"
+    - key: "/org/gnome/shell/extensions/quick-settings-tweaks/media-control-enabled"
+      value: "true"
+    - key: "/org/gnome/shell/extensions/quick-settings-tweaks/notifications-position"
+      value: "'bottom'"

@@ -1,0 +1,21 @@
+---
+# https://github.com/Rayzeq/quick-settings-audio-panel
+# The Quick Settings panel for sound related stuff
+- name: "Install and enable 'Quick Settings Audio Panel' extension"
+  ansible.builtin.include_role:
+    name: "gnome/gnome_shell_extension"
+  vars:
+    # https://extensions.gnome.org/extension/5940/quick-settings-audio-panel/
+    gnome_shell_extension_id: "5940"
+
+- name: "Configure 'Quick Settings Audio Panel'"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/quick-settings-audio-panel/merge-panel"
+      value: "true"
+    - key: "/org/gnome/shell/extensions/quick-settings-audio-panel/always-show-input-slider"
+      value: "true"
+    - key: "/org/gnome/shell/extensions/quick-settings-audio-panel/panel-position"
+      value: "'bottom'"
