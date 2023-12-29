@@ -1,0 +1,20 @@
+---
+- name: "'Alt[+Shift]+Tab' - switch windows"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/desktop/wm/keybindings/switch-windows"
+      value: "['<Alt>Tab']"
+    - key: "/org/gnome/desktop/wm/keybindings/switch-windows-backward"
+      value: "['<Shift><Alt>Tab']"
+
+- name: "'Super[+Shift]+Tab' - switch applications"
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/desktop/wm/keybindings/switch-applications"
+      value: "['<Super>Tab']"
+    - key: "/org/gnome/desktop/wm/keybindings/switch-applications-backward"
+      value: "['<Shift><Super>Tab']"
