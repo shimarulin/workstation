@@ -5,7 +5,7 @@
 ```shell
 # Download https://raw.githubusercontent.com/shimarulin/workstation/main/tools/bin/install
 # with Curl
-curl -sSL https://shorturl.at/chkyU | bash
+bash <(curl -sSL https://shorturl.at/chkyU)
 ```
 
 See [User guide / Getting started](docs/1.%20User%20guide/1.%20Getting%20started.md) for details.
