@@ -1,4 +1,0 @@
-#!/usr/bin/bash
-
-# Run playbook
-ansible-playbook playbook.yml
