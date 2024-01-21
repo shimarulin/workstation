@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+
+
+def main():
+  git_user_name = ask_git_user_name()
+  print(git_user_name)
+
+if __name__ == "__main__":
+  import subprocess
+  print('Run as cli')
+  from tools.prompts.git import ask_git_user_name
+  main()

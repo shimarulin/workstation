@@ -1,12 +1,42 @@
-[tool.poetry]
-name = "workstation"
+[project]
+name = "wst"
 version = "0.1.0"
-description = "nstallation scripts and Ansible config for my own workstation"
+description = "Ansible playbooks and self-management tools to setup Arch Linux workstation"
+readme = "README.md"
+authors = [{ name = "Vyacheslav Shimarulin", email = "shimarulin@gmail.com" }]
+requires-python = ">= 3.11"
+dependencies = [
+  "questionary = 2.0.1",
+  "yaspin = 3.0.1",
+  "copier = 9.1.0",
+  "jinja2-getenv-extension = 1.0.2",
+  "copier-templates-extensions = 0.3.0",
+]
+
+[project.scripts]
+wstrc = "wstrc.__main__:cli"
+
+[tool.poetry]
+name = "wst"
+version = "0.1.0"
+description = "Ansible playbooks and self-management tools to setup Arch Linux workstation"
 authors = ["Vyacheslav Shimarulin <shimarulin@gmail.com>"]
 readme = "README.md"
+packages = [
+    { include = "tools/**/*.py" },
+    { include = "wstrc/**/*.py" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+questionary = "^2.0.1"
+yaspin = "^3.0.1"
+copier = "^9.1.0"
+jinja2-getenv-extension = "^1.0.2"
+copier-templates-extensions = "^0.3.0"
+
+[tool.poetry.scripts]
+setvars = 'tools.commands.setvars:main'
 
 [tool.poe.tasks]
 "mkrole" = "./tools/bin/mkrole"

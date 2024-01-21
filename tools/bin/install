@@ -190,7 +190,8 @@ install_system_requirements() {
   # See https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html#requirements
   # Ansible community.general.dconf module requirements:
   # - python-psutil
-  sudo pacman -S ansible git python-pipx python-github3py python-pyjwt python-psutil --needed
+  # Poetry [https://python-poetry.org/] need to run internal tools
+  sudo pacman -S ansible git python-pipx python-poetry python-github3py python-pyjwt python-psutil --needed
 
   # Install Copier template render [https://github.com/copier-org/copier]
   pipx install copier
@@ -198,13 +199,17 @@ install_system_requirements() {
   pipx inject copier copier-templates-extensions
 }
 
+install_project_requirements() {
+  echo "${STYLE_INFO}Install project dependencies${STYLE_OFF}"
+  poetry install -C "$TARGET_PATH"
+}
+
 install_development_system_requirements() {
   echo "${STYLE_INFO}Install Ansible configuration development requirements${STYLE_OFF}"
   # - Argbash [https://argbash.readthedocs.io/en/stable/index.html]
   # - Ansible Lint [https://ansible.readthedocs.io/projects/lint/]
-  # - Poetry [https://python-poetry.org/]
   # - shfmt [https://github.com/mvdan/sh]
-  sudo pacman -S ansible-lint argbash python-poetry shfmt --needed
+  sudo pacman -S ansible-lint argbash shfmt --needed
 
   # Install Poe the Poet [https://poethepoet.natn.io/index.html] - a batteries included task runner that works well with poetry.
   pipx install poethepoet
@@ -263,6 +268,8 @@ install_system_requirements
 if [ "$_arg_development" = on ]; then
   install_development_system_requirements
 fi
+
+install_project_requirements
 
 export_path
 
