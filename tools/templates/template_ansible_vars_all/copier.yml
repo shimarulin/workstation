@@ -1,46 +1,8 @@
 ---
 # questions
-vars_scope:
-  type: "str"
-  help: "Select variables scope"
-  default: "group_vars"
-  choices:
-    - "group_vars"
-    - "host_vars"
-
-git_user_name:
-  type: "str"
-  help: "Git user name:"
-  placeholder: "John Doe"
-  default: "{{ 'GIT_USER_NAME' | getenv('') }}"
-  validator: >-
-    {% if not git_user_name %}
-    Git user name is required
-    {% endif %}
-
-git_user_email:
-  type: "str"
-  help: "Git user email:"
-  placeholder: "john-doe@example.com"
-  default: "{{ 'GIT_USER_EMAIL' | getenv('') }}"
-  validator: >-
-    {% if not git_user_email %}
-    Git user email is required
-    {% endif %}
-
-default_cli_text_editor:
-  type: "str"
-  help: "Default CLI Text Editor:"
-  default: "micro"
-  choices:
-    - "micro"
-    - "neovim"
-    - "helix"
-    - "nano"
-
 country_code:
   type: "str"
-  help: "Locale > Country code (ISO 3166-1 alpha-2 two uppercase letters):"
+  help: "Country code (ISO 3166-1 alpha-2 two uppercase letters):"
   placeholder: "US"
   default: "{{ 'COUNTRY_CODE' | getenv('US') }}"
   validator: >-
@@ -50,7 +12,7 @@ country_code:
 
 language_code:
   type: "str"
-  help: "Locale > Language code (ISO 3166-1 alpha-2 two letters):"
+  help: "Language code (ISO 3166-1 alpha-2 two letters):"
   placeholder: "en"
   default: "{{ 'LANGUAGE_CODE' | getenv(country_code | country_lang) }}"
   validator: >-
@@ -58,10 +20,21 @@ language_code:
     Language code is required
     {% endif %}
 
-mirror_country_code:
+alternate_keyboard_layout:
+  type: "str"
+  help: "Keyboard layout:"
+  placeholder: "uk"
+  default: "{{ 'KEYBOARD_LAYOUT' | getenv(language_code) }}"
+  validator: >-
+    {% if not alternate_keyboard_layout %}
+    Keyboard layout is required
+    {% endif %}
+
+mirror_code_list:
   type: "str"
   help: "Preferred mirror country (only available on the https://archlinux.org/mirrors/):"
   default: "{{ 'MIRROR_COUNTRY_CODE' | getenv(country_code) }}"
+  multiselect: true
   choices:
     Argentina:
       value: "AR"
@@ -208,12 +181,38 @@ mirror_country_code:
     Vietnam:
       value: "VN"
 
+default_cli_text_editor:
+  type: "str"
+  help: "Default CLI Text Editor:"
+  default: "micro"
+  choices:
+    - "micro"
+    - "neovim"
+    - "helix"
+    - "nano"
+
+default_visual_text_editor:
+  type: "str"
+  help: "Default Visual Text Editor:"
+  default: "GNOME Text Editor"
+  choices:
+    - "GNOME Text Editor"
+
+default_terminal_emulator:
+  type: "str"
+  help: "Default Terminal emulator:"
+  default: "Black Box"
+  choices:
+    - "Black Box"
+    - "Tilix"
+    - "GNOME Console"
+
 # settings
 _jinja_extensions:
   - "jinja2_getenv_extension.GetenvExtension"
   - "copier_templates_extensions.TemplateExtensionLoader"
   - "extensions/context.py:ContextUpdater"
-  - "extensions/country_lang.py:CountryLangExtension"
+  - "extensions/filters/country_lang.py:CountryLangExtension"
 
 _exclude:
   - "copier.yaml"

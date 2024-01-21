@@ -1,0 +1,38 @@
+---
+# questions
+git_user_name:
+  type: "str"
+  help: "Git user name:"
+  placeholder: "John Doe"
+  default: "{{ 'GIT_USER_NAME' | getenv('') }}"
+  validator: >-
+    {% if not git_user_name %}
+    Git user name is required
+    {% endif %}
+
+git_user_email:
+  type: "str"
+  help: "Git user email:"
+  placeholder: "john-doe@example.com"
+  default: "{{ 'GIT_USER_EMAIL' | getenv('') }}"
+  validator: >-
+    {% if not git_user_email %}
+    Git user email is required
+    {% endif %}
+
+# settings
+_jinja_extensions:
+  - "jinja2_getenv_extension.GetenvExtension"
+
+_exclude:
+  - "copier.yaml"
+  - "copier.yml"
+  - "~*"
+  - "**/*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"
+  - "README.md"
+  - "!*/README.md"
+  - "extensions"
