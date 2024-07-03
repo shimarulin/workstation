@@ -27,7 +27,13 @@
   ansible.builtin.set_fact:
     current_locale_language: "{{ locale_status.stdout | regex_search('LANGUAGE=([^\n]+)', '\\1') | default([current_locale_lang], true) | first }}"
 
-- name: "Configure system locale to '{{ locale_lang }}' and language to '{{ locale_language }}'" # noqa: name[template]
+- name: "Configure system locale to '{{ locale_lang }}'" # noqa: name[template]
   become: true
-  ansible.builtin.command: "localectl set-locale LANG={{ locale_lang }} LANGUAGE={{ locale_language }}"
-  changed_when: "current_locale_lang != locale_lang or current_locale_language != locale_language"
+  ansible.builtin.command: "localectl set-locale LANG={{ locale_lang }}"
+  changed_when: "current_locale_lang != locale_lang"
+
+# TODO: Not working now
+#- name: "Configure fallback language to '{{ locale_language }}'" # noqa: name[template]
+#  become: true
+#  ansible.builtin.command: "localectl set-locale LANGUAGE={{ locale_language }}"
+#  changed_when: "current_locale_language != locale_language"
