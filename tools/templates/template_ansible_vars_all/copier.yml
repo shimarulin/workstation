@@ -201,10 +201,10 @@ default_visual_text_editor:
 default_terminal_emulator:
   type: "str"
   help: "Default Terminal emulator:"
-  default: "Black Box"
+  default: "Tilix"
   choices:
-    - "Black Box"
     - "Tilix"
+    - "Black Box"
     - "GNOME Console"
 
 # settings
