@@ -17,3 +17,6 @@ host_vars/all
 
 ### NodeJS
 node_modules/
+
+### Python cache
+**/__pycache__

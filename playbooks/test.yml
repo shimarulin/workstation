@@ -1,0 +1,15 @@
+---
+# This playbook deploys the whole application stack.
+- name: Apply a common configuration to all nodes
+  hosts: all
+  tasks:
+    - name: Print the reflector_country_list
+      ansible.builtin.debug:
+        msg: "{{ reflector_country_list }}"
+    - name: Print the git_user_name
+      ansible.builtin.debug:
+        msg: "{{ git_user_name }}"
+#   roles:
+#     - role: gnome/gnome_shell
+#     - role: gnome/gnome_apps
+#     - role: gnome/gnome_appearance

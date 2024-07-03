@@ -1,0 +1,6 @@
+---
+# This playbook deploys the whole application stack.
+- name: Apply a common configuration to all nodes
+  hosts: all
+  roles:
+   - role: nix

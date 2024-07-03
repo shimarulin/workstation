@@ -1,0 +1,4 @@
+---
+# vars file for "nix" role
+nix_packages:
+  - "nix"

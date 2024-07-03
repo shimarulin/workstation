@@ -1,0 +1,34 @@
+---
+# tasks file for "nix" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ nix_packages }}"
+    extra_args: "--needed"
+
+- name: "Copy ~/.config/nix"
+  ansible.builtin.copy:
+    src: "home/.config/nix"
+    dest: "~/.config/"
+    mode: "u=rw,g=r,o=r"
+
+- name: "Add the user to 'nix-users' group"
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: "lp"
+    append: true
+
+- name: "Enable nix-daemon"
+  become: true
+  ansible.builtin.systemd:
+    name: "nix-daemon.service"
+    state: "started"
+    enabled: true
+
+- name: "Install Home manager"
+  ansible.builtin.shell: |
+    nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+    nix-channel --update
+    nix-shell '<home-manager>' -A install
+  changed_when: false
