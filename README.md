@@ -5,7 +5,7 @@
 ```shell
 # Download https://raw.githubusercontent.com/shimarulin/workstation/main/tools/bin/install
 # with Curl
-bash <(curl -sSL https://shorturl.at/chkyU)
+bash <(curl -sSL https://rb.gy/q38a2u)
 ```
 
 See [User guide / Getting started](docs/1.%20User%20guide/1.%20Getting%20started.md) for details.
@@ -23,19 +23,19 @@ See [User guide / Getting started](docs/1.%20User%20guide/1.%20Getting%20started
 Run playbook on localhost with common configuration
 
 ```shell
-cd ~/.config/localhost && ansible-playbook playbook.yml
+cd ~/.config/workstation && ansible-playbook playbooks/gnome.yml
 ```
 
 Run playbook on localhost for desktop setup
 
 ```shell
-cd ~/.config/localhost && ansible-playbook playbook.yml --tags "desktop"
+cd ~/.config/workstation && ansible-playbook playbooks/gnome.yml --tags "desktop"
 ```
 
 Run playbook on localhost for laptop setup
 
 ```shell
-cd ~/.config/localhost && ansible-playbook playbook.yml --tags "laptop"
+cd ~/.config/workstation && ansible-playbook playbooks/gnome.yml --tags "laptop"
 ```
 
 ## Development
