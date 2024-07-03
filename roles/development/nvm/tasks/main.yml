@@ -1,26 +1,26 @@
 ---
 # tasks file for nvm
-- name: get nvm latest release info
+- name: Get nvm latest release info
   uri:
     url: https://api.github.com/repos/nvm-sh/nvm/releases/latest
     return_content: true
   register: nvm_github_latest_release
 
-- name: create nvm dir
+- name: Create nvm dir
   shell: >
     mkdir -p $NVM_DIR
-  environment: '{{ nvm_env }}'
+  environment: "{{ nvm_env }}"
   changed_when: false
 
-- name: install latest nvm release
+- name: Install latest nvm release
   shell: >
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_github_latest_release.json.tag_name }}/install.sh |
     bash
   args:
-    creates: '{{ nvm_source_path }}'
-  environment: '{{ nvm_env }}'
+    creates: "{{ nvm_source_path }}"
+  environment: "{{ nvm_env }}"
 
-- name: copy ~/.config/profile.d
+- name: Copy ~/.config/profile.d
   copy:
     src: home/.config/profile.d
     dest: ~/.config/
@@ -33,26 +33,26 @@
 #      export NVM_DIR="$HOME/.config/nvm"
 #      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-- name: install latest Node.js
+- name: Install latest Node.js
   shell: >
     source ~/.profile && nvm install node
   args:
     executable: /usr/bin/bash
-  environment: '{{ nvm_env }}'
+  environment: "{{ nvm_env }}"
   changed_when: false
 
-- name: enable Corepack
+- name: Enable Corepack
   shell: >
     source ~/.profile && corepack enable
   args:
     executable: /usr/bin/bash
-  environment: '{{ nvm_env }}'
+  environment: "{{ nvm_env }}"
   changed_when: false
 
-- name: prepare and update the "Last Known Good" version of all supported package managers
+- name: Prepare and update the "Last Known Good" version of all supported package managers
   shell: >
     source ~/.profile && corepack prepare --all --activate
   args:
     executable: /usr/bin/bash
-  environment: '{{ nvm_env }}'
+  environment: "{{ nvm_env }}"
   changed_when: false

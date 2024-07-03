@@ -1,33 +1,33 @@
 ---
 # tasks file for "rust" role
-- name: "Install dependencies"
+- name: Install dependencies
   become: true
   community.general.pacman:
     name: "{{ rust_packages }}"
-    extra_args: "--needed"
+    extra_args: --needed
 
 # https://www.rust-lang.org/tools/install
-- name: "Check that the Cargo already local installed"
+- name: Check that the Cargo already local installed
   ansible.builtin.stat:
-    path: "~/.cargo/bin"
-  register: "cargo_stat_result"
+    path: ~/.cargo/bin
+  register: cargo_stat_result
 
-- name: "Install Rust"
+- name: Install Rust
   ansible.builtin.shell: |
     set -o pipefail
     curl --proto '=https' --tlsv1.2  https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-  when: "not cargo_stat_result.stat.exists"
+  when: not cargo_stat_result.stat.exists
 
-- name: "Copy ~/.config/profile.d"
+- name: Copy ~/.config/profile.d
   ansible.builtin.copy:
-    src: "home/.config/profile.d"
-    dest: "~/.config/"
-    mode: "u=rw,g=r,o=r"
+    src: home/.config/profile.d
+    dest: ~/.config/
+    mode: u=rw,g=r,o=r
 
-- name: "Update Rust tools"
+- name: Update Rust tools
   ansible.builtin.shell: >
     source ~/.config/profile.d/00.env_cargo.sh && rustup update
   args:
-    executable: "/usr/bin/bash"
-  when: "cargo_stat_result.stat.exists"
+    executable: /usr/bin/bash
+  when: cargo_stat_result.stat.exists
   changed_when: false

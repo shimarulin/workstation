@@ -7,5 +7,17 @@
     - role: cli/git
     - role: cli/ssh
 
-    # Programming language
+    # Rust
     - role: development/rust
+      tags:
+        - rust
+
+    # Node.js
+    - role: development/nvm
+      tags:
+        - node
+
+    # VSCode
+    - role: development/vscode
+      tags:
+        - vscode

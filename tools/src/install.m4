@@ -76,7 +76,7 @@ install_system_requirements() {
   sudo pacman -S ansible git python-pipx python-github3py python-pyjwt python-psutil --needed
 
   # Install Copier template render [https://github.com/copier-org/copier]
-  pipx install copier
+  pipx install copier --force
   pipx inject copier jinja2_getenv_extension
   pipx inject copier copier-templates-extensions
 }
@@ -90,16 +90,16 @@ install_development_system_requirements() {
   sudo pacman -S ansible-lint argbash python-poetry shfmt --needed
 
   # Install Poe the Poet [https://poethepoet.natn.io/index.html] - a batteries included task runner that works well with poetry.
-  pipx install poethepoet
+  pipx install poethepoet --force
 
   # Install pre-commit [https://pre-commit.com/] - a framework for managing and maintaining multi-language pre-commit hooks
-  pipx install pre-commit
+  pipx install pre-commit --force
 
   # Install yamlfix [https://lyz-code.github.io/yamlfix/] - simple opinionated yaml formatter
-  pipx install yamlfix
+  pipx install yamlfix --force
 
   # Install Mdformat [https://mdformat.readthedocs.io/en/stable/] - CommonMark compliant Markdown formatter
-  pipx install mdformat
+  pipx install mdformat --force
 
   # Install Mdformat plugin [https://github.com/hukkin/mdformat-shfmt] to format shell code blocks
   pipx inject mdformat mdformat-shfmt

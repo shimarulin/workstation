@@ -1,0 +1,7 @@
+---
+# tasks file for "vscode" role
+- name: Install dependencies
+  kewlfft.aur.aur:
+    name: "{{ vscode_packages }}"
+    use: paru
+    extra_args: --needed

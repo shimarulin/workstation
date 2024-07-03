@@ -11,9 +11,13 @@ rules:
     allow-quoted-quotes: true
   braces:
     forbid: false
-    min-spaces-inside: 1
+    min-spaces-inside: 0
     max-spaces-inside: 1
   comments:
     require-starting-space: true
     ignore-shebangs: true
     min-spaces-from-content: 1
+  comments-indentation: false
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
