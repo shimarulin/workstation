@@ -1,0 +1,6 @@
+---
+# vars file for "docker" role
+docker_packages:
+  - "docker"
+  - "docker-compose"
+  - "fuse-overlayfs"

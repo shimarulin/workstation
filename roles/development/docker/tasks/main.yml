@@ -1,0 +1,21 @@
+---
+# tasks file for "docker" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ docker_packages }}"
+    extra_args: "--needed"
+
+- name: "Add the user to 'docker' group"
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: "docker"
+    append: true
+
+- name: "Enable Docker service"
+  become: true
+  ansible.builtin.systemd:
+    name: "docker.service"
+    state: "started"
+    enabled: true

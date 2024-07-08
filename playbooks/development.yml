@@ -21,3 +21,8 @@
     - role: development/vscode
       tags:
         - vscode
+
+    # Docker
+    - role: development/docker
+      tags:
+        - docker
