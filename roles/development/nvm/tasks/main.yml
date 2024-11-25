@@ -1,11 +1,5 @@
 ---
 # tasks file for nvm
-
-# - name: "Check that the nvm already installed"
-#  ansible.builtin.stat:
-#    path: "{{ nvm_source_path }}"
-#  register: "nvm_installed_stat_result"
-
 - name: "Get nvm latest release info"
   ansible.builtin.uri:
     url: "https://api.github.com/repos/nvm-sh/nvm/releases/latest"
