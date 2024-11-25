@@ -1,58 +1,32 @@
 ---
 # tasks file for nvm
-- name: Get nvm latest release info
-  uri:
-    url: https://api.github.com/repos/nvm-sh/nvm/releases/latest
+
+# - name: "Check that the nvm already installed"
+#  ansible.builtin.stat:
+#    path: "{{ nvm_source_path }}"
+#  register: "nvm_installed_stat_result"
+
+- name: "Get nvm latest release info"
+  ansible.builtin.uri:
+    url: "https://api.github.com/repos/nvm-sh/nvm/releases/latest"
     return_content: true
-  register: nvm_github_latest_release
+  register: "nvm_github_latest_release"
 
-- name: Create nvm dir
-  shell: >
-    mkdir -p $NVM_DIR
-  environment: "{{ nvm_env }}"
-  changed_when: false
+- name: "Clone nvm repo"
+  ansible.builtin.git:
+    repo: "https://github.com/nvm-sh/nvm.git"
+    dest: "~/{{ nvm_rel_dir }}"
+    version: "{{ nvm_github_latest_release.json.tag_name }}"
 
-- name: Install latest nvm release
-  shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_github_latest_release.json.tag_name }}/install.sh |
-    bash
-  args:
-    creates: "{{ nvm_source_path }}"
-  environment: "{{ nvm_env }}"
+# TODO: move to different role (zsh? new role?)
+- name: "Create the profile.d user directory"
+  ansible.builtin.file:
+    path: "~/.config/profile.d"
+    state: "directory"
+    mode: "u=rwx,g=rwx,o=rx"
 
-- name: Copy ~/.config/profile.d
-  copy:
-    src: home/.config/profile.d
-    dest: ~/.config/
-
-#- name: loads nvm
-#  blockinfile:
-#    path: ~/.profile
-#    marker: '# {mark} ANSIBLE MANAGED BLOCK @nvm'
-#    block: |
-#      export NVM_DIR="$HOME/.config/nvm"
-#      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-- name: Install latest Node.js
-  shell: >
-    source ~/.profile && nvm install node
-  args:
-    executable: /usr/bin/bash
-  environment: "{{ nvm_env }}"
-  changed_when: false
-
-- name: Enable Corepack
-  shell: >
-    source ~/.profile && corepack enable
-  args:
-    executable: /usr/bin/bash
-  environment: "{{ nvm_env }}"
-  changed_when: false
-
-- name: Prepare and update the "Last Known Good" version of all supported package managers
-  shell: >
-    source ~/.profile && corepack prepare --all --activate
-  args:
-    executable: /usr/bin/bash
-  environment: "{{ nvm_env }}"
-  changed_when: false
+- name: "Create the nvm register script"
+  ansible.builtin.template:
+    src: "home/.config/profile.d/00.nvm.sh.j2"
+    dest: "~/.config/profile.d/00.nvm.sh"
+    mode: "u=rw,g=r,o=r"
