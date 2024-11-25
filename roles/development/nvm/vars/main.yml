@@ -1,6 +1,3 @@
 ---
 # vars file for nvm
-nvm_dir: "{{ ansible_user_dir }}/.config/nvm"
-nvm_source_path: "{{ nvm_dir }}/nvm.sh"
-nvm_env:
-  NVM_DIR: "{{ nvm_dir }}"
+nvm_rel_dir: ".local/opt/nvm"
