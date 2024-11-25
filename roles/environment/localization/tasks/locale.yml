@@ -33,7 +33,7 @@
   changed_when: "current_locale_lang != locale_lang"
 
 # TODO: Not working now
-#- name: "Configure fallback language to '{{ locale_language }}'" # noqa: name[template]
-#  become: true
-#  ansible.builtin.command: "localectl set-locale LANGUAGE={{ locale_language }}"
-#  changed_when: "current_locale_language != locale_language"
+# - name: "Configure fallback language to '{{ locale_language }}'" # noqa: name[template]
+#   become: true
+#   ansible.builtin.command: "localectl set-locale LANGUAGE={{ locale_language }}"
+#   changed_when: "current_locale_language != locale_language"
