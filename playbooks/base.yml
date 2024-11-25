@@ -9,6 +9,8 @@
     - role: environment/xdg_basedir
 
     # Package management
+    ## Setup pacman
+    - role: package-management/pacman
     ## Update packages database and upgrade system
     - role: package-management/update
     ## Setup pacman mirror list

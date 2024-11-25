@@ -17,3 +17,7 @@ host_vars/all
 
 ### NodeJS
 node_modules/
+
+### Temporary playbooks
+playbooks/test.yml
+playbooks/tmp.yml
