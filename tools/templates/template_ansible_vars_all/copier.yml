@@ -201,8 +201,9 @@ default_visual_text_editor:
 default_terminal_emulator:
   type: "str"
   help: "Default Terminal emulator:"
-  default: "Tilix"
+  default: "Kitty"
   choices:
+    - "Kitty"
     - "Tilix"
     - "Black Box"
     - "GNOME Console"

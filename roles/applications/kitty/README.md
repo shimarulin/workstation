@@ -1,9 +1,6 @@
-# ansible-role-kitty
+# Ansible Role "kitty"
 
-> kitty - the fast, featureful, GPU based terminal emulator
-
-- https://sw.kovidgoyal.net/kitty/#
-- https://github.com/kovidgoyal/kitty
+> The fast, feature-rich, GPU based terminal emulator
 
 ## Requirements
 
@@ -27,9 +24,22 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: kitty, x: 42 }
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - kitty
+```
+
+```yaml
+- name: Apply common configuration to all nodes # noqa: role-name[path]
+  hosts: all
+  roles:
+    - role: kitty # noqa: role-name[path]
+      tags:
+        - laptop
+        - desktop
+```
 
 ## License
 

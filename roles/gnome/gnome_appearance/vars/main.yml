@@ -21,6 +21,7 @@ gnome_appearance_icon_theme_role_map:
 gnome_appearance_upgrade_command_map:
   "Black Box": "blackbox -- /bin/sh -c \"paru -Syu ; echo Done - Press enter to exit; read _\""
   "GNOME Console": "kgx -- /bin/sh -c \"paru -Syu\""
-  "Tilix": ""
+  "Tilix": "tilix -a app-new-window -x \"sudo pacman -Syu\""
+  "Kitty": "kitty --detach --directory=\"~\" --hold sh -c \"paru -Syu ; echo Done - Press enter to exit; read _; exit\""
 
 gnome_appearance_upgrade_command: "{{ gnome_appearance_upgrade_command_map[default_terminal_emulator] }}"
