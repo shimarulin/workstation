@@ -1,4 +1,0 @@
----
-# vars file for gnome-calendar
-gnome_calendar_packages:
-  - gnome-calendar
