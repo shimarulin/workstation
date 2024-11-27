@@ -1,6 +1,6 @@
-# ansible-role-applications
+# ansible-role-eog
 
-> GUI Applications
+> Eye of Gnome: An image viewing and cataloging program
 
 ## Requirements
 
@@ -24,9 +24,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: applications, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: eog, x: 42 }
+```
 
 ## License
 

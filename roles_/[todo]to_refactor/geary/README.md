@@ -1,6 +1,6 @@
-# ansible-role-eog
+# ansible-role-geary
 
-> Eye of Gnome: An image viewing and cataloging program
+> A lightweight email client for the GNOME desktop
 
 ## Requirements
 
@@ -24,9 +24,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: eog, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: geary, x: 42 }
+```
 
 ## License
 

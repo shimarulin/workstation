@@ -1,6 +1,8 @@
-# ansible-role-font-manager
+# ansible-role-lookbook
 
-> A simple font management application for GTK Desktop Environments
+> Browse and find system icons
+
+https://github.com/danrabbit/lookbook
 
 ## Requirements
 
@@ -24,9 +26,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: font-manager, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: lookbook, x: 42 }
+```
 
 ## License
 

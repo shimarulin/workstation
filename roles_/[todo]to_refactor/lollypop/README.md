@@ -1,8 +1,6 @@
-# ansible-role-kooha
+# ansible-role-lollypop
 
-> Elegantly record your screen
-
-https://github.com/SeaDve/Kooha
+> Lollypop music player
 
 ## Requirements
 
@@ -26,9 +24,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: kooha, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: lollypop, x: 42 }
+```
 
 ## License
 
