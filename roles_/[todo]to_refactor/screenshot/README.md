@@ -1,6 +1,6 @@
-# ansible-role-user-actions
+# ansible-role-screenshot
 
-> Common role for some desktop agnostic user actions
+> Make screenshot tool
 
 ## Requirements
 
@@ -24,9 +24,11 @@ for other roles, or variables that are used from other roles.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
 users too:
 
-    - hosts: servers
-      roles:
-         - { role: user-actions, x: 42 }
+```
+- hosts: servers
+  roles:
+     - { role: screenshot, x: 42 }
+```
 
 ## License
 
