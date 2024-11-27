@@ -8,13 +8,7 @@ exclude_paths:
   - .obsidian/   # implicit unless exclude_paths is defined in config
   - .vagrant/
   - docs/
-  - node_modules/
-  - templates/
-  - roles_/
-  - playbook_alternatives.yml
-  - playbook_virtualbox.yml
-  - playbook_virtualbox_prestart.yml
-  - temp/
+  - tmp/
 
 enable_list:
   # add yaml here if you want to avoid ignoring yaml checks when yamllint
