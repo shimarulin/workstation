@@ -1,0 +1,4 @@
+---
+# vars file for "kitty" role
+kitty_packages:
+  - "kitty"

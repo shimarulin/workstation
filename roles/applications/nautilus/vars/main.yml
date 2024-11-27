@@ -6,3 +6,26 @@ nautilus_packages:
   # Preview and thumbnail tools
   - sushi
   - ffmpegthumbnailer
+
+# Extra (AUR)
+#  - nautilus-open-any-terminal
+#  - turtle
+#  - nautilus-terminal
+#  - python-nautilus
+#  - meld
+#  - nautilus-copy-path
+#  - nautilus-compare
+#  - gtkhash
+#  - nautilus-metadata-editor
+#  - nautilus-ext-git
+#  - git-nautilus-icons
+#  - nautilus-annotations
+#  - nautilus-folder-icons
+#  - gvfs
+#  - gvfs-afc
+#  - gvfs-goa
+#  - gvfs-google
+#  - gvfs-gphoto2
+#  - gvfs-mtp
+#  - gvfs-nfs
+#  - gvfs-smb

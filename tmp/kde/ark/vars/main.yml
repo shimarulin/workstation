@@ -1,0 +1,9 @@
+---
+# vars file for ark
+ark_packages:
+  - ark
+  - lrzip #: LRZ format support
+  - lzop #: LZO format support
+  - p7zip #: 7Z format support
+  #  - unrar #: RAR decompression support
+  - unarchiver #: RAR format support (https://theunarchiver.com/command-line -> https://github.com/MacPaw/XADMaster)

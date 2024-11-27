@@ -1,0 +1,13 @@
+---
+# tasks file for "kitty" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ kitty_packages }}"
+    extra_args: "--needed"
+
+- name: "Copy the kitty config files"
+  ansible.builtin.copy:
+    src: "home/.config/kitty"
+    dest: "~/.config/"
+    mode: "u=rw,g=r,o=r"

@@ -1,6 +1,0 @@
----
-# tasks file for picom
-- name: install Picom from AUR
-  kewlfft.aur.aur:
-    name: picom-git
-    use: paru

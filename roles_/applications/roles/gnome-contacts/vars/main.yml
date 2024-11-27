@@ -1,4 +1,0 @@
----
-# vars file for gnome-contacts
-gnome_contacts_packages:
-  - gnome-contacts

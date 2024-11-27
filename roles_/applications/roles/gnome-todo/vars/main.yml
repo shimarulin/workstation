@@ -1,4 +1,0 @@
----
-# vars file for gnome-todo
-gnome_todo_packages:
-  - endeavour

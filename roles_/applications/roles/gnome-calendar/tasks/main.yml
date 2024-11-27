@@ -1,6 +1,0 @@
----
-# tasks file for gnome-calendar
-- name: install dependencies
-  become: true
-  community.general.pacman:
-    name: '{{ gnome_calendar_packages }}'
