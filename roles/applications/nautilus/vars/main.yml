@@ -2,6 +2,7 @@
 # vars file for nautilus
 nautilus_packages:
   - nautilus
+  - nautilus-python
 
   # Preview and thumbnail tools
   - sushi
@@ -11,7 +12,6 @@ nautilus_packages:
 #  - nautilus-open-any-terminal
 #  - turtle
 #  - nautilus-terminal
-#  - python-nautilus
 #  - meld
 #  - nautilus-copy-path
 #  - nautilus-compare
@@ -29,3 +29,11 @@ nautilus_packages:
 #  - gvfs-mtp
 #  - gvfs-nfs
 #  - gvfs-smb
+
+nautilus_terminal_emulator_executable_command_map:
+  "Black Box": "/usr/bin/blackbox"
+  "GNOME Console": "/usr/bin/kgx"
+  "Tilix": "/usr/bin/tilix"
+  "Kitty": "/usr/bin/kitty --detach"
+
+nautilus_terminal_emulator_executable_command: "{{ nautilus_terminal_emulator_executable_command_map[default_terminal_emulator] }}"

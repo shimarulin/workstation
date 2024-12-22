@@ -11,4 +11,5 @@ galaxy_info:
       versions:
         - "all"
 
-dependencies: []
+dependencies:
+  - role: "environment/default_terminal_emulator"

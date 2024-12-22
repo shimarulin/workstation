@@ -19,6 +19,18 @@
   when: "xdg_mime_query_inode_result.stdout != 'org.gnome.Nautilus.desktop'"
   changed_when: "xdg_mime_inode_result.rc == 0"
 
+- name: "Create the extension directory"
+  ansible.builtin.file:
+    path: "~/.local/share/nautilus-python/extensions"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+
+- name: "Generate 'Open Terminal' extension"
+  ansible.builtin.template:
+    src: "home/.local/share/nautilus-python/extensions/open-terminal.py.j2"
+    dest: "~/.local/share/nautilus-python/extensions/open-terminal.py"
+    mode: "u=rw,g=r,o=r"
+
 - name: "Setup Nautilus (Gnome Files)"
   community.general.dconf:
     key: "{{ item.key }}"
