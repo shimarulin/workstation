@@ -1,6 +1,9 @@
 ---
 # vars file for "default_terminal_emulator" role
-default_terminal_emulator_packages: []
+default_terminal_emulator_packages:
+  # Proposed standard to launching desktop apps with Terminal=true
+  # https://gitlab.freedesktop.org/Vladimir-csp/xdg-terminal-exec
+  - "xdg-terminal-exec"
 
 default_terminal_emulator_packages_map:
   "Black Box": "blackbox-terminal"
@@ -14,6 +17,13 @@ default_terminal_emulator_executable_paths_map:
   "Tilix": "/usr/bin/tilix"
   "Kitty": "/usr/bin/kitty"
 
+default_terminal_emulator_desktop_file_map:
+  "Black Box": "help"
+  "GNOME Console": "help"
+  "Tilix": "help"
+  "Kitty": "kitty.desktop"
+
 default_terminal_emulator_package: "{{ default_terminal_emulator_packages_map[default_terminal_emulator] }}"
 default_terminal_emulator_executable_path: "{{ default_terminal_emulator_executable_paths_map[default_terminal_emulator] }}"
 default_terminal_emulator_role: "applications/{{ default_terminal_emulator_package | replace('-', '_') }}"
+default_terminal_emulator_desktop_file: "{{ default_terminal_emulator_desktop_file_map[default_terminal_emulator] }}"

@@ -1,5 +1,18 @@
 ---
 # tasks file for "default_terminal_emulator" role
+- name: "Install dependencies"
+  kewlfft.aur.aur:
+    name: "{{ default_terminal_emulator_packages }}"
+    use: "paru"
+    extra_args: "--needed"
+
 - name: "Install default terminal emulator"
   ansible.builtin.include_role:
     name: "{{ default_terminal_emulator_role }}"
+
+# https://gitlab.freedesktop.org/Vladimir-csp/xdg-terminal-exec#default-terminal-execution-specification
+- name: "Generate ~/.config/xdg-terminals.list"
+  ansible.builtin.template:
+    src: "home/.config/xdg-terminals.list.j2"
+    dest: "~/.config/xdg-terminals.list"
+    mode: "u=rw,g=r,o=r"
