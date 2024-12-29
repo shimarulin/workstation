@@ -1,0 +1,25 @@
+---
+# tasks file for "yazi" role
+- name: "Install dependencies"
+  become: true
+  community.general.pacman:
+    name: "{{ yazi_packages }}"
+    extra_args: "--needed"
+
+- name: "Create the config directories"
+  ansible.builtin.file:
+    path: "~/.config/yazi/{{ item }}"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+  loop:
+    - "flavors"
+    - "plugins"
+
+- name: "Copy config files"
+  ansible.builtin.copy:
+    src: "home/.config/yazi/{{ item }}"
+    dest: "~/.config/yazi/{{ item }}"
+    mode: "u=rw,g=r,o=r"
+  loop:
+    - "yazi.toml"
+    - "package.toml"
