@@ -1,4 +1,36 @@
 ---
 # vars file for "micro" role
 micro_packages:
+  # Main
   - "micro"
+
+  ## system clipboard support for X11
+  - "xsel"
+  # or
+  # - "xclip"
+
+  ## system clipboard support for Wayland
+  - "wl-clipboard"
+
+  # Extra
+  - "fzf"
+  ## AUR
+  ### Command line interface to convert strings into any case.
+  - "ccase"
+
+### Plugins
+# cd $HOME/.config/micro/plug/
+# git clone https://github.com/terokarvinen/palettero
+# fzf, pythonpy
+##
+# https://github.com/sparques/micro-quoter
+##
+# https://github.com/claromes/filemanager-plugin - see https://claromes.com/blog/customizing-my-micro-editor
+##
+
+#### For reference
+## to replace by 'textfilter' command
+# https://github.com/NicolaiSoeborg/manipulator-plugin
+##
+# https://github.com/zyedidia/micro/blob/master/data/micro.json#L8
+# https://github.com/dmaluka/micro-detectindent

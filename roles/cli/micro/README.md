@@ -1,6 +1,26 @@
 # Ansible Role "micro"
 
-> Ansible role 'micro'
+> 'micro' - A modern and intuitive terminal-based text editor
+
+## Keybindings
+
+All default key bindings are contained in the file https://github.com/zyedidia/micro/blob/master/internal/action/defaults_other.go.
+
+### Multiple cursors
+
+| Key            | Description of function                                                                      | Mod |
+|----------------|----------------------------------------------------------------------------------------------|-----|
+| Alt-n          | Create new multiple cursor from selection (will select current word if no current selection) |     |
+| Alt-Shift-Up   | Spawn a new cursor on the line above the current one                                         |     |
+| Alt-Shift-Down | Spawn a new cursor on the line below the current one                                         |     |
+| Alt-p          | Remove latest multiple cursor                                                                |     |
+| Alt-c          | Remove all multiple cursors (cancel)                                                         |     |
+| Alt-x          | Skip multiple cursor selection                                                               | ️   |
+| Alt-m          | Spawn a new cursor at the beginning of every line in the current selection                   |     |
+| Alt-MouseLeft  | Place a multiple cursor at any location                                                      | ✔   |
+
+
+---
 
 ## Requirements
 

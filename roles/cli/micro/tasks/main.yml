@@ -1,7 +1,38 @@
 ---
 # tasks file for "micro" role
 - name: "Install dependencies"
-  become: true
-  community.general.pacman:
+  kewlfft.aur.aur:
     name: "{{ micro_packages }}"
+    use: "paru"
     extra_args: "--needed"
+
+# TODO: move to different role (zsh? new role?)
+- name: "Create the profile.d user directory"
+  ansible.builtin.file:
+    path: "~/.config/profile.d"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+
+- name: "Copy the micro environment variables register script"
+  ansible.builtin.copy:
+    src: "home/.config/profile.d/00.env_micro.sh"
+    dest: "~/.config/profile.d/00.env_micro.sh"
+    mode: "u=rw,g=r,o=r"
+
+- name: "Create the config directory"
+  ansible.builtin.file:
+    path: "~/.config/micro"
+    state: "directory"
+    mode: "u=rwx,g=rx,o=rx"
+
+- name: "Copy bindings"
+  ansible.builtin.copy:
+    src: "home/.config/micro/bindings.json"
+    dest: "~/.config/micro/bindings.json"
+    mode: "u=rw,g=r,o=r"
+
+- name: "Copy settings"
+  ansible.builtin.copy:
+    src: "home/.config/micro/settings.json"
+    dest: "~/.config/micro/settings.json"
+    mode: "u=rw,g=r,o=r"
