@@ -1,20 +1,26 @@
 ---
 # vars file for nautilus
 nautilus_packages:
-  - nautilus
-  - nautilus-python
+  - "nautilus"
+  - "nautilus-python"
 
   # Preview and thumbnail tools
-  - sushi
-  - ffmpegthumbnailer
+  - "sushi"
+  - "ffmpegthumbnailer"
+
+  # Compare files and Git integration
+  - "meld" # required by "nautilus-compare" or "turtle"
+  # - "nautilus-compare" # AUR
+  - "turtle" # AUR, replace "nautilus-compare" TODO:FIX: ./workstation/venv/bin/python: No module named build
+  - "seahorse" # sign commits TODO: move to "git" role?
+
+  # Utils
+  - "nautilus-copy-path"
+  # - "actions-for-nautilus-git"
 
 # Extra (AUR)
 #  - nautilus-open-any-terminal
-#  - turtle
 #  - nautilus-terminal
-#  - meld
-#  - nautilus-copy-path
-#  - nautilus-compare
 #  - gtkhash
 #  - nautilus-metadata-editor
 #  - nautilus-ext-git

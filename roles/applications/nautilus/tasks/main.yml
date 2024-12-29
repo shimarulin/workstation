@@ -1,9 +1,10 @@
 ---
 # tasks file for nautilus
 - name: "Install dependencies"
-  become: true
-  community.general.pacman:
+  kewlfft.aur.aur:
     name: "{{ nautilus_packages }}"
+    use: "paru"
+    extra_args: "--needed"
 
 - name: "Get default file manager"
   ansible.builtin.command: "xdg-mime query default inode/directory"
@@ -24,6 +25,15 @@
     path: "~/.local/share/nautilus-python/extensions"
     state: "directory"
     mode: "u=rwx,g=rx,o=rx"
+
+#- name: "Copy custom extensions"
+#  ansible.builtin.copy:
+#    src: "home/.local/share/nautilus-python/extensions/{{ item }}"
+#    dest: "~/.local/share/nautilus-python/extensions/{{ item }}"
+#    mode: "u=rw,g=r,o=r"
+#  loop:
+#    - "keybindings.py"
+#    - "open-terminal.py"
 
 - name: "Generate 'Open Terminal' extension"
   ansible.builtin.template:
